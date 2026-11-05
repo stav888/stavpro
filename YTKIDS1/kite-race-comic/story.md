@@ -14,4 +14,6 @@ When they look closer, they find a painted banner on the kite with drawings of s
 
 ---
 
+**Version 3 (comic-8-panels-en-v3.png):** the kids stop on a garden path away from the road, the same grown-up in a purple cardigan helps and collects the kite from the grass, and the "Get well soon" banner is a separate sign the kids carry to the hospital.
+
 **Version 2 (comic-8-panels-en-v2.png):** the kids stay on the sidewalk while a grown-up helps, nobody jumps or climbs to catch the kite, the cloud shape stays the same, and the banner is delivered to the hospital by a grown-up.
