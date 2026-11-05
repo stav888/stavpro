@@ -1,0 +1,13 @@
+# The Race After the Cloud Kite
+
+**Series:** YTKIDS1
+**Format:** 8-panel comic page (2 columns x 4 rows)
+**Characters:** the girl with the blue hair, her friend the boy in the yellow t-shirt, and her friend the girl with curly black hair in the green dress
+
+---
+
+A big cloud-shaped kite breaks loose during the holiday and flies over the city. The girl and her friends chase it through the streets and gardens, and help it land safely before it reaches the road.
+
+When they look closer, they find a painted banner on the kite with drawings of smiling children and the words "Get well soon". The kite was carrying a picture for the kids in the hospital, so the friends decide to bring it to them.
+
+**To be continued...**
