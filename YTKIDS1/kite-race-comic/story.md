@@ -11,3 +11,7 @@ A big cloud-shaped kite breaks loose during the holiday and flies over the city.
 When they look closer, they find a painted banner on the kite with drawings of smiling children and the words "Get well soon". The kite was carrying a picture for the kids in the hospital, so the friends decide to bring it to them.
 
 **To be continued...**
+
+---
+
+**Version 2 (comic-8-panels-en-v2.png):** the kids stay on the sidewalk while a grown-up helps, nobody jumps or climbs to catch the kite, the cloud shape stays the same, and the banner is delivered to the hospital by a grown-up.
