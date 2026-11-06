@@ -24,7 +24,7 @@ The friends share ideas: maybe the bird is hiding behind a giant flower, or mayb
 
 **5. The Path of Colors**
 They notice small colored dots on the path and follow them at a calm pace, staying together.
-**Girl:** "Here's another dot! We're on the right way."
+**Girl:** "Here's another dot! We're on the right track."
 
 **6. Friends Come Together**
 Behind a flower bush they find the bird. She smiles and flies to the rabbit.
