@@ -1,6 +1,6 @@
 # The Girl Who Asked the Sun for Help
 
-**Series:** YTKIDS1
+**Series:** YT1
 **Format:** 8-panel comic, 9:16 vertical
 
 ---

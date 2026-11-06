@@ -1,6 +1,6 @@
 # The Whispering Library
 
-**Series:** YTKIDS1
+**Series:** YT1
 **Format:** 8-panel comic page (2 columns x 4 rows)
 **Characters:** the girl with the blue hair, her friend the boy in the yellow t-shirt, her friend the girl with curly black hair in the green dress, a white rabbit, and a small bird
 
