@@ -59,10 +59,11 @@ The old Derinkuyu method (14 independent Krea scenes, paired two by two as start
 - **No zoom / Ken Burns**; static or very gentle camera, motion inside the scene.
 - ~10 Flow credits per clip (estimate). Rotate between all existing profiles to use their daily free credits.
 - After each clip: `ffprobe` height > width; compare its last frame with `partN_end.png` (`scripts/video/chain_parts.sh check`).
+- **Generated directly at 720p**: no 480p test, no upscale; QA Gate 1 watches the 720p clip right away.
 - Details: [video-generators/google-flow.md](video-generators/google-flow.md).
 
 ## Animation: Grok Imagine (option)
-Two chained 4 s clips per part (clip B starts from clip A's last frame), tested at 480p, then the approved part is upscaled to 720p with Real-ESRGAN instead of being regenerated. See [video-generators/grok-imagine.md](video-generators/grok-imagine.md) and [upscale-real-esrgan.md](upscale-real-esrgan.md).
+Only Grok Imagine (and other tools without 720p) use the 480p test + upscale. Two chained 4 s clips per part (clip B starts from clip A's last frame), tested at 480p, then the approved part is upscaled to 720p with Real-ESRGAN instead of being regenerated. See [video-generators/grok-imagine.md](video-generators/grok-imagine.md) and [upscale-real-esrgan.md](upscale-real-esrgan.md).
 
 ## Fixing clips
 - **Drifting clips are locked**: freeze the drifting area with a still mask (Hanging Gardens scene 3: `s3_lock.png` over the left 41% of the frame in `build_highlight_wash.py`).

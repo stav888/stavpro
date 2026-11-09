@@ -8,6 +8,8 @@
 #   prompts/partN.txt                                transition prompt (motion only)
 #   prompts/partN.dur  (optional)                    4, 6 or 8 (default 8; Veo max is 8 s)
 # Profiles: rotate between all existing profiles to use their daily free credits.
+# Clips are generated directly at 720p (Veo 3.1 Lite default, 720x1280): no 480p test and no
+# upscale for Flow; QA Gate 1 watches each 720p clip right away (scripts/qa/qa_check.py clip ...).
 # ~10 Flow credits per clip (estimate). Existing clips are skipped, so a re-run after the daily
 # credit refresh only does the missing parts. Part 1 is the approval sample: run PARTS="1" first.
 set -u

@@ -27,4 +27,4 @@
 - **Google Flow** (labs.google/fx/tools/flow): Veo 3.1 Lite clips.
 - **Grok Imagine** (Grok Bot `GenerateVideo` / Grok Chat): image-to-video in the earlier videos.
 - **Buffer** (MCP connector): scheduled YouTube upload.
-- The Flow path needs no upscaler (720p clips are scaled to 1080x1920 with lanczos in the editor). Real-ESRGAN is only for approved low-res clips (Grok Imagine 480p tests, see `../docs/upscale-real-esrgan.md`).
+- The Flow path needs no upscaler (720p clips are scaled to 1080x1920 with lanczos in the editor). Real-ESRGAN is only for approved low-res clips from Grok Imagine or other tools without 720p output (480p tests, see `../docs/upscale-real-esrgan.md`).

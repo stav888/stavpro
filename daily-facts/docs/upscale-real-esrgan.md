@@ -1,6 +1,8 @@
 # Upscale an approved clip to 720p (Real-ESRGAN)
 
-Script: [`../scripts/video/upscale_720p.sh`](../scripts/video/upscale_720p.sh) (standalone; any vertical clip from any generator: Grok Imagine 480p tests, a low-res Krea clip, an old 400x736 Grok clip, etc.).
+**Only for Grok Imagine and other tools that cannot output 720p.** Google Flow generates directly at 720p: no 480p test and no upscale for Flow clips.
+
+Script: [`../scripts/video/upscale_720p.sh`](../scripts/video/upscale_720p.sh) (standalone; any vertical low-res clip: Grok Imagine 480p tests, a low-res Krea clip, an old 400x736 Grok clip, etc.).
 
 ## When
 - The clip **already passed QA** (motion, watercolor look, 9:16, no text) and only needs more resolution.

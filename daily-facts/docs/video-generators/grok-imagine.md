@@ -14,6 +14,7 @@ Used for image-to-video **before Flow** (Oct 2026): Prague v3, Petra, Alexandria
 Uses the Grok Bot subscription: a full video with bot-made clips used about 10% of a monthly plan, which is why the pipeline moved to Flow's free daily credits.
 
 ## Per-part chained workflow (option, from 2026-11-09)
+The 480p test + upscale below is specific to Grok Imagine (and any other tool without a 720p output). Flow clips are generated at 720p and never upscaled.
 Use when Flow credits are out or a part needs Grok's motion. Inputs are the same Step 0 pair (`partN_start.png`, `partN_end.png`) and transition prompt.
 
 1. **Clip A, 4 s, 480p, 9:16** from `scenes/partN_start.png`. Prompt: the first half of the motion toward the end state + `static locked camera, no zoom, no pan, soft watercolor and thin ink lines stay steady, no text, no letters, no captions`. Save `gen/partN_a.mp4`.

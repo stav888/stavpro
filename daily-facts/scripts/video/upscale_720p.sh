@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Daily Facts Arete: upscale an APPROVED low-res vertical clip (a 480p Grok Imagine test part, or a
-# clip from any other generator) to 720x1280 with Real-ESRGAN, keeping exactly the same motion.
+# clip from another tool that cannot output 720p) to 720x1280 with Real-ESRGAN, keeping exactly the
+# same motion. Not for Google Flow: Flow clips are generated directly at 720p and never upscaled.
 # Use it instead of regenerating at 720p (a new generation = different motion).
 #
 # Two back ends, same result size:

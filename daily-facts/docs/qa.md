@@ -20,17 +20,19 @@ What QA gets: per part `partN_start` variants, then start + end side by side wit
 Output: best start variant + "pair OK" or "regenerate partN_end because ...".
 
 ## Gate 1: every clip, right after generation (QA watches each clip)
-Pre-check: `python3 scripts/qa/qa_check.py clip clips/partN.mp4 --start scenes/partN_start.png --end scenes/partN_end.png` and, from part 2 on, `qa_check.py seam clips/part(N-1).mp4 clips/partN.mp4 [--continuous]`.
+Flow clips are checked here **at 720p as generated** (no 480p test, no upscale). Pre-check: `python3 scripts/qa/qa_check.py clip clips/partN.mp4 --start scenes/partN_start.png --end scenes/partN_end.png` and, from part 2 on, `qa_check.py seam clips/part(N-1).mp4 clips/partN.mp4 [--continuous]`.
 - [ ] **9:16** (height > width); landscape = reject
 - [ ] **continuity at the seams**: first frame matches `partN_start`, last frame matches `partN_end`; where part N+1 continues part N, part N's last frame = part N+1's first frame (`--continuous` must PASS)
 - [ ] **one-way motion**: no loop, ping-pong, reverse, drift back and forth; camera locked or very gentle, **no pans or zooms** the prompt did not ask for
 - [ ] **no glitches or distortions**: melting faces, hands, buildings; flicker; morphing between unrelated shapes; sudden jumps
 - [ ] **no text** appearing anywhere in any frame (signs, fake letters, watermarks)
 - [ ] length 4/6/8 s covers the part's narration; no frozen stretch
+- [ ] Flow: 720x1280
 - [ ] Grok option: no visible seam where clip B starts from clip A's last frame
 Output per clip: keep / lock the drifting area / re-roll. Only kept clips go to the user.
 
-## Gate 2: after every upscale
+## Gate 2: after every upscale (only for generators that cannot output 720p)
+Applies only to Grok Imagine or another tool without a 720p output, after its approved 480p take is upscaled. **Flow clips are generated at 720p and skip this gate**: Gate 1 already watched the final 720p clip.
 Pre-check: `python3 scripts/qa/qa_check.py sharp gen/partN_480.mp4 clips/partN.mp4`.
 - [ ] 720x1280, same motion and length as the approved 480p take
 - [ ] **sharper**: ink lines crisp, no smearing, halos or ringing

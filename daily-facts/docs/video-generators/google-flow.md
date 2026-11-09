@@ -8,7 +8,7 @@
 | Model | **Veo 3.1 Lite** (`veo-lite` in gflow-cli) |
 | Mode | image-to-video / frames to video, **start frame + end frame** |
 | Aspect | **9:16, set explicitly on every generation** (Flow may remember 16:9); verify height > width after each clip |
-| Resolution | 720p (the Veo Lite default; the result is 720x1280) |
+| Resolution | **720p directly** (the Veo Lite default; the result is 720x1280). No 480p test, no upscale: QA Gate 1 watches the 720p clip right away |
 | Duration | **4, 6 or 8 s** (8 s is the hard max; pick the shortest that covers the part's narration). 8 s clips come out ~7.9 s |
 | Outputs | 1 per prompt |
 | Composer | classic only; never the Agent button |

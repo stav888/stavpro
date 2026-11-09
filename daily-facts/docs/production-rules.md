@@ -21,6 +21,7 @@ These rules apply to every new Short (rules 9-10 added later on 2026-11-09). The
 - **A clip is at most 8 s**, so **each part's narration is at most 8 s, about 18-20 words** at most; at our slower Kokoro pace (af_heart, below 0.92, with "..." pauses) plan ~16-18 words and measure the WAV. A longer beat is split into two parts, with part N+1 starting from part N's end frame.
 - Credits: ~10 per clip (estimate). Rotate between all existing profiles to use their daily free credits. Never buy credits.
 - **Never click the Agent button**; classic composer only.
+- **Google Flow generates directly at 720p** (Veo 3.1 Lite, 720x1280): no 480p test and no upscale; QA Gate 1 watches the 720p clip right away.
 
 ## 4. 9:16 is mandatory
 - Pass **aspect 9:16 explicitly on every image call and every video call** (Krea `aspect_ratio 9:16`, Flow composer 9:16, gflow `--aspect 9:16`, Grok Imagine 9:16).
@@ -52,12 +53,13 @@ These rules apply to every new Short (rules 9-10 added later on 2026-11-09). The
 Every part gets a filled [`../templates/scene-template.md`](../templates/scene-template.md): beat, setting, characters and props, exact start frame, end frame, the one-way motion, accent colour, references used, continuity with the previous part, and the three prompts (start, end-edit, transition).
 
 ## 8. Grok Imagine option (chained 4 s clips, 480p test, upscale)
+The 480p test + Real-ESRGAN upscale applies **only to Grok Imagine and other tools that cannot output 720p**. Never to Flow (see rule 3).
 - Per part: **clip A** (4 s) from `partN_start`, then **clip B** (4 s) from **clip A's last frame**, continuing the same motion toward `partN_end` (which is only the check target). Join A+B into one ~8 s part (`scripts/video/chain_parts.sh`).
-- Generate and QA at **480p** first. After QA passes, **do not regenerate** at 720p (that gives different motion): upscale the approved clip to **720x1280** with Real-ESRGAN via [`scripts/video/upscale_720p.sh`](../scripts/video/upscale_720p.sh) (standalone, works for clips from any generator). Guide: [upscale-real-esrgan.md](upscale-real-esrgan.md).
+- Grok: generate and QA at **480p** first. After QA passes, **do not regenerate** at 720p (that gives different motion): upscale the approved clip to **720x1280** with Real-ESRGAN via [`scripts/video/upscale_720p.sh`](../scripts/video/upscale_720p.sh) (standalone, works for clips from any generator). Guide: [upscale-real-esrgan.md](upscale-real-esrgan.md).
 - Regenerate at 720p only if the upscale looks soft or breaks the ink lines.
 
 ## 9. Staged QA that watches the video
-- The QA bot **watches** every clip right after generation, every upscale, and the full video before delivery, and checks for faults at each stage: seams and continuity, glitches and distortions, any text in the image, 9:16, one-way motion; sharpness and surviving watercolor grain after upscaling; audio word by word vs the script, ~-16 LUFS, no source audio leaking, subtitle sync (Whisper on the final mix), subtitle size and low bottom-centre position, layout, English only, no frozen animation.
+- The QA bot **watches** every clip right after generation, every upscale (only for generators that cannot output 720p, never Flow), and the full video before delivery, and checks for faults at each stage: seams and continuity, glitches and distortions, any text in the image, 9:16, one-way motion; sharpness and surviving watercolor grain after upscaling; audio word by word vs the script, ~-16 LUFS, no source audio leaking, subtitle sync (Whisper on the final mix), subtitle size and low bottom-centre position, layout, English only, no frozen animation.
 - `scripts/qa/qa_check.py` is the automatic pre-check for each gate (`clip`, `seam`, `sharp`, `video`).
 - **Any fault -> fix -> re-QA.** Nothing is delivered to the user or scheduled on Buffer without a QA PASS on that exact file.
 - Checklists per gate: [qa.md](qa.md).

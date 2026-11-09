@@ -17,7 +17,7 @@ Copy this file to `<story>/scenes/partN.md` for every part. All generated images
 | References used | `reference-images/<file>.jpg`, `reference-images/<file>.jpg` (2-3) |
 | Continuity | start = end of part N-1? (yes/no, what carries over: light, props, palette) |
 | Transition to next part | themed, slow: paper tear / ink bloom / golden light / cloud or fire wash |
-| Clip settings | Flow Veo 3.1 Lite, 9:16, 4/6/8 s (or Grok Imagine 2 x 4 s chained, 480p test) |
+| Clip settings | Flow Veo 3.1 Lite, 9:16, 4/6/8 s, **720p directly** (no test, no upscale); or Grok Imagine 2 x 4 s chained, 480p test + upscale (non-720p tools only) |
 
 ## Prompts
 
@@ -44,7 +44,7 @@ no text, no letters, no captions
 ## QA (QA bot watches; any fault -> fix -> re-QA)
 - [ ] **Gate 0 pair**: start and end side by side with the references: same style, same shot, only the action changed; no lettering; both height > width
 - [ ] **Gate 1 clip** (`qa_check.py clip` + `seam`): 9:16, first/last frame match the pair, seam with part N-1 (continuous or themed), one-way motion, no glitches/distortions, no text, no frozen stretch, length covers the narration
-- [ ] **Gate 2 upscale** (Grok option, `qa_check.py sharp`): sharper, watercolor grain kept
+- [ ] **Gate 2 upscale** (Grok / non-720p tools only; skip for Flow, `qa_check.py sharp`): sharper, watercolor grain kept
 - [ ] QA result: PASS / faults: ...  (date, round)
 - [ ] user approval (part 1 = sample)
 

@@ -1,13 +1,13 @@
 # QA סרטונים (QA bot)
 
-**Role:** independent quality check that **actually watches** every clip, every upscale and the full video (with sound) at each stage. Nothing reaches the user and nothing is scheduled before QA passes it. Gates and checklists: [`../docs/qa.md`](../docs/qa.md).
+**Role:** independent quality check that **actually watches** every clip (Flow: the 720p clip as generated), every upscale (Grok / non-720p tools only) and the full video (with sound) at each stage. Nothing reaches the user and nothing is scheduled before QA passes it. Gates and checklists: [`../docs/qa.md`](../docs/qa.md).
 
 ## What I send, per stage
 | Stage | I send | QA returns |
 |---|---|---|
 | Stills | `qa/sNN_sheet.jpg` per scene (2 Krea variants side by side + the narration line), prompts | best variant per scene, or "regenerate sNN because ..." (re-rolls come back as `sNN_rsheet.jpg`) |
 | Clips (each, right after generation) | `clips/partN.mp4` + `qa_check.py clip/seam` output | seams, glitches, distortions, text, 9:16, one-way motion -> keep / lock area / re-roll |
-| Upscale | 480p source + 720p result + `qa_check.py sharp` | sharpness, watercolor grain kept -> PASS / regenerate at 720p |
+| Upscale (Grok / non-720p tools only; never Flow) | 480p source + 720p result + `qa_check.py sharp` | sharpness, watercolor grain kept -> PASS / regenerate at 720p |
 | Narration | `narration.wav`, `narration_REPORT.json`, `script.txt` | word-by-word check vs the script, pace, gaps, loudness, pronunciation |
 | Highlight colour | 3-4 frames from different scenes | one recommended colour + reason (I pass it to the user for approval) |
 | Final video | MP4 + contact sheet + `qa_check.py video` + subtitle sync report + metadata draft | audio vs script, -16 LUFS, no source audio, sync, subtitle size/position, layout, English only, no frozen animation -> pass or a numbered fix list |

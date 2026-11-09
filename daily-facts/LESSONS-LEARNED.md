@@ -12,7 +12,8 @@
 7. **Mute generator audio** (`CLIP_AUDIO=0`); Flow ambience leaked into the narration gaps.
 8. Flow clips drift/pan even when asked not to: say "static locked camera, no zoom, no pan" in every transition prompt, measure motion in QA, lock or re-roll.
 9. Use start/end **pairs made by editing the start frame** (not independent scenes), so seams are real continuations.
-10. Publish only via **Buffer** with a temporary public GitHub raw URL, delete it after publish; set thumbnail in YouTube Studio; tags may need adding after approval.
+10. Flow clips: generate **directly at 720p** and QA them right away; the 480p test + Real-ESRGAN upscale is only for Grok Imagine / tools without 720p.
+11. Publish only via **Buffer** with a temporary public GitHub raw URL, delete it after publish; set thumbnail in YouTube Studio; tags may need adding after approval.
 
 ---
 

@@ -18,7 +18,7 @@ Channel: **Daily Facts Arete** (YouTube Shorts, https://www.youtube.com/@Daily_F
 - **3-4 Shorts a week** at non-round times between 14:00 and 19:00 Israel time.
 - **Approval before anything is made (since 2026-11-09, replaces the 2026-11-07 script + sample frame gate)**: a part-by-part script table led by `N parts / N clips / ~T s / ~C credits (estimate)`, then part 1 as the sample, then the rest part by part. Full rules: [docs/production-rules.md](docs/production-rules.md).
 - **Step 0**: per-part start/end sketches (end made FROM start), checked against our own `reference-images/`, before any video credits. 9:16 passed explicitly on every image and video call and verified after each one. Generated images and clips are illustration only; all text is drawn in code.
-- **Staged QA that watches the video** (each clip, each upscale, the full video); any fault -> fix -> re-QA; nothing delivered or scheduled without a QA PASS. [docs/qa.md](docs/qa.md)
+- **Staged QA that watches the video** (each clip, each upscale of a non-720p generator, the full video); any fault -> fix -> re-QA; nothing delivered or scheduled without a QA PASS. [docs/qa.md](docs/qa.md)
 - **Continuous improvement**: read [LESSONS-LEARNED.md](LESSONS-LEARNED.md) before each video, add an entry after it.
 - Never use long em dashes in scripts, subtitles or metadata.
 - No zoom / Ken Burns; slow transitions themed to the mood; no music.
@@ -34,9 +34,9 @@ Channel: **Daily Facts Arete** (YouTube Shorts, https://www.youtube.com/@Daily_F
 | 2 | **User approval: part-by-part table** led by `N parts / N clips / ~T s / ~C Flow credits (estimate)` | - | [script-writing § table](docs/script-writing.md#part-by-part-table), [production-rules](docs/production-rules.md) |
 | 3 | Scene sheet per part (beat, setting, start/end frame, one-way motion, accent colour, refs, continuity, 3 prompts) | [`templates/scene-template.md`](templates/scene-template.md) | same |
 | 4 | **Step 0, part 1**: pick 2-3 refs, `part1_start` (Krea "arete style", 9:16, 2 variants, QA pick), `part1_end` as an edit FROM the start, transition prompt; check side by side with refs | Krea MCP | [images-and-animation](docs/images-and-animation.md), [krea](docs/video-generators/krea.md) |
-| 5 | Part 1 clip: Flow web UI, Veo 3.1 Lite, start + end, 9:16, 4/6/8 s (gflow-cli only on browser fault); **QA Gate 1** (QA bot watches the clip: seams, glitches, text, 9:16, one-way motion) | Flow / `scripts/flow/run_clips.sh` | [google-flow](docs/video-generators/google-flow.md) |
+| 5 | Part 1 clip: Flow web UI, Veo 3.1 Lite, **directly at 720p** (no 480p test, no upscale), start + end, 9:16, 4/6/8 s (gflow-cli only on browser fault); **QA Gate 1** on the 720p clip right away (QA bot watches the clip: seams, glitches, text, 9:16, one-way motion) | Flow / `scripts/flow/run_clips.sh` | [google-flow](docs/video-generators/google-flow.md) |
 | 6 | **User approval of the part 1 sample** (pair + prompt + composited sample frame + clip) | `scripts/video/preview_frame.py` | [production-rules § 6](docs/production-rules.md#6-approval-flow) |
-| 7 | Remaining parts **one by one**: pair (QA Gate 0) -> clip -> **QA Gate 1** (+ seam vs previous part) -> next (~10 Flow credits/clip, estimate; rotate between all existing profiles to use their daily free credits). Grok option: 2 x 4 s chained at 480p, QA, Real-ESRGAN to 720p + **QA Gate 2** (sharpness, watercolor grain) | Krea, Flow, פעולות bot; `chain_parts.sh`, `upscale_720p.sh` | [grok-imagine](docs/video-generators/grok-imagine.md), [upscale](docs/upscale-real-esrgan.md) |
+| 7 | Remaining parts **one by one**: pair (QA Gate 0) -> clip -> **QA Gate 1** (+ seam vs previous part) -> next (~10 Flow credits/clip, estimate; rotate between all existing profiles to use their daily free credits). Flow clips are final at 720p. Only for Grok Imagine / other tools without 720p: 2 x 4 s chained at 480p, QA, Real-ESRGAN to 720p + **QA Gate 2** (sharpness, watercolor grain) | Krea, Flow, פעולות bot; `chain_parts.sh`, `upscale_720p.sh` | [grok-imagine](docs/video-generators/grok-imagine.md), [upscale](docs/upscale-real-esrgan.md) |
 | 8 | QA + **user approval** of all clips | QA סרטונים | [qa](docs/qa.md) |
 | 9 | **Narration first**: Kokoro af_heart, slower than 0.92, one WAV per part, each measured <= 8 s | `scripts/voice/kokoro_tts_lines.py` | [narration](docs/narration.md) |
 | 10 | **10 s narration sample -> user approval** | - | same |
@@ -71,7 +71,7 @@ All links checked on 2026-11-09 (HTTP 200). Licences from GitHub licence metadat
 | Flow automation (fallback) | [ffroliva/gflow-cli](https://github.com/ffroliva/gflow-cli) · [PyPI](https://pypi.org/project/gflow-cli/) | MIT (alpha, not affiliated with Google) | `gflow video i2v` batch |
 | **Stills** | [Krea](https://www.krea.ai) trained style "Daily Facts Arete Watercolor" (trigger `arete style`) | service | 2 images per scene via the Krea MCP connector |
 | Earlier i2v | Grok Imagine (Grok Bot `GenerateVideo` / Grok Chat) | service | clips before Flow; now the chained 2 x 4 s option |
-| Upscale | [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (weights `realesr-animevideov3`, `realesr-general-x4v3`) · optional [Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) | BSD-3-Clause · no SPDX id on GitHub | approved 480p clips -> 720x1280 (`upscale_720p.sh`, CPU PyTorch path on the box) |
+| Upscale | [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (weights `realesr-animevideov3`, `realesr-general-x4v3`) · optional [Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan) | BSD-3-Clause · no SPDX id on GitHub | approved 480p clips from Grok Imagine / other non-720p tools -> 720x1280 (`upscale_720p.sh`, CPU PyTorch path on the box); never used for Flow |
 | Video I/O | [FFmpeg](https://github.com/FFmpeg/FFmpeg) with [libass](https://github.com/libass/libass) | LGPL/GPL · ISC | encode, xfade, ASS subtitles, loudnorm, ducking |
 | Compositing | [Pillow](https://github.com/python-pillow/Pillow), NumPy, SciPy | MIT-CMU · BSD | frame compositing, transitions, subtitles |
 | **Font** | [Montserrat (Google Fonts)](https://fonts.google.com/specimen/Montserrat) | OFL | bold white subtitles |
@@ -95,7 +95,7 @@ See [requirements/system-deps.md](requirements/system-deps.md) for models, fonts
 script.txt            N|text, one row per part (locked after approval)
 scenes/partN.md partN_start.png partN_end.png   scene sheet + matched pair (end made FROM start)
 prompts/partN.txt [partN.dur]   transition prompt (motion only) [+ 4/6/8 s]
-clips/partN.mp4       Flow clip per part (Grok option: gen/partN_a.mp4, partN_b.mp4, partN_480.mp4)
+clips/partN.mp4       Flow clip per part, 720p as generated (Grok option: gen/partN_a.mp4, partN_b.mp4, partN_480.mp4)
 prompts.txt           NN|Krea prompt per scene         urls.txt   Krea image URLs
 krea/ (all Krea outputs)   qa/ (QA sheets)   flow/*.log
 (older videos: picks/sNN.png + motion_prompts.txt + clips/clipNN.mp4, one scene per line, paired two by two)
