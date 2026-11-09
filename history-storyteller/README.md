@@ -4,6 +4,36 @@
 
 Channel: **Smart History Knowledge** (YouTube Shorts). Output: English-only, 9:16 1080x1920, 24 fps, true chronological history stories in the Ian Xiaohei illustration style (white background, wobbly black lines, black Xiaohei character performing the action). Reference video: *Agent Garbo* (`garbo-history-v9.mp4`, 81 s), scheduled 2026-11-12 18:43 Israel.
 
+## Base repos / sources (everything the pipeline is built on)
+All links checked on 2026-11-09 (HTTP 200). Licences come from the GitHub/Hugging Face licence metadata.
+
+| Area | Repo / source | Licence | How we use it |
+|---|---|---|---|
+| **Visual style** | [helloianneo/ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) | MIT (+ [NOTICE](https://github.com/helloianneo/ian-xiaohei-illustrations/blob/main/NOTICE.md): credit Ian) | Style rules and example images, used as references for every still |
+| **Narration TTS** | [resemble-ai/chatterbox](https://github.com/resemble-ai/chatterbox) · model [ResembleAI/chatterbox](https://huggingface.co/ResembleAI/chatterbox) · PyPI `chatterbox-tts==0.1.7` | MIT | Voice clone, seed 7, exaggeration 0.6, cfg 0.45 |
+| Watermark lib (Chatterbox dependency) | [resemble-ai/Perth](https://github.com/resemble-ai/Perth) · PyPI `resemble-perth` | MIT | Falls back to `DummyWatermarker` on CPU |
+| **Reference voice** | [hexgrad/kokoro](https://github.com/hexgrad/kokoro) · model [hexgrad/Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (voice `am_eric`, backup `bm_george`) | Apache-2.0 | One reference clip `k_am_eric.wav` for Chatterbox |
+| **Frame interpolation** | [Fannovel16/ComfyUI-Frame-Interpolation @ 26545cc](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/tree/26545cc2dd95bc3d27f056016300673bdeee78f5) (`vfi_models/rife/rife_arch.py`) | MIT | RIFE 4.7 `IFNet` code |
+| RIFE (original algorithm) | [hzwer/Practical-RIFE](https://github.com/hzwer/Practical-RIFE) · [hzwer/ECCV2022-RIFE](https://github.com/hzwer/ECCV2022-RIFE) | MIT | Upstream of the RIFE 4.7 model |
+| RIFE 4.7 weights | [jasonot/mycomfyui `rife47.pth`](https://huggingface.co/jasonot/mycomfyui/blob/main/rife47.pth) | mirror, no licence stated (RIFE upstream is MIT) | Weights loaded by `rife_eq.py`, `jolt_fix.py`, `fix_frames.py` |
+| **ASR / timing** | [SYSTRAN/faster-whisper](https://github.com/SYSTRAN/faster-whisper) · model [Systran/faster-whisper-small](https://huggingface.co/Systran/faster-whisper-small) (from [openai/whisper](https://github.com/openai/whisper)) | MIT | Word timestamps, first-word QA |
+| Video I/O | [FFmpeg](https://github.com/FFmpeg/FFmpeg) · [PyAV-Org/PyAV](https://github.com/PyAV-Org/PyAV) | LGPL/GPL · BSD-3-Clause | Decode/encode, loudnorm, compose |
+| **Font** | [Patrick Hand (Google Fonts)](https://fonts.google.com/specimen/Patrick+Hand) | OFL | Title and subtitles |
+| **Hosting for Buffer** | [stav888/video-hosting](https://github.com/stav888/video-hosting) (public, ours) | – | Commit-pinned raw MP4 URLs, file deleted after publish |
+| **SEO bot playbooks** | [AgriciDaniel/claude-youtube](https://github.com/AgriciDaniel/claude-youtube) · [sergebulaev/youtube-skills](https://github.com/sergebulaev/youtube-skills) | MIT · MIT | Titles, descriptions, tags, performance reviews |
+| Legacy narration (retired 2026-11-07) | [rany2/edge-tts](https://github.com/rany2/edge-tts) | LGPL-3.0 (one file MIT) | First videos only |
+| Images / i2v | Grok Bot built-in `GenerateImage` / `GenerateVideo` (Grok Imagine) | service | Stills (1152x864) and image-to-video (640x480, 24 fps) |
+| Scheduling | Buffer (MCP connector) | service | `create_post` to Smart History Knowledge |
+
+## What the videos look like
+| Final frame | Final frame | Source still (before layout) |
+|---|---|---|
+| ![Garbo scene 1](reference-images/01-garbo-final-frame-scene1.jpg) | ![Stanley Meyer scene 2](reference-images/11-stanley-meyer-final-frame.jpg) | ![Garbo source still](reference-images/05-garbo-source-still-before-layout.jpg) |
+
+![Garbo contact sheet](reference-images/04-garbo-contact-sheet-all-scenes.jpg)
+
+More frames and the full style rules are in [`reference-images/`](reference-images/README.md).
+
 ## Pipeline at a glance
 | # | Step | Tool / file | Doc |
 |---|---|---|---|
@@ -34,18 +64,6 @@ for i in range(1, N+1):                             # one take per paragraph pI.
     ta.save(f"p{i}.wav", w, m.sr)
 ```
 Then: concat `p*.wav` (no crossfade, no stretch) -> `process_narration.py` (loudnorm I=-16 TP=-1.5 LRA=11, 48 kHz, breaths in pauses gated, 0.15 s head pad) -> `asr_words.py` (faster-whisper small) for timing and first-word QA. Full details: `docs/narration.md`.
-
-## Repos used
-| Repo | Why |
-|---|---|
-| https://github.com/helloianneo/ian-xiaohei-illustrations | visual style + reference images (MIT) |
-| https://github.com/resemble-ai/chatterbox (PyPI `chatterbox-tts`) | narration TTS (MIT) |
-| https://huggingface.co/hexgrad/Kokoro-82M (PyPI `kokoro`) | am_eric reference voice (Apache-2.0) |
-| https://github.com/SYSTRAN/faster-whisper | ASR word timestamps |
-| https://github.com/Fannovel16/ComfyUI-Frame-Interpolation @26545cc | RIFE 4.7 `IFNet` code |
-| https://huggingface.co/jasonot/mycomfyui (`rife47.pth`) | RIFE 4.7 weights |
-| https://github.com/stav888/video-hosting (public) | temporary MP4 hosting for Buffer |
-| https://github.com/AgriciDaniel/claude-youtube, https://github.com/sergebulaev/youtube-skills | SEO bot playbooks |
 
 ## Install
 ```bash
@@ -79,6 +97,7 @@ scripts/voice/                make_kokoro_reference.py, chatterbox_paragraphs.py
 scripts/video/                sentence_timing.py, rife_eq.py, jolt_fix.py, fix_frames.py, build.py
 scripts/qa/                   static_runs.py, dup_frames.py, bg_jitter.py, compare_versions.py
 requirements/                 requirements-tts.txt, requirements-kokoro.txt, requirements-video.txt, requirements-legacy-edge.txt, system-deps.md
+reference-images/             11 frames/stills from our productions + style rules (README)
 examples/garbo/               real inputs/outputs of the Garbo build (script, paragraphs, sentences, timing JSON)
 ```
 Scripts are the real ones from the Garbo/Lustig builds, with only machine paths turned into env vars. Some are per-video (title string and `OV` subtitle splits in `build.py`, `cuts` in `dup_frames.py`, paragraph count in `chatterbox_paragraphs.py`).
