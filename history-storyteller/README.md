@@ -1,6 +1,6 @@
 # History Storyteller — full production pipeline (backup + how-to)
 
-> **בעברית בקצרה:** התיקייה הזו היא גיבוי מלא של תהליך העבודה של הבוט "סיפורים מההיסטוריה". יש בה: הסבר שלב אחר שלב (תסריט → אישור → סקיצות לפי חלק (partN_start/end + prompts/partN, לפי reference-images, 9:16 בלבד; Flow ≤8 שנ׳ לחלק; Grok: שני קליפים 4 שנ׳ בשרשור + אפסייל Real-ESRGAN ל־720p) → תמונות → אנימציה → קריינות → כתוביות → QA → SEO → Buffer → ניקוי), הגדרות הקריינות המדויקות (Chatterbox עם קול am_eric, seed 7, exaggeration 0.6, cfg 0.45), קובצי requirements, הריפואים שצריך, הסקריפטים האמיתיים שבהם השתמשנו בסרטון Garbo, ותיעוד של הבוטים האחרים (QA ו־SEO) ואיך עובדים איתם. בלי סיסמאות או טוקנים.
+> **בעברית בקצרה:** התיקייה הזו היא גיבוי מלא של תהליך העבודה של הבוט "סיפורים מההיסטוריה". יש בה: הסבר שלב אחר שלב כולל [docs/scene-by-scene-production.md](docs/scene-by-scene-production.md) (תסריט → אישור → סקיצות לפי חלק (partN_start/end + prompts/partN, לפי reference-images, 9:16 בלבד; Flow ≤8 שנ׳ לחלק; Grok: שני קליפים 4 שנ׳ בשרשור + אפסייל Real-ESRGAN ל־720p) → תמונות → אנימציה → קריינות → כתוביות → QA → SEO → Buffer → ניקוי), הגדרות הקריינות המדויקות (Chatterbox עם קול am_eric, seed 7, exaggeration 0.6, cfg 0.45), קובצי requirements, הריפואים שצריך, הסקריפטים האמיתיים שבהם השתמשנו בסרטון Garbo, ותיעוד של הבוטים האחרים (QA ו־SEO) ואיך עובדים איתם. בלי סיסמאות או טוקנים.
 
 Channel: **Smart History Knowledge** (YouTube Shorts). Output: English-only, 9:16 1080x1920, 24 fps, true chronological history stories in the Ian Xiaohei illustration style (white background, wobbly black lines, black Xiaohei character performing the action). Reference video: *Agent Garbo* (`garbo-history-v9.mp4`, 81 s), scheduled 2026-11-12 18:43 Israel.
 
@@ -38,6 +38,9 @@ Final frames from different finished Shorts. **38 vertical 9:16 frames** (540×9
 | :---: | :---: | :---: | :---: |
 | ![Flexible glass](reference-images/flexible-glass-02-middle.jpg) | ![Armstrong](reference-images/armstrong-01-hook.jpg) | ![Violet Jessop](reference-images/violet-jessop-02-middle.jpg) | ![Garbo](reference-images/garbo-01-hook.jpg) |
 | *9:16* | *9:16* | *9:16* | *9:16* |
+
+## Scene-by-scene production (full how-to)
+**How to build the video from the approved part-by-part script, one scene at a time:** [`docs/scene-by-scene-production.md`](docs/scene-by-scene-production.md) (script table → per-part narration + start/end sketches + clip → verify → upscale → RIFE → assemble with `build.py` → QA → SEO → Buffer). Includes a 3-part worked example, folder layout, and per-part checklist.
 
 ## Pipeline at a glance
 | # | Step | Tool / file | Doc |
@@ -94,7 +97,7 @@ anim/sceneN_r.mp4 (RIFE retimed)   audio_timing.json ons.json timing.json   subp
 ## File map of this folder
 ```
 README.md                     this file
-docs/                         step-by-step guides (script, images+animation, narration, subtitles+build, QA, publishing, routines, upscale-real-esrgan)
+docs/                         step-by-step guides (script, **scene-by-scene-production**, images+animation, narration, subtitles+build, QA, publishing, routines, upscale-real-esrgan)
                               docs/video-generators/: image-to-video options (Grok Imagine, Google Flow, Krea, Hugging Face)
 bots/                         the bots in the History Storyteller workflow: producer, QA, SEO + handoff protocol
 skills/                       custom Grok Bot skills: xiaohei-history-shorts/ (SKILL.md current + SKILL-legacy-edge-tts.md + README comparison),

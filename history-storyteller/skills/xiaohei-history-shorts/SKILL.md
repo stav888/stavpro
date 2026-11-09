@@ -10,7 +10,7 @@ description: >-
 
 # Xiaohei History Shorts — approved settings (updated 2026-11-09)
 
-Create vertical history Shorts that tell one true story in strict chronological order. Full backup docs and scripts: github.com/stav888/stavpro/tree/master/history-storyteller.
+Create vertical history Shorts that tell one true story in strict chronological order. Full backup docs and scripts: github.com/stav888/stavpro/tree/master/history-storyteller. **Scene-by-scene how-to** (from the approved part-by-part script): `history-storyteller/docs/scene-by-scene-production.md`.
 
 ## Approval flow (mandatory)
 - **Before any sketches or clips:** show the user the **part-by-part script table** with an up-front summary line: `This script = N parts / N clips, ~T s. Flow estimate: N × ~10 ≈ C credits (Veo 3.1 Lite).` Columns: part #, narration (English), word count, estimated seconds (≤8), start-frame idea, end-frame idea. Proposed total is ~50 s – ~1.5 min (~7–11 parts). Hebrew chat OK; narration text in the table stays English.
@@ -57,6 +57,9 @@ Create vertical history Shorts that tell one true story in strict chronological 
 
 ## Subtitles
 - Full **English-only** subtitles synced to speech using ASR word timestamps on the final audio. Each block stays strictly inside its sentence's audio (0 boundary crossings). Balanced chunks, no 2-4 word orphans (except a whole short sentence), max 2 lines, Patrick Hand 62 (fallback 56/52), y=1430, max width 960.
+
+## Scene-by-scene production
+- Follow `docs/scene-by-scene-production.md`: approved table → for each part N (narration → start/end sketches → clip → verify → 480p QA/upscale if needed → RIFE → retime) → assemble with `build.py` → final QA → SEO → Buffer. Includes folder layout, 3-part example, and per-part checklist.
 
 ## Story/part mapping
 - Strict chronological order, visual change every ~6-11s (and **≤ 8 s per part** when using Flow). Map parts to sentences in a table (`partN` → sentence numbers); after render inspect midpoint frames of every part to confirm visual matches the spoken line. Naming: `scenes/partN_start.jpg`, `scenes/partN_end.jpg`, `prompts/partN.txt`, `gen/partN_a.mp4` + `gen/partN_b.mp4` + `gen/partN.mp4` (Grok chain; optional `partN_720p.mp4`).

@@ -11,6 +11,8 @@ Repo: https://github.com/helloianneo/ian-xiaohei-illustrations (MIT, Ian). Clone
 
 ## Step 0 — per-part start/end sketches according to `reference-images/` (before any video credits)
 
+> End-to-end order of work after the script is approved: [`scene-by-scene-production.md`](scene-by-scene-production.md).
+
 Start-to-end-frame models (Flow/Veo, Krea H3 Max / Seedance Pro, HF Wan last-image) need **one matched pair per part**. **Never** generate independent stills of every frame, or unrelated images per beat — those do not work as start→end video inputs.
 
 Split the story into **parts (scenes) 1..N** (e.g. part 1 / 4 / 9).

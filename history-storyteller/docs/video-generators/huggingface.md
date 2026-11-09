@@ -1,5 +1,7 @@
 # Hugging Face Spaces — browser workflow
 
+> **Scene-by-scene production:** how to build each part from the approved script table (narration ≤8 s, start/end sketches, generate, verify, upscale, RIFE, assemble): [`../scene-by-scene-production.md`](../scene-by-scene-production.md).
+
 **Primary method: the Space page in the box's Chrome** (signed-in Hugging Face session, for ZeroGPU quota), operated by the bot's browser/desktop agent.
 
 ## Spaces

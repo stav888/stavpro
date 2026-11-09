@@ -1,5 +1,7 @@
 # Image-to-video generators — options
 
+> **Full scene-by-scene production how-to** (script table → per-part sketches/clips → assemble → QA → Buffer): [`../scene-by-scene-production.md`](../scene-by-scene-production.md).
+
 The pipeline needs one **image-to-video** clip per scene, animated from the approved Xiaohei still. **Grok Imagine** (the built-in GenerateVideo tool) is the current default. The alternatives run on the box's signed-in Chrome sessions:
 - **Google Flow** is worked **directly in Flow's web UI** in the box's Chrome (manual browser operation). The **gflow-cli MCP** is only a **fallback** when the browser route has a fault or no access.
 - **Krea** runs through the **Krea MCP connector**, with krea.ai/video in the browser as the fallback (unchanged).

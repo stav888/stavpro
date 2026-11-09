@@ -1,5 +1,7 @@
 # Google Flow (Veo): web UI in box Chrome (primary)
 
+> **Scene-by-scene production:** how to build each part from the approved script table (narration ≤8 s, start/end sketches, generate, verify, upscale, RIFE, assemble): [`../scene-by-scene-production.md`](../scene-by-scene-production.md).
+
 **Primary method: work directly in Flow's web UI** (https://flow.google.com) in the box's **Chrome browser** (manual browser operation by the bot's browser/desktop agent). No gflow-cli MCP for the normal path.
 
 **Fallback only:** the [gflow-cli](https://github.com/ffroliva/gflow-cli) MCP server (below) — use it **only** when the browser route has a **fault** or **no access** (Chrome won't open, Flow won't load, login/session broken and can't be fixed in-browser, downloads fail repeatedly, or the page is unusable). Do **not** start with MCP when the browser works.

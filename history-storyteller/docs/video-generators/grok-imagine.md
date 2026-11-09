@@ -1,5 +1,7 @@
 # Grok Imagine (default)
 
+> **Scene-by-scene production:** how to build each part from the approved script table (narration ≤8 s, start/end sketches, generate, verify, upscale, RIFE, assemble): [`../scene-by-scene-production.md`](../scene-by-scene-production.md).
+
 - **What:** the Grok Bot built-in `GenerateVideo` tool (Grok Imagine), image-to-video mode.
 - **Input:** `image_path` = the approved still (`scenes/sceneN.jpg`, 1152x864 for Garbo). An optional `last_frame_path` pins the end frame. `duration` is 1–15 s, set to cover the scene slot. `resolution` is 480p by default.
 - **Output seen on the box:** 640x480, 24 fps, ~7 s clips (`gen/sN.mp4`, inferred from the Garbo files).

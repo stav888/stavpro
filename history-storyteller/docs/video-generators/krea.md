@@ -1,5 +1,7 @@
 # Krea: MCP connector (primary), browser fallback
 
+> **Scene-by-scene production:** how to build each part from the approved script table (narration ≤8 s, start/end sketches, generate, verify, upscale, RIFE, assemble): [`../scene-by-scene-production.md`](../scene-by-scene-production.md).
+
 **Primary method: the Krea MCP connector** (namespace `user-Krea`, signed in to the user's Krea workspace). It submits jobs to the Krea public API with typed inputs and returns a job id and the result URL. Fallback: the web UI at https://www.krea.ai/video in the box's Chrome.
 
 The model facts below were read with `list_models(category="video")` and `get_model_schema` on 2026-11-09, with no credits spent.
