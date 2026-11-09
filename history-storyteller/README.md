@@ -26,13 +26,15 @@ All links checked on 2026-11-09 (HTTP 200). Licences come from the GitHub/Huggin
 | Scheduling | Buffer (MCP connector) | service | `create_post` to Smart History Knowledge |
 
 ## What the videos look like
-| Final frame | Final frame | Source still (before layout) |
-|---|---|---|
-| ![Garbo scene 1](reference-images/01-garbo-final-frame-scene1.jpg) | ![Stanley Meyer scene 2](reference-images/11-stanley-meyer-final-frame.jpg) | ![Garbo source still](reference-images/05-garbo-source-still-before-layout.jpg) |
+Final frames from different finished Shorts. 38 frames from 13 videos are in [`reference-images/`](reference-images/README.md).
 
-![Garbo contact sheet](reference-images/04-garbo-contact-sheet-all-scenes.jpg)
+| Lustig (Eiffel Tower) | Tesla (Wardenclyffe) | Stanley Meyer | Wojtek |
+|---|---|---|---|
+| ![Lustig](reference-images/lustig-02-middle.jpg) | ![Tesla](reference-images/tesla-02-middle.jpg) | ![Stanley Meyer](reference-images/stanley-meyer-01-hook.jpg) | ![Wojtek](reference-images/wojtek-02-middle.jpg) |
 
-More frames and the full style rules are in [`reference-images/`](reference-images/README.md).
+| Flexible glass (Rome) | Armstrong (FM) | Violet Jessop | Garbo |
+|---|---|---|---|
+| ![Flexible glass](reference-images/flexible-glass-02-middle.jpg) | ![Armstrong](reference-images/armstrong-01-hook.jpg) | ![Violet Jessop](reference-images/violet-jessop-02-middle.jpg) | ![Garbo](reference-images/garbo-01-hook.jpg) |
 
 ## Pipeline at a glance
 | # | Step | Tool / file | Doc |
@@ -97,7 +99,7 @@ scripts/voice/                make_kokoro_reference.py, chatterbox_paragraphs.py
 scripts/video/                sentence_timing.py, rife_eq.py, jolt_fix.py, fix_frames.py, build.py
 scripts/qa/                   static_runs.py, dup_frames.py, bg_jitter.py, compare_versions.py
 requirements/                 requirements-tts.txt, requirements-kokoro.txt, requirements-video.txt, requirements-legacy-edge.txt, system-deps.md
-reference-images/             11 frames/stills from our productions + style rules (README)
+reference-images/             38 final frames from 13 of our Shorts + style rules (README)
 examples/garbo/               real inputs/outputs of the Garbo build (script, paragraphs, sentences, timing JSON)
 ```
 Scripts are the real ones from the Garbo/Lustig builds, with only machine paths turned into env vars. Some are per-video (title string and `OV` subtitle splits in `build.py`, `cuts` in `dup_frames.py`, paragraph count in `chatterbox_paragraphs.py`).
