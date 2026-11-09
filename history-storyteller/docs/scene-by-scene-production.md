@@ -21,7 +21,7 @@ Related docs:
 - **QA at every stage:** send every part clip and the final video to **QA סרטונים**, which **watches** for faults. Fix → QA again. Nothing delivered/scheduled without a QA pass. See [`qa.md`](qa.md).
 - **Continuous improvement:** every production better than the last. After each video append [`lessons-learned.md`](lessons-learned.md); read it before the next story.
 - **Flow = direct 720p:** Google Flow / Veo 3.1 Lite generates at **720p** with **no 480p test** and **no Real-ESRGAN upscale**. QA watches the 720p clip immediately. The 480p → upscale path is **Grok Imagine only** (and other tools whose max output is below 720p).
-- **Transition prompt from the actual sketches (mandatory):** write (or rewrite) `prompts/partN.txt` **after** `scenes/partN_start.jpg` and `scenes/partN_end.jpg` exist, from what those images **actually show** — not only from the planned scene idea. Include a **timed beat breakdown** across the clip (see §1b). If a sketch is regenerated, rewrite the prompt. Check the prompt against both images before spending video credits.
+- **Transition prompt from the actual sketches (mandatory):** write (or rewrite) `prompts/partN.txt` **after** `scenes/partN_start.jpg` and `scenes/partN_end.jpg` exist, from what those images **actually show** — not only from the planned scene idea. Include a **timed beat breakdown** across the clip (see §1b). If a sketch is regenerated, rewrite the prompt. Check the prompt against both images before spending video credits. **Reason:** leaves the generator nothing to guess, so the clip has **no lag or glitches** (no jumps, reverse, stutter/freeze, vanishing/morphing objects, or mismatched ending).
 
 ---
 
@@ -121,6 +121,8 @@ Every beat continues the same one-way action. Static locked camera, no zoom, no 
 ## 1b. Transition prompt from the actual sketches (mandatory)
 
 > **Hard rule:** do **not** paste a prompt written only from the script idea. After `scenes/partN_start.jpg` and `scenes/partN_end.jpg` exist, **look at both images**, then write (or rewrite) `prompts/partN.txt` so it describes **exactly** the motion from the start image to the end image, naming the same elements in the same positions as they appear. If either sketch is regenerated, **rewrite the prompt**. Check the prompt against both images **before** generating. After generation, QA checks that the clip followed the prompt (including timed beats) and landed on the end image.
+>
+> **Why (no lag / no glitches):** planning each second with timed beats and matching the prompt to both images leaves the generator nothing to guess. That prevents jumps, backward or reversed motion, stutter or freezes, objects vanishing or morphing, and a mismatched ending — so the clip stays continuous and lands on the end sketch.
 
 ### Steps (every part)
 
