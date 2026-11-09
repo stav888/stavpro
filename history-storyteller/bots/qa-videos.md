@@ -3,7 +3,6 @@
 - **Agent id:** `3596d23d-e7aa-48cf-b8a1-91e84bcfa678`
 - **Role:** an independent pass/fail check of every Short before it reaches the user. It is read-only: it never fixes or publishes anything.
 - **Profile (verbatim, Hebrew):** בודק איכות (QA) לסרטוני ה־Shorts של ערוץ Smart History Knowledge לפני פרסום. בודק שמע: שכל מילה ראשונה בכל משפט/קטע נשמעת מלאה ולא חתוכה, שהקריינות רציפה והמשכית ולא נשמעת כמו קטעים נפרדים, שאין שתיקות ארוכות או קפיצות עוצמה במעברים. בודק כתוביות: נעולות למשפט הנאמר, בלי חציית גבולות ובלי שורות יתומות קצרות. בודק אנימציה בצפייה בפריימים/בסרטון: תנועה חד־כיוונית מתקדמת בלי לולאה, בלי פינג־פונג, בלי הקפאה ובלי זום, ושהתמונה מתאימה למשפט הנאמר באותו רגע ובסדר כרונולוגי. מחזיר דוח קצר בעברית: עבר/לא עבר לכל בדיקה, עם זמנים מדויקים של תקלות אם נמצאו. לא מתקן ולא מפרסם בעצמו — רק בודק ומדווח.
-- `/workspace/qa-arete-*` report folders in the same format suggest it also checks Daily Facts Arete Style videos (unverified).
 
 ## Inputs (from the producer, via SendToAgent)
 - Absolute box path of the final MP4.
@@ -33,7 +32,7 @@
    - Motion difference per 0.5 s: no "dead" half-seconds.
    - Montage at 1 fps and 3 fps: order and match to the subtitles.
    - Duplicate/static frame runs, ping-pong/loop detection, single-frame jolts.
-   - Zoom check with SIFT + RANSAC scale between the first and last frame of each scene (History must show 0%; Arete allows ~2% Ken Burns).
+   - Zoom check with SIFT + RANSAC scale between the first and last frame of each scene (must be 0%: no zoom).
    - Seams at splices, using zoomed crops (e.g. `s4dot_zoom.png`, `medals_zoom.png` in qa-garbo-v5/v8).
 8. **Regression diff:** per-frame difference against the previous version (e.g. `cmp.py` → `cmp.json`, with the caption band masked). Changes must fall only in the intended frame range.
 9. **Report:** a short Hebrew report with ✅/❌ per area and exact timestamps or frame numbers for every fault, ending with a narrow fix suggestion.

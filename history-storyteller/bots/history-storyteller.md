@@ -11,7 +11,7 @@
 - Reports from QA סרטונים and advice from YouTube SEO (information only, never approval).
 
 ## Step by step
-1. **Ideas:** research ~5 true stories, each with one authoritative source, and ask the SEO bot to rank them and suggest a timing. Present them to the user in Hebrew.
+1. **Ideas:** find ~5 true stories by web search, each with one authoritative source, and ask the SEO bot to rank them and suggest a timing. Present them to the user in Hebrew.
 2. **Script:** chronological, hook → payoff. Written as paragraphs plus `sentences.txt`. Expanded style is a trial from Garbo onward (`../docs/script-writing.md`).
 3. **Approval gate:** send the Hebrew script and **one sample frame**, then wait for an explicit "go".
 4. **Stills:** GenerateImage with Ian Xiaohei reference images, one per sentence/beat.

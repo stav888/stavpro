@@ -1,7 +1,7 @@
 # 1. Story choice and script
 
 ## Topic selection
-- Consult the YouTube SEO bot (see `../bots/youtube-seo.md`) and research before proposing topics. Present ~5 researched options to the user (Hebrew), each with one authoritative source link (e.g. mi5.gov.uk, nps.gov, iwm.org.uk, smithsonianmag.com, naa.gov.au). The user picks.
+- Topic research comes from web search plus the YouTube SEO bot (see `../bots/youtube-seo.md`). Present ~5 researched options to the user (Hebrew), each with one authoritative source link (e.g. mi5.gov.uk, nps.gov, iwm.org.uk, smithsonianmag.com, naa.gov.au). The user picks.
 - Seasonal topics wait for their search wave (example: Christmas Truce -> publish 18–23 Dec; Emu War -> any time).
 - Facts must be true and checkable. Sensitive topics: respectful, no gore; violence shown as a distant flash/silhouette.
 

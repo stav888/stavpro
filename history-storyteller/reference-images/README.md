@@ -7,7 +7,7 @@ All 38 images in this folder are frames from **13 of our own finished history Sh
 - **Line art:** thin, slightly wobbly black hand-drawn lines and lots of empty white space. Colour only as tiny accents (a red dot or dashed line, an orange bulb or flame, a soft sun glow).
 - **Xiaohei:** solid-black bean-shaped character with white dot eyes, thin stick legs and a blank expression. He **performs the key action** of the sentence (holds the guidebook, writes the reports, watches the landing through binoculars, pours the water). He is never decoration. Props such as a hat or headphones may be added for the role.
 - **Other people:** simple white line-drawn figures (officers, businessmen) with minimal detail. No gore: a bomb is a distant glow on the horizon (`yamaguchi-01-early.jpg`).
-- **Layout (from `scripts/video/build.py`):**
+- **Layout (from `../scripts/video/build.py`):**
   - Title at top in Patrick Hand ~64 px, all caps, with a short red underline.
   - Art large in the middle band (auto-cropped to its content, up to ~1060x1150 px, centred around y≈790).
   - Subtitle at y≈1430 in Patrick Hand 52–62 px, black, max 2 lines, locked to the spoken sentence.
