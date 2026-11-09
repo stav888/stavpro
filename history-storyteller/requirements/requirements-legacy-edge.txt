@@ -1,0 +1,2 @@
+# Legacy narration (Sketch 2 / Yamaguchi / Wojtek era, Oct 2026). Replaced by Chatterbox on 2026-11-07.
+edge-tts==7.3.1

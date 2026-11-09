@@ -1,0 +1,172 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "text": "In 1941, a Spaniard named Juan Pujol wanted to spy against Nazi Germany.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 0.4,
+   "onset": 0.4,
+   "speech_end": 5.44,
+   "start": 0.0,
+   "end": 5.85
+  },
+  {
+   "sentence": 2,
+   "text": "He went to the British, but they turned him down.",
+   "first_word": "He",
+   "asr_first": "He",
+   "word_start": 5.91,
+   "onset": 5.91,
+   "speech_end": 8.02,
+   "start": 5.85,
+   "end": 8.27,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 3,
+   "text": "So he tried another way: convincing the Germans that he was ready to spy for them.",
+   "first_word": "So",
+   "asr_first": "so",
+   "word_start": 8.33,
+   "onset": 8.33,
+   "speech_end": 12.16,
+   "start": 8.27,
+   "end": 12.49,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 4,
+   "text": "It worked. They recruited him and sent him to build a network of agents in England.",
+   "first_word": "It",
+   "asr_first": "It",
+   "word_start": 12.55,
+   "onset": 12.55,
+   "speech_end": 16.56,
+   "start": 12.49,
+   "end": 17.22,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 5,
+   "text": "But Pujol never got there. He settled in Lisbon, opened a tourist guidebook and some magazines, and started inventing.",
+   "first_word": "But",
+   "asr_first": "but",
+   "word_start": 17.28,
+   "onset": 17.28,
+   "speech_end": 23.62,
+   "start": 17.22,
+   "end": 24.1,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 6,
+   "text": "He wrote reports that seemed to come from London, and invented agents who were supposedly feeding him information.",
+   "first_word": "He",
+   "asr_first": "He",
+   "word_start": 24.16,
+   "onset": 24.16,
+   "speech_end": 29.4,
+   "start": 24.1,
+   "end": 30.08,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 7,
+   "text": "The Germans believed they were getting reports from a real spy ring. In fact, behind it stood one man, in another country.",
+   "first_word": "The",
+   "asr_first": "The",
+   "word_start": 30.14,
+   "onset": 30.14,
+   "speech_end": 36.42,
+   "start": 30.08,
+   "end": 36.82,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 8,
+   "text": "In 1942, the British finally took him on. He came to London and got the code name Garbo.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 36.88,
+   "onset": 36.88,
+   "speech_end": 42.76,
+   "start": 36.82,
+   "end": 43.3,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 9,
+   "text": "Together with intelligence officer Tom\u00e1s Harris, he expanded the imaginary network.",
+   "first_word": "Together",
+   "asr_first": "Together",
+   "word_start": 43.36,
+   "onset": 43.36,
+   "speech_end": 48.02,
+   "start": 43.3,
+   "end": 48.32,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 10,
+   "text": "Then came the big test. In June 1944, the Allies landed in Normandy.",
+   "first_word": "Then",
+   "asr_first": "then",
+   "word_start": 48.38,
+   "onset": 48.38,
+   "speech_end": 53.42,
+   "start": 48.32,
+   "end": 53.78,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 11,
+   "text": "Garbo sent the Germans a misleading message: this is only a diversion. The main attack is still coming at Pas de Calais.",
+   "first_word": "Garbo",
+   "asr_first": "Garbo",
+   "word_start": 53.84,
+   "onset": 53.84,
+   "speech_end": 60.44,
+   "start": 53.78,
+   "end": 60.94,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 12,
+   "text": "He was part of a wider deception operation. The Germans kept forces in the Calais area even after the Normandy landing had begun.",
+   "first_word": "He",
+   "asr_first": "He",
+   "word_start": 61.0,
+   "onset": 61.0,
+   "speech_end": 67.58,
+   "start": 60.94,
+   "end": 68.15,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 13,
+   "text": "For his excellent service, Germany awarded him the Iron Cross. Months later, Britain gave him a decoration of its own.",
+   "first_word": "For",
+   "asr_first": "For",
+   "word_start": 68.21,
+   "onset": 68.21,
+   "speech_end": 74.62,
+   "start": 68.15,
+   "end": 75.02,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 14,
+   "text": "Both sides decorated the same spy. Only the Germans didn't know that his greatest achievement was deceiving them.",
+   "first_word": "Both",
+   "asr_first": "Both",
+   "word_start": 75.08,
+   "onset": 75.08,
+   "speech_end": 80.92,
+   "start": 75.02,
+   "end": 81.18,
+   "speech_end_prev_ok": true
+  }
+ ],
+ "total": 81.18
+}
