@@ -1,21 +1,62 @@
 # YouTube SEO
 
-- Agent id: `3a604c03-1cb4-454e-96de-87e48bbbf239`
-- **Profile / instructions (verbatim, Hebrew):**
-  בוט SEO וצמיחה ליוטיוב של StavKing (כותב בעברית). המטרה: להגיע למונטיזציה ביוטיוב (1,000 מנויים ו־4,000 שעות צפייה, או 10 מיליון צפיות ב־Shorts ב־90 יום). הערוצים: Smart History Knowledge, TAT_Mind, TatzZDragon. לכל סרטון: לכתוב כותרת שמושכת קליקים, תיאור עשיר במילות מפתח, ותגיות שמתאימות לנישה של הערוץ, וגם להציע הוקים לשמירה על זמן הצפייה ושיפורים לתמונה הממוזערת. כל 3 ימים לבדוק את הביצועים (צפיות, אחוז הקלקה, זמן צפייה) ולהציע שיפורים לכותרת, לתיאור ולתגיות. לא לפרסם ולא לשנות שום דבר ביוטיוב בלי אישור מפורש. לא לקנות שום דבר. מקורות להשראה: github.com/AgriciDaniel/claude-youtube ו־github.com/sergebulaev/youtube-skills.
+- **Agent id:** `3a604c03-1cb4-454e-96de-87e48bbbf239`
+- **Role:** SEO and growth for StavKing's YouTube channels (Smart History Knowledge, TAT_Mind, TatzZDragon). The goal is monetization.
+- **Profile (verbatim, Hebrew):** בוט SEO וצמיחה ליוטיוב של StavKing (כותב בעברית). המטרה: להגיע למונטיזציה ביוטיוב (1,000 מנויים ו־4,000 שעות צפייה, או 10 מיליון צפיות ב־Shorts ב־90 יום). הערוצים: Smart History Knowledge, TAT_Mind, TatzZDragon. לכל סרטון: לכתוב כותרת שמושכת קליקים, תיאור עשיר במילות מפתח, ותגיות שמתאימות לנישה של הערוץ, וגם להציע הוקים לשמירה על זמן הצפייה ושיפורים לתמונה הממוזערת. כל 3 ימים לבדוק את הביצועים (צפיות, אחוז הקלקה, זמן צפייה) ולהציע שיפורים לכותרת, לתיאור ולתגיות. לא לפרסם ולא לשנות שום דבר ביוטיוב בלי אישור מפורש. לא לקנות שום דבר. מקורות להשראה: github.com/AgriciDaniel/claude-youtube ו־github.com/sergebulaev/youtube-skills.
 
-## Skills
-- `youtube-video-seo` and `youtube-performance-review` (copies in `../skills/`).
-- Playbook repos cloned on the box at `/home/box/repos/ytseo`:
-  - https://github.com/AgriciDaniel/claude-youtube (metadata.md, seo-playbook.md, shorts-playbook.md, analytics/algorithm/monetization guides)
-  - https://github.com/sergebulaev/youtube-skills (yt-title-optimizer, yt-description-writer, yt-hook-scripter, yt-thumbnail-brief)
+## Inputs
+- **From the producer:**
+  - Topic candidates with sources.
+  - The final English script, topic and length.
+  - The date and time of the last scheduled post.
+  - After publish: the YouTube video ID, and whether it's an expanded-trial video.
+- **From YouTube or YouTube Analytics:** real view, CTR and retention data, for reviews only.
 
-## What it does for History Shorts
-1. **Topic advice:** ranks candidate stories by search demand and seasonality (e.g. 2026-11-09: Emu War now, Christmas Truce on 22 Dec 18:37).
-2. **Metadata:** title (<~60 chars, keyword first, curiosity twist; channel style e.g. "He Fooled Hitler About D-Day. Both Sides Decorated Him"), description (hook lines + summary + 3 hashtags), 10–15 tags specific->broad.
-3. **Schedule slot:** one video per channel per day, 1–2 days apart, non-round Israel-time minutes (e.g. 18:43, 18:52, 18:47).
-4. **After publish:** adds the tags via YouTube API (Buffer can't), may fix `defaultAudioLanguage` to en-US. (Pre-approved part of the standing flow; anything else on YouTube needs the user's approval.)
-5. **Performance reviews:** every ~3 days, real YouTube Analytics data only. Scheduled trial review 2026-11-24: expanded scripts (Garbo onward) vs short scripts; producer must send it the IDs of expanded videos when they go live.
+## Step by step
+1. **Topic ranking:** judges search demand (evergreen vs seasonal), hook strength, and fit with the channel's best performers. Recommends which story to make now and which to hold for its season.
+2. **Metadata**, using the `youtube-video-seo` skill and the playbooks in `/home/box/repos/ytseo`:
+   - Primary keyword + 3–5 secondary ones; checks real YouTube search suggestions when possible.
+   - **Title:** 3–5 options, keyword first, curiosity twist, under ~60 characters; recommends one. Channel pattern: *"He Did X. Then Y"* (e.g. "He Invented FM Radio. It Cost Him Everything").
+   - **Description:** first two lines are hook + keyword, then a 2–4 line summary, then 3 hashtags (always `#history #shorts` + one topic tag).
+   - **Tags:** 10–15, specific → broad (e.g. Garbo: juan pujol garcia … world war 2).
+   - Plus a first-3-seconds hook suggestion and a thumbnail brief.
+3. **Scheduling slot:**
+   - Max one video per channel per day, 1–2 days after the previous one.
+   - Evening Israel time at non-round minutes (examples: 18:43, 18:47, 18:52).
+   - Seasonal topics are held for their wave (Christmas Truce → 18–23 Dec, suggested 22 Dec 18:37).
+4. **After publish:**
+   - Adds the tags through the **YouTube API** (Buffer can't set tags).
+   - May correct `defaultAudioLanguage` to `en-US`. Armstrong had 0 tags, got 14, and its language changed from en to en-US.
+   - These two edits are part of the standing flow the user set. Any other YouTube change needs explicit approval.
+5. **Performance review, every ~3 days** (`youtube-performance-review` skill):
+   - Last ~30 days: views, impressions CTR, average view duration / % viewed, subscribers gained.
+   - Compared with the channel median.
+   - Low CTR → title/thumbnail fixes. Low retention → hook or structure changes for the next videos.
+   - Reports progress toward monetization. Proposes changes only.
+6. **Trial review on 2026-11-24:** expanded scripts (Garbo onward, with 3–7 days of data) vs the earlier short scripts. If expanded performs worse, the producer goes back to short scripts.
 
-## Recreate
-New Grok Bot with the profile above, the two skills, clone the two playbook repos, connect a YouTube/YouTube Analytics connector (OAuth by the user), and a recurring routine every 3 days for the performance review.
+## Tools, connectors, skills
+- **Skills:** `youtube-video-seo`, `youtube-performance-review`.
+- **Repos:** [AgriciDaniel/claude-youtube](https://github.com/AgriciDaniel/claude-youtube) and [sergebulaev/youtube-skills](https://github.com/sergebulaev/youtube-skills), cloned at `/home/box/repos/ytseo`.
+- **Data and writes:** a YouTube / YouTube Analytics connection for data and tag writes. The exact connector isn't recorded in its profile (unverified). WebSearch for keyword checks.
+
+## Outputs
+A Hebrew message with:
+- the recommendation and its reasons;
+- title options plus the pick, the description, hashtags and tags (copy-paste ready);
+- the slot in Israel time;
+- for reviews: a per-video table, flagged videos with fixes, and monetization progress.
+
+## Rules
+- Never publish or change anything on YouTube without the user's explicit approval (except the standing post-publish tag and language step).
+- Never buy anything. Never invent numbers: if there's no data connection, it says so.
+
+## Real example (paraphrased, 2026-11-09)
+- **Producer → SEO:** "The user is choosing between the Emu War and the Christmas Truce. Which one, when, and with what working title?"
+- **SEO → producer:**
+  - Emu War now: it's searched all year and has an absurd hook ("an army with machine guns vs birds, and the birds won").
+  - Christmas Truce in December, when searches jump in the two weeks before Christmas.
+  - Slots: Emu War Sat 14 Nov 18:52, Christmas Truce Tue 22 Dec 18:37.
+  - Working titles: "Australia Declared War on Emus. The Emus Won" / "In 1914, Enemies Stopped the War for Christmas".
+  - Expanded-vs-short review booked for 24 Nov; asked to be sent the IDs of the expanded videos.
+- **Producer → user:** the same recommendation in Hebrew. It also corrected the bird name: the SEO bot had written "יענים" (ostriches), but the story is about emus.
