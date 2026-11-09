@@ -7,6 +7,14 @@
   - Installed: v0.92.1 at `/home/box/.local/bin/gflow` (also available as `gflow-cli`). Source and docs: `/workspace/gflow-cli` (`docs/MCP.md`, `docs/CONFIGURATION.md`).
   - Licence MIT, alpha, reverse-engineered. Not affiliated with Google.
 
+
+> ## ⚠️ If MCP doesn't work → offer the browser as a choice
+> If the gflow-cli MCP route fails, **don't switch on your own.** Failures include: the server won't start, a tool is missing from `tools/list`, an auth/session failure (`gflow_auth_status` not authenticated), selector drift, or the same error repeating after one retry.
+> - **Ask the user to choose:** fix or retry MCP, or switch to **manual browser operation** in the box's Chrome (the steps in [§5 Fallback](#5-fallback-manual-web-ui-in-box-chrome)).
+> - Go to the browser **only after the user picks it**.
+> - The same rules hold either way: rotate profiles, never click Agent, no buying, Veo video only.
+> - **A credit shortage isn't an MCP failure.** If every profile's balance is too low, stop and tell the user. Don't buy credits and don't switch routes to get around it.
+
 ## 1. Start the MCP server
 | Mode | Command | Use |
 |---|---|---|

@@ -4,6 +4,13 @@
 
 The model facts below were read with `list_models(category="video")` and `get_model_schema` on 2026-11-09, with no credits spent.
 
+
+> ## ⚠️ If MCP doesn't work → offer the browser as a choice
+> If the Krea MCP connector fails, **don't switch on your own.** Failures include: a connector error, an auth or sign-in failure (HTTP 401), a tool missing from the `user-Krea` namespace, or the same error repeating after one retry (`provider_error`, `internal`, `timeout`).
+> - **Ask the user to choose:** fix or retry MCP, or switch to **manual browser operation** at krea.ai/video in the box's Chrome (the steps in [§6 Fallback](#6-fallback-web-ui-in-box-chrome)).
+> - Go to the browser **only after the user picks it**.
+> - **A credit shortage isn't an MCP failure.** On HTTP 402 / `insufficient_balance`, stop and tell the user. Don't buy credits, don't open plan or pack offers, and don't switch routes or models to get around it.
+
 ## 1. Tools
 | Tool | Spends? | Use |
 |---|---|---|

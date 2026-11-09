@@ -3,6 +3,7 @@
 The pipeline needs one **image-to-video** clip per scene, animated from the approved Xiaohei still. **Grok Imagine** (the built-in GenerateVideo tool) is the current default. The alternatives run on the box's signed-in Chrome sessions:
 - **Google Flow** runs through the **gflow-cli MCP server**, which drives Flow in a headed Chrome for orderly, structured work. The manual web UI is its fallback.
 - **Krea** runs through the **Krea MCP connector**, with krea.ai/video in the browser as the fallback.
+- **If an MCP route doesn't work** (connector or server error, auth failure, missing tool, repeated failures), the bot **offers the user a choice** to switch to manual browser operation, using the web UI steps in each doc. It goes to the browser only after the user picks it. A credit shortage (402 / `insufficient_balance` / no profile with credits) is not an MCP failure: stop and tell the user, with no buying.
 - **Hugging Face** is run directly in the browser by the bot's browser/desktop agent. Its MCP route is only a secondary note.
 
 | Option | Provider / model | Resolution | Clip length | Approx. cost | How it's run | Pros | Cons | When to use |
