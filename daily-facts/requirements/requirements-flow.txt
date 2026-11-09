@@ -1,0 +1,3 @@
+# Google Flow fallback automation (primary path is the Flow web UI in the box Chrome)
+# Installed as a CLI tool, e.g.:  uv tool install gflow-cli   (box: v0.92.1, MIT, alpha, not affiliated with Google)
+gflow-cli==0.92.1

@@ -1,0 +1,71 @@
+{
+ "partial": {
+  "duration_s": 41.889,
+  "lufs_integrated": -16.19,
+  "true_peak_dbtp": -1.45,
+  "inter_sentence_gaps_s": [
+   0.4,
+   0.399,
+   0.398,
+   0.399,
+   0.399,
+   0.399,
+   0.4,
+   0.4,
+   0.397
+  ],
+  "max_inter_gap_s": 0.4,
+  "internal_clause_gaps_s": [
+   0.199,
+   0.2,
+   0.188,
+   0.198,
+   0.259,
+   0.18,
+   0.198,
+   0.203,
+   0.124,
+   0.198,
+   0.196,
+   0.197
+  ]
+ },
+ "full": {
+  "duration_s": 59.579,
+  "lufs_integrated": -16.16,
+  "true_peak_dbtp": -1.46,
+  "inter_sentence_gaps_s": [
+   0.4,
+   0.399,
+   0.398,
+   0.399,
+   0.399,
+   0.399,
+   0.4,
+   0.4,
+   0.397,
+   0.398,
+   0.399,
+   0.401,
+   0.399
+  ],
+  "max_inter_gap_s": 0.401
+ },
+ "before": {
+  "qa_video_audio_lufs": -25.5,
+  "qa_partial_video_dur_s": 47.7,
+  "raw_l01_l10_sum_s": 43.715
+ },
+ "method": {
+  "voice": "unchanged Kokoro af_heart per-line WAVs (no re-TTS)",
+  "internal_silence": "compressed >0.28s \u2192 0.20s",
+  "inter_line_gap": "0.40s speech-end to speech-start",
+  "loudnorm": "I=-16 TP=-1.5 LRA=11 two-pass"
+ },
+ "forgotten_s10": {
+  "script_word": "forgotten",
+  "whisper_heard": "forgot",
+  "note": "-ten is very weak. Not re-TTS per brief; flag for optional future re-record of s10 only.",
+  "action": "no re-TTS"
+ }
+}

@@ -1,0 +1,8 @@
+# LEGACY narration (Petra era, before 2026-10-24): Pocket TTS voice clone. Not used now.
+# The Pocket TTS model on Hugging Face is gated: request access with your own HF account first.
+pocket-tts
+resemblyzer
+librosa
+faster-whisper
+soundfile
+torch

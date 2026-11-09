@@ -1,0 +1,7 @@
+# Editing, subtitles timing and QA (system python3 on the box). Versions as installed 2026-11-09.
+faster-whisper==1.2.1
+ctranslate2==4.8.3
+numpy==2.5.4
+scipy==1.18.1
+pillow==13.0.0
+soundfile==0.14.0
