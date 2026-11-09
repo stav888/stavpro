@@ -41,11 +41,12 @@ locked camera, no zoom, no pan, no loop, no reverse. Soft watercolor and thin in
 no text, no letters, no captions
 ```
 
-## Checks
-- [ ] start and end side by side with the references: same style, same shot, only the action changed
-- [ ] both stills height > width; no lettering
-- [ ] clip height > width, motion one-way, no drift (or locked), length covers the narration
-- [ ] QA pass, user approval (part 1 = sample)
+## QA (QA bot watches; any fault -> fix -> re-QA)
+- [ ] **Gate 0 pair**: start and end side by side with the references: same style, same shot, only the action changed; no lettering; both height > width
+- [ ] **Gate 1 clip** (`qa_check.py clip` + `seam`): 9:16, first/last frame match the pair, seam with part N-1 (continuous or themed), one-way motion, no glitches/distortions, no text, no frozen stretch, length covers the narration
+- [ ] **Gate 2 upscale** (Grok option, `qa_check.py sharp`): sharper, watercolor grain kept
+- [ ] QA result: PASS / faults: ...  (date, round)
+- [ ] user approval (part 1 = sample)
 
 ---
 ### Worked example (Derinkuyu, rewritten in the new part format)

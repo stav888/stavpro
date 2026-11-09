@@ -1,13 +1,14 @@
 """QA: re-transcribe the FINAL rendered video with faster-whisper medium.en and compare every
 highlighted word's on-screen frame with the spoken word time. Prints median/mean/max offset in
 frames (24 fps) and the worst words. Target: |offset| <= 2 frames, never early at sentence starts.
-Edit VIDEO and the spot-check times for each video."""
-import json,re,subprocess,numpy as np,difflib
+Usage: python verify_subtitle_sync.py FINAL.mp4 [subs.json]; edit the spot-check times (sentence starts) per video."""
+import json,re,subprocess,sys,numpy as np,difflib
+VIDEO=sys.argv[1] if len(sys.argv)>1 else 'final/hanging_gardens_final.mp4'; SUBS=sys.argv[2] if len(sys.argv)>2 else 'final/subs.json'
 from faster_whisper import WhisperModel
 m=WhisperModel('medium.en',device='cpu',compute_type='int8')
-a=np.frombuffer(subprocess.run(['ffmpeg','-v','error','-i','final/hanging_gardens_final.mp4','-f','f32le','-ac','1','-ar','16000','-'],capture_output=True).stdout,np.float32)
+a=np.frombuffer(subprocess.run(['ffmpeg','-v','error','-i',VIDEO,'-f','f32le','-ac','1','-ar','16000','-'],capture_output=True).stdout,np.float32)
 ww=[(w.word,w.start) for s in m.transcribe(a,word_timestamps=True,language='en')[0] for w in s.words]
-S=json.load(open('final/subs.json')); on=[]
+S=json.load(open(SUBS)); on=[]
 for f0,f1,ws,hi in S:
     if not on or on[-1][1]!=(tuple(ws),hi) : on.append((f0,(tuple(ws),hi),ws[hi]))
 n=lambda w:re.sub(r'[^a-z0-9]','',w.lower())

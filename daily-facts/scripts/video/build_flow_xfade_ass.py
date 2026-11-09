@@ -15,6 +15,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 out = sys.argv[1] if len(sys.argv) > 1 else 'final/derinkuyu_full.mp4'
 path = 'audio/derinkuyu_full_narration_fixed.wav'
 N, X, MARGIN_V = 7, 0.5, 128
+CLIP_AUDIO = float(os.environ.get('CLIP_AUDIO', '0'))  # 0 = mute Flow clip audio (default since 2026-11-09; Derinkuyu used 0.18 and QA found it leaking into the gaps)
 
 w = wave.open(path); sr = w.getframerate(); nch = w.getnchannels(); n = w.getnframes()
 raw = w.readframes(n); w.close()
@@ -90,7 +91,7 @@ for i in range(N):
     tempos.append(t)
     atempo = ','.join(f'atempo={tt:.6f}' for tt in tempos)
     fc.append(f"[{i}:v]trim=0:7.9,setpts=PTS-STARTPTS,setpts={f:.6f}*PTS,fps=24,scale=720:1280,setsar=1,format=yuv420p[v{i}]")
-    fc.append(f"[{i}:a]atrim=0:7.9,asetpts=PTS-STARTPTS,{atempo},apad,atrim=0:{scenes[i]:.3f},volume=0.18[ca{i}]")
+    fc.append(f"[{i}:a]atrim=0:7.9,asetpts=PTS-STARTPTS,{atempo},apad,atrim=0:{scenes[i]:.3f},volume={CLIP_AUDIO}[ca{i}]")
 cur = 'v0'; off = 0.0
 for i in range(1, N):
     off += scenes[i-1] - X

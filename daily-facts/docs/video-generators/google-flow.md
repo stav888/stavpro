@@ -48,4 +48,4 @@ Batch: `scripts/flow/run_clips.sh` (part pairs, skips finished clips, rotates pr
 
 ## Known issues
 - Clips sometimes drift (faces or architecture melt between start and end frames): pick a calmer window in the edit, lock the area with a still mask, or re-roll.
-- Veo adds ambience audio: kept very low and ducked under the narration.
+- Veo adds ambience audio: muted in the edit (`CLIP_AUDIO=0`); QA Gate 4 checks that none leaks into the narration pauses.

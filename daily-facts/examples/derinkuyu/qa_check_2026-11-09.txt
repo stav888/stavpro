@@ -1,0 +1,10 @@
+Retro-check of the published Derinkuyu Short with scripts/qa/qa_check.py (2026-11-09), made before the
+staged QA rule. Shows what the new gates catch:
+
+CLIP clip04 vs its start/end pair: PASS (aspect 720x1280, 7.93 s, no freeze, first/last frame diff 4.3 / 4.5)
+SEAM clip03 -> clip04 with --continuous: FAIL diff 41.2 (old method: independent scenes, not a continuous cut;
+     covered by a 0.5 s fade in the edit. Under the new rules this is either a real continuation (start = previous end)
+     or a deliberate scene change with a themed transition)
+VIDEO final: PASS aspect, 1 audio stream, -16.1 LUFS, true peak -4.4 dBTP, no frozen stretch
+             FAIL mix level inside narration pauses -35.9 dBFS: the Flow clips' own ambience was mixed under the voice.
+             Under the new rule generator audio is muted, so this would be fixed and re-checked before delivery.

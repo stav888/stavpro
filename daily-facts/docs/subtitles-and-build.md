@@ -24,8 +24,8 @@ narration (final, approved) -> word timestamps -> **highlight colour recommendat
 - No em dashes in subtitles.
 
 ## Audio mix
-- Narration at full level; Flow clip ambience scaled to low level and ducked further under speech (`g = 0.30 - 0.20 * speech_env` in `build_highlight_wash.py`, or `sidechaincompress threshold=0.03 ratio=8` in `build_flow_xfade_ass.py`).
-- Final `loudnorm` (Hanging Gardens mix: I=-14 for Shorts; narration itself is normalised to -16 LUFS first).
+- **Narration only. Generator audio is muted** (`CLIP_AUDIO=0`, the default in both editors since 2026-11-09): QA found Flow ambience leaking into the narration gaps on Derinkuyu. `CLIP_AUDIO>0` restores the old ducked ambience only if the user asks for it.
+- Final `loudnorm` I=-16 LUFS, TP -1.5 (Hanging Gardens was mixed at -14). QA Gate 4 checks loudness and leaks with `scripts/qa/qa_check.py video --narration`.
 - No music.
 
 ## Render

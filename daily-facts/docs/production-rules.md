@@ -1,6 +1,6 @@
 # Production rules (Daily Facts Arete, from 2026-11-09)
 
-These rules apply to every new Short. They sit on top of the channel look (soft watercolor, thin ink lines, muted pastels, dreamy historical mood, slow themed transitions, low bottom-centre subtitles, Kokoro narration). Costs are estimates.
+These rules apply to every new Short (rules 9-10 added later on 2026-11-09). They sit on top of the channel look (soft watercolor, thin ink lines, muted pastels, dreamy historical mood, slow themed transitions, low bottom-centre subtitles, Kokoro narration). Costs are estimates.
 
 ## 1. Sketches first (Step 0), before any video credits
 - Before spending a single video credit, make the stills for **every part** and check them against our own [`../reference-images/`](../reference-images/README.md) (frames from Derinkuyu, Hanging Gardens, Petra, Giza, Alexandria, Olmec).
@@ -55,3 +55,13 @@ Every part gets a filled [`../templates/scene-template.md`](../templates/scene-t
 - Per part: **clip A** (4 s) from `partN_start`, then **clip B** (4 s) from **clip A's last frame**, continuing the same motion toward `partN_end` (which is only the check target). Join A+B into one ~8 s part (`scripts/video/chain_parts.sh`).
 - Generate and QA at **480p** first. After QA passes, **do not regenerate** at 720p (that gives different motion): upscale the approved clip to **720x1280** with Real-ESRGAN via [`scripts/video/upscale_720p.sh`](../scripts/video/upscale_720p.sh) (standalone, works for clips from any generator). Guide: [upscale-real-esrgan.md](upscale-real-esrgan.md).
 - Regenerate at 720p only if the upscale looks soft or breaks the ink lines.
+
+## 9. Staged QA that watches the video
+- The QA bot **watches** every clip right after generation, every upscale, and the full video before delivery, and checks for faults at each stage: seams and continuity, glitches and distortions, any text in the image, 9:16, one-way motion; sharpness and surviving watercolor grain after upscaling; audio word by word vs the script, ~-16 LUFS, no source audio leaking, subtitle sync (Whisper on the final mix), subtitle size and low bottom-centre position, layout, English only, no frozen animation.
+- `scripts/qa/qa_check.py` is the automatic pre-check for each gate (`clip`, `seam`, `sharp`, `video`).
+- **Any fault -> fix -> re-QA.** Nothing is delivered to the user or scheduled on Buffer without a QA PASS on that exact file.
+- Checklists per gate: [qa.md](qa.md).
+
+## 10. Continuous improvement
+- **Before starting a video**: read [`../LESSONS-LEARNED.md`](../LESSONS-LEARNED.md) and apply its "carry forward" list (mention which lessons were applied when sending the part table).
+- **After every video**: add a short entry (QA faults, the user's feedback, fixes) and update "carry forward". When the SEO bot's review arrives, add the SEO results to the entry (until then: pending).

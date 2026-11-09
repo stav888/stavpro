@@ -43,11 +43,12 @@ for k in range(15):
 narr=narr/np.abs(narr).max()*0.8
 env=np.convolve((np.abs(narr)>0.02).astype(float),np.ones(int(.4*SR)),'same')>0
 env=np.convolve(env.astype(float),np.ones(int(.3*SR))/int(.3*SR),'same')
-g=0.30-0.20*env  # ambient gain: ~-10dB idle, ~-20dB under voice
+CLIP_AUDIO=float(os.environ.get('CLIP_AUDIO','0'))  # since 2026-11-09: generator audio muted by default (QA: no source audio leaking)
+g=(0.30-0.20*env)*CLIP_AUDIO  # with CLIP_AUDIO=1: ambient ~-10dB idle, ~-20dB under voice (old Hanging Gardens mix)
 rms=np.sqrt((amb**2).mean())+1e-9; amb=amb/rms*0.08
 mix=amb*g[:,None]+narr[:,None]; mix=mix[:int(T*SR)]
 sf.write('final/mix_raw.wav',mix,SR)
-subprocess.run('ffmpeg -v error -y -i final/mix_raw.wav -af "loudnorm=I=-14:TP=-1.5:LRA=9" -ar 48000 final/mix.wav',shell=True,check=True)
+subprocess.run('ffmpeg -v error -y -i final/mix_raw.wav -af "loudnorm=I=-16:TP=-1.5:LRA=9" -ar 48000 final/mix.wav',shell=True,check=True)
 # --- subtitles
 P=os.environ.get('MONTSERRAT_TTF','Montserrat-VariableFont_wght.ttf')
 def font(sz):

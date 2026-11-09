@@ -18,6 +18,8 @@ Channel: **Daily Facts Arete** (YouTube Shorts, https://www.youtube.com/@Daily_F
 - **3-4 Shorts a week** at non-round times between 14:00 and 19:00 Israel time.
 - **Approval before anything is made (since 2026-11-09, replaces the 2026-11-07 script + sample frame gate)**: a part-by-part script table led by `N parts / N clips / ~T s / ~C credits (estimate)`, then part 1 as the sample, then the rest part by part. Full rules: [docs/production-rules.md](docs/production-rules.md).
 - **Step 0**: per-part start/end sketches (end made FROM start), checked against our own `reference-images/`, before any video credits. 9:16 passed explicitly on every image and video call and verified after each one. Generated images and clips are illustration only; all text is drawn in code.
+- **Staged QA that watches the video** (each clip, each upscale, the full video); any fault -> fix -> re-QA; nothing delivered or scheduled without a QA PASS. [docs/qa.md](docs/qa.md)
+- **Continuous improvement**: read [LESSONS-LEARNED.md](LESSONS-LEARNED.md) before each video, add an entry after it.
 - Never use long em dashes in scripts, subtitles or metadata.
 - No zoom / Ken Burns; slow transitions themed to the mood; no music.
 - Never buy subscriptions, plans, credits or units unless the user explicitly asks.
@@ -27,23 +29,25 @@ Channel: **Daily Facts Arete** (YouTube Shorts, https://www.youtube.com/@Daily_F
 ## Pipeline at a glance
 | # | Step | Tool / file | Doc |
 |---|---|---|---|
+| 0 | **Read [LESSONS-LEARNED.md](LESSONS-LEARNED.md)** and apply the carry-forward list | - | [production-rules § 10](docs/production-rules.md#10-continuous-improvement) |
 | 1 | Topic (web-checked, SEO bot ideas); script split into **parts** (one row per part, <= 8 s / ~16-20 words each), total ~50 s - 1.5 min | - | [script-writing](docs/script-writing.md) |
 | 2 | **User approval: part-by-part table** led by `N parts / N clips / ~T s / ~C Flow credits (estimate)` | - | [script-writing § table](docs/script-writing.md#part-by-part-table), [production-rules](docs/production-rules.md) |
 | 3 | Scene sheet per part (beat, setting, start/end frame, one-way motion, accent colour, refs, continuity, 3 prompts) | [`templates/scene-template.md`](templates/scene-template.md) | same |
 | 4 | **Step 0, part 1**: pick 2-3 refs, `part1_start` (Krea "arete style", 9:16, 2 variants, QA pick), `part1_end` as an edit FROM the start, transition prompt; check side by side with refs | Krea MCP | [images-and-animation](docs/images-and-animation.md), [krea](docs/video-generators/krea.md) |
-| 5 | Part 1 clip: Flow web UI, Veo 3.1 Lite, start + end, 9:16, 4/6/8 s (gflow-cli only on browser fault); verify height > width | Flow / `scripts/flow/run_clips.sh` | [google-flow](docs/video-generators/google-flow.md) |
+| 5 | Part 1 clip: Flow web UI, Veo 3.1 Lite, start + end, 9:16, 4/6/8 s (gflow-cli only on browser fault); **QA Gate 1** (QA bot watches the clip: seams, glitches, text, 9:16, one-way motion) | Flow / `scripts/flow/run_clips.sh` | [google-flow](docs/video-generators/google-flow.md) |
 | 6 | **User approval of the part 1 sample** (pair + prompt + composited sample frame + clip) | `scripts/video/preview_frame.py` | [production-rules § 6](docs/production-rules.md#6-approval-flow) |
-| 7 | Remaining parts **one by one**: pair -> check vs refs -> QA -> clip -> verify -> next (~10 Flow credits/clip, estimate; rotate between all existing profiles to use their daily free credits). Grok option: 2 x 4 s chained at 480p, QA, Real-ESRGAN to 720p | Krea, Flow, פעולות bot; `chain_parts.sh`, `upscale_720p.sh` | [grok-imagine](docs/video-generators/grok-imagine.md), [upscale](docs/upscale-real-esrgan.md) |
+| 7 | Remaining parts **one by one**: pair (QA Gate 0) -> clip -> **QA Gate 1** (+ seam vs previous part) -> next (~10 Flow credits/clip, estimate; rotate between all existing profiles to use their daily free credits). Grok option: 2 x 4 s chained at 480p, QA, Real-ESRGAN to 720p + **QA Gate 2** (sharpness, watercolor grain) | Krea, Flow, פעולות bot; `chain_parts.sh`, `upscale_720p.sh` | [grok-imagine](docs/video-generators/grok-imagine.md), [upscale](docs/upscale-real-esrgan.md) |
 | 8 | QA + **user approval** of all clips | QA סרטונים | [qa](docs/qa.md) |
 | 9 | **Narration first**: Kokoro af_heart, slower than 0.92, one WAV per part, each measured <= 8 s | `scripts/voice/kokoro_tts_lines.py` | [narration](docs/narration.md) |
 | 10 | **10 s narration sample -> user approval** | - | same |
 | 11 | Join: 0.40 s gaps, ~0.2 s internal pauses, loudnorm -16 LUFS; word-by-word check vs script | `scripts/voice/join_narration.py`, `scripts/subtitles/whisper_word_times.py` | same |
-| 12 | QA checks narration + **recommends highlight colour -> user approval** | QA bot | [qa](docs/qa.md) |
+| 12 | **QA Gate 3** narration + **recommends highlight colour -> user approval** | QA bot | [qa](docs/qa.md) |
 | 13 | Edit around the narration: each part's clip trimmed to its slot, slow themed transitions, locked drift, text drawn in code (hook, low highlight subtitles timed by Whisper) | `scripts/video/build_highlight_wash.py`, `transition_*.py` | [subtitles-and-build](docs/subtitles-and-build.md) |
-| 14 | Sync check on the final mix, contact sheet -> **QA video check** -> **user approval** | `scripts/qa/verify_subtitle_sync.py`, `contact_sheet.sh` | [qa](docs/qa.md) |
+| 14 | **QA Gate 4**: QA bot watches the full video (audio vs script, -16 LUFS, no source audio, Whisper sync on the final mix, low bottom-centre subtitles, layout, English only, no frozen animation); any fault -> fix -> re-QA; then **user approval** | `scripts/qa/qa_check.py video`, `verify_subtitle_sync.py`, `contact_sheet.sh` | [qa](docs/qa.md) |
 | 15 | SEO bot: title, description, tags, slot -> user approval | YouTube SEO bot, `scripts/metadata/make_metadata.py` | [publishing](docs/publishing-buffer.md), [seo bot](bots/youtube-seo.md) |
-| 16 | Temp-host MP4 in a public GitHub repo (raw URL) -> Buffer `create_post` customScheduled, Education | gh, Buffer MCP | [publishing](docs/publishing-buffer.md) |
+| 16 | **QA Gate 5** (uploaded file = QA-passed file) -> temp-host MP4 in a public GitHub repo (raw URL) -> Buffer `create_post` customScheduled, Education | gh, Buffer MCP | [publishing](docs/publishing-buffer.md) |
 | 17 | One-shot routine after publish: confirm live, delete temp file, send link; user sets thumbnail in Studio, tags after OK | routines | [routines](docs/routines.md) |
+| 18 | **Write the LESSONS-LEARNED entry** (QA faults, feedback, fixes); add SEO results when the review arrives | [LESSONS-LEARNED.md](LESSONS-LEARNED.md) | [production-rules § 10](docs/production-rules.md#10-continuous-improvement) |
 
 ## Narration quick recipe
 ```python
@@ -103,6 +107,7 @@ new_meta.json         title / description / tags from the SEO bot
 ## File map of this folder
 ```
 README.md               this file
+LESSONS-LEARNED.md      per-video QA faults, feedback, fixes, SEO results + carry-forward checklist
 docs/                   production-rules (2026-11-09), script-writing, narration, images-and-animation, subtitles-and-build, qa,
                         publishing-buffer, routines, upscale-real-esrgan
 templates/              scene-template.md (per-part scene sheet, with a Derinkuyu worked example)
@@ -114,7 +119,7 @@ scripts/subtitles/      whisper_word_times.py
 scripts/video/          build_highlight_wash.py (current editor), build_flow_xfade_ass.py (Derinkuyu), transition_paper_tear.py, transition_ink_bloom.py,
                         preview_frame.py (composited approval sample), chain_parts.sh (Grok 2 x 4 s chain), upscale_720p.sh + esrgan_cpu.py (Real-ESRGAN 720p)
 scripts/flow/           run_clips.sh (gflow-cli fallback, per-part pairs)
-scripts/qa/             verify_subtitle_sync.py, contact_sheet.sh
+scripts/qa/             qa_check.py (gate pre-checks: clip / seam / sharp / video), verify_subtitle_sync.py, contact_sheet.sh
 scripts/metadata/       make_metadata.py
 requirements/           requirements-kokoro.txt, requirements-video.txt, requirements-flow.txt, requirements-legacy-pocket.txt, system-deps.md
 reference-images/       17 frames from 6 videos + README

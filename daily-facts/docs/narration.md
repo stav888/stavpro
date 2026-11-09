@@ -31,4 +31,4 @@
 - Edge-TTS (`en-GB-SoniaNeural`, -8% rate) narrated the Giza Short (Flow test, early Nov 2026); Google TTS and Piper were tested and not used.
 
 ## No music
-The approved design is narration only, no music (exception: the Alexandria test on 2026-10-24 used gentle music at the user's request). The Flow clips' own ambience is mixed very low and ducked under the voice.
+The approved design is narration only, no music (exception: the Alexandria test on 2026-10-24 used gentle music at the user's request). The Flow clips' own audio is muted (since 2026-11-09; on Derinkuyu it leaked into the gaps).

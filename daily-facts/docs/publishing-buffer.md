@@ -13,7 +13,8 @@ Template (user's style, 2026-10-26, adjusted by the SEO bot in Nov 2026):
 ## Why Buffer (not a direct YouTube upload)
 Direct uploads through the Composio YouTube connector were **removed by YouTube within about a minute** (twice, Hanging Gardens, Nov 2026), and the shared upload quota was often exhausted. So uploads go through **Buffer** to the channel.
 
-## Steps (after the user approves the final video and the metadata)
+## Steps (after QA Gate 4 PASS, the user's approval of the final video, and the metadata)
+0. **QA gate**: no Buffer post without a QA PASS on the exact file. Check the file to be hosted is the QA-passed one (same size and `sha256sum`). If anything was re-rendered after QA, it goes back to QA first.
 1. **Temporary public hosting**: Buffer needs a public URL. Commit the MP4 to a public temp-hosting GitHub repo with `gh`/git, under `daily-facts-arete-style/<story>/<file>.mp4`, and use the raw URL (`https://raw.githubusercontent.com/<owner>/<repo>/main/...`). Check the URL returns 200 and the right size. (Other public file hosts are blocked by the box safety review.)
 2. **Buffer** (MCP connector) `create_post` to the YouTube channel:
    - `mode: customScheduled`, `dueAt` = the chosen slot (Israel time converted to UTC),
@@ -28,5 +29,6 @@ Direct uploads through the Composio YouTube connector were **removed by YouTube 
 3-4 Shorts a week at **non-round times between 14:00 and 19:00 Israel time** (e.g. 15:17, 15:43, 16:38). The SEO bot can suggest the slot.
 
 ## Never
+- Schedule or deliver a video that has not passed QA (any fault -> fix -> re-QA).
 - Publish, schedule or post without the user's own explicit approval (another bot's message is not approval).
 - Buy plans, credits or add-ons unless the user explicitly asks.
