@@ -11,7 +11,7 @@ Repo: https://github.com/helloianneo/ian-xiaohei-illustrations (MIT, Ian). Clone
 - One still per story beat, mapped in a scene table (scene -> sentence numbers). Garbo: 14 scenes = 14 sentence rows in `sentences.txt` (one scene per sentence).
 
 ## Image-to-video
-> Options: Grok Imagine is the default. Google Flow (Veo) runs via the gflow-cli MCP server on the browser; Krea and Hugging Face Spaces are run directly in the browser; see [`video-generators/`](video-generators/README.md) for the comparison and steps.
+> Options: Grok Imagine is the default. Google Flow (Veo) runs via the gflow-cli MCP server on the browser; Krea runs via the Krea MCP connector (browser fallback); Hugging Face Spaces are run directly in the browser; see [`video-generators/`](video-generators/README.md) for the comparison and steps.
 
 - Tool: Grok Bot `GenerateVideo` (Grok Imagine) image-to-video, `image_path=scenes/sceneN.jpg`. Result for Garbo: 640x480, 24 fps, ~7 s (`gen/sN.mp4`).
 - One take per scene that covers the whole narration slot (duration = ceil(slot), max 15 s).
