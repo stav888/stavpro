@@ -8,14 +8,44 @@
   - Output: 24 fps, dimensions rounded to multiples of 32. The page also has a frame-extract tool, useful for taking the last frame to chain a second clip.
 - **Stills (optional):** Z-Image-Turbo, https://huggingface.co/spaces/mcp-tools/Z-Image-Turbo. It offers resolutions including 1152x864 (4:3) and 720x1280 / 1152x2048 (9:16). Xiaohei stills normally come from GenerateImage with the repo references.
 
+## Step 0: per-part start/end sketches (ACCORDING TO the reference images)
+
+Wan 2.2 I2V accepts an input image and an optional **last image**. Work **per part**, not with a pile of unrelated stills. **Never** generate independent stills of every frame, or unrelated images per beat.
+
+Split the story into **parts (scenes) 1..N**. For **each** part make **exactly one** matched pair:
+
+| File | Role |
+|---|---|
+| `scenes/partN_start.jpg` | Start / input image of part N |
+| `scenes/partN_end.jpg` | Last image of part N (optional upload; always make it as the motion target) |
+| `prompts/partN.txt` | Transition prompt for part N (motion only: start → end) |
+
+### Per part
+1. Pick 2–3 relevant refs from [`../../reference-images/`](../../reference-images/); generate `partN_start.jpg` with free `GenerateImage` (9:16, illustration only, large Xiaohei, style matched to refs).
+2. Generate `partN_end.jpg` **FROM** `partN_start.jpg` (image-to-image / edit). Same background, camera, framing, scale, Xiaohei and objects; only the action's progress changes.
+3. Write `prompts/partN.txt` (motion only, one-way, locked camera, no zoom/pan/loop, no text).
+4. Check the pair against the refs and the scene table; regenerate drift.
+
+### Transition prompt template
+```
+Slow continuous one-direction motion: <what moves and in which direction from the start pose to the end pose>. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
+```
+
+### Worked example — part 1 (Lustig / Eiffel Tower)
+- Start: Xiaohei left of frame looking at the Eiffel Tower. End (from start): same shot, Xiaohei closer with arm raised pointing at the tower.
+- Prompt: `Slow continuous one-direction motion: Xiaohei walks toward the Eiffel Tower and raises his arm to point at the top. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same tower and character. no text, no letters, no captions.`
+
+### Approval, then produce part by part
+Show **part 1** (start + end + prompt) for approval. After approval: per part in order — check the pair → upload start (+ last image) + prompt → generate → verify → next part.
+
 ## Steps (labels may change)
 1. Open the Space page in box Chrome (signed in) and wait until it shows "Running".
-2. Upload the start image (`scenes/sceneN.jpg`), plus a last image if you want a fixed end pose.
-3. Prompt: one-direction motion, "locked static camera, no zoom, no pan, no text, no letters, no captions". Start stills must be illustration-only with large Xiaohei filling most of the width. Keep the default negative prompt (it already discourages static frames and subtitles).
-4. Set the duration to fit the slot (short clips are fine, since RIFE retimes them). Leave steps at 6.
+2. Upload `scenes/partN_start.jpg`, and `scenes/partN_end.jpg` as the last image.
+3. Paste the transition prompt from `prompts/partN.txt` (one-direction motion, locked static camera, no zoom, no pan, no text, no letters, no captions). Start stills must be illustration-only with large Xiaohei filling most of the width. Keep the default negative prompt (it already discourages static frames and subtitles).
+4. Set the duration to fit the part slot (short clips are fine, since RIFE retimes them). Leave steps at 6.
 5. Generate. If it's queued or the quota is exceeded, wait or stop; don't pay for compute.
-6. **Download** the MP4 to `/home/box/Downloads/`, then move it to `/workspace/<story>/gen/sN.mp4`.
-7. Continue with RIFE + layout.
+6. **Download** the MP4 to `/home/box/Downloads/`, then move it to `/workspace/<story>/gen/partN.mp4`. Check the last frame against `partN_end.jpg`, then move to the next part.
+7. After all parts: RIFE + layout.
 
 ## Limits and cost
 - Free-ish: runs on ZeroGPU with a per-account daily GPU quota. Long or high-step runs use more quota.
@@ -53,7 +83,7 @@ At the 540×960 preview / reference size these are half: title 32 px, underline 
 
 ```bash
 PATRICK_HAND_TTF=/path/PatrickHand-Regular.ttf \
-  python ../../scripts/video/preview_frame.py scenes/scene1.jpg \
+  python ../../scripts/video/preview_frame.py scenes/part1_start.jpg \
     --title "THE ENGLISH TITLE" \
     --subtitle "One English subtitle chunk." \
     --i 1 --n 14 -o sample_frame.png

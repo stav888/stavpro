@@ -7,6 +7,13 @@ Approved by the user on 2026-11-07 (sample: `lustig-clean-ending-v2b-quiet-pause
 - The voice timbre comes from one reference clip rendered with Kokoro-82M voice `am_eric` (**Apache-2.0**) - so the whole voice chain is commercially licensed. The user forbids LibriVox/unknown-licence reference voices and old-sounding voices.
 - Backup timbre: Kokoro `bm_george` fed through Chatterbox the same way.
 
+
+## Per-part length (≤ 8 s) and total runtime
+- Narration is **written and checked per part** so each part fits a Flow/Veo clip: **hard max 8 seconds** at natural Chatterbox pace (~**18–20 English words** max per part).
+- After each part take, **measure** the WAV; rewrite or split any part over 8 s. **Never** stretch, atempo, or speed up audio to fit.
+- **Total video length** is proposed **per story** as a suitable timing between **~50 seconds and ~1.5 minutes** (about **7–11 parts** of up to 8 s each). The approval table shows the proposed total length and part count. Do not force "under 60 s" unless that length suits the story.
+- The name **"Xiaohei" never appears in narration** (or anywhere in the story text). The black character plays the story's real subject; "Xiaohei" is only for image/video style prompts.
+
 ## Locked parameters
 | Parameter | Value |
 |---|---|
@@ -15,9 +22,9 @@ Approved by the user on 2026-11-07 (sample: `lustig-clean-ending-v2b-quiet-pause
 | exaggeration | **0.6** |
 | cfg_weight | **0.45** |
 | device | CPU |
-| unit | **one take per paragraph** (`p1.txt`..`pN.txt`), not per sentence, not whole script |
+| unit | **one take per paragraph** (`p1.txt`..`pN.txt`), not per sentence, not whole script. Parts map onto paragraphs/sentences so each **part ≤ 8 s** |
 | join | plain concatenation, natural pauses only (~0.4–0.5 s between paragraphs) |
-| time-stretch / atempo / setpts on audio | **never** |
+| time-stretch / atempo / setpts on audio | **never** (if a part is over 8 s: rewrite or split; never stretch) |
 | breath noises | gated to digital silence in pauses (>=150 ms below -40 dB) |
 | loudness | `loudnorm=I=-16:TP=-1.5:LRA=11`, 48 kHz |
 | head pad | 0.15 s silence before first word; 30 ms fade only at the very end |
@@ -45,6 +52,8 @@ python scripts/voice/asr_words.py narration_norm.wav asr_words.json
 Listen to every paragraph. If a take has a glitch, re-roll only that paragraph (same seed first; if it still fails, report to the user before changing settings). `chatterbox_full_pass.py` (single take of the whole script, `max_new_tokens` raised to 4500) is kept for comparison only.
 
 ## Checks before building video
+- Each part's measured duration is **≤ 8.0 s**; total proposed length is in the **~50 s – ~1.5 min** band (or whatever the approved table said).
+- Narration text never contains the word **Xiaohei**.
 - ASR transcript contains the first word of every sentence.
 - RMS energy present within the first ~400 ms of every sentence onset; no fade-ins at onsets.
 - No pause >0.45 s inside a sentence; paragraph pauses ~0.4–0.5 s.

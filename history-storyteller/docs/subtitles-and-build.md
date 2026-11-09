@@ -11,13 +11,15 @@
 - Per-scene art is auto-cropped to its non-white bbox and scaled to ~1060x1150 max, centred ~y=790, white pad.
 - Static overlay per scene (English only): title at top UPPERCASE (Patrick Hand 64, colour `(20,20,20)` at y=115), red underline **x=400–680** (280 px, 6 px thick) at y=165 colour `(225,55,40)`, and `— i / N —` at y=1835 (Patrick Hand 32, grey). **Edit the title string per video.** Never ask the image generator to draw these.
 - Subtitles (English only): Patrick Hand **62** (fallback 56 then 52), colour `(12,12,12)`, max 2 lines, 960 px wide, first line at y=1430, line spacing 70. Sentences <=10 words shown whole; longer split into 2–3 balanced chunks at commas or by per-sentence overrides `OV={sentence:[word indexes]}` (edit per video). Line breaks never after a/the/to/and/... Each chunk starts/ends on the frame grid **inside** its sentence; script asserts 0 boundary crossings.
-- Scene mapping in this build is 1 scene per sentence row (`anim/scene{i}_r.mp4`); if a project has more scenes than sentences, extend `segs`.
+- Part mapping in this build is 1 part per sentence row (`anim/scene{i}_r.mp4` or `anim/part{i}_r.mp4`); if a project has more parts than sentences, extend `segs`. Prefer `gen/partN.mp4` naming for new Flow/Krea/HF work.
 - Concats clips and muxes `audio/narration_norm.wav`.
 - Approval sample without a full build: `../scripts/video/preview_frame.py illustration.jpg --title "..." --subtitle "..." --i 1 --n N -o sample_frame.png` (same crop/scale + overlays).
 
 ## Frame layout (mandatory)
 
 **All on-screen text in the video is English only** (title, subtitles, page counter). Never put Hebrew or any other language on the frame.
+
+**Never put the name "Xiaohei" on screen** (title, subtitles, page counter) or in the spoken narration. The black character plays the story's real subject; "Xiaohei" belongs only in image/video generation prompts.
 
 Generated stills and clips (sketches **and** video) contain the **illustration only**:
 - **No title, no underline, no caption, no page counter, no letters of any kind.**
@@ -43,7 +45,7 @@ At the 540×960 preview / reference size these are half: title 32 px, underline 
 
 ```bash
 PATRICK_HAND_TTF=/path/PatrickHand-Regular.ttf \
-  python ../scripts/video/preview_frame.py scenes/scene1.jpg \
+  python ../scripts/video/preview_frame.py scenes/part1_start.jpg \
     --title "THE ENGLISH TITLE" \
     --subtitle "One English subtitle chunk." \
     --i 1 --n 14 -o sample_frame.png

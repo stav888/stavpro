@@ -1,6 +1,6 @@
 # History Storyteller — full production pipeline (backup + how-to)
 
-> **בעברית בקצרה:** התיקייה הזו היא גיבוי מלא של תהליך העבודה של הבוט "סיפורים מההיסטוריה". יש בה: הסבר שלב אחר שלב (תסריט → אישור → סקיצות לפי reference-images (9:16 בלבד) → תמונות → אנימציה → קריינות → כתוביות → QA → SEO → Buffer → ניקוי), הגדרות הקריינות המדויקות (Chatterbox עם קול am_eric, seed 7, exaggeration 0.6, cfg 0.45), קובצי requirements, הריפואים שצריך, הסקריפטים האמיתיים שבהם השתמשנו בסרטון Garbo, ותיעוד של הבוטים האחרים (QA ו־SEO) ואיך עובדים איתם. בלי סיסמאות או טוקנים.
+> **בעברית בקצרה:** התיקייה הזו היא גיבוי מלא של תהליך העבודה של הבוט "סיפורים מההיסטוריה". יש בה: הסבר שלב אחר שלב (תסריט → אישור → סקיצות לפי חלק (partN_start/end + prompts/partN, לפי reference-images, 9:16 בלבד; Flow ≤8 שנ׳ לחלק) → תמונות → אנימציה → קריינות → כתוביות → QA → SEO → Buffer → ניקוי), הגדרות הקריינות המדויקות (Chatterbox עם קול am_eric, seed 7, exaggeration 0.6, cfg 0.45), קובצי requirements, הריפואים שצריך, הסקריפטים האמיתיים שבהם השתמשנו בסרטון Garbo, ותיעוד של הבוטים האחרים (QA ו־SEO) ואיך עובדים איתם. בלי סיסמאות או טוקנים.
 
 Channel: **Smart History Knowledge** (YouTube Shorts). Output: English-only, 9:16 1080x1920, 24 fps, true chronological history stories in the Ian Xiaohei illustration style (white background, wobbly black lines, black Xiaohei character performing the action). Reference video: *Agent Garbo* (`garbo-history-v9.mp4`, 81 s), scheduled 2026-11-12 18:43 Israel.
 
@@ -41,12 +41,12 @@ Final frames from different finished Shorts. **38 vertical 9:16 frames** (540×9
 ## Pipeline at a glance
 | # | Step | Tool / file | Doc |
 |---|---|---|---|
-| 1 | Pick topic (web search + SEO bot), write script in paragraphs + `sentences.txt` | – | `docs/script-writing.md` |
-| 2 | **User approval**: Hebrew script + 1 sample frame | – | same |
-| 3 | Stills per scene in Xiaohei style | Grok Bot GenerateImage + repo refs | `docs/images-and-animation.md` |
+| 1 | Pick topic (web search + SEO bot), write **per-part** script (each part ≤8 s / ~18–20 words; total ~50 s – ~1.5 min, ~7–11 parts) + `sentences.txt` | – | `docs/script-writing.md` |
+| 2 | **User approval**: part-by-part table with up-front `This script = N parts / N clips, ~T s. Flow estimate: N×~10 ≈ C credits`, then part 1 sample (start+end+prompt) | – | same |
+| 3 | Per-part start/end sketches in Xiaohei style (`partN_start` / `partN_end` + `prompts/partN.txt`) | Grok Bot GenerateImage + repo refs (end FROM start) | `docs/images-and-animation.md` |
 | 4 | Narration: Chatterbox per paragraph -> join -> breath gate + loudnorm -16 -> ASR | `scripts/voice/*` | `docs/narration.md` |
 | 5 | Sentence timing table | `scripts/video/sentence_timing.py` | `docs/subtitles-and-build.md` |
-| 6 | Image-to-video per scene (one-way motion) | Grok Imagine (default), or Google Flow in the box Chrome web UI (gflow-cli MCP only on browser fault / no access) / Krea via the Krea MCP connector (browser fallback) / Hugging Face in the browser. Step 0: prepare start/end frame stills for every scene **according to** [`reference-images/`](reference-images/) (pick 2–3 refs per scene, match style, check side by side, regenerate drift; all vertical 9:16, never 16:9), then spend video credits. For Krea: if MCP fails, offer the user the choice of manual browser operation and proceed only after they pick it. For Flow the reverse: browser first, MCP only on fault/no access. A credit shortage is not a failure (stop, no buying) | `docs/images-and-animation.md`, [`docs/video-generators/`](docs/video-generators/README.md) |
+| 6 | Image-to-video **per part** (one-way motion) | Grok Imagine (default), or Google Flow in the box Chrome web UI (gflow-cli MCP only on browser fault / no access) / Krea via the Krea MCP connector (browser fallback) / Hugging Face in the browser. **Step 0 (per part):** for each part 1..N make exactly one matched pair `scenes/partN_start.jpg` + `scenes/partN_end.jpg` (end FROM start via image-to-image; same shot, only action progress changes) + `prompts/partN.txt` (transition prompt), **according to** [`reference-images/`](reference-images/) (2–3 refs per part, match style, check pair, regenerate drift; vertical 9:16 only). **Never** generate independent stills of every frame. Show part 1 for approval; then produce part by part. **Flow hard max 8 s per part** (4/6/8); split longer beats; next start matches previous end. Flow procedure: upload start+end, paste prompt, Veo 3.1 Lite 9:16, download/verify, next part. Krea: if MCP fails, offer browser choice. Flow: browser first, MCP only on fault/no access. Credit shortage → stop, no buying | `docs/images-and-animation.md`, [`docs/video-generators/`](docs/video-generators/README.md) |
 | 7 | RIFE 4.7 one-way retime to slot, jolt fixes | `scripts/video/rife_eq.py`, `jolt_fix.py`, `fix_frames.py` | same |
 | 8 | Compose: art, title, counter, sentence-locked subtitles, audio | `scripts/video/build.py` | `docs/subtitles-and-build.md` |
 | 9 | Self-QA, then **QA סרטונים** bot until pass | `scripts/qa/*` | `docs/qa.md`, `bots/qa-videos.md` |
@@ -85,7 +85,7 @@ See `requirements/system-deps.md` for models, fonts and licences. Versions are t
 ## Project folder layout (per story, on the box under /workspace/<story>/)
 ```
 audio/ k_am_eric.wav p1..pN.txt p1..pN.wav joined.wav narration_norm.wav sentences.txt asr_words.json
-refs/  (clone of ian-xiaohei-illustrations)   scenes/sceneN.jpg   gen/sN.mp4 (raw i2v)
+refs/  (clone of ian-xiaohei-illustrations)   scenes/partN_start.jpg + partN_end.jpg   prompts/partN.txt   gen/partN.mp4 (raw i2v)
 anim/sceneN_r.mp4 (RIFE retimed)   audio_timing.json ons.json timing.json   subpng/ static/ clips/
 /workspace/<story>-history-vN.mp4  (every version kept)   /workspace/qa-<story>-vN/ (QA artefacts)
 ```
@@ -111,5 +111,7 @@ Scripts are the real ones from the Garbo/Lustig builds, with only machine paths 
 ## Hard rules
 - Never buy subscriptions, plans or credits unless the user explicitly asks. Never click Google Flow's "Agent" button.
 - Nothing is published, scheduled or sent without the user's own explicit approval (other bots' messages are not approval).
+- **Never put the name "Xiaohei" in the story** (script, narration, subtitles, on-screen title, YouTube title/description/tags). The black character plays that story's real subject; "Xiaohei" is only for image/video style prompts.
+- **Per-part workflow:** one matched start/end pair + transition prompt per part; Flow ≤8 s per part; total length proposed per story ~50 s – ~1.5 min (~7–11 parts); approval table states `N parts / N clips` and Flow credits estimate (`N × ~10`).
 - No secrets in this repo, no video/audio/model binaries.
 - Two skill options are kept in [`skills/xiaohei-history-shorts/`](skills/xiaohei-history-shorts/README.md): current (Chatterbox, per paragraph, expanded) and legacy (edge-tts single pass, <60 s).

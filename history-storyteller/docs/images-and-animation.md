@@ -9,15 +9,43 @@ Repo: https://github.com/helloianneo/ian-xiaohei-illustrations (MIT, Ian). Clone
 
 ## Stills
 
-## Step 0 — sketches according to `reference-images/` (before any video credits)
-Before spending image-to-video credits (Flow, Krea, or otherwise):
-1. From [`../reference-images/`](../reference-images/) (38 vertical **9:16** frames from 13 Shorts), pick **2–3 relevant refs per scene** and note them by relative path.
-2. Generate the start frame (and end frame where the model supports one) with free `GenerateImage`, passing those refs as style references / describing their style. Match white background, wobbly black lines, black Xiaohei doing the action, character size/composition, minimal colour accents. **Always request 9:16 / 1080×1920 — never 16:9.**
-3. Check each sketch side by side with the chosen refs and the scene table; regenerate any style drift. Verify height > width.
-4. Only then run image-to-video.
+## Step 0 — per-part start/end sketches according to `reference-images/` (before any video credits)
 
-- Tool: Grok Bot `GenerateImage` with [`../reference-images/`](../reference-images/) (and/or Ian Xiaohei examples) as `reference_image_paths`. For Flow/Krea sketches, output **vertical 9:16** (e.g. 1080×1920). Older Grok Imagine Garbo stills were 1152×864 JPG per scene (`scenes/sceneN.jpg`) — that landscape size is **not** the target for new Flow/Krea sketches.
-- One still per story beat, mapped in a scene table (scene -> sentence numbers). Garbo: 14 scenes = 14 sentence rows in `sentences.txt` (one scene per sentence).
+Start-to-end-frame models (Flow/Veo, Krea H3 Max / Seedance Pro, HF Wan last-image) need **one matched pair per part**. **Never** generate independent stills of every frame, or unrelated images per beat — those do not work as start→end video inputs.
+
+Split the story into **parts (scenes) 1..N** (e.g. part 1 / 4 / 9).
+
+**Part length when using Flow:** a Flow/Veo start→end clip is at most **8 seconds** (4 / 6 / 8 s only). Plan every part's narration slot to be **≤ 8 s**. If a beat is longer, split it into two parts; the next part's start frame should match the previous part's end frame for continuity. Choose 4, 6 or 8 s to cover the slot; RIFE retimes afterwards.
+
+For **each** part:
+
+| File | Role |
+|---|---|
+| `scenes/partN_start.jpg` | Start frame |
+| `scenes/partN_end.jpg` | End frame — same scene after one continuous one-way motion; generate **FROM** the start frame (image-to-image / edit) |
+| `prompts/partN.txt` | Transition prompt (motion only: start → end) |
+
+1. From [`../reference-images/`](../reference-images/) (38 vertical **9:16** frames from 13 Shorts), pick **2–3 relevant refs per part** and note them by relative path.
+2. Generate `partN_start.jpg` with free `GenerateImage`, passing those refs. Match white background, wobbly black lines, black Xiaohei doing the action, character size/composition, minimal colour accents. **Always request 9:16 / 1080×1920 — never 16:9.** Illustration only (`no text, no letters, no captions`); large Xiaohei filling most of the width.
+3. Generate `partN_end.jpg` **FROM** `partN_start.jpg`. Same background, camera, framing, scale, Xiaohei and objects; only the action's progress changes.
+4. Write `prompts/partN.txt` (what moves, which direction; one-way; locked camera; no zoom/pan/loop; keep style; no text).
+5. Check the pair side by side with the chosen refs and the scene table; regenerate any style drift or mismatched pair. Verify height > width.
+6. **Before any sketches:** present the part-by-part script table with up-front `This script = N parts / N clips, ~T s. Flow estimate: N × ~10 ≈ C credits (Veo 3.1 Lite).` (narration ≤8 s / ~18–20 words per part; proposed total ~50 s – ~1.5 min, ~7–11 parts). Then **approval sample = part 1** (start + end + prompt). After approval, produce part by part: check pair → generate that part's clip (Flow: upload start + end, paste prompt, Veo 3.1 Lite 9:16, ≤8 s) → verify → next part (2, 3, 4…).
+7. Only then spend image-to-video credits. Krea start-only models (Seedance Fast, LTX-2): upload start + prompt; use the end sketch as the check target.
+
+### Transition prompt template
+```
+Slow continuous one-direction motion: <what moves and in which direction from the start pose to the end pose>. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
+```
+
+### Worked example — part 1 (Lustig / Eiffel Tower)
+- `part1_start.jpg`: Xiaohei left of frame looking at the Eiffel Tower.
+- `part1_end.jpg` (from start): same shot; Xiaohei closer, arm raised pointing at the tower.
+- `prompts/part1.txt`: Xiaohei walks toward the tower and raises his arm to point at the top (locked camera, one-way, no text).
+
+- Tool: Grok Bot `GenerateImage` with [`../reference-images/`](../reference-images/) (and/or Ian Xiaohei examples) as `reference_image_paths`. For Flow/Krea/HF sketches, output **vertical 9:16** (e.g. 1080×1920). Older Grok Imagine Garbo stills were 1152×864 JPG per scene (`scenes/sceneN.jpg`) — that landscape size and the old `sceneN.jpg` naming are **not** the target for new Flow/Krea/HF per-part sketches.
+- Map parts to sentences in a scene table (part → sentence numbers). Garbo: 14 parts = 14 sentence rows in `sentences.txt` (one part per sentence). When using Flow, also check each part's audio slot is ≤ 8 s (or split the part).
+
 
 ## Frame layout (mandatory)
 
@@ -47,17 +75,17 @@ At the 540×960 preview / reference size these are half: title 32 px, underline 
 
 ```bash
 PATRICK_HAND_TTF=/path/PatrickHand-Regular.ttf \
-  python ../scripts/video/preview_frame.py scenes/scene1.jpg \
+  python ../scripts/video/preview_frame.py scenes/part1_start.jpg \
     --title "THE ENGLISH TITLE" \
     --subtitle "One English subtitle chunk." \
     --i 1 --n 14 -o sample_frame.png
 ```
 
 ## Image-to-video
-> Options: Grok Imagine is the default. Google Flow (Veo) is worked in the Flow **web UI** in box Chrome (gflow-cli MCP only as fallback on browser fault / no access); Krea runs via the Krea MCP connector (browser fallback); Hugging Face Spaces are run directly in the browser; see [`video-generators/`](video-generators/README.md) for the comparison, **Step 0 (sketches according to reference-images)**, and the mandatory **9:16** aspect rules.
+> Options: Grok Imagine is the default. Google Flow (Veo) is worked in the Flow **web UI** in box Chrome (gflow-cli MCP only as fallback on browser fault / no access); Krea runs via the Krea MCP connector (browser fallback); Hugging Face Spaces are run directly in the browser; see [`video-generators/`](video-generators/README.md) for the comparison, **Step 0 (per-part start/end sketches according to reference-images)**, the Flow **≤8 s per part** rule, and the mandatory **9:16** aspect rules.
 
-- Tool: Grok Bot `GenerateVideo` (Grok Imagine) image-to-video, `image_path=scenes/sceneN.jpg`. Result for Garbo: 640x480, 24 fps, ~7 s (`gen/sN.mp4`).
-- One take per scene that covers the whole narration slot (duration = ceil(slot), max 15 s).
+- Tool: Grok Bot `GenerateVideo` (Grok Imagine) image-to-video, `image_path=scenes/partN_start.jpg`. Result for Garbo: 640x480, 24 fps, ~7 s (`gen/partN.mp4` / legacy `gen/sN.mp4`).
+- One take **per part** that covers the whole narration slot. Grok Imagine: duration = ceil(slot), max 15 s. **Flow/Veo: hard max 8 s** (pick 4/6/8); split longer beats into two parts.
 - Prompt for slow, continuous, **one-direction** progressive motion, and always state a locked static camera: no zoom, no pan, no push-in.
 - Forbidden: loops, ping-pong, reverse, `stream_loop`, freeze/hold >0.3 s, Ken Burns. If a clip is short: regenerate once; never loop it.
 

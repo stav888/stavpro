@@ -10,14 +10,45 @@
   - Licence MIT, alpha, reverse-engineered. Not affiliated with Google.
 
 
-> ## 🖼️ Step 0: sketch the frames first (ACCORDING TO the reference images), then spend video credits
-> Before **any** video generation, prepare the stills for **every scene** **according to** the style references in [`../../reference-images/`](../../reference-images/) (38 vertical 9:16 frames from 13 of our Shorts):
-> 1. **Pick 2–3 relevant reference images per scene** from `reference-images/` (link them by relative path in the scene notes, e.g. `../../reference-images/lustig-02-middle.jpg`). Prefer refs whose action, props or composition match the beat.
-> 2. Make the **start frame** for each scene, and an **end frame** where the model supports one (all Veo models in Flow accept start + end frames). Use free image generation only: the built-in `GenerateImage` (or another free image tool), **passing those 2–3 refs as style references / describing their style in the image prompt**. Match: pure white background, thin wobbly black lines, black Xiaohei character doing the action, character size and composition, and minimal colour accents **as in the chosen references**. Every sketch is **vertical 9:16** (e.g. 1080×1920 or 540×960) — **never 16:9**. Save as `scenes/sceneN.jpg` and `scenes/sceneN_end.jpg`.
-> 3. **Check** each sketch **side by side** with the chosen references and the **scene table** (scene → sentence numbers, see [images-and-animation](../images-and-animation.md)): Xiaohei ink look, matching characters across scenes, illustration only (no baked-in title/underline/caption), large Xiaohei filling most of the width (not a small centred vignette), height > width. The end frame is the same shot with the action completed (same camera, no zoom or pan). **Regenerate any sketch that drifts in style** from the references — fix now, while it's free.
-> 4. **Only then** spend video credits, one clip per approved scene.
+> ## 🖼️ Step 0: per-part start/end sketches (ACCORDING TO the reference images), then spend video credits
+> Start-to-end-frame models (Flow/Veo) need **one matched pair per part**, not a pile of unrelated stills. **Never** generate independent stills of every frame, or unrelated images per beat — those do not work as start→end video inputs.
 >
-> This follows the existing approval flow ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)): the user approves the script plus a sample frame before full production. The full set of frames is prepared and checked against the references before any paid clip.
+> Split the story into **parts (scenes) 1..N** (e.g. part 1 / 4 / 9). **Hard limit: each Flow start→end clip is at most 8 seconds** (Veo 3.1 durations are **4 / 6 / 8 s only**). When planning parts, every part's narration slot must be **≤ 8 s**. If a beat is longer, **split it into two parts**; the next part's start frame should match the previous part's end frame for continuity. Choose 4, 6 or 8 s to cover the slot; RIFE retimes afterwards.
+
+For **each** part make **exactly one** matched pair:
+>
+> | File | Role |
+> |---|---|
+> | `scenes/partN_start.jpg` | Start frame of part N |
+> | `scenes/partN_end.jpg` | End frame of part N (result of one continuous one-way motion from the start) |
+> | `prompts/partN.txt` | Transition prompt for part N (motion only: start → end) |
+>
+> ### Per part (before any video credits)
+> 1. **Pick 2–3 relevant reference images** from [`../../reference-images/`](../../reference-images/) (38 vertical 9:16 frames from 13 Shorts). Note them by relative path in the part notes (e.g. `../../reference-images/lustig-02-middle.jpg`). Prefer refs whose action, props or composition match the beat.
+> 2. **Generate `partN_start.jpg`** with free image generation only (`GenerateImage` or another free tool), passing those 2–3 refs as style references / describing their style. Match: pure white background, thin wobbly black lines, black Xiaohei doing the action, character size and composition, minimal colour accents **as in the chosen references**. **Vertical 9:16 only** (e.g. 1080×1920) — **never 16:9**. Illustration only: `no text, no letters, no captions`. Large Xiaohei filling most of the frame width (not a small centred vignette).
+> 3. **Generate `partN_end.jpg` FROM `partN_start.jpg`** (image-to-image / edit, using the start frame as the reference image). The end frame must keep the **same scene**: same background, camera, framing, scale, Xiaohei character and objects. It differs **only** in the action's progress — the pose/result after one continuous one-way motion. Do **not** invent a new composition.
+> 4. **Write `prompts/partN.txt`** — one transition prompt that describes **only** the motion from that start to that end (what moves, in which direction). Always include: one-way, no loop, no reverse, no zoom, no pan, locked static camera, keep style, no text / no letters / no captions.
+> 5. **Check the pair** side by side with the chosen references and the scene table (part → sentence numbers, see [images-and-animation](../images-and-animation.md)): same shot continuity, Xiaohei ink look, illustration only, large drawing, height > width. Regenerate any style drift or mismatched pair — fix now, while it's free.
+>
+> ### Transition prompt template (`prompts/partN.txt`)
+> ```
+> Slow continuous one-direction motion: <what moves and in which direction from the start pose to the end pose>. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
+> ```
+>
+> ### Worked example — part 1 (Lustig / Eiffel Tower)
+> - `scenes/part1_start.jpg` — large black Xiaohei stands left of frame looking at the Eiffel Tower on the right; pure white background; illustration only.
+> - `scenes/part1_end.jpg` — **same** tower, background, camera and scale; Xiaohei has walked closer and raised one arm pointing at the tower (action completed). Generated by editing the start frame.
+> - `prompts/part1.txt`:
+> ```
+> Slow continuous one-direction motion: Xiaohei walks toward the Eiffel Tower and raises his arm to point at the top. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same tower and character. no text, no letters, no captions.
+> ```
+>
+> ### Approval, then produce part by part
+> 0. **Before any sketches:** present the full **part-by-part script table** with up-front summary: `This script = N parts / N clips, ~T s. Flow estimate: N × ~10 ≈ C credits (Veo 3.1 Lite).` (part count = clip count = start+end pairs). Columns: part #, narration English, words ≤~20, est. s ≤8, start-frame idea, end-frame idea. Proposed total ~50 s – ~1.5 min (~7–11 parts). Wait for approval ([script-writing](../script-writing.md)). Narration written to fit ≤8 s/part; never stretch audio.
+> 1. Show the user **part 1** as the sample: `part1_start.jpg` + `part1_end.jpg` + `prompts/part1.txt` (and a composited approval sample via [`../../scripts/video/preview_frame.py`](../../scripts/video/preview_frame.py) from the start frame). Wait for explicit approval ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)).
+> 2. After approval, for each part **in order** (1, then 2, then 3…): check the pair → generate that part's clip with **start + end + transition prompt** → verify the clip (one-way motion, locked camera, 9:16, no baked-in text) → only then move to the next part.
+> 3. Spend video credits **only** on approved parts, one clip per part.
+
 
 > ## ⚠️ Aspect ratio 9:16 is mandatory
 > Flow will happily make landscape if you let it. Prevent that:
@@ -54,23 +85,27 @@ At the 540×960 preview / reference size these are half: title 32 px, underline 
 
 ```bash
 PATRICK_HAND_TTF=/path/PatrickHand-Regular.ttf \
-  python ../../scripts/video/preview_frame.py scenes/scene1.jpg \
+  python ../../scripts/video/preview_frame.py scenes/part1_start.jpg \
     --title "THE ENGLISH TITLE" \
     --subtitle "One English subtitle chunk." \
     --i 1 --n 14 -o sample_frame.png
 ```
 
-## 1. Primary: manual web UI in box Chrome
+## 1. Primary: manual web UI in box Chrome — per-part procedure
 
-Labels may change; follow what the page shows. Use the **classic** composer only.
+Labels may change; follow what the page shows. Use the **classic** composer only. Work **one part at a time** (part 1, then 2, then 3…).
 
+**For part N:**
 1. Open Chrome with the next profile in the rotation and go to flow.google.com. Open or create the story's project.
 2. Check the credit balance in the account menu. If it's under ~10, switch profiles.
-3. Choose image-to-video / frames to video. Upload the **start frame** (`scenes/sceneN.jpg`), and the **end frame** if there is one.
-4. Choose **Veo 3.1 Lite**, **9:16**, **720p**, and a duration of 4/6/8 s. One output.
-5. Confirm the composer shows **9:16** before Generate (Flow may remember the last-used 16:9). Prefer classic; **never click Agent**.
-6. Use the same prompt pattern (one-direction motion, locked camera, no text, no letters, no captions). Click Generate, then preview.
-7. Download the MP4. It lands in `/home/box/Downloads/`; move it to `/workspace/<story>/gen/sN.mp4`. Verify with `ffprobe` that height > width; reject landscape.
+3. Choose image-to-video / frames to video.
+4. Upload **`scenes/partN_start.jpg`** as the **start frame** and **`scenes/partN_end.jpg`** as the **end frame**.
+5. Paste the contents of **`prompts/partN.txt`** (the transition prompt that joins start → end). Do not invent a new prompt at generate time.
+6. Choose **Veo 3.1 Lite**, **9:16**, **720p**, and a duration of **4, 6 or 8 s** that covers this part's narration slot (hard max **8 s**). One output.
+7. Confirm the composer shows **9:16** before Generate (Flow may remember the last-used 16:9). Prefer classic; **never click Agent**.
+8. Click Generate, then preview. Check one-way motion, locked camera, no baked-in text, and that the clip ends near the end-frame pose.
+9. Download the MP4. It lands in `/home/box/Downloads/`; move it to `/workspace/<story>/gen/partN.mp4`. Verify with `ffprobe` that height > width; reject landscape.
+10. Only then go on to **part N+1** (same steps with `part{N+1}_start.jpg`, `part{N+1}_end.jpg`, `prompts/part{N+1}.txt`). If part N+1 continues the same beat, its start frame should match part N's end frame.
 
 ## 2. Daily free credits: rotate between profiles
 
@@ -88,7 +123,7 @@ Labels may change; follow what the page shows. Use the **classic** composer only
 
 - **Never click Flow's "Agent" button.** Stay in the **classic** composer. If an account's composer is agent-only, skip that profile.
 - Never buy credits or subscriptions unless the user explicitly asks.
-- Spend credits **only on Veo video clips** for approved scenes (no image generation in Flow for paid sketches when free tools cover Step 0, no re-runs "just to compare").
+- Spend credits **only on Veo video clips** for approved parts (no image generation in Flow for paid sketches when free tools cover Step 0, no re-runs "just to compare").
 - A credit shortage is not a browser fault: if every profile's balance is too low, stop and tell the user. Don't buy credits and don't switch routes to get around it.
 - Never commit cookies, `.env`, profile directories, or (on the MCP path) `GFLOW_DAEMON_TOKEN`.
 
@@ -128,15 +163,15 @@ Browser notes for the MCP driver:
 | `gflow_list_projects(profile, limit, offset)` | no | Recent generations from the local catalog |
 | `gflow_upscale_video(media_id, scale, ...)` | free (measured once) | Optional 1080p export. Not needed, since RIFE + layout handle sizing. |
 
-Image-to-video call for one scene:
+Image-to-video call for one part:
 ```json
 {
   "name": "gflow_generate_video",
   "arguments": {
     "mode": "i2v",
-    "initial_frame": "/workspace/<story>/scenes/sceneN.jpg",
-    "end_frame": "/workspace/<story>/scenes/sceneN_end.jpg",
-    "prompt": "<slow one-direction motion for the scene>, static locked camera, no zoom, no pan, no text, no letters, no captions",
+    "initial_frame": "/workspace/<story>/scenes/partN_start.jpg",
+    "end_frame": "/workspace/<story>/scenes/partN_end.jpg",
+    "prompt": "<contents of prompts/partN.txt>",
     "model": "veo_lite",
     "aspect": "9:16",
     "duration": 8,
@@ -144,7 +179,7 @@ Image-to-video call for one scene:
     "profile": "<profile>",
     "project": "<flow project id for this story, optional>",
     "ui_mode": "classic",
-    "output": "<story>/sN.mp4",
+    "output": "<story>/partN.mp4",
     "wait": true
   }
 }
@@ -154,7 +189,7 @@ Image sketch call (free still; always force 9:16 + classic):
 {
   "name": "gflow_generate_image",
   "arguments": {
-    "prompt": "Ian Xiaohei style ink illustration, pure white background, thin wobbly black lines, LARGE black Xiaohei character <action> filling most of the frame width (not a small centred vignette), minimal colour accents, no text, no letters, no captions, vertical 9:16",
+    "prompt": "Ian Xiaohei style ink illustration, pure white background, thin wobbly black lines, LARGE black Xiaohei character <start pose for this part> filling most of the frame width (not a small centred vignette), minimal colour accents, no text, no letters, no captions, vertical 9:16",
     "model": "nano2",
     "aspect": "9:16",
     "count": 1,
@@ -164,7 +199,7 @@ Image sketch call (free still; always force 9:16 + classic):
     ],
     "ui_mode": "classic",
     "profile": "<profile>",
-    "output": "<story>/scenes/sceneN.jpg",
+    "output": "<story>/scenes/partN_start.jpg",
     "wait": true
   }
 }
@@ -176,12 +211,12 @@ Image sketch call (free still; always force 9:16 + classic):
 - `initial_frame` and `end_frame` take local file paths (or a Flow image UUID). Each is uploaded into the Flow project under a run-unique name.
 - **`model: veo_lite`** is Veo 3.1 Lite, the cheapest; it's also the default for i2v when `model` is omitted. Its output is 720p, the Daily Facts setting.
   - Do **not** pass `resolution` with Veo: it is only supported on `omni_flash`, and on other models the job is refused before submit.
-- `duration` is 4, 6 or 8 for Veo 3.1. Pick the value that covers the scene slot; RIFE retimes it exactly afterwards.
+- `duration` is 4, 6 or 8 for Veo 3.1. Pick **4, 6 or 8** to cover the part slot (hard max 8 s; split longer beats into two parts). RIFE retimes it exactly afterwards.
 - `count` is always 1, because count multiplies the cost.
 - `wait=true` keeps the call open for minutes, so raise the client's tool timeout. Alternatively, use `wait=false`, which returns a `task_id`; poll `tasks/get` and check `result.isError`.
 - **Downloads:**
   - MCP `output` must sit inside gflow's output directory, `GFLOW_CLI_OUTPUT_DIR`. On the box the default is `/home/box/Downloads/gflow-cli/`.
-  - The reply gives the file path. Copy the file to `/workspace/<story>/gen/sN.mp4`.
+  - The reply gives the file path. Copy the file to `/workspace/<story>/gen/partN.mp4`.
   - If the download failed but the clip was made, the reply has `flow_media_id`. Call `gflow_download_media` with it (free) and **do not regenerate**.
 - Error handling:
   - Follow the envelope's `retryable` flag; re-run at most once.

@@ -13,17 +13,20 @@ description: >-
 Create vertical history Shorts that tell one true story in strict chronological order. Full backup docs and scripts: github.com/stav888/stavpro/tree/master/history-storyteller.
 
 ## Approval flow (mandatory)
-- Before ANY full production: show the user the script (Hebrew translation for review; the video is English only) AND one sample frame, and wait for explicit approval. Approval of the preview does not by itself authorize anything else (publishing etc.).
+- **Before any sketches or clips:** show the user the **part-by-part script table** with an up-front summary line: `This script = N parts / N clips, ~T s. Flow estimate: N × ~10 ≈ C credits (Veo 3.1 Lite).` Columns: part #, narration (English), word count, estimated seconds (≤8), start-frame idea, end-frame idea. Proposed total is ~50 s – ~1.5 min (~7–11 parts). Hebrew chat OK; narration text in the table stays English.
+- After the table is approved: show **part 1** sample (`part1_start` + `part1_end` + `prompts/part1.txt` + composited preview) and wait for explicit approval. Approval of the preview does not by itself authorize publishing etc.
+- Then produce **part by part**. Narration is written to fit ≤8 s per part (~18–20 words); measure each take; rewrite/split if over — never stretch audio.
 
 ## Script style
-- Expanded, engaging storytelling (approved Garbo rewrite, 2026-11-07): developed chronological story, concrete details, clear setup and progression, strong ending, not a brief summary. Don't compress the story just to fit under 60s (typical result ~70-85s).
-- This expanded style is a TRIAL since 2026-11-09 (starting with Garbo). The YouTube SEO bot compares expanded vs earlier short (<60s) Shorts; if results are worse, revert to short scripts. Tell the SEO bot the video ID of every expanded upload.
+- Expanded, engaging storytelling (approved Garbo rewrite, 2026-11-07): developed chronological story, concrete details, clear setup and progression, strong ending. Propose a **suitable total length per story between ~50 s and ~1.5 min** (about **7–11 parts** of ≤8 s each). Do **not** force under 60 s unless it suits the story.
+- This length band is a TRIAL since 2026-11-09 (starting with Garbo ~81 s). The YouTube SEO bot compares lengths; tell the SEO bot the video ID of every upload in the trial.
+- **Never put the name "Xiaohei" in the story** (script, narration, subtitles, on-screen title, YouTube title/description/tags). The black character plays that story's real person/subject. "Xiaohei" is allowed **only** in image/video generation prompts (style descriptions).
 - "A true story." ending only when it fits. Sensitive topics: respectful, no gore.
 
 ## Style (from github.com/helloianneo/ian-xiaohei-illustrations)
 - Pure white background, thin wobbly black hand-drawn lines, lots of white space, only tiny red/orange/blue annotations.
 - Xiaohei: solid-black character, white dot eyes, thin legs, blank expression, who PERFORMS the core action in every scene.
-- Use `history-storyteller/reference-images/` (38 vertical 9:16 frames from our Shorts) as `reference_image_paths` for every GenerateImage / sketch call; Ian Xiaohei examples may supplement. Sketches are **illustration only** — every prompt says `no text, no letters, no captions`; regenerate on any lettering or style drift. Large Xiaohei filling most of the frame width (not a small centred vignette). Sketches and finals are **vertical 9:16** (e.g. 1080×1920 / 540×960), never 16:9. **All on-screen text is English only** and is composited later by `build.py` / `preview_frame.py`.
+- Use `history-storyteller/reference-images/` (38 vertical 9:16 frames from our Shorts) as `reference_image_paths` for every GenerateImage / sketch call; Ian Xiaohei examples may supplement. **Per-part pairs** (`partN_start` / `partN_end` from start via edit). Sketches are **illustration only** — every prompt says `no text, no letters, no captions`; regenerate on any lettering or style drift. Large Xiaohei filling most of the frame width (not a small centred vignette). Sketches and finals are **vertical 9:16** (e.g. 1080×1920 / 540×960), never 16:9. **All on-screen text is English only** and is composited later by `build.py` / `preview_frame.py`.
 
 ## Frame layout (mandatory)
 - **All on-screen text is English only.** Generated stills/clips = illustration only (`no text, no letters, no captions`); any baked-in lettering is a reject.
@@ -36,9 +39,10 @@ Create vertical history Shorts that tell one true story in strict chronological 
 - Locked static camera: NO zoom, pan, push-in or Ken Burns.
 
 ## Animation — CRITICAL
-- **Step 0 for Flow/Krea (and any paid i2v):** before spending video credits, prepare start frames (and end frames where supported) **according to** `reference-images/`: pick 2–3 refs per scene by relative path, match white background / wobbly lines / black Xiaohei / composition / minimal accents, check each sketch side by side with those refs and the scene table, regenerate style drift. Always pass aspect **9:16** explicitly; verify height > width with ffprobe/PIL and reject landscape.
-- **Flow method:** work in Flow's **web UI** in box Chrome by default (classic composer, Veo 3.1 Lite 720p, start+end frames, pick 9:16 before every generate, rotate profiles, never click Agent, never buy credits). Use the **gflow-cli MCP only as fallback** when the browser has a fault or no access (then force `aspect: "9:16"` and `ui_mode: "classic"` / `GFLOW_CLI_UI_MODE=classic`). Krea stays MCP-primary with browser fallback. Details: `docs/video-generators/google-flow.md`.
-- Each still animated with image-to-video as ONE single-pass, one-direction take covering the scene slot. NEVER loop, ping-pong, reverse, repeat, or freeze-hold >0.3s. Never slow/stretch the animation.
+- **Step 0 — per-part start/end pairs (Flow/Krea/HF and any paid i2v):** split the story into parts 1..N. For **each** part make **exactly one** matched pair: `scenes/partN_start.jpg` + `scenes/partN_end.jpg` (end generated **FROM** the start via image-to-image / edit; same background, camera, framing, scale, Xiaohei and objects; only the action's progress changes) plus `prompts/partN.txt` (motion-only transition prompt). Pick 2–3 refs from `reference-images/` per part, match style, check the pair side by side, regenerate drift. **Never** generate independent stills of every frame or unrelated images per beat. Show **part 1** (start + end + prompt) for approval; after approval produce **part by part** (check → clip → verify → next). Always pass aspect **9:16** explicitly; verify height > width; reject landscape. Illustration only (`no text, no letters, no captions`); large Xiaohei filling most of the width.
+- **Flow ≤8 s hard limit:** Veo 3.1 clip durations are **4 / 6 / 8 s only**. Each part's narration slot must be **≤ 8 s**; if a beat is longer, split into two parts and make the next start match the previous end for continuity. Choose 4, 6 or 8 s; RIFE retimes afterwards.
+- **Flow method (per part):** work in Flow's **web UI** in box Chrome by default. For part N: upload `partN_start.jpg` as start and `partN_end.jpg` as end, paste `prompts/partN.txt`, choose Veo 3.1 Lite / 720p / **9:16** / 4|6|8 s, generate, download to `gen/partN.mp4`, verify, then go to part N+1. Classic composer only; rotate profiles; never click Agent; never buy credits. Use the **gflow-cli MCP only as fallback** on browser fault / no access (then force `aspect: "9:16"` and `ui_mode: "classic"` / `GFLOW_CLI_UI_MODE=classic`). Krea stays MCP-primary with browser fallback; start-only Krea models use `partN_start` + prompt, with `partN_end` as the check target. Details: `docs/video-generators/google-flow.md`.
+- Each part animated with image-to-video as ONE single-pass, one-direction take covering the part slot. NEVER loop, ping-pong, reverse, repeat, or freeze-hold >0.3s. Never slow/stretch the animation.
 - Smoothness: RIFE-interpolate to true 24fps continuous motion (the user loved Stanley Meyer scenes 1 and 10). Never interpolate across a cut. Fix single-frame jolts with RIFE neighbor midpoints.
 - Patch defects by frame-splicing on decoded final frames; prefer a one-pass rebuild of a broken scene over stacked patches. Self-check for regressions and seams before sending to QA.
 
@@ -53,14 +57,14 @@ Create vertical history Shorts that tell one true story in strict chronological 
 ## Subtitles
 - Full **English-only** subtitles synced to speech using ASR word timestamps on the final audio. Each block stays strictly inside its sentence's audio (0 boundary crossings). Balanced chunks, no 2-4 word orphans (except a whole short sentence), max 2 lines, Patrick Hand 62 (fallback 56/52), y=1430, max width 960.
 
-## Story/scene mapping
-- Strict chronological order, visual change every ~6-11s. Map scenes to sentences in a table; after render inspect midpoint frames of every scene to confirm visual matches the spoken line.
+## Story/part mapping
+- Strict chronological order, visual change every ~6-11s (and **≤ 8 s per part** when using Flow). Map parts to sentences in a table (`partN` → sentence numbers); after render inspect midpoint frames of every part to confirm visual matches the spoken line. Naming: `scenes/partN_start.jpg`, `scenes/partN_end.jpg`, `prompts/partN.txt`, `gen/partN.mp4`.
 
 ## QA
 - Send the final file to QA סרטונים (id 3596d23d-e7aa-48cf-b8a1-91e84bcfa678) and wait for pass before delivering. Fix reported faults with timestamps and re-check.
 
 ## Publishing
-- Metadata (title, description, tags) and the schedule (1-2 days apart) come from the YouTube SEO bot (id 3a604c03-1cb4-454e-96de-87e48bbbf239); ask it before each scheduling.
+- Metadata (title, description, tags) and the schedule (1-2 days apart) come from the YouTube SEO bot (id 3a604c03-1cb4-454e-96de-87e48bbbf239); ask it before each scheduling. **Never include "Xiaohei"** in the YouTube title, description, or tags.
 - Host the MP4 in the public repo stav888/video-hosting and use a commit-pinned raw URL; verify 200 and sha256.
 - Buffer create_post on Smart History Knowledge: YouTube title, categoryId 27, privacy public, madeForKids false, isAiGenerated true. Buffer cannot set tags; the SEO bot adds them after publication. The YouTube AI label may need setting manually in Studio.
 - Only the user's own words approve scheduling/publishing.

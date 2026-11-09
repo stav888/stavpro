@@ -5,14 +5,49 @@
 The model facts below were read with `list_models(category="video")` and `get_model_schema` on 2026-11-09, with no credits spent.
 
 
-> ## 🖼️ Step 0: sketch the frames first (ACCORDING TO the reference images), then spend video credits
-> Before **any** video generation, prepare the stills for **every scene** **according to** the style references in [`../../reference-images/`](../../reference-images/) (38 vertical 9:16 frames from 13 of our Shorts):
-> 1. **Pick 2–3 relevant reference images per scene** from `reference-images/` (link them by relative path in the scene notes, e.g. `../../reference-images/lustig-02-middle.jpg`). Prefer refs whose action, props or composition match the beat.
-> 2. Make the **start frame** for each scene, and an **end frame** where the model supports one (H3 Max and Seedance 1.0 Pro: yes; LTX-2 19B and Seedance 1.0 Pro Fast: start frame only). Use free image generation only: the built-in `GenerateImage` (or another free image tool), **passing those 2–3 refs as style references / describing their style in the image prompt**. Match: pure white background, thin wobbly black lines, black Xiaohei character doing the action, character size and composition, and minimal colour accents **as in the chosen references**. Every sketch is **vertical 9:16** (e.g. 1080×1920 or 540×960) — **never 16:9**. Save as `scenes/sceneN.jpg` and `scenes/sceneN_end.jpg`.
-> 3. **Check** each sketch **side by side** with the chosen references and the **scene table** (scene → sentence numbers, see [images-and-animation](../images-and-animation.md)): Xiaohei ink look, matching characters across scenes, illustration only (no baked-in title/underline/caption), large Xiaohei filling most of the width (not a small centred vignette), height > width. The end frame is the same shot with the action completed (same camera, no zoom or pan). **Regenerate any sketch that drifts in style** from the references — fix now, while it's free.
-> 4. **Only then** spend video credits, one clip per approved scene.
+> ## 🖼️ Step 0: per-part start/end sketches (ACCORDING TO the reference images), then spend video credits
+> Start-to-end-frame models need **one matched pair per part**, not a pile of unrelated stills. **Never** generate independent stills of every frame, or unrelated images per beat — those do not work as start→end video inputs.
 >
-> This follows the existing approval flow ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)): the user approves the script plus a sample frame before full production. The full set of frames is prepared and checked against the references before any paid clip.
+> Split the story into **parts (scenes) 1..N** (e.g. part 1 / 4 / 9). Keep parts short enough for the chosen model's duration (and **≤ 8 s** if the same part plan may also be used on Flow/Veo). For **each** part make **exactly one** matched pair:
+>
+> | File | Role |
+> |---|---|
+> | `scenes/partN_start.jpg` | Start frame of part N |
+> | `scenes/partN_end.jpg` | End frame of part N (result of one continuous one-way motion from the start) |
+> | `prompts/partN.txt` | Transition prompt for part N (motion only: start → end) |
+>
+> ### Per part (before any video credits)
+> 1. **Pick 2–3 relevant reference images** from [`../../reference-images/`](../../reference-images/) (38 vertical 9:16 frames from 13 Shorts). Note them by relative path in the part notes. Prefer refs whose action, props or composition match the beat.
+> 2. **Generate `partN_start.jpg`** with free image generation only (`GenerateImage` or another free tool), passing those 2–3 refs as style references / describing their style. Match: pure white background, thin wobbly black lines, black Xiaohei doing the action, character size and composition, minimal colour accents **as in the chosen references**. **Vertical 9:16 only** (e.g. 1080×1920) — **never 16:9**. Illustration only: `no text, no letters, no captions`. Large Xiaohei filling most of the frame width (not a small centred vignette).
+> 3. **Generate `partN_end.jpg` FROM `partN_start.jpg`** (image-to-image / edit, using the start frame as the reference image). Same scene: same background, camera, framing, scale, Xiaohei and objects. Differs **only** in the action's progress. Do **not** invent a new composition.
+> 4. **Write `prompts/partN.txt`** — one transition prompt that describes **only** the motion from that start to that end (what moves, in which direction). Always include: one-way, no loop, no reverse, no zoom, no pan, locked static camera, keep style, no text / no letters / no captions.
+> 5. **Check the pair** side by side with the chosen references and the scene table (part → sentence numbers, see [images-and-animation](../images-and-animation.md)). Regenerate any style drift or mismatched pair — fix now, while it's free.
+>
+> ### Models with start frame only (Seedance 1.0 Pro Fast, LTX-2 19B, …)
+> Upload **`partN_start.jpg`** plus the transition prompt from `prompts/partN.txt`. Keep **`partN_end.jpg`** as the **target for checking** the finished clip (does the last frame match the intended end pose?). Do not skip making the end sketch.
+>
+> ### Models with start + end (MiniMax H3 Max, Seedance 1.0 Pro, …)
+> Upload **`partN_start.jpg`** + **`partN_end.jpg`** + the transition prompt.
+>
+> ### Transition prompt template (`prompts/partN.txt`)
+> ```
+> Slow continuous one-direction motion: <what moves and in which direction from the start pose to the end pose>. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
+> ```
+>
+> ### Worked example — part 1 (Lustig / Eiffel Tower)
+> - `scenes/part1_start.jpg` — large black Xiaohei stands left of frame looking at the Eiffel Tower on the right; pure white background; illustration only.
+> - `scenes/part1_end.jpg` — **same** tower, background, camera and scale; Xiaohei has walked closer and raised one arm pointing at the tower. Generated by editing the start frame.
+> - `prompts/part1.txt`:
+> ```
+> Slow continuous one-direction motion: Xiaohei walks toward the Eiffel Tower and raises his arm to point at the top. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same tower and character. no text, no letters, no captions.
+> ```
+>
+> ### Approval, then produce part by part
+> 0. **Before any sketches:** present the full **part-by-part script table** with up-front `This script = N parts / N clips, ~T s` (and Flow-equivalent credit note if relevant). Part count = clip count = start+end pairs. Columns: part #, narration, words, est. s ≤8, start/end ideas. Proposed total ~50 s – ~1.5 min (~7–11 parts). Wait for approval. Narration written to fit ≤8 s/part; never stretch audio.
+> 1. Show the user **part 1** as the sample: `part1_start.jpg` + `part1_end.jpg` + `prompts/part1.txt` (and a composited approval sample via [`../../scripts/video/preview_frame.py`](../../scripts/video/preview_frame.py) from the start frame). Wait for explicit approval ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)).
+> 2. After approval, for each part **in order** (1, then 2, then 3…): check the pair → generate that part's clip (start [+ end if supported] + prompt) → verify the clip → only then move to the next part.
+> 3. Spend video credits **only** on approved parts, one clip per part. Use `preflight: true` for any cost question.
+
 
 > ## ⚠️ Aspect ratio 9:16 is mandatory
 > Always request a **vertical** frame. Landscape slips through when size/aspect is left to a default.
@@ -49,7 +84,7 @@ At the 540×960 preview / reference size these are half: title 32 px, underline 
 
 ```bash
 PATRICK_HAND_TTF=/path/PatrickHand-Regular.ttf \
-  python ../../scripts/video/preview_frame.py scenes/scene1.jpg \
+  python ../../scripts/video/preview_frame.py scenes/part1_start.jpg \
     --title "THE ENGLISH TITLE" \
     --subtitle "One English subtitle chunk." \
     --i 1 --n 14 -o sample_frame.png
@@ -67,7 +102,7 @@ PATRICK_HAND_TTF=/path/PatrickHand-Regular.ttf \
 | `list_models(category)` | no | `category: "video"` lists the video model ids |
 | `get_model_schema(model)` | no | Exact input fields, enums and defaults for a model. Re-check it before a run, because schemas change. |
 | `get_balance()` | no | The workspace plan and remaining compute units (credits) |
-| `get_upload_url()` | no | A presigned upload URL valid for 3 h. Upload with `curl -X POST "$UPLOAD_URL" -F "file=@/workspace/<story>/scenes/sceneN.jpg"`; the response body has the asset URL. One URL can take many files, one POST each. |
+| `get_upload_url()` | no | A presigned upload URL valid for 3 h. Upload with `curl -X POST "$UPLOAD_URL" -F "file=@/workspace/<story>/scenes/partN_start.jpg"`; the response body has the asset URL. One URL can take many files, one POST each. |
 | `generate_video(model, input, sync, timeoutSeconds, preflight)` | **yes**, unless `preflight: true` | Submits the job. `preflight: true` returns a cost quote and the available balance, and nothing is queued or charged. |
 | `get_job(jobId)` | no | Job status and result. Statuses: backlogged / queued / scheduled / processing / sampling / intermediate-complete / completed / failed / cancelled. |
 | `cancel_job(jobId)` | no | Cancels or deletes a job that isn't finished |
@@ -87,27 +122,27 @@ Image inputs (`start_image`, `end_image`, `reference_images`) accept an **extern
 Notes:
 - LTX-2 has `generate_audio: true` by default. Always set it to **`false`**, because we add our own narration.
 - Always pass `aspect_ratio: "9:16"` explicitly, since several models default to 16:9. Verify the result is vertical (height > width) before keeping it.
-- **Clip length is chosen per scene**, by what looks right for the narration slot. RIFE retimes it to the exact slot afterwards.
+- **Clip length is chosen per part**, by what looks right for the narration slot. RIFE retimes it to the exact slot afterwards.
 - Other video models in the list include Kling, Seedance 2/2.5, Veo 3.1, Hailuo, Runway, Luma and Grok Imagine. Check their schema before trying one.
 
-## 3. Workflow for one scene
+## 3. Workflow for one part
 1. `get_balance()`, and stop if it's too low.
 2. Run `get_model_schema` for the chosen model to confirm the fields.
-3. Upload `scenes/sceneN.jpg` (and the end frame, plus a few `reference-images/` JPGs for H3 Max) with `get_upload_url` + curl, and note the asset URLs.
-4. Run `generate_video` with `preflight: true` and the full input, then read the quote. Only proceed for an approved scene.
+3. Upload `scenes/partN_start.jpg` (and `scenes/partN_end.jpg` when the model supports an end frame, plus a few `reference-images/` JPGs for H3 Max) with `get_upload_url` + curl, and note the asset URLs.
+4. Run `generate_video` with `preflight: true` and the full input (prompt = contents of `prompts/partN.txt`), then read the quote. Only proceed for an approved part.
 5. Run `generate_video` with the same input (async; `sync: false` is the default) and get the `job_id`.
 6. Poll `get_job(jobId)` until it shows `completed`, or `failed` (then read `error.code`).
-7. Download the result URL with `curl -L -o /workspace/<story>/gen/sN.mp4 "<result url>"`.
-8. Post-process with RIFE + `build.py` (see [README](README.md)).
+7. Download the result URL with `curl -L -o /workspace/<story>/gen/partN.mp4 "<result url>"`. For start-only models, check the last frame against `partN_end.jpg`.
+8. Verify the clip, then move to the next part. After all parts: RIFE + `build.py` (see [README](README.md)).
 
-Example: a 9:16 Xiaohei scene with start and end frames (MiniMax H3 Max):
+Example: a 9:16 Xiaohei part with start and end frames (MiniMax H3 Max):
 ```json
 {
   "model": "minimax/h3-max",
   "input": {
-    "prompt": "Hand-drawn Ian Xiaohei style ink illustration comes alive: <slow one-direction action for the scene>. Static locked camera, no zoom, no pan, no camera movement, no text, no letters, no captions, no new characters. LARGE Xiaohei filling most of the frame width.",
-    "start_image": "<asset URL of scenes/sceneN.jpg>",
-    "end_image": "<asset URL of scenes/sceneN_end.jpg>",
+    "prompt": "<contents of prompts/partN.txt>",
+    "start_image": "<asset URL of scenes/partN_start.jpg>",
+    "end_image": "<asset URL of scenes/partN_end.jpg>",
     "reference_images": ["<asset URL of a reference-images/*.jpg>", "<another>"],
     "aspect_ratio": "9:16",
     "resolution": "480p",
@@ -131,13 +166,13 @@ The LTX-2 variant: `"model": "lightricks/ltx-video-2-19b"`, with no `end_image` 
 
 ## 5. Rules
 - **Never buy credits, plans or compute packs.** If the connector suggests showing plans after an out-of-credits error, don't. Just report it to the user.
-- Generate only approved scenes. Use `preflight` for any cost question.
+- Generate only approved parts. Use `preflight` for any cost question.
 - Same rules after generation as every option: one-direction motion, no loop/zoom/pan, RIFE to 24 fps, 1080x1920 layout, QA.
 
 ## 6. Fallback: web UI in box Chrome
 Use this when the connector is unavailable or a model is only in the web app. Labels may change.
 1. Open https://www.krea.ai/video and check the balance.
-2. Pick the model. Upload the start image, plus the end image if the model supports it.
+2. Pick the model. Upload `partN_start.jpg`, plus `partN_end.jpg` if the model supports an end frame.
 3. Set **9:16**, resolution and duration, and turn audio off. Confirm the UI shows 9:16 before Generate.
-4. Use the same prompt pattern. Generate one clip.
-5. Download it; it lands in `/home/box/Downloads/`. Move it to `/workspace/<story>/gen/sN.mp4`. Verify height > width with `ffprobe` / PIL; reject landscape.
+4. Paste the transition prompt from `prompts/partN.txt`. Generate one clip for this part.
+5. Download it; it lands in `/home/box/Downloads/`. Move it to `/workspace/<story>/gen/partN.mp4`. Verify height > width with `ffprobe` / PIL; reject landscape. Then move to the next part.
