@@ -53,3 +53,14 @@ Sources: user feedback on frames/layout, Flow/Grok process decisions, Garbo QA r
   1. End-sketch character x must equal start x + intended move; otherwise prompt only the drawn delta.
   2. Prefer one continuous Grok clip (start + last_frame) over A/B chain when ≤8–15 s.
   3. Crowds/animals enter from frame edge only; keep fixed props + constant accents; living motion through the end (no freeze).
+
+## 2026-11-09 — emu-war (final_v2 after full-video QA FAIL)
+
+- **QA faults:** multi-sentence subtitle cards (parts 8–9); cards 0.41–0.91 s early vs first word; weak “A” + mid pauses >0.6 s; holds from freeze+setpts stretch (parts 2/3/4/6/8/9); part4 red zero ~26%; part1 at version cap with end morph.
+- **User feedback:** fix cheapest-first (subs → audio → retime → regen); part1 stays v2; max 3 versions; do not upload/schedule.
+- **Fixed by:** sentence-split cards word-synced via ASR; re-render p8 + cap ASR gaps to ~0.35 s; hold-drop retime then setpts; regen part3/part4 v2 + part2 v3 (last); Lanczos upscale; keep v1 final beside v2.
+- **SEO / performance (when known):** —
+- **Carry forward:**
+  1. Subtitle cards = one sentence each; start ≤2 frames from ASR first-word onset.
+  2. Cap narration word-gaps to ~0.35 s after join; verify every first phoneme is audible.
+  3. Drop hold frames before setpts; only spend a version slot when living seconds cannot cover the narration slot.
