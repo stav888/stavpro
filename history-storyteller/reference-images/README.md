@@ -2,19 +2,53 @@
 
 All 38 images in this folder are frames from **13 of our own finished history Shorts** (12 videos with 3 frames each plus 2 from Garbo). Each video has a hook/early frame, a middle action frame and an ending/late frame, so the style can be compared across stories. **Every file is vertical 9:16 at 540×960 JPG** taken from the final MP4s — never 16:9 / landscape. Total about 1.4 MB. File names follow `<video>-NN-<role>.jpg`.
 
-**For new sketches (Step 0):** always build start/end frames **according to** these references (pick 2–3 per scene, match the look, check side by side). Sketches must also be vertical 9:16 (e.g. 1080×1920 or 540×960).
+**For new sketches (Step 0):** always build start/end frames **according to** these references (pick 2–3 per scene, match the look, check side by side). Sketches must be vertical 9:16, **illustration only** (`no text, no letters, no captions`), with large Xiaohei filling most of the width — not a small centred vignette. Compose the approval sample with `preview_frame.py`; never ask the generator to draw the title/underline/caption.
 
 ## Style rules these images show
 - **Canvas:** **vertical 9:16 only** (final Shorts 1080×1920; these refs 540×960), pure white background, no textures, no gradients. Never 16:9. The camera never moves: no zoom, pan or Ken Burns. Scenes change with hard cuts.
 - **Line art:** thin, slightly wobbly black hand-drawn lines and lots of empty white space. Colour only as tiny accents (a red dot or dashed line, an orange bulb or flame, a soft sun glow).
 - **Xiaohei:** solid-black bean-shaped character with white dot eyes, thin stick legs and a blank expression. He **performs the key action** of the sentence (holds the guidebook, writes the reports, watches the landing through binoculars, pours the water). He is never decoration. Props such as a hat or headphones may be added for the role.
 - **Other people:** simple white line-drawn figures (officers, businessmen) with minimal detail. No gore: a bomb is a distant glow on the horizon (`yamaguchi-01-early.jpg`).
-- **Layout (from `../scripts/video/build.py`):**
-  - Title at top in Patrick Hand ~64 px, all caps, with a short red underline.
-  - Art large in the middle band (auto-cropped to its content, up to ~1060x1150 px, centred around y≈790).
-  - Subtitle at y≈1430 in Patrick Hand 52–62 px, black, max 2 lines, locked to the spoken sentence.
-  - Small grey counter `— i / N —` at the bottom.
-- **No text inside the generated art.** All text is added in the compose step.
+- **Layout (from `../scripts/video/build.py`) — see Frame layout below:**
+  - Title English UPPERCASE at `(540,115)` in Patrick Hand 64, red underline x=400–680 (280 px, 6 px) at y=165.
+  - Art large in the middle band (auto-cropped to content, up to 1060×1150, centred around y≈790, between y=200–1400).
+  - English subtitle at y=1430 in Patrick Hand 62 (fallback 56/52), max 2 lines, 960 px, locked to speech.
+  - Grey counter `— i / N —` at y=1835 (32 px).
+- **No text inside the generated art.** All on-screen text is English and is added in the compose step (`build.py` / `preview_frame.py`).
+
+## Frame layout (mandatory)
+
+**All on-screen text in the video is English only** (title, subtitles, page counter). Never put Hebrew or any other language on the frame.
+
+Generated stills and clips (sketches **and** video) contain the **illustration only**:
+- **No title, no underline, no caption, no page counter, no letters of any kind.**
+- Every image/video prompt must say: `no text, no letters, no captions`.
+- Any lettering baked into a still or clip is a **reject** — regenerate it. Text is added afterwards by [`../scripts/video/build.py`](../scripts/video/build.py) (or [`../scripts/video/preview_frame.py`](../scripts/video/preview_frame.py) for the approval sample).
+
+**Drawing size (fill the screen):**
+- Make the scene fill nearly the whole **width** of the image. The Xiaohei character must be large and clearly doing the action — not a small vignette centred in the middle.
+- `build.py` crops each clip to the drawing's bounding box (pixels darker than 200, plus a 14 px margin) and scales it to fit a **1060×1150** box, centred at about **y=790** and kept between **y=200** and **y=1400** of the 1080×1920 frame. A wide, well-filled drawing therefore ends up filling most of the screen; a small centred drawing stays small.
+
+**Overlay layout on the 1080×1920 canvas** (Patrick Hand, `PatrickHand-Regular.ttf`, env `PATRICK_HAND_TTF`):
+
+| Element | Spec |
+|---|---|
+| Title | English, **UPPERCASE**, 64 px, colour `(20,20,20)`, centred at `(540,115)` |
+| Red underline | from **x=400 to x=680** (280 px ≈ 26% of width), **6 px** thick, at **y=165**, colour `(225,55,40)` |
+| Subtitles | English, **62 px** (fallback 56 then 52 only if a line won't fit), max line width **960 px**, max **2 lines**, line spacing **70 px**, first line top at **y=1430**, colour `(12,12,12)`, centred |
+| Page counter | `— i / N —`, 32 px, grey `(130,130,130)`, at **y=1835** |
+
+At the 540×960 preview / reference size these are half: title 32 px, underline 140 px long and 3 px thick at y≈82, subtitles 31 px.
+
+**Sample-frame approval:** build the approval sample by compositing the generated illustration with these overlays (`build.py`'s static overlay plus one subtitle chunk), **never** by asking the image generator to draw text. Helper: [`../scripts/video/preview_frame.py`](../scripts/video/preview_frame.py):
+
+```bash
+PATRICK_HAND_TTF=/path/PatrickHand-Regular.ttf \
+  python ../scripts/video/preview_frame.py scenes/scene1.jpg \
+    --title "THE ENGLISH TITLE" \
+    --subtitle "One English subtitle chunk." \
+    --i 1 --n 14 -o sample_frame.png
+```
 
 ## The images
 | File | Video | What it shows |

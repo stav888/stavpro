@@ -17,7 +17,7 @@ The pipeline needs one **image-to-video** clip per scene, animated from the appr
 ## Same rules after any generator
 1. One-direction, progressive motion per clip. No loop, ping-pong, reverse, freeze, zoom or pan (camera locked in the prompt).
 2. RIFE 4.7 motion-equalized retime to the scene slot at true 24 fps (`../../scripts/video/rife_eq.py`), then jolt fixes. Never interpolate across a cut.
-3. Layout into 1080x1920 with `../../scripts/video/build.py` (crop to art, scale, title, subtitles).
+3. Layout into 1080x1920 with `../../scripts/video/build.py` (crop to art, scale, English title/underline/subtitles/counter) — see **Frame layout (mandatory)** in each generator doc; sketches are illustration-only (`no text, no letters, no captions`), large Xiaohei filling most of the width; approval samples via `../../scripts/video/preview_frame.py`.
 4. QA סרטונים check before delivery.
 
 ## Spending rules (all options)

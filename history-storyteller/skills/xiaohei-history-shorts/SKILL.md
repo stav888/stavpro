@@ -23,10 +23,16 @@ Create vertical history Shorts that tell one true story in strict chronological 
 ## Style (from github.com/helloianneo/ian-xiaohei-illustrations)
 - Pure white background, thin wobbly black hand-drawn lines, lots of white space, only tiny red/orange/blue annotations.
 - Xiaohei: solid-black character, white dot eyes, thin legs, blank expression, who PERFORMS the core action in every scene.
-- Use `history-storyteller/reference-images/` (38 vertical 9:16 frames from our Shorts) as `reference_image_paths` for every GenerateImage / sketch call; Ian Xiaohei examples may supplement. No/minimal text in images; regenerate once on garbled text or style drift. Sketches and finals are **vertical 9:16** (e.g. 1080×1920 / 540×960), never 16:9.
+- Use `history-storyteller/reference-images/` (38 vertical 9:16 frames from our Shorts) as `reference_image_paths` for every GenerateImage / sketch call; Ian Xiaohei examples may supplement. Sketches are **illustration only** — every prompt says `no text, no letters, no captions`; regenerate on any lettering or style drift. Large Xiaohei filling most of the frame width (not a small centred vignette). Sketches and finals are **vertical 9:16** (e.g. 1080×1920 / 540×960), never 16:9. **All on-screen text is English only** and is composited later by `build.py` / `preview_frame.py`.
+
+## Frame layout (mandatory)
+- **All on-screen text is English only.** Generated stills/clips = illustration only (`no text, no letters, no captions`); any baked-in lettering is a reject.
+- Drawing fills nearly the whole width (large Xiaohei doing the action, not a small centred vignette). `build.py` bbox-crops (darker than 200 + 14 px) and scales into 1060×1150, centred ~y=790, clamped y=200–1400.
+- Overlays on 1080×1920 (Patrick Hand): title UPPERCASE 64 px `(20,20,20)` at (540,115); red underline x=400–680 / 6 px at y=165 `(225,55,40)`; subtitles 62→56→52 px at y=1430 `(12,12,12)`, max 2 lines / 960 px / 70 px gap; counter `— i / N —` 32 px grey at y=1835.
+- Sample-frame approval: composite with `scripts/video/preview_frame.py` (same layout), never by prompting the generator to draw text. Details: `docs/video-generators/google-flow.md` § Frame layout and `docs/subtitles-and-build.md`.
 
 ## Video format
-- 1080x1920, 24 fps, H.264 + AAC, hard cuts. Art big in the middle band; title at top, subtitles at bottom. Font: Patrick Hand.
+- 1080x1920, 24 fps, H.264 + AAC, hard cuts. **Frame layout (mandatory):** illustration-only stills/clips; English UPPERCASE title 64 px at (540,115); red underline x=400–680 (280 px, 6 px) at y=165; English subtitles 62 px (fallback 56/52) at y=1430; counter `— i / N —` at y=1835. Art cropped to bbox and scaled into 1060×1150 centred ~y=790. Font: Patrick Hand. Approval sample via `scripts/video/preview_frame.py` — never ask the image generator to draw text.
 - Locked static camera: NO zoom, pan, push-in or Ken Burns.
 
 ## Animation — CRITICAL
@@ -44,7 +50,7 @@ Create vertical history Shorts that tell one true story in strict chronological 
 - FIRST-WORD CHECK: no clipped onsets; verify RMS energy in the first ~400ms of each sentence and that an ASR (faster-whisper) transcript contains every sentence's first word.
 
 ## Subtitles
-- Full English subtitles synced to speech using ASR word timestamps on the final audio. Each block stays strictly inside its sentence's audio (0 boundary crossings). Balanced chunks, no 2-4 word orphans (except a whole short sentence), max 2 lines, Patrick Hand.
+- Full **English-only** subtitles synced to speech using ASR word timestamps on the final audio. Each block stays strictly inside its sentence's audio (0 boundary crossings). Balanced chunks, no 2-4 word orphans (except a whole short sentence), max 2 lines, Patrick Hand 62 (fallback 56/52), y=1430, max width 960.
 
 ## Story/scene mapping
 - Strict chronological order, visual change every ~6-11s. Map scenes to sentences in a table; after render inspect midpoint frames of every scene to confirm visual matches the spoken line.
