@@ -44,7 +44,7 @@ Final frames from different finished Shorts. 38 frames from 13 videos are in [`r
 | 3 | Stills per scene in Xiaohei style | Grok Bot GenerateImage + repo refs | `docs/images-and-animation.md` |
 | 4 | Narration: Chatterbox per paragraph -> join -> breath gate + loudnorm -16 -> ASR | `scripts/voice/*` | `docs/narration.md` |
 | 5 | Sentence timing table | `scripts/video/sentence_timing.py` | `docs/subtitles-and-build.md` |
-| 6 | Image-to-video per scene (one-way motion) | Grok Bot GenerateVideo (Grok Imagine) | `docs/images-and-animation.md` |
+| 6 | Image-to-video per scene (one-way motion) | Grok Imagine (default), or Google Flow / Krea / Hugging Face in the browser | `docs/images-and-animation.md`, [`docs/video-generators/`](docs/video-generators/README.md) |
 | 7 | RIFE 4.7 one-way retime to slot, jolt fixes | `scripts/video/rife_eq.py`, `jolt_fix.py`, `fix_frames.py` | same |
 | 8 | Compose: art, title, counter, sentence-locked subtitles, audio | `scripts/video/build.py` | `docs/subtitles-and-build.md` |
 | 9 | Self-QA, then **QA סרטונים** bot until pass | `scripts/qa/*` | `docs/qa.md`, `bots/qa-videos.md` |
@@ -92,6 +92,7 @@ anim/sceneN_r.mp4 (RIFE retimed)   audio_timing.json ons.json timing.json   subp
 ```
 README.md                     this file
 docs/                         step-by-step guides (script, images+animation, narration, subtitles+build, QA, publishing, routines)
+                              docs/video-generators/: image-to-video options (Grok Imagine, Google Flow, Krea, Hugging Face)
 bots/                         the bots in the History Storyteller workflow: producer, QA, SEO + handoff protocol
 skills/                       custom Grok Bot skills: xiaohei-history-shorts/ (SKILL.md current + SKILL-legacy-edge-tts.md + README comparison),
                               youtube-video-seo, youtube-performance-review
