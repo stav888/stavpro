@@ -42,6 +42,9 @@ Final frames from different finished Shorts. **38 vertical 9:16 frames** (540×9
 ## Scene-by-scene production (full how-to)
 **How to build the video from the approved part-by-part script, one scene at a time:** [`docs/scene-by-scene-production.md`](docs/scene-by-scene-production.md) (script table → per-part narration + start/end sketches + clip → **QA watches each part** → Flow stays at 720p / Grok upscales after 480p QA → RIFE → assemble with `build.py` → **full-video QA** → SEO → Buffer → [`docs/lessons-learned.md`](docs/lessons-learned.md)). Includes a 3-part worked example, folder layout, and per-part checklist.
 
+## In-bot Grok default (backup for other engines)
+Exact settings for how **this bot** makes history Shorts with built-in Grok (`GenerateImage` / `GenerateVideo`), plus verified alternatives outside the bot (grok.com, xAI API, Flow, Krea, HF Spaces, local Wan/LTX) and a switch-engine checklist: [`docs/video-generators/grok-in-bot.md`](docs/video-generators/grok-in-bot.md).
+
 ## Pipeline at a glance
 | # | Step | Tool / file | Doc |
 |---|---|---|---|
@@ -98,7 +101,7 @@ anim/sceneN_r.mp4 (RIFE retimed)   audio_timing.json ons.json timing.json   subp
 ```
 README.md                     this file
 docs/                         step-by-step guides (script, **scene-by-scene-production**, images+animation, narration, subtitles+build, QA, **lessons-learned**, publishing, routines, upscale-real-esrgan)
-                              docs/video-generators/: image-to-video options (Grok Imagine, Google Flow, Krea, Hugging Face)
+                              docs/video-generators/: image-to-video options (Grok Imagine, **[grok-in-bot.md](docs/video-generators/grok-in-bot.md)** backup of the in-bot default + outside alternatives, Google Flow, Krea, Hugging Face)
 bots/                         the bots in the History Storyteller workflow: producer, QA, SEO + handoff protocol
 skills/                       custom Grok Bot skills: xiaohei-history-shorts/ (SKILL.md current + SKILL-legacy-edge-tts.md + README comparison),
                               youtube-video-seo, youtube-performance-review
