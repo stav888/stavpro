@@ -12,7 +12,7 @@
 > Google Flow / **Veo 3.1 Lite already outputs 720p**. There is **no low-res test** and **no Real-ESRGAN upscale** on the Flow path.
 > 1. Generate the part at **720p / 9:16** (duration 4 / 6 / 8 s).
 > 2. Download to `gen/partN.mp4`.
-> 3. Self-verify, then send to **QA סרטונים** — it **watches the 720p clip immediately** (seam/continuity N/A for single take; glitches, distortions, extra limbs, baked-in text, 9:16, one-way / no loop / no zoom, match `partN_end.jpg`).
+> 3. Self-verify, then send to **QA סרטונים** — it **watches the 720p clip immediately** (glitches, distortions, extra limbs, baked-in text, 9:16, one-way / no loop / no zoom, match `partN_end.jpg`, **followed `prompts/partN.txt` including timed beats**).
 > 4. On pass → RIFE retime. On fail → fix / regenerate → QA again.
 > 5. The **480p → QA → upscale → sharpness QA** path is for **Grok Imagine** (and other tools whose max output is below 720p) only — see [grok-imagine.md](grok-imagine.md) and [`../upscale-real-esrgan.md`](../upscale-real-esrgan.md). **Do not** run `upscale_720p.sh` on Flow clips.
 - gflow-cli on the box (fallback tooling):
@@ -37,21 +37,42 @@ For **each** part make **exactly one** matched pair:
 > 1. **Pick 2–3 relevant reference images** from [`../../reference-images/`](../../reference-images/) (38 vertical 9:16 frames from 13 Shorts). Note them by relative path in the part notes (e.g. `../../reference-images/lustig-02-middle.jpg`). Prefer refs whose action, props or composition match the beat.
 > 2. **Generate `partN_start.jpg`** with free image generation only (`GenerateImage` or another free tool), passing those 2–3 refs as style references / describing their style. Match: pure white background, thin wobbly black lines, black Xiaohei doing the action, character size and composition, minimal colour accents **as in the chosen references**. **Vertical 9:16 only** (e.g. 1080×1920) — **never 16:9**. Illustration only: `no text, no letters, no captions`. Large Xiaohei filling most of the frame width (not a small centred vignette).
 > 3. **Generate `partN_end.jpg` FROM `partN_start.jpg`** (image-to-image / edit, using the start frame as the reference image). The end frame must keep the **same scene**: same background, camera, framing, scale, Xiaohei character and objects. It differs **only** in the action's progress — the pose/result after one continuous one-way motion. Do **not** invent a new composition.
-> 4. **Write `prompts/partN.txt`** — one transition prompt that describes **only** the motion from that start to that end (what moves, in which direction). Always include: one-way, no loop, no reverse, no zoom, no pan, locked static camera, keep style, no text / no letters / no captions.
+> 4. **Write / rewrite `prompts/partN.txt` from the actual sketches** — look at start+end, list what they show, write motion + **timed beats** matching those images (not only the script idea). One-way, locked camera, no zoom/pan/loop, keep style, no text. If a sketch is regenerated, rewrite the prompt. See § Transition prompt below and [`../scene-by-scene-production.md`](../scene-by-scene-production.md) §1b.
 > 5. **Check the pair** side by side with the chosen references and the scene table (part → sentence numbers, see [images-and-animation](../images-and-animation.md)): same shot continuity, Xiaohei ink look, illustration only, large drawing, height > width. Regenerate any style drift or mismatched pair — fix now, while it's free.
+>
+> ### Transition prompt from the actual sketches (mandatory) + timed beats
+> Write (or rewrite) `prompts/partN.txt` **after** `partN_start.jpg` and `partN_end.jpg` exist. Look at both images; list character pose/position, props, objects, background, accent colour; describe **exactly** the motion from start → end with those same elements in those same positions. Do not invent or contradict the images. Include a **timed beat breakdown** (8 s: 0–1 / 1–3 / 3–5 / 5–7 / 7–8; 6 s: 0–1 / 1–2.5 / 2.5–4 / 4–5.5 / 5.5–6; 4 s: 0–0.5 / 0.5–1.5 / 1.5–2.5 / 2.5–3.5 / 3.5–4). First beat = exact start state; last beat = settles on exact end state. If a sketch is regenerated, rewrite the prompt. Full checklist + good/bad examples: [`../scene-by-scene-production.md`](../scene-by-scene-production.md) §1b.
 >
 > ### Transition prompt template (`prompts/partN.txt`)
 > ```
-> Slow continuous one-direction motion: <what moves and in which direction from the start pose to the end pose>. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
+> Slow continuous one-direction motion matching the actual start and end sketches.
+>
+> Timed beats (<D> s total):
+> - 0–… s: exact start-image state — <pose, props, objects, background, accent as in partN_start.jpg>
+> - …–… s: <what moves, where, which direction>
+> - …
+> - …–<D> s: settles exactly on the end-image state — <as in partN_end.jpg>
+>
+> Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects in the same positions as the sketches. no text, no letters, no captions.
 > ```
 >
-> ### Worked example — part 1 (Lustig / Eiffel Tower)
-> - `scenes/part1_start.jpg` — large black Xiaohei stands left of frame looking at the Eiffel Tower on the right; pure white background; illustration only.
-> - `scenes/part1_end.jpg` — **same** tower, background, camera and scale; Xiaohei has walked closer and raised one arm pointing at the tower (action completed). Generated by editing the start frame.
-> - `prompts/part1.txt`:
+> ### Worked timed example — Emu War part 1 (8 s)
+> After sketches show: soldier left-of-centre, Lewis gun low at side, fence left, wheat right, tiny red on cooling rings → same shot, step forward, gun at waist aimed right.
 > ```
-> Slow continuous one-direction motion: Xiaohei walks toward the Eiffel Tower and raises his arm to point at the top. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same tower and character. no text, no letters, no captions.
+> Slow continuous one-direction motion matching the actual start and end sketches.
+>
+> Timed beats (8 s total):
+> - 0–1 s: exact start-image state — soldier left-of-centre facing right, Lewis gun low at his side, fence left, wheat right, tiny red on gun cooling rings
+> - 1–3 s: soldier begins one step forward; gun starts rising
+> - 3–5 s: step completes; gun rises to hip height aimed right
+> - 5–7 s: gun reaches waist height aimed right; body settles
+> - 7–8 s: settles exactly on the end-image state — one pace forward, gun at waist aimed right, same fence/wheat/red accent
+>
+> Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same fence, wheat, gun and character. no text, no letters, no captions.
 > ```
+>
+> ### Prompt-check (before Generate)
+> Looked at both sketches · same elements/positions · nothing invented/contradicted · one-way locked camera · timed beats present and consistent · first=start / last=end · rewritten if a sketch changed.
 >
 > ### Approval, then produce part by part
 > 0. **Before any sketches:** present the full **part-by-part script table** with up-front summary: `This script = N parts / N clips, ~T s. Flow estimate: N × ~10 ≈ C credits (Veo 3.1 Lite).` (part count = clip count = start+end pairs). Columns: part #, narration English, words ≤~20, est. s ≤8, start-frame idea, end-frame idea. Proposed total ~50 s – ~1.5 min (~7–11 parts). Wait for approval ([script-writing](../script-writing.md)). Narration written to fit ≤8 s/part; never stretch audio.
@@ -110,7 +131,7 @@ Labels may change; follow what the page shows. Use the **classic** composer only
 2. Check the credit balance in the account menu. If it's under ~10, switch profiles.
 3. Choose image-to-video / frames to video.
 4. Upload **`scenes/partN_start.jpg`** as the **start frame** and **`scenes/partN_end.jpg`** as the **end frame**.
-5. Paste the contents of **`prompts/partN.txt`** (the transition prompt that joins start → end). Do not invent a new prompt at generate time.
+5. Paste the contents of **`prompts/partN.txt`** (written from the actual sketches with timed beats). Do not invent a new prompt at generate time; if sketches changed, rewrite the file first.
 6. Choose **Veo 3.1 Lite**, **9:16**, **720p**, and a duration of **4, 6 or 8 s** that covers this part's narration slot (hard max **8 s**). One output.
 7. Confirm the composer shows **9:16** before Generate (Flow may remember the last-used 16:9). Prefer classic; **never click Agent**.
 8. Click Generate, then preview. Check one-way motion, locked camera, no baked-in text, and that the clip ends near the end-frame pose.

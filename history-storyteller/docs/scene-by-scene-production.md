@@ -21,6 +21,7 @@ Related docs:
 - **QA at every stage:** send every part clip and the final video to **QA סרטונים**, which **watches** for faults. Fix → QA again. Nothing delivered/scheduled without a QA pass. See [`qa.md`](qa.md).
 - **Continuous improvement:** every production better than the last. After each video append [`lessons-learned.md`](lessons-learned.md); read it before the next story.
 - **Flow = direct 720p:** Google Flow / Veo 3.1 Lite generates at **720p** with **no 480p test** and **no Real-ESRGAN upscale**. QA watches the 720p clip immediately. The 480p → upscale path is **Grok Imagine only** (and other tools whose max output is below 720p).
+- **Transition prompt from the actual sketches (mandatory):** write (or rewrite) `prompts/partN.txt` **after** `scenes/partN_start.jpg` and `scenes/partN_end.jpg` exist, from what those images **actually show** — not only from the planned scene idea. Include a **timed beat breakdown** across the clip (see §1b). If a sketch is regenerated, rewrite the prompt. Check the prompt against both images before spending video credits.
 
 ---
 
@@ -88,7 +89,7 @@ Then write the **three prompts** (English only; `Xiaohei` OK here; always includ
 
 1. **Start-frame image prompt** — full scene description for `GenerateImage` (with the 2–3 refs).
 2. **End-frame edit prompt** — edit/i2v-edit instruction applied **FROM** the start frame (same shot; only action progress).
-3. **Video transition prompt** — motion only, for `prompts/partN.txt` (Flow start+end; Grok chain; Krea start+prompt).
+3. **Video transition prompt** — written **after** the sketches exist (§1b): motion + **timed beats** for `prompts/partN.txt` (Flow start+end; Grok chain; Krea start+prompt), matching what the images actually show.
 
 ### Prompt skeletons
 
@@ -102,10 +103,110 @@ Ian Xiaohei illustration style, pure white background, thin wobbly black hand-dr
 Same Ian Xiaohei scene, same white background, same camera, same framing, same scale, same objects. Only change: <exact end pose / result of the one action>. Keep large Xiaohei. Vertical 9:16. no text, no letters, no captions.
 ```
 
-**Video transition prompt** (`prompts/partN.txt`)
+**Video transition prompt** (`prompts/partN.txt`) — write this **after** the start/end sketches exist (see §1b). Include timed beats.
 ```
-Slow continuous one-direction motion: <what moves and in which direction from the start pose to the end pose>. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
+Slow continuous one-direction motion matching the actual start and end sketches.
+
+Timed beats (<D> s total):
+- 0–… s: exact start-image state (list character pose/position, props, objects, background, accent colour as they appear in partN_start.jpg)
+- …–… s: <what moves, where, which direction>
+- …
+- …–<D> s: settles exactly on the end-image state (as in partN_end.jpg)
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects in the same positions as the sketches. no text, no letters, no captions.
 ```
+
+---
+
+## 1b. Transition prompt from the actual sketches (mandatory)
+
+> **Hard rule:** do **not** paste a prompt written only from the script idea. After `scenes/partN_start.jpg` and `scenes/partN_end.jpg` exist, **look at both images**, then write (or rewrite) `prompts/partN.txt` so it describes **exactly** the motion from the start image to the end image, naming the same elements in the same positions as they appear. If either sketch is regenerated, **rewrite the prompt**. Check the prompt against both images **before** generating. After generation, QA checks that the clip followed the prompt (including timed beats) and landed on the end image.
+
+### Steps (every part)
+
+1. Open `partN_start.jpg` and `partN_end.jpg` side by side.
+2. **List what is actually in them** (do not invent):
+   - Character position and pose (left/right/centre, facing which way, limbs)
+   - Props / costume
+   - Other objects
+   - Background / setting marks
+   - Accent colour (what and where)
+3. Confirm end is the **same shot** as start (same camera, framing, scale, background); only the action's result changed.
+4. Write the transition prompt:
+   - Name the **same** elements in the **same** positions as in the images.
+   - Describe **one continuous one-way** action from start pose → end pose.
+   - Include a **timed beat breakdown** for the clip duration (4 / 6 / 8 s).
+   - Locked camera; no zoom; no pan; no loop; no reverse; same style; `no text, no letters, no captions`.
+5. **Do not** mention things that are not in the images, or that contradict them (wrong side, wrong prop, extra characters, different background).
+6. Run the **prompt-check checklist** below. Only then generate.
+7. If a sketch is regenerated → rewrite the prompt and re-check before generating again.
+
+### Timed beat splits
+
+| Clip length | Beat windows (first = exact start state; last = settles on exact end state) |
+|---|---|
+| **8 s** | 0–1 s · 1–3 s · 3–5 s · 5–7 s · 7–8 s |
+| **6 s** | 0–1 s · 1–2.5 s · 2.5–4 s · 4–5.5 s · 5.5–6 s |
+| **4 s** | 0–0.5 s · 0.5–1.5 s · 1.5–2.5 s · 2.5–3.5 s · 3.5–4 s |
+
+Each beat says **what moves, where, and in which direction**. Every beat continues the **same** one-way action (no new subplot mid-clip).
+
+### Timed template (`prompts/partN.txt`)
+
+```
+Slow continuous one-direction motion matching the actual start and end sketches.
+
+Timed beats (<D> s total):
+- 0–… s: exact start-image state — <character pose/position, props, objects, background, accent as in partN_start.jpg>
+- …–… s: <what moves, where, which direction>
+- …–… s: <continue same action>
+- …–… s: <continue same action>
+- …–<D> s: settles exactly on the end-image state — <as in partN_end.jpg>
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects in the same positions as the sketches. no text, no letters, no captions.
+```
+
+### Worked timed example — Emu War part 1 (8 s)
+
+Assume the generated sketches show: soldier left-of-centre facing right, Lewis gun low at his side, fence left, wheat right, tiny red on gun cooling rings (start); same shot with soldier one step forward and gun at waist aimed right (end).
+
+```
+Slow continuous one-direction motion matching the actual start and end sketches.
+
+Timed beats (8 s total):
+- 0–1 s: exact start-image state — large black soldier left-of-centre facing right, Lewis gun held low at his side, low fence left, wheat stalks right, tiny red on gun cooling rings, pure white background
+- 1–3 s: soldier begins one step forward toward the right; gun starts rising from his side
+- 3–5 s: step completes; gun rises to about hip height, still aimed right
+- 5–7 s: gun reaches waist height aimed right; body settles after the step
+- 7–8 s: settles exactly on the end-image state — soldier one pace forward, Lewis gun at waist aimed right, same fence, wheat, red accent, same framing
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects in the same positions as the sketches. no text, no letters, no captions.
+```
+
+### Prompt-check checklist (before generate)
+
+```
+[ ] Looked at partN_start.jpg and partN_end.jpg (not only the script idea)
+[ ] Listed character pose/position, props, objects, background, accent colour from the images
+[ ] Prompt names the same elements in the same positions (no wrong side / wrong prop / extra characters)
+[ ] Prompt does not mention anything absent from the images
+[ ] Prompt does not contradict either image
+[ ] One continuous one-way action; locked camera; no zoom; no pan; no loop; no reverse
+[ ] Same Ian Xiaohei style; no text / no letters / no captions
+[ ] Timed beats present for the clip length (4/6/8) and consistent with both images
+[ ] First beat = exact start-image state; last beat = settles on exact end-image state
+[ ] If a sketch was regenerated since the last prompt → prompt was rewritten
+```
+
+### Good vs bad transition prompts (image match)
+
+| | Bad (contradicts / invents) | Good (matches the images) |
+|---|---|---|
+| Side / prop | Start sketch has soldier on the **left** with a **Lewis gun**; prompt says "cavalry on the right draw sabres" | "soldier left-of-centre raises the Lewis gun aimed right" |
+| Extra cast | Only soldier + fence + wheat in both sketches; prompt adds "a crowd of farmers cheering" | Names only soldier, fence, wheat, gun (as drawn) |
+| End state | End sketch shows gun at **waist**; prompt says "fires a long burst into the sky" (not in the end image) | Motion ends when pose matches the end sketch |
+| Timing | One vague sentence, no beats | Timed beats 0–1 / 1–3 / 3–5 / 5–7 / 7–8 with progressive one-way action |
+| Written when | Prompt written from the script **before** sketches, never updated | Prompt written **after** sketches; rewritten if a sketch changes |
 
 ---
 
@@ -158,9 +259,18 @@ Ian Xiaohei illustration style, pure white background, thin wobbly black hand-dr
 Same Ian Xiaohei scene, same white background, same camera, same framing, same scale, same fence and wheat. Only change: the soldier has taken one step forward and raised the Lewis gun to waist height aimed to the right. Keep large Xiaohei. Vertical 9:16. no text, no letters, no captions.
 ```
 
-**Video transition prompt** (`prompts/part1.txt`)
+**Video transition prompt** (`prompts/part1.txt`) — written **after** the sketches; timed beats for 8 s
 ```
-Slow continuous one-direction motion: Xiaohei the soldier steps forward once and raises the Lewis machine gun to waist height aimed to the right. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same fence, wheat, gun and character. no text, no letters, no captions.
+Slow continuous one-direction motion matching the actual start and end sketches.
+
+Timed beats (8 s total):
+- 0–1 s: exact start-image state — large black soldier left-of-centre facing right, Lewis gun held low at his side, low fence left, wheat stalks right, tiny red on gun cooling rings
+- 1–3 s: soldier begins one step forward toward the right; gun starts rising from his side
+- 3–5 s: step completes; gun rises to about hip height, still aimed right
+- 5–7 s: gun reaches waist height aimed right; body settles after the step
+- 7–8 s: settles exactly on the end-image state — soldier one pace forward, Lewis gun at waist aimed right, same fence, wheat, red accent
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same fence, wheat, gun and character. no text, no letters, no captions.
 ```
 
 ---
@@ -188,9 +298,18 @@ Ian Xiaohei illustration style, pure white background, thin wobbly black hand-dr
 Same Ian Xiaohei scene, same white background, same camera, same framing, same scale, same soldier pose and wheat. Only change: both emus have jogged left to the mid-right of the frame, still mid-stride. Keep large Xiaohei and emus. Vertical 9:16. no text, no letters, no captions.
 ```
 
-**Video transition prompt** (`prompts/part2.txt`)
+**Video transition prompt** (`prompts/part2.txt`) — written **after** the sketches; timed beats for 6 s
 ```
-Slow continuous one-direction motion: the two emus jog left across the wheat toward mid-frame while the soldier stays aimed. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and wheat. no text, no letters, no captions.
+Slow continuous one-direction motion matching the actual start and end sketches.
+
+Timed beats (6 s total):
+- 0–1 s: exact start-image state — soldier left with Lewis at waist aimed right; two emus enter from far right edge mid-stride leftward; wheat row lower third; tiny blue on one emu eye
+- 1–2.5 s: both emus continue jogging left across the wheat
+- 2.5–4 s: emus reach the right-centre of the frame; soldier stays aimed (no new pose)
+- 4–5.5 s: emus settle into mid-right mid-stride
+- 5.5–6 s: settles exactly on the end-image state — emus mid-right mid-stride; soldier still aimed; same wheat and blue accent
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and wheat. no text, no letters, no captions.
 ```
 
 ---
@@ -218,9 +337,18 @@ Ian Xiaohei illustration style, pure white background, thin wobbly black hand-dr
 Same Ian Xiaohei scene, same white background, same camera, same framing, same scale, same wheat. Only change: the three emus have scattered — one farther right, one higher, one exiting top-right — and the soldier has recoiled one small step from the gun kick. Keep large Xiaohei. Vertical 9:16. no text, no letters, no captions.
 ```
 
-**Video transition prompt** (`prompts/part3.txt`)
+**Video transition prompt** (`prompts/part3.txt`) — written **after** the sketches; timed beats for 8 s
 ```
-Slow continuous one-direction motion: the three emus scatter outward to the right and upward in one burst while the soldier recoils one small step from the Lewis gun kick. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and wheat. no text, no letters, no captions.
+Slow continuous one-direction motion matching the actual start and end sketches.
+
+Timed beats (8 s total):
+- 0–1 s: exact start-image state — soldier left aimed right; three emus clustered mid-right; wheat lower third; tiny red at muzzle
+- 1–3 s: emus begin to burst apart — one right, one up, one toward top-right; muzzle red holds
+- 3–5 s: scatter continues; soldier starts a small recoil step from the gun kick
+- 5–7 s: emus near their end positions; soldier finishes the small step back
+- 7–8 s: settles exactly on the end-image state — one emu farther right, one higher, one exiting top-right; soldier one small step recoiled; same wheat and red muzzle accent
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and wheat. no text, no letters, no captions.
 ```
 
 *(Continue the same template for parts 4…N of whatever story you are producing.)*
@@ -238,13 +366,13 @@ Do this **after** the user has approved the part-by-part script table ([`script-
    - Generate `scenes/partN_start.jpg` (9:16, illustration only, large character).
    - Generate `scenes/partN_end.jpg` **FROM** the start (edit / image-to-image). Same shot; only action progress.
    - Check pair side by side vs refs; regenerate drift; verify height > width.
-4. **Write `prompts/partN.txt`** (video transition prompt only; the image prompts can live in part notes).
+4. **Write / rewrite `prompts/partN.txt` from the actual sketches** (§1b): look at `partN_start.jpg` + `partN_end.jpg`, list what they show, write a motion prompt with **timed beats** that match those images (not only the script idea). Run the prompt-check checklist. If a sketch is regenerated later, rewrite the prompt before generating.
 5. **Generate the clip** for that part only:
    - **Flow (browser-primary):** upload start + end, paste prompt, Veo 3.1 Lite **720p**, **9:16**, duration 4|6|8 s (≤8). **No 480p test. No Real-ESRGAN upscale.** MCP only on browser fault / no access.
    - **Grok Imagine (default):** two chained **4 s** clips at **480p** (clip A from start → last frame → clip B continuing); end sketch = check target only; join → **QA stage 1** → `scripts/video/upscale_720p.sh` (or `chain_and_upscale.sh`) to **720×1280** → **QA stage 2** sharpness. Do **not** regenerate at 720p unless upscale is soft. (Same 480p→upscale pattern for any other tool whose max output is below 720p.)
    - **Krea (MCP-primary):** start + prompt (start/end models when available); end sketch = check target for start-only models. Browser fallback only after user choice. If output is already ≥720p, skip upscale; if below 720p, use the Grok-style 480p→upscale path.
    - **HF Wan:** start (+ optional last image) + prompt in the Space browser UI; treat sub-720p output like Grok (QA then upscale).
-6. **Self-verify the clip**, then **QA stage 1** — send the part clip to **QA סרטונים** (watches the video): 9:16; no baked-in text; one-way motion; locked camera; no loop/zoom; last frame matches end sketch; seam/continuity (Grok A→B); no glitches/distortions/extra limbs. **Flow:** QA watches the **720p** clip immediately. **Grok:** QA watches the **480p** join before upscale.
+6. **Self-verify the clip**, then **QA stage 1** — send the part clip **and** `prompts/partN.txt` to **QA סרטונים** (watches the video): 9:16; no baked-in text; one-way motion; locked camera; no loop/zoom; last frame matches end sketch; **clip followed the prompt** (elements/positions); **timing matches the timed beats**; seam/continuity (Grok A→B); no glitches/distortions/extra limbs. **Flow:** QA watches the **720p** clip immediately. **Grok:** QA watches the **480p** join before upscale.
 7. **Upscale only if needed** (Grok / sub-720p): after stage-1 pass → Real-ESRGAN → **QA stage 2** sharpness. **Skip for Flow 720p.**
 8. **RIFE** to true 24 fps continuous motion (`scripts/video/rife_eq.py`), then jolt fixes if needed. Never interpolate across a cut.
 9. **Retime** the part to its narration slot (motion-equalized one-way).
@@ -323,10 +451,11 @@ Copy for each part:
 [ ] scenes/partN_start.jpg — 9:16, illustration only, large character
 [ ] scenes/partN_end.jpg — FROM start; same shot; only action progress
 [ ] Pair checked vs refs (style, size, no text, height > width)
-[ ] prompts/partN.txt written (motion only, locked camera, no text)
+[ ] prompts/partN.txt written **after** sketches from what the images show (not only the idea)
+[ ] Prompt-check checklist passed (same elements/positions; timed beats; first=start / last=end)
 [ ] Clip generated (Flow ≤8 s @720p direct / Grok 2×4 s @480p / Krea / HF)
-[ ] Self-verify (9:16, no text, one-way, matches end, continuity)
-[ ] **QA stage 1** — QA סרטונים watched the part clip and passed (Flow: 720p; Grok: 480p join)
+[ ] Self-verify (9:16, no text, one-way, matches end, continuity, beats)
+[ ] **QA stage 1** — QA סרטונים watched the part clip vs prompt+beats and passed (Flow: 720p; Grok: 480p join)
 [ ] Grok / sub-720p only: upscale_720p.sh → **QA stage 2** sharpness pass (skip for Flow 720p)
 [ ] RIFE 24 fps + retime to slot
 [ ] Ready for part N+1 (next start matches this end, if continuous)

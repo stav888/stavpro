@@ -25,17 +25,39 @@ Split the story into **parts (scenes) 1..N**. For **each** part make **exactly o
 ### Per part
 1. Pick 2–3 relevant refs from [`../../reference-images/`](../../reference-images/); generate `partN_start.jpg` with free `GenerateImage` (9:16, illustration only, large Xiaohei, style matched to refs).
 2. Generate `partN_end.jpg` **FROM** `partN_start.jpg` (image-to-image / edit). Same background, camera, framing, scale, Xiaohei and objects; only the action's progress changes.
-3. Write `prompts/partN.txt` (motion only, one-way, locked camera, no zoom/pan/loop, no text).
-4. Check the pair against the refs and the scene table; regenerate drift.
+3. **Write / rewrite `prompts/partN.txt` from the actual sketches** (look at both images; motion + **timed beats**; same elements/positions; no invented cast). If a sketch is regenerated, rewrite the prompt. Full rule: [`../scene-by-scene-production.md`](../scene-by-scene-production.md) §1b.
+4. Check the pair against the refs and the scene table; regenerate drift; re-run the prompt-check checklist before generate.
+
+### Transition prompt from actual sketches (mandatory) + timed beats
+Write the prompt **after** the sketches exist. Include timed beats (8 s: 0–1 / 1–3 / 3–5 / 5–7 / 7–8; 6 s: 0–1 / 1–2.5 / 2.5–4 / 4–5.5 / 5.5–6; 4 s: 0–0.5 / 0.5–1.5 / 1.5–2.5 / 2.5–3.5 / 3.5–4). First beat = exact start state; last = settles on end. QA compares clip timing to the beats.
 
 ### Transition prompt template
 ```
-Slow continuous one-direction motion: <what moves and in which direction from the start pose to the end pose>. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
+Slow continuous one-direction motion matching the actual start and end sketches.
+
+Timed beats (<D> s total):
+- 0–… s: exact start-image state — <pose, props, objects, background, accent as in partN_start.jpg>
+- …–… s: <what moves, where, which direction>
+- …
+- …–<D> s: settles exactly on the end-image state — <as in partN_end.jpg>
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects in the same positions as the sketches. no text, no letters, no captions.
 ```
 
-### Worked example — part 1 (Lustig / Eiffel Tower)
-- Start: Xiaohei left of frame looking at the Eiffel Tower. End (from start): same shot, Xiaohei closer with arm raised pointing at the tower.
-- Prompt: `Slow continuous one-direction motion: Xiaohei walks toward the Eiffel Tower and raises his arm to point at the top. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same tower and character. no text, no letters, no captions.`
+### Worked timed example — Emu War part 1 (8 s)
+After sketches show soldier left-of-centre, Lewis gun low, fence left, wheat right → step forward, gun at waist aimed right:
+```
+Slow continuous one-direction motion matching the actual start and end sketches.
+
+Timed beats (8 s total):
+- 0–1 s: exact start-image state — soldier left-of-centre facing right, Lewis gun low at his side, fence left, wheat right, tiny red on gun cooling rings
+- 1–3 s: soldier begins one step forward; gun starts rising
+- 3–5 s: step completes; gun rises to hip height aimed right
+- 5–7 s: gun reaches waist height aimed right; body settles
+- 7–8 s: settles exactly on the end-image state — one pace forward, gun at waist aimed right, same fence/wheat/red accent
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same fence, wheat, gun and character. no text, no letters, no captions.
+```
 
 ### Approval, then produce part by part
 Show **part 1** (start + end + prompt) for approval. After approval: per part in order — check the pair → upload start (+ last image) + prompt → generate → self-verify → **QA סרטונים watches** the clip → if output is below 720p, upscale after QA pass (same as Grok; see [`../upscale-real-esrgan.md`](../upscale-real-esrgan.md)) → next part. HF is usually sub-720p, so expect the **480p-style test + upscale** path, not Flow's direct 720p.
@@ -43,7 +65,7 @@ Show **part 1** (start + end + prompt) for approval. After approval: per part in
 ## Steps (labels may change)
 1. Open the Space page in box Chrome (signed in) and wait until it shows "Running".
 2. Upload `scenes/partN_start.jpg`, and `scenes/partN_end.jpg` as the last image.
-3. Paste the transition prompt from `prompts/partN.txt` (one-direction motion, locked static camera, no zoom, no pan, no text, no letters, no captions). Start stills must be illustration-only with large Xiaohei filling most of the width. Keep the default negative prompt (it already discourages static frames and subtitles).
+3. Paste the transition prompt from `prompts/partN.txt` (written from the actual sketches with timed beats; one-direction motion, locked static camera, no zoom, no pan, no text, no letters, no captions). Start stills must be illustration-only with large Xiaohei filling most of the width. Keep the default negative prompt (it already discourages static frames and subtitles).
 4. Set the duration to fit the part slot (short clips are fine, since RIFE retimes them). Leave steps at 6.
 5. Generate. If it's queued or the quota is exceeded, wait or stop; don't pay for compute.
 6. **Download** the MP4 to `/home/box/Downloads/`, then move it to `/workspace/<story>/gen/partN.mp4`. Check the last frame against `partN_end.jpg`.

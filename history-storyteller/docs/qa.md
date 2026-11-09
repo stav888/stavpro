@@ -8,7 +8,7 @@
 >
 > | Stage | When | What QA watches for |
 > |---|---|---|
-> | **(1) Per part — after each clip** | After the part's clip is ready (**Flow:** Veo 3.1 Lite **720p** download — **no 480p test, no upscale**; **Grok:** after A+B join at **480p**; other tools: after download; if max output &lt; 720p, treat like Grok) | Seam / continuity; glitches; distortions; extra limbs; text baked into the image; **9:16**; one-way motion with **no loop** and **no zoom**; match with the **end sketch** (`partN_end.jpg`); continuity with the previous part. **Flow:** QA watches the **720p** clip immediately |
+> | **(1) Per part — after each clip** | After the part's clip is ready (**Flow:** Veo 3.1 Lite **720p** download — **no 480p test, no upscale**; **Grok:** after A+B join at **480p**; other tools: after download; if max output &lt; 720p, treat like Grok). Producer also sends `prompts/partN.txt` | Seam / continuity; glitches; distortions; extra limbs; text baked into the image; **9:16**; one-way motion with **no loop** and **no zoom**; match with the **end sketch** (`partN_end.jpg`); **followed the transition prompt** (same elements/positions as the sketches); **timed beats present and timing matches** (compare clip progress to the beat windows); continuity with the previous part. **Flow:** QA watches the **720p** clip immediately |
 > | **(2) After upscale to 720p** (**Grok / sub-720p only**) | After `scripts/video/upscale_720p.sh` on an approved 480p take. **Skip for Flow** (already 720p) | **Sharpness** check (line art stays sharp, not mushy / ringing / broken). Soft/broken → regenerate at native 720p, then full QA again |
 > | **(3) Full assembled video before delivery** | After `build.py` muxes the final MP4 | **Audio:** first words audible, pauses, no stretch, loudness ~−16 LUFS. **Subtitles:** sync and size. **Title + underline** layout. **English only.** Animation never frozen. Overall fit to the script |
 >
@@ -28,10 +28,10 @@ Self-checks (this bot) run **before** each handoff to QA, then the independent Q
 - Animation: `../scripts/qa/static_runs.py file.mp4` (runs of near-identical frames >=5 frames, `TH` env threshold), `../scripts/qa/dup_frames.py` (dup ratio per scene; edit `cuts`), `../scripts/qa/bg_jitter.py file.mp4 "[(y0,y1,x0,x1)]"` (background must not jitter), start vs end frame of each scene must differ (no loop).
 - Order: contact sheet of every scene's midpoint frame; each picture must match the subtitle at that moment.
 - Version diff: `../scripts/qa/compare_versions.py old.mp4 new.mp4` proves a fix changed only the intended frames; also compare audio PCM MD5 (`ffmpeg -i f.mp4 -map 0:a -f md5 -`).
-- Per-part (stage 1): last frame ≈ `partN_end.jpg`; A→B seam continuous (Grok); height > width; no baked-in letters.
+- Per-part (stage 1): last frame ≈ `partN_end.jpg`; A→B seam continuous (Grok); height > width; no baked-in letters; prompt was written from the actual sketches; timed beats listed; clip progress roughly matches beat windows.
 
 ## Stage 1 — Per-part clip QA (after generate / join)
-Send to **QA סרטונים** with: absolute path of `gen/partN.mp4`, part number, path to `scenes/partN_end.jpg`, previous part end path if continuous, list of what changed, and **which generator / resolution** (Flow 720p vs Grok 480p join).
+Send to **QA סרטונים** with: absolute path of `gen/partN.mp4`, part number, path to `scenes/partN_start.jpg` + `scenes/partN_end.jpg`, path to **`prompts/partN.txt`** (with timed beats), previous part end path if continuous, list of what changed, and **which generator / resolution** (Flow 720p vs Grok 480p join).
 
 - **Google Flow:** generate **directly at 720p** (Veo 3.1 Lite). **No 480p test. No Real-ESRGAN.** QA **watches the 720p clip right away**.
 - **Grok Imagine:** QA watches the **480p** A+B join first; upscale comes only after this pass.
@@ -44,6 +44,8 @@ QA must **watch** the clip and report pass/fail on:
 - Aspect **9:16** (height > width)
 - One-way motion; **no loop**, **no reverse**, **no zoom**, locked camera
 - Last frames match the **end sketch**
+- **Followed the transition prompt** (elements and positions match what the sketches + prompt describe; no invented cast / wrong side / wrong prop)
+- **Timed beats present and consistent with both images**; clip timing compared against the beat windows (first beat ≈ start state; last beat settles on end)
 - Continuity with previous part (when the beat continues)
 
 Fail → fix that part → QA again. **Do not** upscale (Grok) or start part N+1 until stage-1 QA passes (unless the user explicitly asks to continue drafting while a part is in rework — still no delivery).

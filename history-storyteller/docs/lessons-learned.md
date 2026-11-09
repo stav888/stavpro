@@ -19,11 +19,13 @@ Sources: user feedback on frames/layout, Flow/Grok process decisions, Garbo QA r
 | **8 s Flow limit** | Flow/Veo start→end is max **8 s** (4/6/8 only). Longer narration forced stretch or bad cuts. | Write narration ≤~18–20 words / ≤8 s per part; rewrite or **split**; next start matches previous end; never stretch audio. |
 | **Regenerate vs upscale** | Re-running at 720p after a good 480p take produced **different motion**, not the same take sharper. | QA at **480p** → upscale approved clip with Real-ESRGAN to **720×1280**; regenerate 720p only if upscale is soft/broken, then full QA again. |
 | **Garbo contact sheet** | Midpoint frames must match the spoken line; order mistakes and frozen/looped motion failed QA (Garbo took v1–v9). | After render, inspect a **contact sheet of every part's midpoint**; confirm visual ↔ subtitle; no loop/freeze/zoom; send full video to QA סרטונים until pass. |
+| **Prompt vs actual sketches** | A transition prompt written only from the script idea can contradict the generated start/end (wrong side, wrong prop, extra characters) or lack timing, so the clip drifts. | Write / rewrite `prompts/partN.txt` **after** the sketches exist, from what the images show; include **timed beats**; check against both images before generate; rewrite if a sketch changes; QA compares clip timing to the beats ([`scene-by-scene-production.md`](scene-by-scene-production.md) §1b). |
 
 ### Checklist before the next story
 - [ ] Re-read this file (and any newer entries below).
 - [ ] Script table: N parts ≤8 s each; 9:16; English-only overlays planned via `build.py`.
 - [ ] Sketches: refs from `reference-images/`; large art; no text; start/end pairs only.
+- [ ] Transition prompts: written **after** sketches from the actual images + timed beats; prompt-check before generate.
 - [ ] Clips: Flow ≤8 s or Grok 2×4 s chain; 480p QA → upscale; QA at every stage ([`qa.md`](qa.md)).
 - [ ] After delivery: append a new dated entry (faults, fixes, SEO when known).
 
