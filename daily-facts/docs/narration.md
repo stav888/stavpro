@@ -27,7 +27,7 @@
 
 ## Legacy voices (kept for reference)
 - **Pocket TTS clone** of the channel's original narrator (Petra, Oct 2026): `scripts/voice/legacy_pocket_tts_clone.py`, best of 4 seeds by ASR match and Resemblyzer speaker similarity, then `atempo=0.9`. Gated HF model, slower on CPU, retired for Kokoro.
-- Edge-TTS / Google TTS / Piper / Chatterbox were tested early and not used for this channel.
+- Edge-TTS (`en-GB-SoniaNeural`, -8% rate) narrated the Giza Short (Flow test, early Nov 2026); Google TTS / Piper / Chatterbox were tested and not used.
 
 ## No music
 The approved design is narration only, no music (exception: the Alexandria test on 2026-10-24 used gentle music at the user's request). The Flow clips' own ambience is mixed very low and ducked under the voice.

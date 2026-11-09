@@ -11,8 +11,8 @@
 | `hanging-gardens-02-middle.jpg` | Hanging Gardens | final @27 s | close-up still life (note: an em dash still appears here; made before the no-dash rule) |
 | `hanging-gardens-03-late.jpg` | Hanging Gardens | final @52 s | golden light / sparkle mood |
 | `petra-01-hook.jpg` .. `petra-03-late.jpg` | Petra (published) | final @2/22/42 s | earlier serif subtitle style and title card |
-| `dancing-plague-01-hook.jpg` .. `-03-late.jpg` | Dancing Plague 1518 (published) | final @2/25/48 s | earlier small centred subtitles, crowd scenes |
+| `giza-01-hook.jpg` .. `giza-03-late.jpg` | Great Pyramid of Giza (published) | final @2/24/45 s | serif title card, earlier centred serif subtitles, desert palette |
 | `alexandria-01-early.jpg`, `alexandria-02-late.jpg` | Alexandria (test) | 12 s test cut @2/9 s | lighthouse, library; no subtitles |
 | `olmec-krea-s01.jpg`, `-s07`, `-s13` | Olmec heads (in progress) | Krea picks (trained style) | raw stills before animation |
 
-Current subtitle style = Derinkuyu / Hanging Gardens (bold white, low, one highlight colour). Petra / Dancing Plague frames show the older style and are kept for the art look only.
+Current subtitle style = Derinkuyu / Hanging Gardens (bold white, low, one highlight colour). Petra / Giza frames show the older subtitle style and are kept for the art look only.

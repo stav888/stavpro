@@ -7,9 +7,9 @@ Channel: **Daily Facts Arete** (YouTube Shorts, https://www.youtube.com/@Daily_F
 ## What the videos look like
 17 vertical 9:16 frames from 6 videos are in [`reference-images/`](reference-images/README.md).
 
-| Derinkuyu | Hanging Gardens | Petra | Dancing Plague 1518 | Olmec (Krea pick) |
+| Derinkuyu | Hanging Gardens | Petra | Great Pyramid (Giza) | Olmec (Krea pick) |
 | :---: | :---: | :---: | :---: | :---: |
-| ![Derinkuyu](reference-images/derinkuyu-01-hook.jpg) | ![Hanging Gardens](reference-images/hanging-gardens-01-hook.jpg) | ![Petra](reference-images/petra-02-middle.jpg) | ![Dancing Plague](reference-images/dancing-plague-02-middle.jpg) | ![Olmec](reference-images/olmec-krea-s07.jpg) |
+| ![Derinkuyu](reference-images/derinkuyu-01-hook.jpg) | ![Hanging Gardens](reference-images/hanging-gardens-01-hook.jpg) | ![Petra](reference-images/petra-02-middle.jpg) | ![Great Pyramid](reference-images/giza-02-middle.jpg) | ![Olmec](reference-images/olmec-krea-s07.jpg) |
 | *9:16* | *9:16* | *9:16* | *9:16* | *9:16* |
 
 ## Channel rules
@@ -110,7 +110,7 @@ scripts/qa/             verify_subtitle_sync.py, contact_sheet.sh
 scripts/metadata/       make_metadata.py
 requirements/           requirements-kokoro.txt, requirements-video.txt, requirements-flow.txt, requirements-legacy-pocket.txt, system-deps.md
 reference-images/       17 frames from 6 videos + README
-examples/               published links + Derinkuyu / Hanging Gardens / Petra / Dancing Plague / Olmec inputs
+examples/               published links + Derinkuyu / Hanging Gardens / Petra / Giza / Olmec inputs
 ```
 Scripts are the real ones from the Derinkuyu and Hanging Gardens builds, with machine paths turned into env vars or arguments. Some values are per video (scene count, lock mask in scene 3, spot-check times in `verify_subtitle_sync.py`). `join_narration.py` was rebuilt to the exact spec of the Derinkuyu narration fix because the original one-off script was not kept; it was tested on the Derinkuyu lines.
 
