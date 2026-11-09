@@ -47,7 +47,7 @@ The model facts below were read with `list_models(category="video")` and `get_mo
 > ### Approval, then produce part by part
 > 0. **Before any sketches:** present the full **part-by-part script table** with up-front `This script = N parts / N clips, ~T s` (and Flow-equivalent credit note if relevant). Part count = clip count = start+end pairs. Columns: part #, narration, words, est. s ≤8, start/end ideas. Proposed total ~50 s – ~1.5 min (~7–11 parts). Wait for approval. Narration written to fit ≤8 s/part; never stretch audio.
 > 1. Show the user **part 1** as the sample: `part1_start.jpg` + `part1_end.jpg` + `prompts/part1.txt` (and a composited approval sample via [`../../scripts/video/preview_frame.py`](../../scripts/video/preview_frame.py) from the start frame). Wait for explicit approval ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)).
-> 2. After approval, for each part **in order** (1, then 2, then 3…): check the pair → generate that part's clip (start [+ end if supported] + prompt) → verify the clip → only then move to the next part.
+> 2. After approval, for each part **in order** (1, then 2, then 3…): check the pair → generate that part's clip (start [+ end if supported] + prompt) → self-verify → **QA סרטונים watches** the clip → only then move to the next part. If the model outputs **≥720p**, treat like Flow (QA at native res, **no** Real-ESRGAN). If max output is **below 720p**, treat like Grok (QA → upscale → sharpness QA).
 > 3. Spend video credits **only** on approved parts, one clip per part. Use `preflight: true` for any cost question.
 
 
@@ -169,7 +169,7 @@ The LTX-2 variant: `"model": "lightricks/ltx-video-2-19b"`, with no `end_image` 
 ## 5. Rules
 - **Never buy credits, plans or compute packs.** If the connector suggests showing plans after an out-of-credits error, don't. Just report it to the user.
 - Generate only approved parts. Use `preflight` for any cost question.
-- Same rules after generation as every option: one-direction motion, no loop/zoom/pan, RIFE to 24 fps, 1080x1920 layout, QA.
+- Same rules after generation as every option: one-direction motion, no loop/zoom/pan, **QA watches each part** ([`../qa.md`](../qa.md)), RIFE to 24 fps, 1080x1920 layout, **full-video QA** before delivery. Sub-720p → Real-ESRGAN after part QA; ≥720p → no upscale.
 
 ## 6. Fallback: web UI in box Chrome
 Use this when the connector is unavailable or a model is only in the web app. Labels may change.

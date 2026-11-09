@@ -1,6 +1,8 @@
 # Real-ESRGAN upscale to 720×1280 (standalone)
 
-Use this on **any** approved vertical clip from **any** generator (Grok Imagine, Google Flow, Krea, Hugging Face) when you want 720p without regenerating the motion.
+Use this on **approved vertical clips whose native output is below 720p** — primarily **Grok Imagine**, and other tools (some Krea / HF models) with max output under 720p — when you want 720p without regenerating the motion.
+
+> **Not for Google Flow.** Veo 3.1 Lite already generates at **720p**. Flow has **no 480p test** and **no Real-ESRGAN step**; QA watches the 720p clip immediately ([`video-generators/google-flow.md`](video-generators/google-flow.md)).
 
 Licence: **Real-ESRGAN** is **BSD-3-Clause** ([xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN)). The portable `realesrgan-ncnn-vulkan` binary is MIT ([xinntao/Real-ESRGAN-ncnn-vulkan](https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan)); we list Real-ESRGAN (BSD-3) in the base-repos table.
 
@@ -67,7 +69,7 @@ ffprobe -v error -select_streams v:0 \
 Visual: open a mid frame and the last frame; line art should stay sharp (not smeared). If soft/broken → regenerate at native 720p + full QA.
 
 ## After upscale
-Continue the normal pipeline: RIFE 24 fps retime (`scripts/video/rife_eq.py`), jolt fixes, `build.py` into 1080×1920, QA.
+**QA stage 2** — send the 720p file to **QA סרטונים** for a short **sharpness** check ([`qa.md`](qa.md)). Then continue: RIFE 24 fps retime (`scripts/video/rife_eq.py`), jolt fixes, `build.py` into 1080×1920, **QA stage 3** on the full video.
 
 ## Grok Imagine chain
 For Grok's two×4 s chain, join first, QA the 480p join, then upscale — see [`video-generators/grok-imagine.md`](video-generators/grok-imagine.md) § Per-part chained workflow. `chain_and_upscale.sh` calls this upscale script.

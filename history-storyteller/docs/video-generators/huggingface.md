@@ -38,7 +38,7 @@ Slow continuous one-direction motion: <what moves and in which direction from th
 - Prompt: `Slow continuous one-direction motion: Xiaohei walks toward the Eiffel Tower and raises his arm to point at the top. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same tower and character. no text, no letters, no captions.`
 
 ### Approval, then produce part by part
-Show **part 1** (start + end + prompt) for approval. After approval: per part in order — check the pair → upload start (+ last image) + prompt → generate → verify → next part.
+Show **part 1** (start + end + prompt) for approval. After approval: per part in order — check the pair → upload start (+ last image) + prompt → generate → self-verify → **QA סרטונים watches** the clip → if output is below 720p, upscale after QA pass (same as Grok; see [`../upscale-real-esrgan.md`](../upscale-real-esrgan.md)) → next part. HF is usually sub-720p, so expect the **480p-style test + upscale** path, not Flow's direct 720p.
 
 ## Steps (labels may change)
 1. Open the Space page in box Chrome (signed in) and wait until it shows "Running".
@@ -46,8 +46,9 @@ Show **part 1** (start + end + prompt) for approval. After approval: per part in
 3. Paste the transition prompt from `prompts/partN.txt` (one-direction motion, locked static camera, no zoom, no pan, no text, no letters, no captions). Start stills must be illustration-only with large Xiaohei filling most of the width. Keep the default negative prompt (it already discourages static frames and subtitles).
 4. Set the duration to fit the part slot (short clips are fine, since RIFE retimes them). Leave steps at 6.
 5. Generate. If it's queued or the quota is exceeded, wait or stop; don't pay for compute.
-6. **Download** the MP4 to `/home/box/Downloads/`, then move it to `/workspace/<story>/gen/partN.mp4`. Check the last frame against `partN_end.jpg`, then move to the next part.
-7. After all parts: RIFE + layout.
+6. **Download** the MP4 to `/home/box/Downloads/`, then move it to `/workspace/<story>/gen/partN.mp4`. Check the last frame against `partN_end.jpg`.
+7. Send to **QA סרטונים** (watches the part). On pass: if below 720p, Real-ESRGAN upscale + sharpness QA; then RIFE. Then move to the next part.
+8. After all parts: RIFE (if not done) + `build.py` layout → **full-video QA** before delivery.
 
 ## Limits and cost
 - Free-ish: runs on ZeroGPU with a per-account daily GPU quota. Long or high-step runs use more quota.

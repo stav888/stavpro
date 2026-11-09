@@ -7,6 +7,14 @@
 **Fallback only:** the [gflow-cli](https://github.com/ffroliva/gflow-cli) MCP server (below) — use it **only** when the browser route has a **fault** or **no access** (Chrome won't open, Flow won't load, login/session broken and can't be fixed in-browser, downloads fail repeatedly, or the page is unusable). Do **not** start with MCP when the browser works.
 
 - Method used before (Daily Facts videos): **Veo 3.1 Lite, 720p, 9:16, a start frame and an end frame per clip, ~10 Flow credits per clip.**
+
+> ## 🎯 Flow resolution — 720p direct (no 480p test, no upscale)
+> Google Flow / **Veo 3.1 Lite already outputs 720p**. There is **no low-res test** and **no Real-ESRGAN upscale** on the Flow path.
+> 1. Generate the part at **720p / 9:16** (duration 4 / 6 / 8 s).
+> 2. Download to `gen/partN.mp4`.
+> 3. Self-verify, then send to **QA סרטונים** — it **watches the 720p clip immediately** (seam/continuity N/A for single take; glitches, distortions, extra limbs, baked-in text, 9:16, one-way / no loop / no zoom, match `partN_end.jpg`).
+> 4. On pass → RIFE retime. On fail → fix / regenerate → QA again.
+> 5. The **480p → QA → upscale → sharpness QA** path is for **Grok Imagine** (and other tools whose max output is below 720p) only — see [grok-imagine.md](grok-imagine.md) and [`../upscale-real-esrgan.md`](../upscale-real-esrgan.md). **Do not** run `upscale_720p.sh` on Flow clips.
 - gflow-cli on the box (fallback tooling):
   - Installed: v0.92.1 at `/home/box/.local/bin/gflow` (also available as `gflow-cli`). Source and docs: `/workspace/gflow-cli` (`docs/MCP.md`, `docs/CONFIGURATION.md`).
   - Licence MIT, alpha, reverse-engineered. Not affiliated with Google.
@@ -48,8 +56,8 @@ For **each** part make **exactly one** matched pair:
 > ### Approval, then produce part by part
 > 0. **Before any sketches:** present the full **part-by-part script table** with up-front summary: `This script = N parts / N clips, ~T s. Flow estimate: N × ~10 ≈ C credits (Veo 3.1 Lite).` (part count = clip count = start+end pairs). Columns: part #, narration English, words ≤~20, est. s ≤8, start-frame idea, end-frame idea. Proposed total ~50 s – ~1.5 min (~7–11 parts). Wait for approval ([script-writing](../script-writing.md)). Narration written to fit ≤8 s/part; never stretch audio.
 > 1. Show the user **part 1** as the sample: `part1_start.jpg` + `part1_end.jpg` + `prompts/part1.txt` (and a composited approval sample via [`../../scripts/video/preview_frame.py`](../../scripts/video/preview_frame.py) from the start frame). Wait for explicit approval ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)).
-> 2. After approval, for each part **in order** (1, then 2, then 3…): check the pair → generate that part's clip with **start + end + transition prompt** → verify the clip (one-way motion, locked camera, 9:16, no baked-in text) → only then move to the next part.
-> 3. Spend video credits **only** on approved parts, one clip per part.
+> 2. After approval, for each part **in order** (1, then 2, then 3…): check the pair → generate that part's clip at **720p** with **start + end + transition prompt** → self-verify → **QA סרטונים watches the 720p clip** → only then move to the next part.
+> 3. Spend video credits **only** on approved parts, one clip per part. **No 480p test. No Real-ESRGAN.**
 
 
 > ## ⚠️ Aspect ratio 9:16 is mandatory
@@ -233,4 +241,4 @@ Image sketch call (free still; always force 9:16 + classic):
 - `gflow image t2i --aspect 9:16 --ui-mode classic --profile <profile> "prompt" --out-dir ./scenes`
 - `gflow credits list` / `gflow credits user --profile <profile>` (free)
 
-After any route: RIFE retime + `build.py` layout (see [README](README.md)).
+After any route: **QA watches the 720p part clip** ([`../qa.md`](../qa.md)) → RIFE retime → (after all parts) `build.py` layout → **QA watches the full video** before delivery (see [README](README.md)).

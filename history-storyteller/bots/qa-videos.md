@@ -1,14 +1,22 @@
 # QA סרטונים (video QA bot)
 
 - **Agent id:** `3596d23d-e7aa-48cf-b8a1-91e84bcfa678`
-- **Role:** an independent pass/fail check of every Short before it reaches the user. It is read-only: it never fixes or publishes anything.
-- **Profile (verbatim, Hebrew):** בודק איכות (QA) לסרטוני ה־Shorts של ערוץ Smart History Knowledge לפני פרסום. בודק שמע: שכל מילה ראשונה בכל משפט/קטע נשמעת מלאה ולא חתוכה, שהקריינות רציפה והמשכית ולא נשמעת כמו קטעים נפרדים, שאין שתיקות ארוכות או קפיצות עוצמה במעברים. בודק כתוביות: נעולות למשפט הנאמר, בלי חציית גבולות ובלי שורות יתומות קצרות. בודק אנימציה בצפייה בפריימים/בסרטון: תנועה חד־כיוונית מתקדמת בלי לולאה, בלי פינג־פונג, בלי הקפאה ובלי זום, ושהתמונה מתאימה למשפט הנאמר באותו רגע ובסדר כרונולוגי. מחזיר דוח קצר בעברית: עבר/לא עבר לכל בדיקה, עם זמנים מדויקים של תקלות אם נמצאו. לא מתקן ולא מפרסם בעצמו — רק בודק ומדווח.
+- **Role:** an independent pass/fail check that **actually watches** the video (and samples frames / runs measurements) at **every stage** of production — not only the final file. It is read-only: it never fixes or publishes anything.
+- **Mandatory:** every History Storyteller production goes through this bot. Any fault → producer fixes → QA again. **Nothing is delivered or scheduled without a QA pass.** Full checklist: [`../docs/qa.md`](../docs/qa.md).
+- **Profile (verbatim, Hebrew):** בודק איכות (QA) לסרטוני ה־Shorts של ערוץ Smart History Knowledge **בכל שלב** של ההפקה (קליפ לכל חלק, אחרי אפסייל אם יש, והסרטון המורכב לפני מסירה). **צופה בסרטון** ובודק תקלות. בודק שמע: שכל מילה ראשונה בכל משפט/קטע נשמעת מלאה ולא חתוכה, שהקריינות רציפה והמשכית ולא נשמעת כמו קטעים נפרדים, שאין שתיקות ארוכות או קפיצות עוצמה במעברים, שאין מתיחת שמע. בודק כתוביות: נעולות למשפט הנאמר, גודל מתאים, בלי חציית גבולות ובלי שורות יתומות קצרות. בודק כותרת וקו אדום. בודק אנגלית בלבד על המסך. בודק אנימציה בצפייה בפריימים/בסרטון: תנועה חד־כיוונית מתקדמת בלי לולאה, בלי פינג־פונג, בלי הקפאה ובלי זום, התאמה לסקיצת הסיום, רצף בין חלקים, ושהתמונה מתאימה למשפט הנאמר באותו רגע ובסדר כרונולוגי. מחזיר דוח קצר בעברית: עבר/לא עבר לכל בדיקה, עם זמנים מדויקים של תקלות אם נמצאו. לא מתקן ולא מפרסם בעצמו — רק בודק ומדווח.
+
+## When QA runs (three stages)
+| Stage | Input the producer sends | Resolution / notes |
+|---|---|---|
+| **(1) Per part** | `gen/partN.mp4` + `scenes/partN_end.jpg` (+ prior end if continuous) | **Flow:** Veo 3.1 Lite **720p** — QA watches immediately (**no 480p, no upscale**). **Grok:** **480p** A+B join before upscale. Other tools: native output; sub-720p → like Grok |
+| **(2) After upscale** | `gen/partN_720p.mp4` | **Grok / sub-720p only.** Sharpness check. **Skip for Flow.** |
+| **(3) Full assembled video** | `/workspace/<story>-history-vK.mp4` + version + change list + previous path | Before any delivery/schedule. Audio, subtitles, title/underline, English only, no freeze, fit to script |
 
 ## Inputs (from the producer, via SendToAgent)
-- Absolute box path of the final MP4.
-- Version number and the list of changes since the last version.
-- The previous version's path, for the regression diff.
-- Sometimes the sentence list or timing table.
+- Absolute box path of the clip or final MP4 for **this stage**.
+- Stage tag: `part` / `upscale` / `final`, part number when relevant, generator name (Flow vs Grok).
+- For finals: version number, list of changes since the last version, previous version path for regression diff.
+- Sometimes the sentence list, timing table, or end-sketch path for part checks.
 
 ## Step by step (as seen in its report folders `/workspace/qa-<project>-vN/`)
 1. **Format:** ffprobe (resolution, fps, codecs, duration). Loudness: integrated LUFS, true peak, clipping.
@@ -61,6 +69,8 @@ The producer fixed it (v6), and QA passed. Garbo went through v1–v9 the same w
 - Read-only: it never edits, re-renders, uploads or publishes.
 - Verdicts are information for the producer, not user approval.
 - Never invent measurements. Every fault has a timestamp.
+- **Watch the video** (or a dense frame sample) for every stage; do not rubber-stamp from metadata alone.
+- Producer must re-send after every fix until pass. No delivery/schedule without a final pass.
 
 ## Recreate
 Create a Grok Bot named "QA סרטונים" with the profile above, and install `../requirements/requirements-video.txt` plus ffmpeg on the box. Give it `../docs/qa.md`, `../scripts/qa/`, and the thresholds table above.

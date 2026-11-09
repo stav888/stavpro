@@ -19,10 +19,10 @@
 6. **Timing:** faster-whisper ASR, then a sentence table, then subtitle chunks.
 7. **Animation:** GenerateVideo image-to-video per scene, one-way motion. RIFE 4.7 retime to the slot, then jolt fixes. Never loop, hold, zoom or pan.
 8. **Compose** with `build.py`: title, counter, sentence-locked Patrick Hand subtitles.
-9. **Self-QA**, then send to **QA סרטונים**. Fix and bump the version (vN+1) until it passes.
+9. **QA at every stage** (mandatory — QA סרטונים **watches**): (1) each part clip — Flow **720p direct** (no 480p/upscale); Grok **480p** join then upscale + sharpness QA; (2) after upscale when used; (3) full assembled video. Fix and re-send until pass. Nothing delivered/scheduled without a final pass (`../docs/qa.md`).
 10. **Metadata and slot** from **YouTube SEO**.
 11. **User approval** of video, metadata and time. Then host the MP4 on `stav888/video-hosting` (commit-pinned raw URL) and create the Buffer `create_post`.
-12. **After publish:** a routine deletes the hosted MP4 (the folder stays) and the video ID goes to the SEO bot.
+12. **After publish:** a routine deletes the hosted MP4 (the folder stays) and the video ID goes to the SEO bot. Append `../docs/lessons-learned.md` (QA faults, user feedback, fixes; SEO when known) and read it before the next story.
 
 ## Tools, connectors, skills
 - Grok Bot built-ins: GenerateImage, GenerateVideo, SendToAgent, routines.
@@ -31,7 +31,7 @@
 - Connectors: Buffer MCP.
 - Skills: `xiaohei-history-shorts`, `youtube-video-seo`, `routines`.
 
-## Checks before handing to QA
+## Checks before handing to QA (every stage)
 ffprobe format, loudness, first-word ASR and RMS, subtitle 0 crossings, static/duplicate-frame runs, background jitter, start ≠ end frame per scene, midpoint contact sheet vs subtitles, and a version diff (`../docs/qa.md`).
 
 ## Outputs

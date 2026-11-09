@@ -65,11 +65,14 @@ Animating `partN_start.jpg` for 4 s and `partN_end.jpg` for 4 s as separate take
 
 ### 480p test → local upscale to 720p (do not regenerate)
 
+> This **480p → QA → Real-ESRGAN → sharpness QA** path is for **Grok Imagine** (and other tools whose max output is below 720p). **Google Flow does not use it** — Flow generates at 720p directly and QA watches that clip immediately ([google-flow.md](google-flow.md)).
+
 1. Generate and join the part at **480p** first.
-2. **QA** the joined 480p part: continuity at the A→B seam, no glitches, Xiaohei style, vertical **9:16**, illustration only (no baked-in text).
+2. **QA stage 1:** send the joined 480p part to **QA סרטונים** (it **watches**): continuity at the A→B seam, no glitches/distortions/extra limbs, Xiaohei style, vertical **9:16**, illustration only (no baked-in text), one-way / no loop / no zoom, last frame ≈ `partN_end.jpg`.
 3. After QA passes, **do not** regenerate the same part at 720p — a new generation produces **different motion**, not the same take sharper.
-4. Instead **upscale** the approved 480p join locally to **720×1280** with **Real-ESRGAN** (anime/illustration model `realesr-animevideov3`), then RIFE to 24 fps as usual, then a short QA sharpness check.
-5. Regenerate at 720p **only** if the upscale looks soft or broken; then run full QA again.
+4. Instead **upscale** the approved 480p join locally to **720×1280** with **Real-ESRGAN** (anime/illustration model `realesr-animevideov3`).
+5. **QA stage 2:** short sharpness check on the upscaled clip. Then RIFE to 24 fps as usual.
+6. Regenerate at 720p **only** if the upscale looks soft or broken; then run full QA again.
 
 Helper scripts:
 - [`../../scripts/video/chain_and_upscale.sh`](../../scripts/video/chain_and_upscale.sh) — `extract-last`, `join`, `upscale`, or `all` (A+B → joined → 720p).

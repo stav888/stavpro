@@ -7,9 +7,10 @@ Related docs:
 - Narration (Chatterbox): [`narration.md`](narration.md)
 - Style, pairs, RIFE: [`images-and-animation.md`](images-and-animation.md)
 - Generators: [`video-generators/README.md`](video-generators/README.md) · [Grok Imagine](video-generators/grok-imagine.md) · [Google Flow](video-generators/google-flow.md) · [Krea](video-generators/krea.md) · [Hugging Face](video-generators/huggingface.md)
-- Upscale (standalone): [`upscale-real-esrgan.md`](upscale-real-esrgan.md)
+- Upscale (standalone, **Grok / sub-720p only**): [`upscale-real-esrgan.md`](upscale-real-esrgan.md)
 - Subtitles / assemble: [`subtitles-and-build.md`](subtitles-and-build.md)
 - QA / publish: [`qa.md`](qa.md) · [`publishing-buffer.md`](publishing-buffer.md)
+- Continuous improvement: [`lessons-learned.md`](lessons-learned.md)
 
 **Hard rules (always):**
 - Vertical **9:16** only (e.g. 1080×1920). Never 16:9.
@@ -17,6 +18,9 @@ Related docs:
 - The name **"Xiaohei"** may appear **only inside image/video prompts**. Never in narration, subtitles, title, or YouTube metadata. The black character plays the real person of that story.
 - One continuous **one-way** action per part. Locked camera. No zoom, pan, loop, reverse, or freeze >0.3 s.
 - Each part ≤ **8 s** (Flow durations **4 / 6 / 8**). Narration ≈ **18–20 English words** max per part. Never stretch audio.
+- **QA at every stage:** send every part clip and the final video to **QA סרטונים**, which **watches** for faults. Fix → QA again. Nothing delivered/scheduled without a QA pass. See [`qa.md`](qa.md).
+- **Continuous improvement:** every production better than the last. After each video append [`lessons-learned.md`](lessons-learned.md); read it before the next story.
+- **Flow = direct 720p:** Google Flow / Veo 3.1 Lite generates at **720p** with **no 480p test** and **no Real-ESRGAN upscale**. QA watches the 720p clip immediately. The 480p → upscale path is **Grok Imagine only** (and other tools whose max output is below 720p).
 
 ---
 
@@ -236,14 +240,15 @@ Do this **after** the user has approved the part-by-part script table ([`script-
    - Check pair side by side vs refs; regenerate drift; verify height > width.
 4. **Write `prompts/partN.txt`** (video transition prompt only; the image prompts can live in part notes).
 5. **Generate the clip** for that part only:
-   - **Flow (browser-primary):** upload start + end, paste prompt, Veo 3.1 Lite, **9:16**, duration 4|6|8 s (≤8). MCP only on browser fault / no access.
-   - **Grok Imagine (default):** two chained **4 s** clips at **480p** (clip A from start → last frame → clip B continuing); end sketch = check target only; join → QA → `scripts/video/upscale_720p.sh` (or `chain_and_upscale.sh`) to **720×1280**. Do **not** regenerate at 720p unless upscale is soft.
-   - **Krea (MCP-primary):** start + prompt (start/end models when available); end sketch = check target for start-only models. Browser fallback only after user choice.
-   - **HF Wan:** start (+ optional last image) + prompt in the Space browser UI.
-6. **Verify the clip:** 9:16; no baked-in text; one-way motion; locked camera; last frame matches end sketch closely; continuity with previous part; no loop/zoom.
-7. **RIFE** to true 24 fps continuous motion (`scripts/video/rife_eq.py`), then jolt fixes if needed. Never interpolate across a cut.
-8. **Retime** the part to its narration slot (motion-equalized one-way).
-9. Only then move to **part N+1**.
+   - **Flow (browser-primary):** upload start + end, paste prompt, Veo 3.1 Lite **720p**, **9:16**, duration 4|6|8 s (≤8). **No 480p test. No Real-ESRGAN upscale.** MCP only on browser fault / no access.
+   - **Grok Imagine (default):** two chained **4 s** clips at **480p** (clip A from start → last frame → clip B continuing); end sketch = check target only; join → **QA stage 1** → `scripts/video/upscale_720p.sh` (or `chain_and_upscale.sh`) to **720×1280** → **QA stage 2** sharpness. Do **not** regenerate at 720p unless upscale is soft. (Same 480p→upscale pattern for any other tool whose max output is below 720p.)
+   - **Krea (MCP-primary):** start + prompt (start/end models when available); end sketch = check target for start-only models. Browser fallback only after user choice. If output is already ≥720p, skip upscale; if below 720p, use the Grok-style 480p→upscale path.
+   - **HF Wan:** start (+ optional last image) + prompt in the Space browser UI; treat sub-720p output like Grok (QA then upscale).
+6. **Self-verify the clip**, then **QA stage 1** — send the part clip to **QA סרטונים** (watches the video): 9:16; no baked-in text; one-way motion; locked camera; no loop/zoom; last frame matches end sketch; seam/continuity (Grok A→B); no glitches/distortions/extra limbs. **Flow:** QA watches the **720p** clip immediately. **Grok:** QA watches the **480p** join before upscale.
+7. **Upscale only if needed** (Grok / sub-720p): after stage-1 pass → Real-ESRGAN → **QA stage 2** sharpness. **Skip for Flow 720p.**
+8. **RIFE** to true 24 fps continuous motion (`scripts/video/rife_eq.py`), then jolt fixes if needed. Never interpolate across a cut.
+9. **Retime** the part to its narration slot (motion-equalized one-way).
+10. Only then move to **part N+1** (do not advance on a failed QA without a fix + re-pass, unless the user explicitly allows drafting ahead).
 
 Credit shortage (Flow / Krea) → stop and tell the user. Never buy plans or credits unless the user explicitly asks.
 
@@ -262,12 +267,13 @@ Credit shortage (Flow / Krea) → stop and tell the user. Never buy plans or cre
 
 Details: [`subtitles-and-build.md`](subtitles-and-build.md), [`narration.md`](narration.md).
 
-## 5b. Final QA → SEO → Buffer
+## 5b. Final QA → SEO → Buffer → lessons
 
-1. Self-QA scripts, then send the final file to the **QA סרטונים** bot and wait for pass ([`qa.md`](qa.md), [`../bots/qa-videos.md`](../bots/qa-videos.md)).
+1. Self-QA scripts, then **QA stage 3:** send the final file to the **QA סרטונים** bot (it **watches** the full video) and wait for pass ([`qa.md`](qa.md), [`../bots/qa-videos.md`](../bots/qa-videos.md)). Checks: audio (first words, pauses, no stretch, loudness), subtitle sync/size, title+underline layout, English only, animation never frozen, fit to script. Fail → fix → QA again. **Nothing delivered or scheduled without this pass.**
 2. **YouTube SEO** bot sets title / description / tags / schedule (no "Xiaohei" in metadata) ([`../bots/youtube-seo.md`](../bots/youtube-seo.md)).
 3. Only after the **user's own words** approve: host on `stav888/video-hosting` (commit-pinned raw URL) → Buffer `create_post` on Smart History Knowledge (category 27, public, madeForKids false, isAiGenerated true).
 4. After publish: cleanup hosted file; SEO adds tags.
+5. **Continuous improvement:** append a short entry to [`lessons-learned.md`](lessons-learned.md) (QA faults, user feedback, fixes; SEO performance when known). Read that log before the next video.
 
 Details: [`publishing-buffer.md`](publishing-buffer.md).
 
@@ -318,11 +324,12 @@ Copy for each part:
 [ ] scenes/partN_end.jpg — FROM start; same shot; only action progress
 [ ] Pair checked vs refs (style, size, no text, height > width)
 [ ] prompts/partN.txt written (motion only, locked camera, no text)
-[ ] Clip generated with the chosen tool (Flow ≤8 s / Grok 2×4 s 480p / Krea / HF)
-[ ] Clip verified (9:16, no text, one-way, matches end, continuity)
-[ ] Grok only: QA join → upscale_720p.sh → short sharpness check
+[ ] Clip generated (Flow ≤8 s @720p direct / Grok 2×4 s @480p / Krea / HF)
+[ ] Self-verify (9:16, no text, one-way, matches end, continuity)
+[ ] **QA stage 1** — QA סרטונים watched the part clip and passed (Flow: 720p; Grok: 480p join)
+[ ] Grok / sub-720p only: upscale_720p.sh → **QA stage 2** sharpness pass (skip for Flow 720p)
 [ ] RIFE 24 fps + retime to slot
 [ ] Ready for part N+1 (next start matches this end, if continuous)
 ```
 
-After all parts: build overlays → loudnorm −16 → QA bot → SEO → user approval → Buffer.
+After all parts: build overlays → loudnorm −16 → **QA stage 3** (full video watched) → SEO → user approval → Buffer → append [`lessons-learned.md`](lessons-learned.md).
