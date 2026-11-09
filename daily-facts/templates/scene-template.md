@@ -36,7 +36,7 @@ has progressed: ...>. Keep everything else identical. no text, no letters, no ca
 ```
 
 **Transition (fill LAST, after `partN_start.png` and `partN_end.png` both exist; motion only, timed beats):**
-Look at both images and describe exactly what turns the start image into the end image, using the elements, positions and props they show. Pick the layout for the clip length:
+Look at both images and describe exactly what turns the start image into the end image, using the elements, positions and props they show. Why: a second-by-second plan that matches both images leaves the generator nothing to guess, which prevents jumps, backward motion, freezes or stutter, objects vanishing or morphing, and an ending that misses the end image (Derinkuyu clip 4: prompt "stone door rolls shut", end frame a ventilation shaft -> morph). Pick the layout for the clip length:
 
 8 s
 ```

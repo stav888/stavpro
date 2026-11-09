@@ -78,6 +78,7 @@ The 480p test + Real-ESRGAN upscale applies **only to Grok Imagine and other too
 | 6 s | 0-1 s exactly the start image / 1-3 s / 3-5 s / 5-6 s settles exactly on the end image |
 | 4 s | 0-0.5 s exactly the start image / 0.5-2 s / 2-3.5 s / 3.5-4 s settles exactly on the end image |
 
+- **Why**: planning every second and matching the prompt to the start and end images leaves the generator nothing to guess. A vague or mismatched prompt is what causes lag and glitches in the clip: jumps, backward motion, freezes or stutter, objects vanishing or morphing, and an ending that does not match the end image. Example: Derinkuyu clip 4 asked for "a stone door rolls shut" while its end frame was a ventilation shaft, so the model had to invent a way between two unrelated images and morphed instead of moving.
 - **Check before generating**: read the prompt against both images (elements, positions, props, direction, light, end state) and fix any mismatch. QA Gate 0 checks it too.
 - **Any regenerated sketch -> rewrite the prompt** from the new images and check again.
 - Lesson from Derinkuyu: its motion prompts were written from the script, before looking at the picks, and several contradicted the images (clip 4 asked for "a stone door rolls shut" while its end frame was a ventilation shaft). See `../LESSONS-LEARNED.md`.

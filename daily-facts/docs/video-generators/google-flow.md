@@ -19,7 +19,7 @@ Rotate between all existing profiles to use their daily free credits. Check the 
 
 ## Inputs per part (Step 0 first)
 Every part N has one matched pair made before any credits are spent (see `../images-and-animation.md`):
-`scenes/partN_start.png` (Krea, trained style) and `scenes/partN_end.png` (image edit FROM the start frame), plus `prompts/partN.txt` with the motion only, **written after both images exist, from what they show, in timed beats** matching the clip length (8 s: 0-1 / 1-3 / 3-5 / 5-7 / 7-8 s; 6 s: 0-1 / 1-3 / 3-5 / 5-6 s; 4 s: 0-0.5 / 0.5-2 / 2-3.5 / 3.5-4 s; first beat = start image, last = end image). Never feed two independent stills.
+`scenes/partN_start.png` (Krea, trained style) and `scenes/partN_end.png` (image edit FROM the start frame), plus `prompts/partN.txt` with the motion only, **written after both images exist, from what they show, in timed beats** matching the clip length (8 s: 0-1 / 1-3 / 3-5 / 5-7 / 7-8 s; 6 s: 0-1 / 1-3 / 3-5 / 5-6 s; 4 s: 0-0.5 / 0.5-2 / 2-3.5 / 3.5-4 s; first beat = start image, last = end image). Why: when every second is planned and matches both images, Veo has nothing to guess, so no jumps, backward motion, freezes/stutter, vanishing or morphing objects, or an ending off the end image (Derinkuyu clip 4 asked for a door rolling shut toward a ventilation-shaft end frame and morphed). Never feed two independent stills.
 A part's narration is at most 8 s (~18-20 words max, plan ~16-18 at our Kokoro pace); a longer beat becomes two parts and part N+1 starts from part N's end frame.
 
 Old method (Derinkuyu, retired): 14 independent scene picks paired two by two (`s01`+`s02` -> clip 1). Kept in `../../examples/derinkuyu/` for reference.
