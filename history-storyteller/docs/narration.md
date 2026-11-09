@@ -1,6 +1,6 @@
 # 2. Narration (Chatterbox voice clone of Kokoro am_eric)
 
-Approved by the user on 2026-11-07 (sample: `lustig-clean-ending-v2b-quiet-pauses.mp3`, kept on the box at `/workspace/lustig/sample/`). Earlier videos used edge-tts `en-US-ChristopherNeural` -5%; that is **retired** (the old SKILL.md still describes it — ignore that section).
+Approved by the user on 2026-11-07 (sample: `lustig-clean-ending-v2b-quiet-pauses.mp3`, kept on the box at `/workspace/lustig/sample/`). Earlier videos used edge-tts `en-US-ChristopherNeural` -5%; that is kept as the legacy option in `../skills/xiaohei-history-shorts/SKILL-legacy-edge-tts.md` (comparison: `../skills/xiaohei-history-shorts/README.md`).
 
 ## Why this stack
 - Chatterbox TTS (Resemble AI, **MIT**) gives an energetic storyteller delivery.

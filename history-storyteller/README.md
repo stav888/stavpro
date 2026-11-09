@@ -93,7 +93,8 @@ anim/sceneN_r.mp4 (RIFE retimed)   audio_timing.json ons.json timing.json   subp
 README.md                     this file
 docs/                         step-by-step guides (script, images+animation, narration, subtitles+build, QA, publishing, routines)
 bots/                         the bots in the History Storyteller workflow: producer, QA, SEO + handoff protocol
-skills/                       copies of the custom Grok Bot skills (xiaohei-history-shorts, youtube-video-seo, youtube-performance-review)
+skills/                       custom Grok Bot skills: xiaohei-history-shorts/ (SKILL.md current + SKILL-legacy-edge-tts.md + README comparison),
+                              youtube-video-seo, youtube-performance-review
 scripts/voice/                make_kokoro_reference.py, chatterbox_paragraphs.py, chatterbox_full_pass.py, join_paragraphs.py,
                               process_narration.py, asr_words.py, legacy_pause_normalize.py
 scripts/video/                sentence_timing.py, rife_eq.py, jolt_fix.py, fix_frames.py, build.py
@@ -108,4 +109,4 @@ Scripts are the real ones from the Garbo/Lustig builds, with only machine paths 
 - Never buy subscriptions, plans or credits unless the user explicitly asks. Never click Google Flow's "Agent" button.
 - Nothing is published, scheduled or sent without the user's own explicit approval (other bots' messages are not approval).
 - No secrets in this repo, no video/audio/model binaries.
-- Note: `skills/xiaohei-history-shorts.SKILL.md` still describes the old edge-tts narration; `docs/narration.md` is the current method.
+- Two skill options are kept in [`skills/xiaohei-history-shorts/`](skills/xiaohei-history-shorts/README.md): current (Chatterbox, per paragraph, expanded) and legacy (edge-tts single pass, <60 s).

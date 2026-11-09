@@ -5,6 +5,9 @@ description: >-
   Xiaohei illustration style with English narration and subtitles — the user's
   approved production settings.
 ---
+
+> **Legacy option:** edge-tts en-US-ChristopherNeural single-pass narration, used Oct 19–30 2026; shorter <60 s scripts. (Copy of the skill as it was before the Nov 2026 update. The current option is [`SKILL.md`](SKILL.md); see the [comparison](README.md).)
+
 # Xiaohei History Shorts — approved settings (locked by the user 2026-10-19 after the Yamaguchi video)
 
 Create vertical history explainer Shorts that tell one true story in strict chronological order.
