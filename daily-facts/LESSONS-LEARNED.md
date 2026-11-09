@@ -13,7 +13,8 @@
 8. Flow clips drift/pan even when asked not to: say "static locked camera, no zoom, no pan" in every transition prompt, measure motion in QA, lock or re-roll.
 9. Use start/end **pairs made by editing the start frame** (not independent scenes), so seams are real continuations.
 10. Flow clips: generate **directly at 720p** and QA them right away; the 480p test + Real-ESRGAN upscale is only for Grok Imagine / tools without 720p.
-11. Publish only via **Buffer** with a temporary public GitHub raw URL, delete it after publish; set thumbnail in YouTube Studio; tags may need adding after approval.
+11. Write each transition prompt **last, from the finished start/end images**, in second-by-second beats (first beat = start image, last beat = end image, one one-way action); check it against both images before generating; rewrite it after any regen.
+12. Publish only via **Buffer** with a temporary public GitHub raw URL, delete it after publish; set thumbnail in YouTube Studio; tags may need adding after approval.
 
 ---
 
@@ -30,6 +31,7 @@ Pipeline: 14 Krea scenes (trained style) -> QA picks -> 7 Flow Veo 3.1 Lite clip
 | Subtitles (full cut QA) | line 10 card showed the next sentence while "forgotten" was spoken (card crossing a sentence boundary) | split the card at the full stop | phrase cards never cross sentences |
 | Picture (full cut QA) | camera pans/zooms measured in every clip (hundreds of px), not camera-locked | flagged; prompts must lock the camera | "static locked camera" in every transition prompt; measure in QA |
 | Picture (Krea) | scene 7 came out as a wooden door instead of a rolling stone door | regenerated with "no wood no wooden door" | negatives in words for known mistakes |
+| Prompts (found 2026-11-09) | the Flow motion prompts were written from the script before looking at the picks and contradicted the images: clip 3 (classroom -> stone door) asked for "stables, kitchens and storage rooms ... then a classroom"; clip 4 (stone door -> ventilation shaft) asked for "a stone door rolls shut ... close soft camera hold" | rule 11: prompt written last from the pair, timed beats, checked against both images | prompts must describe the images, not the script |
 | Flow | gflow-cli runs failed on download (exit 6) and UI drift (exit 23) on some clips | failed clips re-run separately until all 7 existed | browser first, CLI only as fallback |
 | Publishing | direct YouTube uploads were being deleted (see Hanging Gardens) | published via Buffer from a temporary public GitHub raw URL, temp file deleted after publish by a one-shot routine | Buffer route |
 | After publish | Buffer cannot set a thumbnail; tags may not come through | thumbnail set in YouTube Studio by the user; tags to add after his OK | remind both in the publish message |

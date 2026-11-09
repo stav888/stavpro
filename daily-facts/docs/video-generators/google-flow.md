@@ -19,7 +19,7 @@ Rotate between all existing profiles to use their daily free credits. Check the 
 
 ## Inputs per part (Step 0 first)
 Every part N has one matched pair made before any credits are spent (see `../images-and-animation.md`):
-`scenes/partN_start.png` (Krea, trained style) and `scenes/partN_end.png` (image edit FROM the start frame), plus `prompts/partN.txt` with the motion only. Never feed two independent stills.
+`scenes/partN_start.png` (Krea, trained style) and `scenes/partN_end.png` (image edit FROM the start frame), plus `prompts/partN.txt` with the motion only, **written after both images exist, from what they show, in timed beats** matching the clip length (8 s: 0-1 / 1-3 / 3-5 / 5-7 / 7-8 s; 6 s: 0-1 / 1-3 / 3-5 / 5-6 s; 4 s: 0-0.5 / 0.5-2 / 2-3.5 / 3.5-4 s; first beat = start image, last = end image). Never feed two independent stills.
 A part's narration is at most 8 s (~18-20 words max, plan ~16-18 at our Kokoro pace); a longer beat becomes two parts and part N+1 starts from part N's end frame.
 
 Old method (Derinkuyu, retired): 14 independent scene picks paired two by two (`s01`+`s02` -> clip 1). Kept in `../../examples/derinkuyu/` for reference.
@@ -27,7 +27,7 @@ Old method (Derinkuyu, retired): 14 independent scene picks paired two by two (`
 ## A. Default: Flow web UI in the box Chrome
 1. Open Chrome with a profile that still has credits (rotate between all existing profiles to use their daily free credits), go to Flow, open/create the story's project.
 2. Frames to video: upload `partN_start.png` as start and `partN_end.png` as end.
-3. Paste `prompts/partN.txt`. Model **Veo 3.1 Lite**, **9:16** (check it is selected), 4/6/8 s, 1 output. Classic composer; **never click Agent**.
+3. Re-read `prompts/partN.txt` against both uploaded images (elements, positions, props, direction, end state); fix any contradiction; make sure the duration you pick matches the beat layout. Paste it. Model **Veo 3.1 Lite**, **9:16** (check it is selected), 4/6/8 s, 1 output. Classic composer; **never click Agent**.
 4. Generate, preview, download to `<story>/clips/partN.mp4`.
 5. Verify: `ffprobe` height > width (720x1280); landscape = reject and redo. Compare the last frame with `partN_end.png` (`scripts/video/chain_parts.sh check clips/partN.mp4 scenes/partN_end.png`).
 6. Part 1 is the sample: stop after it for approval. Then continue part by part.

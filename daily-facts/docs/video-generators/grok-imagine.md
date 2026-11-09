@@ -15,7 +15,7 @@ Uses the Grok Bot subscription: a full video with bot-made clips used about 10% 
 
 ## Per-part chained workflow (option, from 2026-11-09)
 The 480p test + upscale below is specific to Grok Imagine (and any other tool without a 720p output). Flow clips are generated at 720p and never upscaled.
-Use when Flow credits are out or a part needs Grok's motion. Inputs are the same Step 0 pair (`partN_start.png`, `partN_end.png`) and transition prompt.
+Use when Flow credits are out or a part needs Grok's motion. Inputs are the same Step 0 pair (`partN_start.png`, `partN_end.png`) and the timed-beat transition prompt written from them (8 s layout: 0-1 / 1-3 / 3-5 / 5-7 / 7-8 s). Split it at 4 s: **clip A gets beats 0-4 s** (re-timed 0-1 / 1-3 / 3-4 s), **clip B gets beats 4-8 s** (re-timed 0-1 / 1-3 / 3-4 s, its first beat = A's last frame, its last beat settles on `partN_end`). Both halves stay one single one-way action.
 
 1. **Clip A, 4 s, 480p, 9:16** from `scenes/partN_start.png`. Prompt: the first half of the motion toward the end state + `static locked camera, no zoom, no pan, soft watercolor and thin ink lines stay steady, no text, no letters, no captions`. Save `gen/partN_a.mp4`.
 2. **Last frame of A**: `scripts/video/chain_parts.sh last gen/partN_a.mp4 gen/partN_a_last.png`.

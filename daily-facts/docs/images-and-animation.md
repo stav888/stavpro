@@ -12,7 +12,7 @@ Folder per story:
 scenes/partN.md          filled scene sheet (template)
 scenes/partN_start.png   start frame (Krea, trained style, 9:16)
 scenes/partN_end.png     end frame, made FROM partN_start.png by image edit
-prompts/partN.txt        transition prompt (motion only)
+prompts/partN.txt        transition prompt (motion only, timed beats), written LAST from the finished pair
 ```
 
 For every part, in order:
@@ -25,27 +25,23 @@ For every part, in order:
    ```
    QA picks the better variant -> `partN_start.png`.
 3. **End frame FROM the start frame**: an image-edit call with `partN_start.png` as the input image, aspect 9:16 (a Krea edit model that is free/non-blocked at the time, e.g. Flux Kontext; or Grok Bot `GenerateImage` in edit mode with the start frame attached). Prompt: "Same image, same camera, framing, scale, palette and watercolor ink style. Only change: <action progressed>. no text, no letters, no captions". Never a fresh, independent image.
-4. **Transition prompt** `prompts/partN.txt`: motion only, one direction, camera locked:
-   ```
-   Slow continuous one-direction motion: <what moves from the start state to the end state>. Static
-   locked camera, no zoom, no pan, no loop, no reverse. Soft watercolor and thin ink lines stay steady.
-   no text, no letters, no captions
-   ```
-5. **Check** start and end side by side with the references and with each other: same style and shot, only the action changed, no lettering, both height > width. Regenerate drift **in Krea** (never repair by editing on the box).
+4. **Check the pair** start and end side by side with the references and with each other: same style and shot, only the action changed, no lettering, both height > width. Regenerate drift **in Krea** (never repair by editing on the box).
+5. **Only now**, with both images final, write the **transition prompt** `prompts/partN.txt` from what the two images actually show: same elements, positions and props, exactly the motion from start to end, nothing that contradicts either image. Break it down second by second for the chosen clip length (8 s: 0-1 start image / 1-3 / 3-5 / 5-7 / 7-8 settles on end image; 6 s: 0-1 / 1-3 / 3-5 / 5-6; 4 s: 0-0.5 / 0.5-2 / 2-3.5 / 3.5-4), each beat saying what moves, where and in which direction, all one single one-way action, camera locked. **Check the prompt against both images before generating** (elements, positions, props, direction, light, end state). If either sketch is regenerated, rewrite the prompt. Template: [`../templates/scene-template.md`](../templates/scene-template.md).
 6. **Continuity**: when a beat continues into the next part, `part(N+1)_start.png` = copy of `partN_end.png`.
 
 Cost: Krea trained style ~2 units per image (estimate) -> per part ~2 start variants + 1-2 edits = ~6-8 units; a 9-part video ~55-70 units (estimate).
 
 ### Worked example (Derinkuyu door, new format)
-- `part2_start.png`: narrow grey tuff tunnel, huge round millstone door standing open in its side groove, lantern on the floor (refs `derinkuyu-02-middle.jpg`, `derinkuyu-03-late.jpg`).
-- `part2_end.png` (edit of the start): same shot, the stone disc has rolled across and seals the tunnel, dust in the air.
-- `prompts/part2.txt`: "Slow continuous one-direction motion: the massive round stone door rolls from left to right along its carved groove until it seals the tunnel, dust drifts down. Static locked camera, no zoom, no pan, no loop. no text, no letters, no captions"
+Start = the real Derinkuyu Krea pick of the stone door (scene 6); the full timed prompt is in [`../templates/scene-template.md`](../templates/scene-template.md#worked-example-derinkuyu-door-rewritten-in-the-new-format).
+- `part2_start.png`: arched tunnel in soft tuff rock, a huge round stone door standing in the right half of the arch, warm golden light coming from the open gap on the left, dust swirls drawn on the floor, cool green-grey walls.
+- `part2_end.png` (edit of the start): same arch, walls, floor and light source; the door has rolled left and fills the whole opening, only a thin warm rim of light around its edge, dust raised in the air.
+- `prompts/part2.txt`: written after both images, in 8 s beats: the door rolls from the right half of the arch to the left until it covers the gap; the warm light narrows to a rim; dust lifts; nothing else moves.
 
 The old Derinkuyu method (14 independent Krea scenes, paired two by two as start/end for 7 clips) is retired: unrelated pairs make the model morph instead of move.
 
 ## Approval order
 1. Part-by-part table approved ([script-writing](script-writing.md#part-by-part-table)).
-2. **Part 1 sample**: start + end + transition prompt + composited sample frame (`scripts/video/preview_frame.py`), then the part 1 clip.
+2. **Part 1 sample**: start + end + the transition prompt written from them + composited sample frame (`scripts/video/preview_frame.py`), then the part 1 clip.
 3. Then part by part: pair -> check -> clip -> verify -> next.
 
 ## Frame layout

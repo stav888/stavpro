@@ -1,6 +1,6 @@
 # Production rules (Daily Facts Arete, from 2026-11-09)
 
-These rules apply to every new Short (rules 9-10 added later on 2026-11-09). They sit on top of the channel look (soft watercolor, thin ink lines, muted pastels, dreamy historical mood, slow themed transitions, low bottom-centre subtitles, Kokoro narration). Costs are estimates.
+These rules apply to every new Short (rules 9-11 added later on 2026-11-09). They sit on top of the channel look (soft watercolor, thin ink lines, muted pastels, dreamy historical mood, slow themed transitions, low bottom-centre subtitles, Kokoro narration). Costs are estimates.
 
 ## 1. Sketches first (Step 0), before any video credits
 - Before spending a single video credit, make the stills for **every part** and check them against our own [`../reference-images/`](../reference-images/README.md) (frames from Derinkuyu, Hanging Gardens, Petra, Giza, Alexandria, Olmec).
@@ -10,7 +10,7 @@ These rules apply to every new Short (rules 9-10 added later on 2026-11-09). The
 ## 2. Per-part start/end pairs
 - The story is split into **parts 1..N**. Every part has exactly **one matched pair**: `scenes/partN_start.png` and `scenes/partN_end.png`.
 - **The end frame is generated FROM the start frame** (image edit with the start frame as input), so the scene, camera, framing, scale, palette and characters stay the same and only the action has progressed (the door has rolled shut, the lantern has gone out, the wall has cracked open).
-- One **transition prompt per part** (`prompts/partN.txt`) that describes **only the motion** from start to end.
+- One **transition prompt per part** (`prompts/partN.txt`) that describes **only the motion** from start to end, written **after** both images exist, from what they show, in **timed beats** (rule 11).
 - **Never** generate independent stills per frame or unrelated images per part as start/end inputs: two unrelated images make the video model morph instead of move.
 - Continuity: when a beat is split, part N+1's start frame **is** part N's end frame (copy it), so the cut is invisible.
 - (Derinkuyu used 14 independent Krea scenes paired two by two; that is the old way. The pairs worked only because the paired scenes were similar. New videos use start -> end edits.)
@@ -67,3 +67,17 @@ The 480p test + Real-ESRGAN upscale applies **only to Grok Imagine and other too
 ## 10. Continuous improvement
 - **Before starting a video**: read [`../LESSONS-LEARNED.md`](../LESSONS-LEARNED.md) and apply its "carry forward" list (mention which lessons were applied when sending the part table).
 - **After every video**: add a short entry (QA faults, the user's feedback, fixes) and update "carry forward". When the SEO bot's review arrives, add the SEO results to the entry (until then: pending).
+
+## 11. Transition prompt: written from the finished pair, in timed beats
+- Write `prompts/partN.txt` **only after `partN_start.png` and `partN_end.png` both exist**, by looking at the two images: name the same elements, positions and props they actually show and describe exactly the motion that turns the start image into the end image. **Nothing in the prompt may contradict the images** (no element that is not there, no wrong side, no different light).
+- **Second-by-second beats**: the prompt breaks the clip down in time. The first beat is exactly the start image, the last beat settles exactly on the end image, and every beat in between says **what moves, where, and in which direction**, all continuing **one single one-way action** (no second action, no reversal, no camera move).
+
+| Clip | Beats |
+|---|---|
+| 8 s | 0-1 s exactly the start image (motion just begins) / 1-3 s / 3-5 s / 5-7 s / 7-8 s settles exactly on the end image |
+| 6 s | 0-1 s exactly the start image / 1-3 s / 3-5 s / 5-6 s settles exactly on the end image |
+| 4 s | 0-0.5 s exactly the start image / 0.5-2 s / 2-3.5 s / 3.5-4 s settles exactly on the end image |
+
+- **Check before generating**: read the prompt against both images (elements, positions, props, direction, light, end state) and fix any mismatch. QA Gate 0 checks it too.
+- **Any regenerated sketch -> rewrite the prompt** from the new images and check again.
+- Lesson from Derinkuyu: its motion prompts were written from the script, before looking at the picks, and several contradicted the images (clip 4 asked for "a stone door rolls shut" while its end frame was a ventilation shaft). See `../LESSONS-LEARNED.md`.
