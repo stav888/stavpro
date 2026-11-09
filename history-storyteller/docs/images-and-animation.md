@@ -54,7 +54,7 @@ PATRICK_HAND_TTF=/path/PatrickHand-Regular.ttf \
 ```
 
 ## Image-to-video
-> Options: Grok Imagine is the default. Google Flow (Veo) runs via the gflow-cli MCP server on the browser; Krea runs via the Krea MCP connector (browser fallback); Hugging Face Spaces are run directly in the browser; see [`video-generators/`](video-generators/README.md) for the comparison, **Step 0 (sketches according to reference-images)**, and the mandatory **9:16** aspect rules.
+> Options: Grok Imagine is the default. Google Flow (Veo) is worked in the Flow **web UI** in box Chrome (gflow-cli MCP only as fallback on browser fault / no access); Krea runs via the Krea MCP connector (browser fallback); Hugging Face Spaces are run directly in the browser; see [`video-generators/`](video-generators/README.md) for the comparison, **Step 0 (sketches according to reference-images)**, and the mandatory **9:16** aspect rules.
 
 - Tool: Grok Bot `GenerateVideo` (Grok Imagine) image-to-video, `image_path=scenes/sceneN.jpg`. Result for Garbo: 640x480, 24 fps, ~7 s (`gen/sN.mp4`).
 - One take per scene that covers the whole narration slot (duration = ceil(slot), max 15 s).

@@ -26,7 +26,8 @@
 
 ## Tools, connectors, skills
 - Grok Bot built-ins: GenerateImage, GenerateVideo, SendToAgent, routines.
-- Box: ffmpeg, Python venvs (`../requirements/`), `gh` CLI.
+- Box: ffmpeg, Python venvs (`../requirements/`), `gh` CLI; Chrome for Google Flow web UI.
+- Image-to-video options: Grok Imagine (default); **Google Flow** via Flow's **web UI** in box Chrome (rotate profiles, classic composer, never Agent; gflow-cli MCP only on browser fault / no access); **Krea** via Krea MCP (browser fallback); Hugging Face in the browser. Details: `../docs/video-generators/`.
 - Connectors: Buffer MCP.
 - Skills: `xiaohei-history-shorts`, `youtube-video-seo`, `routines`.
 
