@@ -8,6 +8,16 @@
   - Licence MIT, alpha, reverse-engineered. Not affiliated with Google.
 
 
+> ## 🖼️ Step 0: sketch the frames first, then spend video credits
+> Before **any** video generation, prepare the stills for **every scene**:
+> 1. Make the **start frame** for each scene, and an **end frame** where the model supports one (all Veo models in Flow accept start + end frames). Use the Ian Xiaohei style, from free image generation only: the built-in `GenerateImage` with the repo's style refs ([`../../reference-images/`](../../reference-images/README.md)), or another free image tool. Save them as `scenes/sceneN.jpg` and `scenes/sceneN_end.jpg`.
+> 2. Check them against the **scene table** (scene → sentence numbers, see [images-and-animation](../images-and-animation.md)) and the **style rules**:
+>    - Xiaohei ink look, matching characters across scenes, no text in the image.
+>    - The end frame is the same shot with the action completed: same camera, no zoom or pan. Fix or redo any frame that fails now, while it's free.
+> 3. **Only then** spend video credits, one clip per approved scene.
+>
+> This follows the existing approval flow ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)): the user approves the script plus a sample frame before full production. The full set of frames is prepared and checked before any paid clip.
+
 > ## ⚠️ If MCP doesn't work → offer the browser as a choice
 > If the gflow-cli MCP route fails, **don't switch on your own.** Failures include: the server won't start, a tool is missing from `tools/list`, an auth/session failure (`gflow_auth_status` not authenticated), selector drift, or the same error repeating after one retry.
 > - **Ask the user to choose:** fix or retry MCP, or switch to **manual browser operation** in the box's Chrome (the steps in [§5 Fallback](#5-fallback-manual-web-ui-in-box-chrome)).
