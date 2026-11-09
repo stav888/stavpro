@@ -4,6 +4,8 @@
 
 Channel: **Daily Facts Arete** (YouTube Shorts, https://www.youtube.com/@Daily_Facts_Arete). Output: English, 9:16, history-mystery stories in **soft watercolor with thin ink lines, muted pastel colours and a dreamy historical mood**. Reference video: *Derinkuyu* ([20,000 People Lived 85 Meters Underground](https://www.youtube.com/shorts/FbjPMiFmAzw), 60 s, published 2026-11-07 15:17 Israel time via Buffer).
 
+**Complete method:** [docs/production-method.md](docs/production-method.md) is the step-by-step guide to how a Short is made in this bot today (script table, Step 0 pairs, timed-beat prompts, Flow, narration, QA, Buffer), plus officially sourced alternatives for doing the same work outside the bot.
+
 ## What the videos look like
 17 vertical 9:16 frames from 6 videos are in [`reference-images/`](reference-images/README.md).
 
@@ -108,7 +110,7 @@ new_meta.json         title / description / tags from the SEO bot
 ```
 README.md               this file
 LESSONS-LEARNED.md      per-video QA faults, feedback, fixes, SEO results + carry-forward checklist
-docs/                   production-rules (2026-11-09), script-writing, narration, images-and-animation, subtitles-and-build, qa,
+docs/                   production-method (complete how-to + outside-the-bot alternatives), production-rules (2026-11-09), script-writing, narration, images-and-animation, subtitles-and-build, qa,
                         publishing-buffer, routines, upscale-real-esrgan
 templates/              scene-template.md (per-part scene sheet, with a Derinkuyu worked example)
 docs/video-generators/  google-flow (current), krea (stills + LTX), grok-imagine (earlier) + README with cost estimates
