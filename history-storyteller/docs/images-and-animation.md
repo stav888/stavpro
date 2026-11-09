@@ -7,11 +7,19 @@ Repo: https://github.com/helloianneo/ian-xiaohei-illustrations (MIT, Ian). Clone
 - No readable text in images. Regenerate once if text/garbled letters or style drift appear.
 
 ## Stills
-- Tool: Grok Bot `GenerateImage` with the repo references. Output used for Garbo: 1152x864 JPG per scene (`scenes/sceneN.jpg`).
+
+## Step 0 — sketches according to `reference-images/` (before any video credits)
+Before spending image-to-video credits (Flow, Krea, or otherwise):
+1. From [`../reference-images/`](../reference-images/) (38 vertical **9:16** frames from 13 Shorts), pick **2–3 relevant refs per scene** and note them by relative path.
+2. Generate the start frame (and end frame where the model supports one) with free `GenerateImage`, passing those refs as style references / describing their style. Match white background, wobbly black lines, black Xiaohei doing the action, character size/composition, minimal colour accents. **Always request 9:16 / 1080×1920 — never 16:9.**
+3. Check each sketch side by side with the chosen refs and the scene table; regenerate any style drift. Verify height > width.
+4. Only then run image-to-video.
+
+- Tool: Grok Bot `GenerateImage` with [`../reference-images/`](../reference-images/) (and/or Ian Xiaohei examples) as `reference_image_paths`. For Flow/Krea sketches, output **vertical 9:16** (e.g. 1080×1920). Older Grok Imagine Garbo stills were 1152×864 JPG per scene (`scenes/sceneN.jpg`) — that landscape size is **not** the target for new Flow/Krea sketches.
 - One still per story beat, mapped in a scene table (scene -> sentence numbers). Garbo: 14 scenes = 14 sentence rows in `sentences.txt` (one scene per sentence).
 
 ## Image-to-video
-> Options: Grok Imagine is the default. Google Flow (Veo) runs via the gflow-cli MCP server on the browser; Krea runs via the Krea MCP connector (browser fallback); Hugging Face Spaces are run directly in the browser; see [`video-generators/`](video-generators/README.md) for the comparison and steps.
+> Options: Grok Imagine is the default. Google Flow (Veo) runs via the gflow-cli MCP server on the browser; Krea runs via the Krea MCP connector (browser fallback); Hugging Face Spaces are run directly in the browser; see [`video-generators/`](video-generators/README.md) for the comparison, **Step 0 (sketches according to reference-images)**, and the mandatory **9:16** aspect rules.
 
 - Tool: Grok Bot `GenerateVideo` (Grok Imagine) image-to-video, `image_path=scenes/sceneN.jpg`. Result for Garbo: 640x480, 24 fps, ~7 s (`gen/sN.mp4`).
 - One take per scene that covers the whole narration slot (duration = ceil(slot), max 15 s).

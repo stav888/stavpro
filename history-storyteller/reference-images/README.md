@@ -1,9 +1,11 @@
 # Reference images — what the videos look like
 
-All 38 images in this folder are frames from **13 of our own finished history Shorts** (12 videos with 3 frames each plus 2 from Garbo). Each video has a hook/early frame, a middle action frame and an ending/late frame, so the style can be compared across stories. Frames are 540x960 JPG taken from the final MP4s (the Garbo contact sheet is 1400x711). Total about 1.4 MB. File names follow `<video>-NN-<role>.jpg`.
+All 38 images in this folder are frames from **13 of our own finished history Shorts** (12 videos with 3 frames each plus 2 from Garbo). Each video has a hook/early frame, a middle action frame and an ending/late frame, so the style can be compared across stories. **Every file is vertical 9:16 at 540×960 JPG** taken from the final MP4s — never 16:9 / landscape. Total about 1.4 MB. File names follow `<video>-NN-<role>.jpg`.
+
+**For new sketches (Step 0):** always build start/end frames **according to** these references (pick 2–3 per scene, match the look, check side by side). Sketches must also be vertical 9:16 (e.g. 1080×1920 or 540×960).
 
 ## Style rules these images show
-- **Canvas:** 9:16, 1080x1920, pure white background, no textures, no gradients. The camera never moves: no zoom, pan or Ken Burns. Scenes change with hard cuts.
+- **Canvas:** **vertical 9:16 only** (final Shorts 1080×1920; these refs 540×960), pure white background, no textures, no gradients. Never 16:9. The camera never moves: no zoom, pan or Ken Burns. Scenes change with hard cuts.
 - **Line art:** thin, slightly wobbly black hand-drawn lines and lots of empty white space. Colour only as tiny accents (a red dot or dashed line, an orange bulb or flame, a soft sun glow).
 - **Xiaohei:** solid-black bean-shaped character with white dot eyes, thin stick legs and a blank expression. He **performs the key action** of the sentence (holds the guidebook, writes the reports, watches the landing through binoculars, pours the water). He is never decoration. Props such as a hat or headphones may be added for the role.
 - **Other people:** simple white line-drawn figures (officers, businessmen) with minimal detail. No gore: a bomb is a distant glow on the horizon (`yamaguchi-01-early.jpg`).
@@ -18,7 +20,7 @@ All 38 images in this folder are frames from **13 of our own finished history Sh
 | File | Video | What it shows |
 |---|---|---|
 | `garbo-01-hook.jpg` | Agent Garbo — The Spy Who Invented Spies (final v9, expanded script) | scene 1/14. Xiaohei as Pujol, in a hat, holds up a document in a sketched street (hook). |
-| `garbo-02-contact-sheet.jpg` | Garbo | midpoint frame of all 14 scenes in story order. This is the sheet used to check that each picture matches the sentence being spoken and that the order is chronological. |
+| `garbo-02-middle.jpg` | Garbo | scene 7/14 middle action: Germans study a map of an imaginary spy ring (left) while Xiaohei alone writes the reports under a lamp (right). |
 | `lustig-01-early.jpg` | The Man Who Sold the Eiffel Tower (v8) | "He forged official stationery": Xiaohei in a bowler hat stamps papers. |
 | `lustig-02-middle.jpg` | Lustig | "He hinted that he was a corrupt official": a whisper across a café table to a dealer. |
 | `lustig-03-ending.jpg` | Lustig | "he was too embarrassed to go to the police": the victim holds his face by an empty doorway. |

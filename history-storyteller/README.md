@@ -1,6 +1,6 @@
 # History Storyteller — full production pipeline (backup + how-to)
 
-> **בעברית בקצרה:** התיקייה הזו היא גיבוי מלא של תהליך העבודה של הבוט "סיפורים מההיסטוריה". יש בה: הסבר שלב אחר שלב (תסריט → אישור → תמונות → אנימציה → קריינות → כתוביות → QA → SEO → Buffer → ניקוי), הגדרות הקריינות המדויקות (Chatterbox עם קול am_eric, seed 7, exaggeration 0.6, cfg 0.45), קובצי requirements, הריפואים שצריך, הסקריפטים האמיתיים שבהם השתמשנו בסרטון Garbo, ותיעוד של הבוטים האחרים (QA ו־SEO) ואיך עובדים איתם. בלי סיסמאות או טוקנים.
+> **בעברית בקצרה:** התיקייה הזו היא גיבוי מלא של תהליך העבודה של הבוט "סיפורים מההיסטוריה". יש בה: הסבר שלב אחר שלב (תסריט → אישור → סקיצות לפי reference-images (9:16 בלבד) → תמונות → אנימציה → קריינות → כתוביות → QA → SEO → Buffer → ניקוי), הגדרות הקריינות המדויקות (Chatterbox עם קול am_eric, seed 7, exaggeration 0.6, cfg 0.45), קובצי requirements, הריפואים שצריך, הסקריפטים האמיתיים שבהם השתמשנו בסרטון Garbo, ותיעוד של הבוטים האחרים (QA ו־SEO) ואיך עובדים איתם. בלי סיסמאות או טוקנים.
 
 Channel: **Smart History Knowledge** (YouTube Shorts). Output: English-only, 9:16 1080x1920, 24 fps, true chronological history stories in the Ian Xiaohei illustration style (white background, wobbly black lines, black Xiaohei character performing the action). Reference video: *Agent Garbo* (`garbo-history-v9.mp4`, 81 s), scheduled 2026-11-12 18:43 Israel.
 
@@ -26,15 +26,17 @@ All links checked on 2026-11-09 (HTTP 200). Licences come from the GitHub/Huggin
 | Scheduling | Buffer (MCP connector) | service | `create_post` to Smart History Knowledge |
 
 ## What the videos look like
-Final frames from different finished Shorts. 38 frames from 13 videos are in [`reference-images/`](reference-images/README.md).
+Final frames from different finished Shorts. **38 vertical 9:16 frames** (540×960) from 13 videos are in [`reference-images/`](reference-images/README.md). The table below shows portrait stills side by side — each cell is one tall 9:16 frame, not landscape.
 
 | Lustig (Eiffel Tower) | Tesla (Wardenclyffe) | Stanley Meyer | Wojtek |
-|---|---|---|---|
+| :---: | :---: | :---: | :---: |
 | ![Lustig](reference-images/lustig-02-middle.jpg) | ![Tesla](reference-images/tesla-02-middle.jpg) | ![Stanley Meyer](reference-images/stanley-meyer-01-hook.jpg) | ![Wojtek](reference-images/wojtek-02-middle.jpg) |
+| *9:16* | *9:16* | *9:16* | *9:16* |
 
 | Flexible glass (Rome) | Armstrong (FM) | Violet Jessop | Garbo |
-|---|---|---|---|
+| :---: | :---: | :---: | :---: |
 | ![Flexible glass](reference-images/flexible-glass-02-middle.jpg) | ![Armstrong](reference-images/armstrong-01-hook.jpg) | ![Violet Jessop](reference-images/violet-jessop-02-middle.jpg) | ![Garbo](reference-images/garbo-01-hook.jpg) |
+| *9:16* | *9:16* | *9:16* | *9:16* |
 
 ## Pipeline at a glance
 | # | Step | Tool / file | Doc |
@@ -44,7 +46,7 @@ Final frames from different finished Shorts. 38 frames from 13 videos are in [`r
 | 3 | Stills per scene in Xiaohei style | Grok Bot GenerateImage + repo refs | `docs/images-and-animation.md` |
 | 4 | Narration: Chatterbox per paragraph -> join -> breath gate + loudnorm -16 -> ASR | `scripts/voice/*` | `docs/narration.md` |
 | 5 | Sentence timing table | `scripts/video/sentence_timing.py` | `docs/subtitles-and-build.md` |
-| 6 | Image-to-video per scene (one-way motion) | Grok Imagine (default), or Google Flow via the gflow-cli MCP on the browser / Krea via the Krea MCP connector / Hugging Face in the browser. Step 0: first prepare and check the start/end frame stills for every scene (free GenerateImage, Xiaohei refs), then spend video credits. If an MCP route fails, offer the user the choice of manual browser operation and proceed only after they pick it; a credit shortage is not a failure (stop, no buying) | `docs/images-and-animation.md`, [`docs/video-generators/`](docs/video-generators/README.md) |
+| 6 | Image-to-video per scene (one-way motion) | Grok Imagine (default), or Google Flow via the gflow-cli MCP on the browser / Krea via the Krea MCP connector / Hugging Face in the browser. Step 0: prepare start/end frame stills for every scene **according to** [`reference-images/`](reference-images/) (pick 2–3 refs per scene, match style, check side by side, regenerate drift; all vertical 9:16, never 16:9), then spend video credits. If an MCP route fails, offer the user the choice of manual browser operation and proceed only after they pick it; a credit shortage is not a failure (stop, no buying) | `docs/images-and-animation.md`, [`docs/video-generators/`](docs/video-generators/README.md) |
 | 7 | RIFE 4.7 one-way retime to slot, jolt fixes | `scripts/video/rife_eq.py`, `jolt_fix.py`, `fix_frames.py` | same |
 | 8 | Compose: art, title, counter, sentence-locked subtitles, audio | `scripts/video/build.py` | `docs/subtitles-and-build.md` |
 | 9 | Self-QA, then **QA סרטונים** bot until pass | `scripts/qa/*` | `docs/qa.md`, `bots/qa-videos.md` |

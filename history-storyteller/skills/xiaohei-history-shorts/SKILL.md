@@ -23,13 +23,14 @@ Create vertical history Shorts that tell one true story in strict chronological 
 ## Style (from github.com/helloianneo/ian-xiaohei-illustrations)
 - Pure white background, thin wobbly black hand-drawn lines, lots of white space, only tiny red/orange/blue annotations.
 - Xiaohei: solid-black character, white dot eyes, thin legs, blank expression, who PERFORMS the core action in every scene.
-- Use repo example images as reference_image_paths for every GenerateImage call. No/minimal text in images; regenerate once on garbled text or style drift.
+- Use `history-storyteller/reference-images/` (38 vertical 9:16 frames from our Shorts) as `reference_image_paths` for every GenerateImage / sketch call; Ian Xiaohei examples may supplement. No/minimal text in images; regenerate once on garbled text or style drift. Sketches and finals are **vertical 9:16** (e.g. 1080×1920 / 540×960), never 16:9.
 
 ## Video format
 - 1080x1920, 24 fps, H.264 + AAC, hard cuts. Art big in the middle band; title at top, subtitles at bottom. Font: Patrick Hand.
 - Locked static camera: NO zoom, pan, push-in or Ken Burns.
 
 ## Animation — CRITICAL
+- **Step 0 for Flow/Krea (and any paid i2v):** before spending video credits, prepare start frames (and end frames where supported) **according to** `reference-images/`: pick 2–3 refs per scene by relative path, match white background / wobbly lines / black Xiaohei / composition / minimal accents, check each sketch side by side with those refs and the scene table, regenerate style drift. Always pass aspect **9:16** explicitly (Flow: also `ui_mode: "classic"` / `GFLOW_CLI_UI_MODE=classic`); verify height > width with ffprobe/PIL and reject landscape.
 - Each still animated with image-to-video as ONE single-pass, one-direction take covering the scene slot. NEVER loop, ping-pong, reverse, repeat, or freeze-hold >0.3s. Never slow/stretch the animation.
 - Smoothness: RIFE-interpolate to true 24fps continuous motion (the user loved Stanley Meyer scenes 1 and 10). Never interpolate across a cut. Fix single-frame jolts with RIFE neighbor midpoints.
 - Patch defects by frame-splicing on decoded final frames; prefer a one-pass rebuild of a broken scene over stacked patches. Self-check for regressions and seams before sending to QA.

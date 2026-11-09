@@ -8,15 +8,23 @@
   - Licence MIT, alpha, reverse-engineered. Not affiliated with Google.
 
 
-> ## 🖼️ Step 0: sketch the frames first, then spend video credits
-> Before **any** video generation, prepare the stills for **every scene**:
-> 1. Make the **start frame** for each scene, and an **end frame** where the model supports one (all Veo models in Flow accept start + end frames). Use the Ian Xiaohei style, from free image generation only: the built-in `GenerateImage` with the repo's style refs ([`../../reference-images/`](../../reference-images/README.md)), or another free image tool. Save them as `scenes/sceneN.jpg` and `scenes/sceneN_end.jpg`.
-> 2. Check them against the **scene table** (scene → sentence numbers, see [images-and-animation](../images-and-animation.md)) and the **style rules**:
->    - Xiaohei ink look, matching characters across scenes, no text in the image.
->    - The end frame is the same shot with the action completed: same camera, no zoom or pan. Fix or redo any frame that fails now, while it's free.
-> 3. **Only then** spend video credits, one clip per approved scene.
+> ## 🖼️ Step 0: sketch the frames first (ACCORDING TO the reference images), then spend video credits
+> Before **any** video generation, prepare the stills for **every scene** **according to** the style references in [`../../reference-images/`](../../reference-images/) (38 vertical 9:16 frames from 13 of our Shorts):
+> 1. **Pick 2–3 relevant reference images per scene** from `reference-images/` (link them by relative path in the scene notes, e.g. `../../reference-images/lustig-02-middle.jpg`). Prefer refs whose action, props or composition match the beat.
+> 2. Make the **start frame** for each scene, and an **end frame** where the model supports one (all Veo models in Flow accept start + end frames). Use free image generation only: the built-in `GenerateImage` (or another free image tool), **passing those 2–3 refs as style references / describing their style in the image prompt**. Match: pure white background, thin wobbly black lines, black Xiaohei character doing the action, character size and composition, and minimal colour accents **as in the chosen references**. Every sketch is **vertical 9:16** (e.g. 1080×1920 or 540×960) — **never 16:9**. Save as `scenes/sceneN.jpg` and `scenes/sceneN_end.jpg`.
+> 3. **Check** each sketch **side by side** with the chosen references and the **scene table** (scene → sentence numbers, see [images-and-animation](../images-and-animation.md)): Xiaohei ink look, matching characters across scenes, no text in the image, height > width. The end frame is the same shot with the action completed (same camera, no zoom or pan). **Regenerate any sketch that drifts in style** from the references — fix now, while it's free.
+> 4. **Only then** spend video credits, one clip per approved scene.
 >
-> This follows the existing approval flow ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)): the user approves the script plus a sample frame before full production. The full set of frames is prepared and checked before any paid clip.
+> This follows the existing approval flow ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)): the user approves the script plus a sample frame before full production. The full set of frames is prepared and checked against the references before any paid clip.
+
+> ## ⚠️ Aspect ratio 9:16 is mandatory
+> Flow will happily make landscape if you let it. Root causes in gflow-cli: `gflow_generate_image` defaults to aspect `"1:1"`, and Flow's **agentic** UI treats aspect as a soft hint (a requested 9:16 can come back landscape). Prevent that:
+> - Always pass **`aspect: "9:16"` explicitly** on every `gflow_generate_image` **and** `gflow_generate_video` call. Never rely on defaults.
+> - Always pass **`ui_mode: "classic"`** on those calls, and set **`GFLOW_CLI_UI_MODE=classic`** in the MCP server / daemon env, so a non-classic arm **aborts before spending credits**.
+> - For sketches made with the built-in `GenerateImage` or any other tool, request **9:16 / 1080×1920** explicitly in the prompt or size fields.
+> - CLI: always pass `--aspect 9:16` (and prefer `--ui-mode classic`).
+> - Manual web UI: pick **9:16** in the composer **before** generating and confirm the UI shows 9:16 (Flow may remember the last-used 16:9).
+> - After generating, verify every still/clip with `ffprobe` or PIL that **height > width** (e.g. 1080×1920 or 720×1280). Reject and regenerate anything landscape before going on.
 
 > ## ⚠️ If MCP doesn't work → offer the browser as a choice
 > If the gflow-cli MCP route fails, **don't switch on your own.** Failures include: the server won't start, a tool is missing from `tools/list`, an auth/session failure (`gflow_auth_status` not authenticated), selector drift, or the same error repeating after one retry.
@@ -39,6 +47,7 @@ stdio client config:
 Remove `--no-spend` only for an approved generation session.
 
 Browser notes:
+- Set `GFLOW_CLI_UI_MODE=classic` in the server environment (and pass `ui_mode: "classic"` on every generate call) so a non-classic arm aborts before credits are spent.
 - Generation needs a **headed** Chrome. `GFLOW_CLI_HEADLESS` defaults to `false`, and that's required because reCAPTCHA rejects headless.
 - The window opens off-screen by default (`GFLOW_CLI_BROWSER_WINDOW_POSITION=-30000,-30000`). Set a position to watch it on the box desktop.
 - Profiles are gflow's saved Chrome sessions. List them with `gflow auth list`. One-time sign-in is `gflow auth login --browser chrome`, done interactively by the user, never with typed passwords.
@@ -75,6 +84,30 @@ Image-to-video call for one scene:
   }
 }
 ```
+Image sketch call (free still; always force 9:16 + classic):
+```json
+{
+  "name": "gflow_generate_image",
+  "arguments": {
+    "prompt": "Ian Xiaohei style ink illustration, pure white background, thin wobbly black lines, black Xiaohei character <action for the scene>, minimal colour accents, no text, vertical 9:16",
+    "model": "nano2",
+    "aspect": "9:16",
+    "count": 1,
+    "reference_images": [
+      "/path/to/history-storyteller/reference-images/<ref-a>.jpg",
+      "/path/to/history-storyteller/reference-images/<ref-b>.jpg"
+    ],
+    "ui_mode": "classic",
+    "profile": "<profile>",
+    "output": "<story>/scenes/sceneN.jpg",
+    "wait": true
+  }
+}
+```
+- Always set `aspect: "9:16"` — the tool default is `"1:1"`.
+- Always set `ui_mode: "classic"` (and `GFLOW_CLI_UI_MODE=classic` on the server). Agentic treats aspect as a soft hint and can return landscape.
+- Pass 2–3 `reference-images/` JPGs as `reference_images` so the sketch matches our Shorts style.
+
 - `initial_frame` and `end_frame` take local file paths (or a Flow image UUID). Each is uploaded into the Flow project under a run-unique name.
 - **`model: veo_lite`** is Veo 3.1 Lite, the cheapest; it's also the default for i2v when `model` is omitted. Its output is 720p, the Daily Facts setting.
   - Do **not** pass `resolution` with Veo: it is only supported on `omni_flash`, and on other models the job is refused before submit.
@@ -118,12 +151,14 @@ Use this when the MCP server can't drive a profile (selector drift, a new Flow U
 3. Choose image-to-video / frames to video. Upload the **start frame** (`scenes/sceneN.jpg`), and the **end frame** if there is one.
 4. Choose **Veo 3.1 Lite**, **9:16**, **720p**, and a duration of 4/6/8 s. One output.
 5. Use the same prompt pattern (one-direction motion, locked camera, no text). Click Generate, then preview.
-6. Download the MP4. It lands in `/home/box/Downloads/`; move it to `/workspace/<story>/gen/sN.mp4`.
+6. Confirm the composer shows **9:16** before Generate (Flow may remember the last-used 16:9).
+7. Download the MP4. It lands in `/home/box/Downloads/`; move it to `/workspace/<story>/gen/sN.mp4`. Verify with `ffprobe` that height > width; reject landscape.
 
 The same rules apply (never click Agent, no buying, rotate profiles).
 
 ## 6. CLI equivalent (one-off checks)
-- `gflow video i2v --initial-frame start.png --end-frame end.png --model veo-lite --aspect 9:16 --duration 8 --profile <profile> "prompt" --out-dir ./gen`
+- `gflow video i2v --initial-frame start.png --end-frame end.png --model veo-lite --aspect 9:16 --ui-mode classic --duration 8 --profile <profile> "prompt" --out-dir ./gen`
+- `gflow image t2i --aspect 9:16 --ui-mode classic --profile <profile> "prompt" --out-dir ./scenes`
 - `gflow credits list` / `gflow credits user --profile <profile>` (free)
 
 After any route: RIFE retime + `build.py` layout (see [README](README.md)).

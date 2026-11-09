@@ -5,15 +5,21 @@
 The model facts below were read with `list_models(category="video")` and `get_model_schema` on 2026-11-09, with no credits spent.
 
 
-> ## 🖼️ Step 0: sketch the frames first, then spend video credits
-> Before **any** video generation, prepare the stills for **every scene**:
-> 1. Make the **start frame** for each scene, and an **end frame** where the model supports one (H3 Max and Seedance 1.0 Pro: yes; LTX-2 19B and Seedance 1.0 Pro Fast: start frame only). Use the Ian Xiaohei style, from free image generation only: the built-in `GenerateImage` with the repo's style refs ([`../../reference-images/`](../../reference-images/README.md)), or another free image tool. Save them as `scenes/sceneN.jpg` and `scenes/sceneN_end.jpg`.
-> 2. Check them against the **scene table** (scene → sentence numbers, see [images-and-animation](../images-and-animation.md)) and the **style rules**:
->    - Xiaohei ink look, matching characters across scenes, no text in the image.
->    - The end frame is the same shot with the action completed: same camera, no zoom or pan. Fix or redo any frame that fails now, while it's free.
-> 3. **Only then** spend video credits, one clip per approved scene.
+> ## 🖼️ Step 0: sketch the frames first (ACCORDING TO the reference images), then spend video credits
+> Before **any** video generation, prepare the stills for **every scene** **according to** the style references in [`../../reference-images/`](../../reference-images/) (38 vertical 9:16 frames from 13 of our Shorts):
+> 1. **Pick 2–3 relevant reference images per scene** from `reference-images/` (link them by relative path in the scene notes, e.g. `../../reference-images/lustig-02-middle.jpg`). Prefer refs whose action, props or composition match the beat.
+> 2. Make the **start frame** for each scene, and an **end frame** where the model supports one (H3 Max and Seedance 1.0 Pro: yes; LTX-2 19B and Seedance 1.0 Pro Fast: start frame only). Use free image generation only: the built-in `GenerateImage` (or another free image tool), **passing those 2–3 refs as style references / describing their style in the image prompt**. Match: pure white background, thin wobbly black lines, black Xiaohei character doing the action, character size and composition, and minimal colour accents **as in the chosen references**. Every sketch is **vertical 9:16** (e.g. 1080×1920 or 540×960) — **never 16:9**. Save as `scenes/sceneN.jpg` and `scenes/sceneN_end.jpg`.
+> 3. **Check** each sketch **side by side** with the chosen references and the **scene table** (scene → sentence numbers, see [images-and-animation](../images-and-animation.md)): Xiaohei ink look, matching characters across scenes, no text in the image, height > width. The end frame is the same shot with the action completed (same camera, no zoom or pan). **Regenerate any sketch that drifts in style** from the references — fix now, while it's free.
+> 4. **Only then** spend video credits, one clip per approved scene.
 >
-> This follows the existing approval flow ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)): the user approves the script plus a sample frame before full production. The full set of frames is prepared and checked before any paid clip.
+> This follows the existing approval flow ([script-writing § Approval gate](../script-writing.md#approval-gate-mandatory)): the user approves the script plus a sample frame before full production. The full set of frames is prepared and checked against the references before any paid clip.
+
+> ## ⚠️ Aspect ratio 9:16 is mandatory
+> Always request a **vertical** frame. Landscape slips through when size/aspect is left to a default.
+> - Always pass **`aspect_ratio: "9:16"` explicitly** on every Krea `generate_video` call (several models default to 16:9). Never rely on defaults.
+> - For sketches made with the built-in `GenerateImage` or any other tool, request **9:16 / 1080×1920** explicitly.
+> - Manual web UI: pick **9:16** in the composer **before** generating and confirm it shows 9:16.
+> - After generating, verify every still/clip with `ffprobe` or PIL that **height > width** (e.g. 1080×1920 or 720×1280). Reject and regenerate anything landscape before going on.
 
 > ## ⚠️ If MCP doesn't work → offer the browser as a choice
 > If the Krea MCP connector fails, **don't switch on your own.** Failures include: a connector error, an auth or sign-in failure (HTTP 401), a tool missing from the `user-Krea` namespace, or the same error repeating after one retry (`provider_error`, `internal`, `timeout`).
@@ -46,7 +52,7 @@ Image inputs (`start_image`, `end_image`, `reference_images`) accept an **extern
 
 Notes:
 - LTX-2 has `generate_audio: true` by default. Always set it to **`false`**, because we add our own narration.
-- Always pass `aspect_ratio: "9:16"` explicitly, since several models default to 16:9.
+- Always pass `aspect_ratio: "9:16"` explicitly, since several models default to 16:9. Verify the result is vertical (height > width) before keeping it.
 - **Clip length is chosen per scene**, by what looks right for the narration slot. RIFE retimes it to the exact slot afterwards.
 - Other video models in the list include Kling, Seedance 2/2.5, Veo 3.1, Hailuo, Runway, Luma and Grok Imagine. Check their schema before trying one.
 
@@ -98,6 +104,6 @@ The LTX-2 variant: `"model": "lightricks/ltx-video-2-19b"`, with no `end_image` 
 Use this when the connector is unavailable or a model is only in the web app. Labels may change.
 1. Open https://www.krea.ai/video and check the balance.
 2. Pick the model. Upload the start image, plus the end image if the model supports it.
-3. Set 9:16, resolution and duration, and turn audio off.
+3. Set **9:16**, resolution and duration, and turn audio off. Confirm the UI shows 9:16 before Generate.
 4. Use the same prompt pattern. Generate one clip.
-5. Download it; it lands in `/home/box/Downloads/`. Move it to `/workspace/<story>/gen/sN.mp4`.
+5. Download it; it lands in `/home/box/Downloads/`. Move it to `/workspace/<story>/gen/sN.mp4`. Verify height > width with `ffprobe` / PIL; reject landscape.
