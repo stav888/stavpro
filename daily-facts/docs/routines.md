@@ -4,7 +4,7 @@ Only **one-shot** routines are used for this channel; nothing runs on a fixed re
 
 | Routine | When it fires | What it does | Ends with |
 |---|---|---|---|
-| **Flow clips after credit refresh** | the next time the Flow daily free credits are refreshed (when a run stopped because credits ran out) | runs the missing clips (`scripts/flow/run_clips.sh` skips finished ones), rotating between all existing profiles to use their daily free credits, downloads into `clips/`, checks 9:16 | a message with the clips (or the error) for QA and the user; no editing is started without approval |
+| **Flow clips after credit refresh** | the next time the Flow daily free credits are refreshed (when a run stopped because credits ran out) | continues the approved parts in the Flow web UI (gflow-cli `scripts/flow/run_clips.sh` only if the browser faults), part by part, rotating between all existing profiles to use their daily free credits, saves `clips/partN.mp4`, checks 9:16 | a message with the clips (or the error) for QA and the user; no editing is started without approval |
 | **Post-publish cleanup** | ~45-50 min after the Buffer slot | checks the Short is live on the channel, deletes the temp MP4 from the public temp-hosting repo, reminds about thumbnail + tags | the YouTube link to the user |
 
 Rules:

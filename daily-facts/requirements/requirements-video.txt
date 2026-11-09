@@ -5,3 +5,5 @@ numpy==2.5.4
 scipy==1.18.1
 pillow==13.0.0
 soundfile==0.14.0
+# Real-ESRGAN CPU upscale (scripts/video/esrgan_cpu.py): torch, any recent CPU build (the Kokoro venv's torch works)
+# torch --extra-index-url https://download.pytorch.org/whl/cpu

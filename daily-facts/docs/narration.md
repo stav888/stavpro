@@ -10,6 +10,7 @@
 - The whole narration must sound like **one continuous story**, not disjointed segments: same voice, same speed, identical gaps.
 
 ## Steps
+0. Since 2026-11-09 the script has **one row per part** and every part is at most 8 s (a Flow clip is at most 8 s). After TTS, **measure each part's WAV**; a part over 8 s is rewritten or split into two parts (never sped up or time-stretched).
 1. `scripts/voice/kokoro_tts_lines.py` (run in the Kokoro venv) -> `audio/lNN.wav` + `audio/lines.json` (text, duration, Kokoro word tokens).
    - each line trimmed at -45 dB, **5 ms fades**, **~150 ms silence pad** on both sides.
 2. **10-second sample** (first 2-3 lines joined) -> user approval of voice and pace.
@@ -27,7 +28,7 @@
 
 ## Legacy voices (kept for reference)
 - **Pocket TTS clone** of the channel's original narrator (Petra, Oct 2026): `scripts/voice/legacy_pocket_tts_clone.py`, best of 4 seeds by ASR match and Resemblyzer speaker similarity, then `atempo=0.9`. Gated HF model, slower on CPU, retired for Kokoro.
-- Edge-TTS (`en-GB-SoniaNeural`, -8% rate) narrated the Giza Short (Flow test, early Nov 2026); Google TTS / Piper / Chatterbox were tested and not used.
+- Edge-TTS (`en-GB-SoniaNeural`, -8% rate) narrated the Giza Short (Flow test, early Nov 2026); Google TTS and Piper were tested and not used.
 
 ## No music
 The approved design is narration only, no music (exception: the Alexandria test on 2026-10-24 used gentle music at the user's request). The Flow clips' own ambience is mixed very low and ducked under the voice.

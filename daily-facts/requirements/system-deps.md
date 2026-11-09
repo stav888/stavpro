@@ -8,6 +8,8 @@
 | espeak-ng (optional) | not installed on the box | misaki can use it for out-of-vocabulary words; the pipeline ran without it | `sudo apt-get install -y espeak-ng` |
 | gh (GitHub CLI) | 2.103.0 | push the MP4 to the public temp-hosting repo for Buffer, delete it after publish, this backup | `sudo apt-get install -y gh` then `gh auth login` (interactive, never store tokens in files) |
 | gflow-cli | 0.92.1 | Flow fallback only (headed Chrome on the box display) | `uv tool install gflow-cli` |
+| Real-ESRGAN weights `realesr-animevideov3.pth`, `realesr-general-x4v3.pth` | release v0.2.5.0 | `scripts/video/upscale_720p.sh` CPU path (`esrgan_cpu.py`, PyTorch from the Kokoro venv works) | download from https://github.com/xinntao/Real-ESRGAN/releases, set `ESRGAN_WEIGHTS` |
+| realesrgan-ncnn-vulkan (optional) | portable binary | fast upscale path, needs a working Vulkan driver (the box has none, so it falls back to CPU) | https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan/releases, keep `models/` next to it, set `ESRGAN_BIN` |
 | Google Chrome | box browser | Flow web UI (primary), Krea web app (LTX clips) | preinstalled |
 | Montserrat (variable TTF) | Google Fonts | subtitles in `build_highlight_wash.py` (env `MONTSERRAT_TTF`) | fonts.google.com/specimen/Montserrat |
 | DejaVu Sans | Debian fonts | ASS subtitles in `build_flow_xfade_ass.py` | `fonts-dejavu-core` |
@@ -25,4 +27,4 @@
 - **Google Flow** (labs.google/fx/tools/flow): Veo 3.1 Lite clips.
 - **Grok Imagine** (Grok Bot `GenerateVideo` / Grok Chat): image-to-video in the earlier videos.
 - **Buffer** (MCP connector): scheduled YouTube upload.
-- No CPU-heavy upscalers are needed for the current Flow path (720p clips are scaled to 1080x1920 with lanczos in the editor).
+- The Flow path needs no upscaler (720p clips are scaled to 1080x1920 with lanczos in the editor). Real-ESRGAN is only for approved low-res clips (Grok Imagine 480p tests, see `../docs/upscale-real-esrgan.md`).

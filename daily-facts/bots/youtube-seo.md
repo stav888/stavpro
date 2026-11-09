@@ -13,4 +13,4 @@
 - It runs periodic performance reviews (views, retention, CTR) and suggests title/description fixes for weak videos; changes to a live video also need the user's OK.
 
 ## Channel guidelines it helped set (approved 2026-11-02)
-Topics (lost places, geographic mysteries, near-miss technology, battles, forgotten civilizations; no aliens/conspiracies), 3-4 Shorts a week, hook text in the first second, 25-40 s.
+Topics (lost places, geographic mysteries, near-miss technology, battles, forgotten civilizations; no aliens/conspiracies), 3-4 Shorts a week, hook text in the first second, 25-40 s (length later changed to about 50 s - 1.5 min on 2026-11-09, see `../docs/production-rules.md`).

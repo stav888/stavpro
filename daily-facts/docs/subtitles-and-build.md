@@ -3,10 +3,12 @@
 ## Order
 narration (final, approved) -> word timestamps -> **highlight colour recommendation from QA -> user approval** -> edit -> QA video check.
 
-## Timeline (narration-first)
+## Timeline (narration-first, one clip per part)
+- Each part's narration (<= 8 s) is laid on its own clip (`clips/partN.mp4`, 4/6/8 s); the part's slot = `LEAD + narration + TAIL`, and the clip is trimmed to that window (never looped or stretched).
 - Each scene = `LEAD 0.25 s + line duration + TAIL 0.35 s` (capped at clip length minus the transition).
 - The clip is **cut to its line**: the editor scans each Flow clip and takes the window with the least motion jitter (`build_highlight_wash.py`), or retimes the 8 s pair-clip to the two lines it covers (`build_flow_xfade_ass.py`, Derinkuyu).
-- First second: the hook line is on screen as text immediately (question or number).
+- First second: the hook line is on screen as text immediately (question or number), drawn in code (Montserrat Bold white, top at y=300, see [production-rules § 5](production-rules.md#5-frame-layout-illustration-only-text-in-code)).
+- The approval sample frame for part 1 is composited with `scripts/video/preview_frame.py` (same fonts and positions as the editor), never generator-drawn text.
 
 ## Transitions
 - **Slow and themed to the mood**, never quick generic dissolves: watercolor paper tearing in two, ink bloom, brush wipe, golden light (fire / sunrise), cloud or burning-paper wash.
