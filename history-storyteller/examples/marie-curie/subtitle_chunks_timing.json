@@ -1,0 +1,222 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "start": 0.2,
+   "speech_end": 5.948,
+   "text": "In 1891, a young Polish woman named Maria arrived in Paris with almost no money.",
+   "first_word": "In 1891",
+   "end": 6.348
+  },
+  {
+   "sentence": 2,
+   "start": 6.348,
+   "speech_end": 10.46,
+   "text": "In a freezing little room, she dreamed of understanding how nature works.",
+   "first_word": "In",
+   "end": 10.86
+  },
+  {
+   "sentence": 3,
+   "start": 10.86,
+   "speech_end": 15.925,
+   "text": "She heard of mysterious rays coming from uranium, and gave them a name: radioactivity.",
+   "first_word": "She",
+   "end": 16.325
+  },
+  {
+   "sentence": 4,
+   "start": 16.325,
+   "speech_end": 22.041,
+   "text": "With her husband Pierre, she worked in a leaky shed, stirring tons of boiling ore for years.",
+   "first_word": "With",
+   "end": 22.441
+  },
+  {
+   "sentence": 5,
+   "start": 22.441,
+   "speech_end": 28.08,
+   "text": "One night in 1898, they saw a tiny substance glowing in the dark: radium.",
+   "first_word": "One",
+   "end": 28.48
+  },
+  {
+   "sentence": 6,
+   "start": 28.48,
+   "speech_end": 33.274,
+   "text": "In 1903, Marie became the first woman ever to win a Nobel Prize.",
+   "first_word": "In 1903",
+   "end": 33.674
+  },
+  {
+   "sentence": 7,
+   "start": 33.674,
+   "speech_end": 38.891,
+   "text": "Then Pierre was killed in an accident, but she kept going alone and won a second Nobel.",
+   "first_word": "Then",
+   "end": 39.291
+  },
+  {
+   "sentence": 8,
+   "start": 39.291,
+   "speech_end": 44.464,
+   "text": "In World War One, she drove X-ray units to the front, saving wounded soldiers.",
+   "first_word": "In",
+   "end": 44.864
+  },
+  {
+   "sentence": 9,
+   "start": 44.864,
+   "speech_end": 49.598,
+   "text": "The glow she loved harmed her in the end, but her notebooks are still radioactive today.",
+   "first_word": "The",
+   "end": 49.948
+  }
+ ],
+ "chunks": [
+  {
+   "sentence": 1,
+   "text": "In 1891, a young Polish woman named Maria",
+   "words": 8,
+   "start": 0.25,
+   "end": 3.216,
+   "sent_start": 0.2,
+   "sent_end": 6.348,
+   "png": "subpng/c00.png",
+   "lines": 1
+  },
+  {
+   "sentence": 1,
+   "text": "arrived in Paris with almost no money.",
+   "words": 7,
+   "start": 3.316,
+   "end": 6.298,
+   "sent_start": 0.2,
+   "sent_end": 6.348,
+   "png": "subpng/c01.png",
+   "lines": 1
+  },
+  {
+   "sentence": 2,
+   "text": "In a freezing little room, she dreamed of understanding how nature works.",
+   "words": 12,
+   "start": 6.398,
+   "end": 10.81,
+   "sent_start": 6.348,
+   "sent_end": 10.86,
+   "png": "subpng/c02.png",
+   "lines": 2
+  },
+  {
+   "sentence": 3,
+   "text": "She heard of mysterious rays coming from uranium, and gave them a name: radioactivity.",
+   "words": 14,
+   "start": 10.91,
+   "end": 16.275,
+   "sent_start": 10.86,
+   "sent_end": 16.325,
+   "png": "subpng/c03.png",
+   "lines": 2
+  },
+  {
+   "sentence": 4,
+   "text": "With her husband Pierre, she worked in a leaky",
+   "words": 9,
+   "start": 16.375,
+   "end": 19.301,
+   "sent_start": 16.325,
+   "sent_end": 22.441,
+   "png": "subpng/c04.png",
+   "lines": 2
+  },
+  {
+   "sentence": 4,
+   "text": "shed, stirring tons of boiling ore for years.",
+   "words": 8,
+   "start": 19.401,
+   "end": 22.391,
+   "sent_start": 16.325,
+   "sent_end": 22.441,
+   "png": "subpng/c05.png",
+   "lines": 1
+  },
+  {
+   "sentence": 5,
+   "text": "One night in 1898, they saw a tiny substance glowing in the dark: radium.",
+   "words": 14,
+   "start": 22.491,
+   "end": 28.43,
+   "sent_start": 22.441,
+   "sent_end": 28.48,
+   "png": "subpng/c06.png",
+   "lines": 2
+  },
+  {
+   "sentence": 6,
+   "text": "In 1903, Marie became the first woman ever to win a Nobel Prize.",
+   "words": 13,
+   "start": 28.53,
+   "end": 33.624,
+   "sent_start": 28.48,
+   "sent_end": 33.674,
+   "png": "subpng/c07.png",
+   "lines": 2
+  },
+  {
+   "sentence": 7,
+   "text": "Then Pierre was killed in an accident, but she",
+   "words": 9,
+   "start": 33.724,
+   "end": 36.386,
+   "sent_start": 33.674,
+   "sent_end": 39.291,
+   "png": "subpng/c08.png",
+   "lines": 2
+  },
+  {
+   "sentence": 7,
+   "text": "kept going alone and won a second Nobel.",
+   "words": 8,
+   "start": 36.486,
+   "end": 39.241,
+   "sent_start": 33.674,
+   "sent_end": 39.291,
+   "png": "subpng/c09.png",
+   "lines": 1
+  },
+  {
+   "sentence": 8,
+   "text": "In World War One, she drove X-ray units to the front, saving wounded soldiers.",
+   "words": 14,
+   "start": 39.341,
+   "end": 44.814,
+   "sent_start": 39.291,
+   "sent_end": 44.864,
+   "png": "subpng/c10.png",
+   "lines": 2
+  },
+  {
+   "sentence": 9,
+   "text": "The glow she loved harmed her in the",
+   "words": 8,
+   "start": 44.914,
+   "end": 47.181,
+   "sent_start": 44.864,
+   "sent_end": 49.948,
+   "png": "subpng/c11.png",
+   "lines": 1
+  },
+  {
+   "sentence": 9,
+   "text": "end, but her notebooks are still radioactive today.",
+   "words": 8,
+   "start": 47.281,
+   "end": 49.898,
+   "sent_start": 44.864,
+   "sent_end": 49.948,
+   "png": "subpng/c12.png",
+   "lines": 2
+  }
+ ],
+ "total": 49.948
+}

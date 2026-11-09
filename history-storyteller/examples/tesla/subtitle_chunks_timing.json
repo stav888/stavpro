@@ -1,0 +1,401 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "text": "In 1901, Nikola Tesla began building a giant tower on Long Island, New York.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 0.0,
+   "speech_end": 5.14,
+   "start": 0.0,
+   "onset": 0.26,
+   "end": 5.56
+  },
+  {
+   "sentence": 2,
+   "text": "His dream was to send messages, and even electricity, through the air to the whole world.",
+   "first_word": "His",
+   "asr_first": "His",
+   "word_start": 5.58,
+   "speech_end": 10.1,
+   "onset": 5.62,
+   "start": 5.56,
+   "end": 10.55
+  },
+  {
+   "sentence": 3,
+   "text": "It was paid for by J.P. Morgan, the most powerful banker in America.",
+   "first_word": "It",
+   "asr_first": "It",
+   "word_start": 10.54,
+   "speech_end": 13.9,
+   "onset": 10.61,
+   "start": 10.55,
+   "end": 14.41
+  },
+  {
+   "sentence": 4,
+   "text": "But in December 1901, Marconi sent a radio signal across the Atlantic, using far cheaper equipment.",
+   "first_word": "But",
+   "asr_first": "But",
+   "word_start": 14.42,
+   "speech_end": 19.76,
+   "onset": 14.47,
+   "start": 14.41,
+   "end": 20.21
+  },
+  {
+   "sentence": 5,
+   "text": "Tesla then asked Morgan for more money. His real dream was sending power through the air.",
+   "first_word": "Tesla",
+   "asr_first": "Tesla",
+   "word_start": 20.24,
+   "speech_end": 24.6,
+   "onset": 20.27,
+   "start": 20.21,
+   "end": 24.88
+  },
+  {
+   "sentence": 6,
+   "text": "Morgan refused to give him another cent.",
+   "first_word": "Morgan",
+   "asr_first": "Morgan",
+   "word_start": 24.88,
+   "speech_end": 26.88,
+   "onset": 24.94,
+   "start": 24.88,
+   "end": 27.22
+  },
+  {
+   "sentence": 7,
+   "text": "Tesla begged other investors for help, but no one would pay.",
+   "first_word": "Tesla",
+   "asr_first": "Tesla",
+   "word_start": 26.88,
+   "speech_end": 30.18,
+   "onset": 27.28,
+   "start": 27.22,
+   "end": 30.63
+  },
+  {
+   "sentence": 8,
+   "text": "By 1906, work on the tower stopped, and Tesla's hotel bills kept growing.",
+   "first_word": "By",
+   "asr_first": "By",
+   "word_start": 30.62,
+   "speech_end": 34.78,
+   "onset": 30.69,
+   "start": 30.63,
+   "end": 35.16
+  },
+  {
+   "sentence": 9,
+   "text": "In 1917, the tower was blown up and sold for scrap to help pay his hotel debts.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 35.18,
+   "speech_end": 39.5,
+   "onset": 35.22,
+   "start": 35.16,
+   "end": 39.89
+  },
+  {
+   "sentence": 10,
+   "text": "Tesla's tower never powered the world, but his dream of wireless energy lives on. A true story.",
+   "first_word": "Tesla's",
+   "asr_first": "Tesla's",
+   "word_start": 39.86,
+   "speech_end": 45.04,
+   "onset": 39.95,
+   "start": 39.89,
+   "end": 45.32
+  }
+ ],
+ "chunks": [
+  {
+   "sentence": 1,
+   "text": "In 1901, Nikola Tesla began building",
+   "lines_text": [
+    "In 1901, Nikola Tesla began building"
+   ],
+   "words": 6,
+   "start": 0.08333333333333333,
+   "end": 2.9166666666666665,
+   "sent_start": 0.0,
+   "sent_end": 5.56,
+   "png": "subpng/c00.png",
+   "lines": 1
+  },
+  {
+   "sentence": 1,
+   "text": "a giant tower on Long Island, New York.",
+   "lines_text": [
+    "a giant tower on Long Island, New York."
+   ],
+   "words": 8,
+   "start": 2.9166666666666665,
+   "end": 5.5,
+   "sent_start": 0.0,
+   "sent_end": 5.56,
+   "png": "subpng/c01.png",
+   "lines": 1
+  },
+  {
+   "sentence": 2,
+   "text": "His dream was to send messages, and even electricity,",
+   "lines_text": [
+    "His dream was to send",
+    "messages, and even electricity,"
+   ],
+   "words": 9,
+   "start": 5.583333333333333,
+   "end": 8.125,
+   "sent_start": 5.56,
+   "sent_end": 10.55,
+   "png": "subpng/c02.png",
+   "lines": 2
+  },
+  {
+   "sentence": 2,
+   "text": "through the air to the whole world.",
+   "lines_text": [
+    "through the air to the whole world."
+   ],
+   "words": 7,
+   "start": 8.125,
+   "end": 10.5,
+   "sent_start": 5.56,
+   "sent_end": 10.55,
+   "png": "subpng/c03.png",
+   "lines": 1
+  },
+  {
+   "sentence": 3,
+   "text": "It was paid for by J.P. Morgan,",
+   "lines_text": [
+    "It was paid for by J.P. Morgan,"
+   ],
+   "words": 7,
+   "start": 10.583333333333334,
+   "end": 12.333333333333334,
+   "sent_start": 10.55,
+   "sent_end": 14.41,
+   "png": "subpng/c04.png",
+   "lines": 1
+  },
+  {
+   "sentence": 3,
+   "text": "the most powerful banker in America.",
+   "lines_text": [
+    "the most powerful banker in America."
+   ],
+   "words": 6,
+   "start": 12.333333333333334,
+   "end": 14.333333333333334,
+   "sent_start": 10.55,
+   "sent_end": 14.41,
+   "png": "subpng/c05.png",
+   "lines": 1
+  },
+  {
+   "sentence": 4,
+   "text": "But in December 1901, Marconi sent",
+   "lines_text": [
+    "But in December 1901, Marconi sent"
+   ],
+   "words": 6,
+   "start": 14.416666666666666,
+   "end": 16.541666666666668,
+   "sent_start": 14.41,
+   "sent_end": 20.21,
+   "png": "subpng/c06.png",
+   "lines": 1
+  },
+  {
+   "sentence": 4,
+   "text": "a radio signal across the Atlantic, using far cheaper equipment.",
+   "lines_text": [
+    "a radio signal across the Atlantic,",
+    "using far cheaper equipment."
+   ],
+   "words": 10,
+   "start": 16.541666666666668,
+   "end": 20.125,
+   "sent_start": 14.41,
+   "sent_end": 20.21,
+   "png": "subpng/c07.png",
+   "lines": 2
+  },
+  {
+   "sentence": 5,
+   "text": "Tesla then asked Morgan for more money.",
+   "lines_text": [
+    "Tesla then asked Morgan for more money."
+   ],
+   "words": 7,
+   "start": 20.25,
+   "end": 22.416666666666668,
+   "sent_start": 20.21,
+   "sent_end": 24.88,
+   "png": "subpng/c08.png",
+   "lines": 1
+  },
+  {
+   "sentence": 5,
+   "text": "His real dream was sending power through the air.",
+   "lines_text": [
+    "His real dream was sending",
+    "power through the air."
+   ],
+   "words": 9,
+   "start": 22.416666666666668,
+   "end": 24.791666666666668,
+   "sent_start": 20.21,
+   "sent_end": 24.88,
+   "png": "subpng/c09.png",
+   "lines": 2
+  },
+  {
+   "sentence": 6,
+   "text": "Morgan refused to give him another cent.",
+   "lines_text": [
+    "Morgan refused to give him another cent."
+   ],
+   "words": 7,
+   "start": 24.916666666666668,
+   "end": 27.166666666666668,
+   "sent_start": 24.88,
+   "sent_end": 27.22,
+   "png": "subpng/c10.png",
+   "lines": 1
+  },
+  {
+   "sentence": 7,
+   "text": "Tesla begged other investors for help,",
+   "lines_text": [
+    "Tesla begged other investors for help,"
+   ],
+   "words": 6,
+   "start": 27.25,
+   "end": 29.291666666666668,
+   "sent_start": 27.22,
+   "sent_end": 30.63,
+   "png": "subpng/c11.png",
+   "lines": 1
+  },
+  {
+   "sentence": 7,
+   "text": "but no one would pay.",
+   "lines_text": [
+    "but no one would pay."
+   ],
+   "words": 5,
+   "start": 29.291666666666668,
+   "end": 30.541666666666668,
+   "sent_start": 27.22,
+   "sent_end": 30.63,
+   "png": "subpng/c12.png",
+   "lines": 1
+  },
+  {
+   "sentence": 8,
+   "text": "By 1906, work on the tower stopped,",
+   "lines_text": [
+    "By 1906, work on the tower stopped,"
+   ],
+   "words": 7,
+   "start": 30.666666666666668,
+   "end": 32.75,
+   "sent_start": 30.63,
+   "sent_end": 35.16,
+   "png": "subpng/c13.png",
+   "lines": 1
+  },
+  {
+   "sentence": 8,
+   "text": "and Tesla's hotel bills kept growing.",
+   "lines_text": [
+    "and Tesla's hotel bills kept growing."
+   ],
+   "words": 6,
+   "start": 32.75,
+   "end": 35.083333333333336,
+   "sent_start": 30.63,
+   "sent_end": 35.16,
+   "png": "subpng/c14.png",
+   "lines": 1
+  },
+  {
+   "sentence": 9,
+   "text": "In 1917, the tower was blown up",
+   "lines_text": [
+    "In 1917, the tower was blown up"
+   ],
+   "words": 7,
+   "start": 35.166666666666664,
+   "end": 37.333333333333336,
+   "sent_start": 35.16,
+   "sent_end": 39.89,
+   "png": "subpng/c15.png",
+   "lines": 1
+  },
+  {
+   "sentence": 9,
+   "text": "and sold for scrap to help pay his hotel debts.",
+   "lines_text": [
+    "and sold for scrap to help",
+    "pay his hotel debts."
+   ],
+   "words": 10,
+   "start": 37.333333333333336,
+   "end": 39.833333333333336,
+   "sent_start": 35.16,
+   "sent_end": 39.89,
+   "png": "subpng/c16.png",
+   "lines": 2
+  },
+  {
+   "sentence": 10,
+   "text": "Tesla's tower never powered the world,",
+   "lines_text": [
+    "Tesla's tower never powered the world,"
+   ],
+   "words": 6,
+   "start": 39.916666666666664,
+   "end": 42.041666666666664,
+   "sent_start": 39.89,
+   "sent_end": 45.32,
+   "png": "subpng/c17.png",
+   "lines": 1
+  },
+  {
+   "sentence": 10,
+   "text": "but his dream of wireless energy lives on.",
+   "lines_text": [
+    "but his dream of wireless energy lives on."
+   ],
+   "words": 8,
+   "start": 42.041666666666664,
+   "end": 44.25,
+   "sent_start": 39.89,
+   "sent_end": 45.32,
+   "png": "subpng/c18.png",
+   "lines": 1
+  },
+  {
+   "sentence": 10,
+   "text": "A true story.",
+   "lines_text": [
+    "A true story."
+   ],
+   "words": 3,
+   "start": 44.25,
+   "end": 45.25,
+   "sent_start": 39.89,
+   "sent_end": 45.32,
+   "png": "subpng/c19.png",
+   "lines": 1
+  }
+ ],
+ "total": 45.32
+}

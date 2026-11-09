@@ -1,0 +1,1 @@
+Lustig v1 build: audio/ (Chatterbox am_eric seed7 ex.75 cfg.4, loudnorm -16, +0.8s tail pad), gen/ raw i2v, anim/ = rife_eq.py (RIFE4.7 motion-equalized one-way retime, trimmed to slot+3f), anim_v1/ = old rife_all output (failed 0.1 dup), build.py, timing.json, sheet.png (midpoints).

@@ -1,0 +1,151 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "start": 0.0,
+   "word_start": 0.0,
+   "speech_end": 7.38,
+   "text": "In the nineteen eighties, an inventor from Ohio named Stanley Meyer built a small dune buggy, and claimed it ran on nothing but water.",
+   "first_word": "In",
+   "asr_first": "In",
+   "end": 7.94,
+   "onset": 0.25
+  },
+  {
+   "sentence": 2,
+   "start": 7.94,
+   "word_start": 7.92,
+   "speech_end": 12.56,
+   "text": "He said his 'water fuel cell' split water into hydrogen and oxygen, and burned them as fuel.",
+   "first_word": "He",
+   "asr_first": "He",
+   "end": 13.02,
+   "sil": [
+    7.47,
+    8.0
+   ],
+   "onset": 8.0
+  },
+  {
+   "sentence": 3,
+   "start": 13.02,
+   "word_start": 13.0,
+   "speech_end": 17.74,
+   "text": "He claimed the car could drive from Los Angeles to New York on just twenty-two gallons of water.",
+   "first_word": "He",
+   "asr_first": "He",
+   "end": 18.2,
+   "sil": [
+    12.69,
+    13.08
+   ],
+   "onset": 13.08
+  },
+  {
+   "sentence": 4,
+   "start": 18.2,
+   "word_start": 18.24,
+   "speech_end": 20.48,
+   "text": "Investors believed him, and handed him their money.",
+   "first_word": "Investors",
+   "asr_first": "Investors",
+   "end": 21.04,
+   "sil": [
+    17.85,
+    18.26
+   ],
+   "onset": 18.26
+  },
+  {
+   "sentence": 5,
+   "start": 21.04,
+   "word_start": 21.02,
+   "speech_end": 28.08,
+   "text": "In nineteen ninety-six, expert witnesses examined his fuel cell for an Ohio court, and found nothing revolutionary at all.",
+   "first_word": "In",
+   "asr_first": "In",
+   "end": 28.36,
+   "sil": [
+    20.58,
+    21.1
+   ],
+   "onset": 21.1
+  },
+  {
+   "sentence": 6,
+   "start": 28.36,
+   "word_start": 28.08,
+   "speech_end": 33.02,
+   "text": "The court ruled it was 'gross and egregious fraud', and ordered him to pay the investors back.",
+   "first_word": "The",
+   "asr_first": "The",
+   "end": 33.51,
+   "sil": [
+    28.32,
+    28.42
+   ],
+   "onset": 28.42
+  },
+  {
+   "sentence": 7,
+   "start": 33.51,
+   "word_start": 33.44,
+   "speech_end": 38.26,
+   "text": "Physics agrees: splitting water takes more energy than you ever get back by burning the hydrogen.",
+   "first_word": "Physics",
+   "asr_first": "Physics",
+   "end": 38.95,
+   "sil": [
+    33.22,
+    33.57
+   ],
+   "onset": 33.57
+  },
+  {
+   "sentence": 8,
+   "start": 38.95,
+   "word_start": 38.96,
+   "speech_end": 44.82,
+   "text": "In nineteen ninety-eight, Meyer collapsed at a restaurant, and witnesses said he cried, 'They poisoned me.'",
+   "first_word": "In",
+   "asr_first": "In",
+   "end": 45.41,
+   "sil": [
+    38.49,
+    39.01
+   ],
+   "onset": 39.01
+  },
+  {
+   "sentence": 9,
+   "start": 45.41,
+   "word_start": 45.4,
+   "speech_end": 48.78,
+   "text": "But the coroner found he died of a brain aneurysm, from natural causes.",
+   "first_word": "But",
+   "asr_first": "But",
+   "end": 49.26,
+   "sil": [
+    44.96,
+    45.47
+   ],
+   "onset": 45.47
+  },
+  {
+   "sentence": 10,
+   "start": 49.26,
+   "word_start": 48.78,
+   "speech_end": 53.12,
+   "text": "Still, to this day, some people believe his water car was hidden from the world.",
+   "first_word": "Still",
+   "asr_first": "Still,",
+   "end": 53.92,
+   "sil": [
+    49.01,
+    49.32
+   ],
+   "onset": 49.32
+  }
+ ],
+ "total": 53.9196875
+}

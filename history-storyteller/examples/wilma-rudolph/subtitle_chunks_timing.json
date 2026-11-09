@@ -1,0 +1,284 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "start": 0.2,
+   "speech_end": 7.774,
+   "text": "In 1940, in a small Tennessee town, Wilma Rudolph was born, the twentieth of twenty-two children in a poor family.",
+   "first_word": "In 1940",
+   "end": 8.174
+  },
+  {
+   "sentence": 2,
+   "start": 8.174,
+   "speech_end": 14.291,
+   "text": "At four, she caught polio, her left leg grew weak, and doctors said she would never walk again.",
+   "first_word": "At",
+   "end": 14.691
+  },
+  {
+   "sentence": 3,
+   "start": 14.691,
+   "speech_end": 22.73,
+   "text": "Her mother refused to give up, taking her by bus every week to a hospital in Nashville, while her brothers and sisters rubbed her leg every day.",
+   "first_word": "Her",
+   "end": 23.13
+  },
+  {
+   "sentence": 4,
+   "start": 23.13,
+   "speech_end": 28.548,
+   "text": "For years she wore a metal brace, until at twelve, she took it off and played basketball.",
+   "first_word": "For",
+   "end": 28.948
+  },
+  {
+   "sentence": 5,
+   "start": 28.948,
+   "speech_end": 34.481,
+   "text": "She began to run, and at just sixteen, she won an Olympic bronze medal in the relay.",
+   "first_word": "She",
+   "end": 34.881
+  },
+  {
+   "sentence": 6,
+   "start": 34.881,
+   "speech_end": 41.703,
+   "text": "In 1960, in Rome, she won three gold medals, and the world called her the fastest woman on Earth.",
+   "first_word": "In 1960",
+   "end": 42.103
+  },
+  {
+   "sentence": 7,
+   "start": 42.103,
+   "speech_end": 48.883,
+   "text": "Back home, she insisted her welcome parade be open to everyone, and it became her town's first integrated event.",
+   "first_word": "Back",
+   "end": 49.233
+  }
+ ],
+ "chunks": [
+  {
+   "sentence": 1,
+   "text": "In 1940, in a small Tennessee town, Wilma Rudolph was born,",
+   "lines_text": [
+    "In 1940, in a small Tennessee",
+    "town, Wilma Rudolph was born,"
+   ],
+   "words": 11,
+   "start": 0.25,
+   "end": 5.0,
+   "sent_start": 0.2,
+   "sent_end": 8.174,
+   "png": "subpng/c00.png",
+   "lines": 2
+  },
+  {
+   "sentence": 1,
+   "text": "the twentieth of twenty-two children in a poor family.",
+   "lines_text": [
+    "the twentieth of twenty-two",
+    "children in a poor family."
+   ],
+   "words": 9,
+   "start": 5.0,
+   "end": 8.125,
+   "sent_start": 0.2,
+   "sent_end": 8.174,
+   "png": "subpng/c01.png",
+   "lines": 2
+  },
+  {
+   "sentence": 2,
+   "text": "At four, she caught polio,",
+   "lines_text": [
+    "At four, she caught polio,"
+   ],
+   "words": 5,
+   "start": 8.2083,
+   "end": 10.5,
+   "sent_start": 8.174,
+   "sent_end": 14.691,
+   "png": "subpng/c02.png",
+   "lines": 1
+  },
+  {
+   "sentence": 2,
+   "text": "her left leg grew weak, and doctors said she would never walk again.",
+   "lines_text": [
+    "her left leg grew weak,",
+    "and doctors said she would never walk again."
+   ],
+   "words": 13,
+   "start": 10.5,
+   "end": 14.625,
+   "sent_start": 8.174,
+   "sent_end": 14.691,
+   "png": "subpng/c03.png",
+   "lines": 2
+  },
+  {
+   "sentence": 3,
+   "text": "Her mother refused to give up,",
+   "lines_text": [
+    "Her mother refused to give up,"
+   ],
+   "words": 6,
+   "start": 14.75,
+   "end": 16.5,
+   "sent_start": 14.691,
+   "sent_end": 23.13,
+   "png": "subpng/c04.png",
+   "lines": 1
+  },
+  {
+   "sentence": 3,
+   "text": "taking her by bus every week to a hospital in Nashville,",
+   "lines_text": [
+    "taking her by bus every week",
+    "to a hospital in Nashville,"
+   ],
+   "words": 11,
+   "start": 16.5,
+   "end": 19.916666666666668,
+   "sent_start": 14.691,
+   "sent_end": 23.13,
+   "png": "subpng/c05.png",
+   "lines": 2
+  },
+  {
+   "sentence": 3,
+   "text": "while her brothers and sisters rubbed her leg every day.",
+   "lines_text": [
+    "while her brothers and sisters",
+    "rubbed her leg every day."
+   ],
+   "words": 10,
+   "start": 19.916666666666668,
+   "end": 23.0833,
+   "sent_start": 14.691,
+   "sent_end": 23.13,
+   "png": "subpng/c06.png",
+   "lines": 2
+  },
+  {
+   "sentence": 4,
+   "text": "For years she wore a metal brace,",
+   "lines_text": [
+    "For years she wore a metal brace,"
+   ],
+   "words": 7,
+   "start": 23.1667,
+   "end": 25.25,
+   "sent_start": 23.13,
+   "sent_end": 28.948,
+   "png": "subpng/c07.png",
+   "lines": 1
+  },
+  {
+   "sentence": 4,
+   "text": "until at twelve, she took it off and played basketball.",
+   "lines_text": [
+    "until at twelve,",
+    "she took it off and played basketball."
+   ],
+   "words": 10,
+   "start": 25.25,
+   "end": 28.9167,
+   "sent_start": 23.13,
+   "sent_end": 28.948,
+   "png": "subpng/c08.png",
+   "lines": 2
+  },
+  {
+   "sentence": 5,
+   "text": "She began to run,",
+   "lines_text": [
+    "She began to run,"
+   ],
+   "words": 4,
+   "start": 29.0,
+   "end": 30.25,
+   "sent_start": 28.948,
+   "sent_end": 34.881,
+   "png": "subpng/c09.png",
+   "lines": 1
+  },
+  {
+   "sentence": 5,
+   "text": "and at just sixteen, she won an Olympic bronze medal in the relay.",
+   "lines_text": [
+    "and at just sixteen, she won",
+    "an Olympic bronze medal in the relay."
+   ],
+   "words": 13,
+   "start": 30.25,
+   "end": 34.8333,
+   "sent_start": 28.948,
+   "sent_end": 34.881,
+   "png": "subpng/c10.png",
+   "lines": 2
+  },
+  {
+   "sentence": 6,
+   "text": "In 1960, in Rome, she won three gold medals,",
+   "lines_text": [
+    "In 1960, in Rome,",
+    "she won three gold medals,"
+   ],
+   "words": 9,
+   "start": 34.9167,
+   "end": 39.041666666666664,
+   "sent_start": 34.881,
+   "sent_end": 42.103,
+   "png": "subpng/c11.png",
+   "lines": 2
+  },
+  {
+   "sentence": 6,
+   "text": "and the world called her the fastest woman on Earth.",
+   "lines_text": [
+    "and the world called her",
+    "the fastest woman on Earth."
+   ],
+   "words": 10,
+   "start": 39.041666666666664,
+   "end": 42.0417,
+   "sent_start": 34.881,
+   "sent_end": 42.103,
+   "png": "subpng/c12.png",
+   "lines": 2
+  },
+  {
+   "sentence": 7,
+   "text": "Back home, she insisted her welcome parade be open to everyone,",
+   "lines_text": [
+    "Back home, she insisted",
+    "her welcome parade be open to everyone,"
+   ],
+   "words": 11,
+   "start": 42.1667,
+   "end": 46.208333333333336,
+   "sent_start": 42.103,
+   "sent_end": 49.233,
+   "png": "subpng/c13.png",
+   "lines": 2
+  },
+  {
+   "sentence": 7,
+   "text": "and it became her town's first integrated event.",
+   "lines_text": [
+    "and it became her town's",
+    "first integrated event."
+   ],
+   "words": 8,
+   "start": 46.208333333333336,
+   "end": 49.1667,
+   "sent_start": 42.103,
+   "sent_end": 49.233,
+   "png": "subpng/c14.png",
+   "lines": 2
+  }
+ ],
+ "total": 49.233
+}

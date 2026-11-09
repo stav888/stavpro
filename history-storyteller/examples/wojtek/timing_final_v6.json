@@ -1,0 +1,181 @@
+{
+  "sentences": [
+    {
+      "sentence": 1,
+      "start": 0.2,
+      "end": 5.225,
+      "words": 12,
+      "text": "In Iran in 1942, Polish soldiers found an orphaned brown bear cub.",
+      "duration": 5.025,
+      "lock_end": 5.225
+    },
+    {
+      "sentence": 2,
+      "start": 5.225,
+      "end": 9.3,
+      "words": 12,
+      "text": "They adopted him, named him Wojtek, and raised him in their unit.",
+      "duration": 4.075,
+      "lock_end": 9.3
+    },
+    {
+      "sentence": 3,
+      "start": 9.3,
+      "end": 13.3,
+      "words": 12,
+      "text": "He ate, slept, and marched with the men, part of the company.",
+      "duration": 4.0,
+      "lock_end": 13.3
+    },
+    {
+      "sentence": 4,
+      "start": 13.3,
+      "end": 17.8,
+      "words": 14,
+      "text": "To sail with them to Italy, the army officially enlisted him as a soldier.",
+      "duration": 4.5,
+      "lock_end": 17.8
+    },
+    {
+      "sentence": 5,
+      "start": 17.8,
+      "end": 22.7,
+      "words": 13,
+      "text": "Private Wojtek got a service number, a pay book, and later became corporal.",
+      "duration": 4.9,
+      "lock_end": 22.7
+    },
+    {
+      "sentence": 6,
+      "start": 22.7,
+      "end": 28.65,
+      "words": 13,
+      "text": "At Monte Cassino in 1944, soldiers said he carried crates of artillery shells.",
+      "duration": 5.95,
+      "lock_end": 28.65
+    },
+    {
+      "sentence": 7,
+      "start": 28.65,
+      "end": 33.525,
+      "words": 12,
+      "text": "After the war, he lived at Edinburgh Zoo, visited by old comrades.",
+      "duration": 4.875,
+      "lock_end": 33.525
+    },
+    {
+      "sentence": 8,
+      "start": 33.525,
+      "end": 38.243,
+      "words": 14,
+      "text": "He died in 1963 — more than a mascot, he was one of them.",
+      "duration": 4.718,
+      "lock_end": 38.243
+    }
+  ],
+  "chunks": [
+    {
+      "gid": 0,
+      "sentence": 1,
+      "text": "In Iran in 1942, Polish soldiers found an orphaned brown bear cub.",
+      "words": 12,
+      "sent_start": 0.2,
+      "sent_end": 5.225,
+      "start": 0.25,
+      "end": 5.175,
+      "png": "/workspace/wojtek_v5/subpng/c00.png",
+      "lines": 2
+    },
+    {
+      "gid": 1,
+      "sentence": 2,
+      "text": "They adopted him, named him Wojtek, and raised him in their unit.",
+      "words": 12,
+      "sent_start": 5.225,
+      "sent_end": 9.3,
+      "start": 5.275,
+      "end": 9.25,
+      "png": "/workspace/wojtek_v5/subpng/c01.png",
+      "lines": 2
+    },
+    {
+      "gid": 2,
+      "sentence": 3,
+      "text": "He ate, slept, and marched with the men, part of the company.",
+      "words": 12,
+      "sent_start": 9.3,
+      "sent_end": 13.3,
+      "start": 9.35,
+      "end": 13.25,
+      "png": "/workspace/wojtek_v5/subpng/c02.png",
+      "lines": 2
+    },
+    {
+      "gid": 3,
+      "sentence": 4,
+      "text": "To sail with them to Italy, the army officially enlisted him as a soldier.",
+      "words": 14,
+      "sent_start": 13.3,
+      "sent_end": 17.8,
+      "start": 13.35,
+      "end": 17.75,
+      "png": "/workspace/wojtek_v5/subpng/c03.png",
+      "lines": 2
+    },
+    {
+      "gid": 4,
+      "sentence": 5,
+      "text": "Private Wojtek got a service number, a pay book, and later became corporal.",
+      "words": 13,
+      "sent_start": 17.8,
+      "sent_end": 22.7,
+      "start": 17.85,
+      "end": 22.65,
+      "png": "/workspace/wojtek_v5/subpng/c04.png",
+      "lines": 2
+    },
+    {
+      "gid": 5,
+      "sentence": 6,
+      "text": "At Monte Cassino in 1944, soldiers said he carried crates of artillery shells.",
+      "words": 13,
+      "sent_start": 22.7,
+      "sent_end": 28.65,
+      "start": 22.75,
+      "end": 28.6,
+      "png": "/workspace/wojtek_v5/subpng/c05.png",
+      "lines": 2
+    },
+    {
+      "gid": 6,
+      "sentence": 7,
+      "text": "After the war, he lived at Edinburgh Zoo, visited by old comrades.",
+      "words": 12,
+      "sent_start": 28.65,
+      "sent_end": 33.525,
+      "start": 28.7,
+      "end": 33.475,
+      "png": "/workspace/wojtek_v5/subpng/c06.png",
+      "lines": 2
+    },
+    {
+      "gid": 7,
+      "sentence": 8,
+      "text": "He died in 1963 — more than a mascot, he was one of them.",
+      "words": 14,
+      "sent_start": 33.525,
+      "sent_end": 38.243,
+      "start": 33.575,
+      "end": 38.193,
+      "png": "/workspace/wojtek_v5/subpng/c07.png",
+      "lines": 2
+    }
+  ],
+  "total": 38.543,
+  "edit": {
+    "cut_start": 34.24,
+    "cut_end": 34.94,
+    "deleted": 0.7,
+    "note": "deleted region verified all digital-zero samples, inside zero run 34.2224-34.9585"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "sentences": [
+    {
+      "sentence": 1,
+      "start": 0.0,
+      "end": 4.008,
+      "duration": 4.008,
+      "words": 6,
+      "text": "Tsutomu Yamaguchi was a Japanese engineer."
+    },
+    {
+      "sentence": 2,
+      "start": 4.508,
+      "end": 12.668,
+      "duration": 8.16,
+      "words": 18,
+      "text": "On August 6, 1945, he was on a business trip in Hiroshima, when the first atomic bomb fell."
+    },
+    {
+      "sentence": 3,
+      "start": 13.168,
+      "end": 16.696,
+      "duration": 3.528,
+      "words": 7,
+      "text": "Burned and injured, he survived the night."
+    },
+    {
+      "sentence": 4,
+      "start": 17.196,
+      "end": 22.74,
+      "duration": 5.544,
+      "words": 12,
+      "text": "The next morning, bandaged, he took a train home — to Nagasaki."
+    },
+    {
+      "sentence": 5,
+      "start": 23.24,
+      "end": 29.984,
+      "duration": 6.744,
+      "words": 18,
+      "text": "On August 9, at work, he was telling his boss about the horror he had seen in Hiroshima."
+    },
+    {
+      "sentence": 6,
+      "start": 30.484,
+      "end": 35.596,
+      "duration": 5.112,
+      "words": 10,
+      "text": "At that moment, the second atomic bomb exploded over Nagasaki."
+    },
+    {
+      "sentence": 7,
+      "start": 36.096,
+      "end": 39.912,
+      "duration": 3.816,
+      "words": 4,
+      "text": "Incredibly, Yamaguchi survived again."
+    },
+    {
+      "sentence": 8,
+      "start": 40.412,
+      "end": 48.02,
+      "duration": 7.608,
+      "words": 19,
+      "text": "He lived to the age of 93 — the only person officially recognized to have survived both atomic bombings."
+    }
+  ],
+  "chunks": [
+    {
+      "gid": 0,
+      "sentence": 1,
+      "text": "Tsutomu Yamaguchi was a Japanese engineer.",
+      "words": 6,
+      "sent_start": 0.0,
+      "sent_end": 4.008,
+      "start": 0.07,
+      "end": 3.938,
+      "png": "/workspace/yamaguchi/subpng/c00.png",
+      "lines": 2
+    },
+    {
+      "gid": 1,
+      "sentence": 2,
+      "text": "On August 6, 1945, he was on a business",
+      "words": 9,
+      "sent_start": 4.508,
+      "sent_end": 12.668,
+      "start": 4.578,
+      "end": 8.588,
+      "png": "/workspace/yamaguchi/subpng/c01.png",
+      "lines": 1
+    },
+    {
+      "gid": 2,
+      "sentence": 2,
+      "text": "trip in Hiroshima, when the first atomic bomb fell.",
+      "words": 9,
+      "sent_start": 4.508,
+      "sent_end": 12.668,
+      "start": 8.588,
+      "end": 12.598,
+      "png": "/workspace/yamaguchi/subpng/c02.png",
+      "lines": 2
+    },
+    {
+      "gid": 3,
+      "sentence": 3,
+      "text": "Burned and injured, he survived the night.",
+      "words": 7,
+      "sent_start": 13.168,
+      "sent_end": 16.696,
+      "start": 13.238,
+      "end": 16.626,
+      "png": "/workspace/yamaguchi/subpng/c03.png",
+      "lines": 1
+    },
+    {
+      "gid": 4,
+      "sentence": 4,
+      "text": "The next morning, bandaged, he took a train home — to Nagasaki.",
+      "words": 12,
+      "sent_start": 17.196,
+      "sent_end": 22.74,
+      "start": 17.266,
+      "end": 22.67,
+      "png": "/workspace/yamaguchi/subpng/c04.png",
+      "lines": 2
+    },
+    {
+      "gid": 5,
+      "sentence": 5,
+      "text": "On August 9, at work, he was telling his",
+      "words": 9,
+      "sent_start": 23.24,
+      "sent_end": 29.984,
+      "start": 23.31,
+      "end": 26.612,
+      "png": "/workspace/yamaguchi/subpng/c05.png",
+      "lines": 1
+    },
+    {
+      "gid": 6,
+      "sentence": 5,
+      "text": "boss about the horror he had seen in Hiroshima.",
+      "words": 9,
+      "sent_start": 23.24,
+      "sent_end": 29.984,
+      "start": 26.612,
+      "end": 29.914,
+      "png": "/workspace/yamaguchi/subpng/c06.png",
+      "lines": 2
+    },
+    {
+      "gid": 7,
+      "sentence": 6,
+      "text": "At that moment, the second atomic bomb exploded over Nagasaki.",
+      "words": 10,
+      "sent_start": 30.484,
+      "sent_end": 35.596,
+      "start": 30.554,
+      "end": 35.526,
+      "png": "/workspace/yamaguchi/subpng/c07.png",
+      "lines": 2
+    },
+    {
+      "gid": 8,
+      "sentence": 7,
+      "text": "Incredibly, Yamaguchi survived again.",
+      "words": 4,
+      "sent_start": 36.096,
+      "sent_end": 39.912,
+      "start": 36.166,
+      "end": 39.842,
+      "png": "/workspace/yamaguchi/subpng/c08.png",
+      "lines": 1
+    },
+    {
+      "gid": 9,
+      "sentence": 8,
+      "text": "He lived to the age of 93 — the only",
+      "words": 10,
+      "sent_start": 40.412,
+      "sent_end": 48.02,
+      "start": 40.482,
+      "end": 44.416,
+      "png": "/workspace/yamaguchi/subpng/c09.png",
+      "lines": 1
+    },
+    {
+      "gid": 10,
+      "sentence": 8,
+      "text": "person officially recognized to have survived both atomic bombings.",
+      "words": 9,
+      "sent_start": 40.412,
+      "sent_end": 48.02,
+      "start": 44.416,
+      "end": 47.95,
+      "png": "/workspace/yamaguchi/subpng/c10.png",
+      "lines": 2
+    }
+  ],
+  "total": 48.02
+}

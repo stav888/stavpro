@@ -1,0 +1,439 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "text": "In 1925, a con man sold the Eiffel Tower. It was never his to sell.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 0.4,
+   "onset": 0.4,
+   "speech_end": 5.28,
+   "start": 0.0,
+   "end": 5.59
+  },
+  {
+   "sentence": 2,
+   "text": "His name was Victor Lustig. A newspaper story about the tower's upkeep gave him an idea.",
+   "first_word": "His",
+   "asr_first": "His",
+   "word_start": 5.65,
+   "onset": 5.65,
+   "speech_end": 10.4,
+   "start": 5.59,
+   "end": 10.75,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 3,
+   "text": "He posed as a government official. He forged official stationery. Then he invited scrap metal dealers to a luxury hotel in Paris.",
+   "first_word": "He",
+   "asr_first": "He",
+   "word_start": 10.81,
+   "onset": 10.81,
+   "speech_end": 18.12,
+   "start": 10.75,
+   "end": 18.52,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 4,
+   "text": "There, he shared a secret. The government planned to tear down the tower and sell its metal.",
+   "first_word": "There,",
+   "asr_first": "There,",
+   "word_start": 18.58,
+   "onset": 18.58,
+   "speech_end": 23.14,
+   "start": 18.52,
+   "end": 23.54,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 5,
+   "text": "One dealer, Andr\u00e9 Poisson, wanted the deal badly.",
+   "first_word": "One",
+   "asr_first": "One",
+   "word_start": 23.6,
+   "onset": 23.6,
+   "speech_end": 26.52,
+   "start": 23.54,
+   "end": 26.95,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 6,
+   "text": "But Lustig wanted more than the price of the tower.",
+   "first_word": "But",
+   "asr_first": "But",
+   "word_start": 27.01,
+   "onset": 27.01,
+   "speech_end": 29.22,
+   "start": 26.95,
+   "end": 29.61,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 7,
+   "text": "He hinted that he was a corrupt official. He expected a bribe, too.",
+   "first_word": "He",
+   "asr_first": "He",
+   "word_start": 29.67,
+   "onset": 29.67,
+   "speech_end": 33.16,
+   "start": 29.61,
+   "end": 33.56,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 8,
+   "text": "Strangely, that made the scam more convincing. Now there was a reason the deal happened behind closed doors.",
+   "first_word": "Strangely,",
+   "asr_first": "Strangely,",
+   "word_start": 33.62,
+   "onset": 33.62,
+   "speech_end": 39.28,
+   "start": 33.56,
+   "end": 39.68,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 9,
+   "text": "Poisson paid. Lustig took the money and fled to Austria.",
+   "first_word": "Poisson",
+   "asr_first": "Poisson",
+   "word_start": 39.74,
+   "onset": 39.74,
+   "speech_end": 42.66,
+   "start": 39.68,
+   "end": 43.13,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 10,
+   "text": "When Poisson realized he had been fooled, he was too embarrassed to go to the police.",
+   "first_word": "When",
+   "asr_first": "When",
+   "word_start": 43.19,
+   "onset": 43.19,
+   "speech_end": 47.12,
+   "start": 43.13,
+   "end": 47.54,
+   "speech_end_prev_ok": true
+  },
+  {
+   "sentence": 11,
+   "text": "The Eiffel Tower stayed right where it was. Poisson's money did not.",
+   "first_word": "The",
+   "asr_first": "The",
+   "word_start": 47.6,
+   "onset": 47.6,
+   "speech_end": 51.26,
+   "start": 47.54,
+   "end": 51.59,
+   "speech_end_prev_ok": true
+  }
+ ],
+ "chunks": [
+  {
+   "sentence": 1,
+   "text": "In 1925, a con man sold the Eiffel Tower.",
+   "lines_text": [
+    "In 1925, a con man sold the Eiffel Tower."
+   ],
+   "words": 9,
+   "start": 0.08333333333333333,
+   "end": 4.0,
+   "sent_start": 0.0,
+   "sent_end": 5.59,
+   "png": "subpng/c00.png",
+   "lines": 1
+  },
+  {
+   "sentence": 1,
+   "text": "It was never his to sell.",
+   "lines_text": [
+    "It was never his to sell."
+   ],
+   "words": 6,
+   "start": 4.0,
+   "end": 5.5,
+   "sent_start": 0.0,
+   "sent_end": 5.59,
+   "png": "subpng/c01.png",
+   "lines": 1
+  },
+  {
+   "sentence": 2,
+   "text": "His name was Victor Lustig.",
+   "lines_text": [
+    "His name was Victor Lustig."
+   ],
+   "words": 5,
+   "start": 5.625,
+   "end": 7.458333333333333,
+   "sent_start": 5.59,
+   "sent_end": 10.75,
+   "png": "subpng/c02.png",
+   "lines": 1
+  },
+  {
+   "sentence": 2,
+   "text": "A newspaper story about the tower's upkeep gave him an idea.",
+   "lines_text": [
+    "A newspaper story about",
+    "the tower's upkeep gave him an idea."
+   ],
+   "words": 11,
+   "start": 7.458333333333333,
+   "end": 10.666666666666666,
+   "sent_start": 5.59,
+   "sent_end": 10.75,
+   "png": "subpng/c03.png",
+   "lines": 2
+  },
+  {
+   "sentence": 3,
+   "text": "He posed as a government official.",
+   "lines_text": [
+    "He posed as a government official."
+   ],
+   "words": 6,
+   "start": 10.75,
+   "end": 12.708333333333334,
+   "sent_start": 10.75,
+   "sent_end": 18.52,
+   "png": "subpng/c04.png",
+   "lines": 1
+  },
+  {
+   "sentence": 3,
+   "text": "He forged official stationery.",
+   "lines_text": [
+    "He forged official stationery."
+   ],
+   "words": 4,
+   "start": 12.708333333333334,
+   "end": 14.791666666666666,
+   "sent_start": 10.75,
+   "sent_end": 18.52,
+   "png": "subpng/c05.png",
+   "lines": 1
+  },
+  {
+   "sentence": 3,
+   "text": "Then he invited scrap metal dealers to a luxury hotel in Paris.",
+   "lines_text": [
+    "Then he invited scrap metal",
+    "dealers to a luxury hotel in Paris."
+   ],
+   "words": 12,
+   "start": 14.791666666666666,
+   "end": 18.458333333333332,
+   "sent_start": 10.75,
+   "sent_end": 18.52,
+   "png": "subpng/c06.png",
+   "lines": 2
+  },
+  {
+   "sentence": 4,
+   "text": "There, he shared a secret.",
+   "lines_text": [
+    "There, he shared a secret."
+   ],
+   "words": 5,
+   "start": 18.541666666666668,
+   "end": 20.208333333333332,
+   "sent_start": 18.52,
+   "sent_end": 23.54,
+   "png": "subpng/c07.png",
+   "lines": 1
+  },
+  {
+   "sentence": 4,
+   "text": "The government planned to tear down the tower and sell its metal.",
+   "lines_text": [
+    "The government planned to tear",
+    "down the tower and sell its metal."
+   ],
+   "words": 12,
+   "start": 20.208333333333332,
+   "end": 23.458333333333332,
+   "sent_start": 18.52,
+   "sent_end": 23.54,
+   "png": "subpng/c08.png",
+   "lines": 2
+  },
+  {
+   "sentence": 5,
+   "text": "One dealer, Andr\u00e9 Poisson, wanted the deal badly.",
+   "lines_text": [
+    "One dealer, Andr\u00e9 Poisson,",
+    "wanted the deal badly."
+   ],
+   "words": 8,
+   "start": 23.541666666666668,
+   "end": 26.875,
+   "sent_start": 23.54,
+   "sent_end": 26.95,
+   "png": "subpng/c09.png",
+   "lines": 2
+  },
+  {
+   "sentence": 6,
+   "text": "But Lustig wanted more than the price of the tower.",
+   "lines_text": [
+    "But Lustig wanted more",
+    "than the price of the tower."
+   ],
+   "words": 10,
+   "start": 26.958333333333332,
+   "end": 29.541666666666668,
+   "sent_start": 26.95,
+   "sent_end": 29.61,
+   "png": "subpng/c10.png",
+   "lines": 2
+  },
+  {
+   "sentence": 7,
+   "text": "He hinted that he was a corrupt official.",
+   "lines_text": [
+    "He hinted that he was a corrupt official."
+   ],
+   "words": 8,
+   "start": 29.625,
+   "end": 31.75,
+   "sent_start": 29.61,
+   "sent_end": 33.56,
+   "png": "subpng/c11.png",
+   "lines": 1
+  },
+  {
+   "sentence": 7,
+   "text": "He expected a bribe, too.",
+   "lines_text": [
+    "He expected a bribe, too."
+   ],
+   "words": 5,
+   "start": 31.75,
+   "end": 33.5,
+   "sent_start": 29.61,
+   "sent_end": 33.56,
+   "png": "subpng/c12.png",
+   "lines": 1
+  },
+  {
+   "sentence": 8,
+   "text": "Strangely, that made the scam more convincing.",
+   "lines_text": [
+    "Strangely, that made",
+    "the scam more convincing."
+   ],
+   "words": 7,
+   "start": 33.583333333333336,
+   "end": 36.416666666666664,
+   "sent_start": 33.56,
+   "sent_end": 39.68,
+   "png": "subpng/c13.png",
+   "lines": 2
+  },
+  {
+   "sentence": 8,
+   "text": "Now there was a reason the deal happened behind closed doors.",
+   "lines_text": [
+    "Now there was a reason the deal",
+    "happened behind closed doors."
+   ],
+   "words": 11,
+   "start": 36.416666666666664,
+   "end": 39.625,
+   "sent_start": 33.56,
+   "sent_end": 39.68,
+   "png": "subpng/c14.png",
+   "lines": 2
+  },
+  {
+   "sentence": 9,
+   "text": "Poisson paid.",
+   "lines_text": [
+    "Poisson paid."
+   ],
+   "words": 2,
+   "start": 39.708333333333336,
+   "end": 40.833333333333336,
+   "sent_start": 39.68,
+   "sent_end": 43.13,
+   "png": "subpng/c15.png",
+   "lines": 1
+  },
+  {
+   "sentence": 9,
+   "text": "Lustig took the money and fled to Austria.",
+   "lines_text": [
+    "Lustig took the money and fled to Austria."
+   ],
+   "words": 8,
+   "start": 40.833333333333336,
+   "end": 43.041666666666664,
+   "sent_start": 39.68,
+   "sent_end": 43.13,
+   "png": "subpng/c16.png",
+   "lines": 1
+  },
+  {
+   "sentence": 10,
+   "text": "When Poisson realized he had been fooled,",
+   "lines_text": [
+    "When Poisson realized he had been fooled,"
+   ],
+   "words": 7,
+   "start": 43.166666666666664,
+   "end": 45.416666666666664,
+   "sent_start": 43.13,
+   "sent_end": 47.54,
+   "png": "subpng/c17.png",
+   "lines": 1
+  },
+  {
+   "sentence": 10,
+   "text": "he was too embarrassed to go to the police.",
+   "lines_text": [
+    "he was too embarrassed to go to the police."
+   ],
+   "words": 9,
+   "start": 45.416666666666664,
+   "end": 47.458333333333336,
+   "sent_start": 43.13,
+   "sent_end": 47.54,
+   "png": "subpng/c18.png",
+   "lines": 1
+  },
+  {
+   "sentence": 11,
+   "text": "The Eiffel Tower stayed right where it was.",
+   "lines_text": [
+    "The Eiffel Tower stayed right where it was."
+   ],
+   "words": 8,
+   "start": 47.541666666666664,
+   "end": 50.083333333333336,
+   "sent_start": 47.54,
+   "sent_end": 51.59,
+   "png": "subpng/c19.png",
+   "lines": 1
+  },
+  {
+   "sentence": 11,
+   "text": "Poisson's money did not.",
+   "lines_text": [
+    "Poisson's money did not."
+   ],
+   "words": 4,
+   "start": 50.083333333333336,
+   "end": 51.5,
+   "sent_start": 47.54,
+   "sent_end": 51.59,
+   "png": "subpng/c20.png",
+   "lines": 1
+  }
+ ],
+ "total": 51.59
+}

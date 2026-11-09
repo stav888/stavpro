@@ -1,0 +1,77 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "start": 0.2,
+   "speech_end": 5.864,
+   "text": "In 1911, Violet Jessop was a stewardess on the Olympic, the largest ship in the world.",
+   "first_word": "In 1911",
+   "end": 6.264
+  },
+  {
+   "sentence": 2,
+   "start": 6.264,
+   "speech_end": 11.658,
+   "text": "That autumn, the warship HMS Hawke rammed its side, but Violet walked away unhurt.",
+   "first_word": "That",
+   "end": 12.058
+  },
+  {
+   "sentence": 3,
+   "start": 12.058,
+   "speech_end": 16.292,
+   "text": "Months later, she joined the Olympic's new sister ship, the Titanic.",
+   "first_word": "Months",
+   "end": 16.692
+  },
+  {
+   "sentence": 4,
+   "start": 16.692,
+   "speech_end": 23.962,
+   "text": "In April 1912, it struck an iceberg, and Violet was sent into lifeboat sixteen with a baby in her arms.",
+   "first_word": "In",
+   "end": 24.362
+  },
+  {
+   "sentence": 5,
+   "start": 24.362,
+   "speech_end": 29.175,
+   "text": "On the rescue ship Carpathia, a woman took the baby back without a single word.",
+   "first_word": "On",
+   "end": 29.575
+  },
+  {
+   "sentence": 6,
+   "start": 29.575,
+   "speech_end": 35.174,
+   "text": "During World War One, she became a nurse on the third sister, the hospital ship Britannic.",
+   "first_word": "During",
+   "end": 35.574
+  },
+  {
+   "sentence": 7,
+   "start": 35.574,
+   "speech_end": 41.867,
+   "text": "In 1916, Britannic hit a mine, and Violet's lifeboat was pulled toward the spinning propellers.",
+   "first_word": "In 1916",
+   "end": 42.267
+  },
+  {
+   "sentence": 8,
+   "start": 42.267,
+   "speech_end": 45.939,
+   "text": "She jumped, struck her head under the water, and still survived.",
+   "first_word": "She",
+   "end": 46.339
+  },
+  {
+   "sentence": 9,
+   "start": 46.339,
+   "speech_end": 50.863,
+   "text": "She kept working at sea for decades, and people called her Miss Unsinkable.",
+   "first_word": "She",
+   "end": 51.213
+  }
+ ],
+ "total": 51.213
+}

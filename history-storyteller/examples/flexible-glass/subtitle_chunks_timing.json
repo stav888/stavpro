@@ -1,0 +1,384 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "start": 0.0,
+   "word_start": 0.0,
+   "speech_end": 5.98,
+   "text": "Almost two thousand years ago, a glassmaker came to the palace of the Roman emperor Tiberius.",
+   "first_word": "Almost",
+   "asr_first": "Almost",
+   "end": 6.46,
+   "onset": 0.25
+  },
+  {
+   "sentence": 2,
+   "start": 6.46,
+   "word_start": 6.46,
+   "speech_end": 10.12,
+   "text": "He brought a gift: a beautiful, crystal-clear glass bowl.",
+   "first_word": "He",
+   "asr_first": "He",
+   "end": 10.55,
+   "sil": [
+    6.18,
+    6.41
+   ],
+   "onset": 6.41
+  },
+  {
+   "sentence": 3,
+   "start": 10.55,
+   "word_start": 10.58,
+   "speech_end": 13.44,
+   "text": "In front of the emperor, he threw it hard onto the floor.",
+   "first_word": "In",
+   "asr_first": "In",
+   "end": 14.08,
+   "sil": [
+    10.22,
+    10.61
+   ],
+   "onset": 10.61
+  },
+  {
+   "sentence": 4,
+   "start": 14.08,
+   "word_start": 14.08,
+   "speech_end": 16.82,
+   "text": "The bowl did not shatter. It only dented, like metal.",
+   "first_word": "The",
+   "asr_first": "The",
+   "end": 17.02,
+   "sil": [
+    13.64,
+    14.14
+   ],
+   "onset": 14.14
+  },
+  {
+   "sentence": 5,
+   "start": 17.02,
+   "word_start": 17.2,
+   "speech_end": 20.48,
+   "text": "The glassmaker took out a small hammer, and tapped it back into shape.",
+   "first_word": "The",
+   "asr_first": "The",
+   "end": 20.95,
+   "sil": [
+    16.94,
+    17.08
+   ],
+   "onset": 17.08
+  },
+  {
+   "sentence": 6,
+   "start": 20.95,
+   "word_start": 20.94,
+   "speech_end": 23.34,
+   "text": "Tiberius asked him: does anyone else know this secret?",
+   "first_word": "Tiberius",
+   "asr_first": "Tiberius",
+   "end": 23.86,
+   "sil": [
+    20.5,
+    21.06
+   ],
+   "onset": 21.06
+  },
+  {
+   "sentence": 7,
+   "start": 23.86,
+   "word_start": 23.74,
+   "speech_end": 26.4,
+   "text": "Proud, the glassmaker swore that no one else did.",
+   "first_word": "Proud,",
+   "asr_first": "Proud,",
+   "end": 26.99,
+   "sil": [
+    23.41,
+    23.92
+   ],
+   "onset": 23.92
+  },
+  {
+   "sentence": 8,
+   "start": 26.99,
+   "word_start": 26.4,
+   "speech_end": 30.46,
+   "text": "But Tiberius feared this glass would make gold and silver worthless.",
+   "first_word": "But",
+   "asr_first": "But",
+   "end": 30.94,
+   "sil": [
+    26.51,
+    27.05
+   ],
+   "onset": 27.05
+  },
+  {
+   "sentence": 9,
+   "start": 30.94,
+   "word_start": 30.94,
+   "speech_end": 34.36,
+   "text": "He ordered the glassmaker executed, and the secret died with him.",
+   "first_word": "He",
+   "asr_first": "He",
+   "end": 34.75,
+   "sil": [
+    30.71,
+    30.85
+   ],
+   "onset": 30.85
+  },
+  {
+   "sentence": 10,
+   "start": 34.75,
+   "word_start": 34.78,
+   "speech_end": 41.26,
+   "text": "That's the story told by the Roman writers Pliny and Petronius. To this day, no one knows if this glass ever really existed.",
+   "first_word": "That's",
+   "asr_first": "That's",
+   "end": 42.087,
+   "sil": [
+    34.41,
+    34.81
+   ],
+   "onset": 34.81
+  }
+ ],
+ "chunks": [
+  {
+   "sentence": 1,
+   "text": "Almost two thousand years ago,",
+   "lines_text": [
+    "Almost two thousand years ago,"
+   ],
+   "words": 5,
+   "start": 0.08333333333333333,
+   "end": 2.25,
+   "sent_start": 0.0,
+   "sent_end": 6.46,
+   "png": "subpng/c00.png",
+   "lines": 1
+  },
+  {
+   "sentence": 1,
+   "text": "a glassmaker came to the palace of the Roman emperor Tiberius.",
+   "lines_text": [
+    "a glassmaker came to the palace",
+    "of the Roman emperor Tiberius."
+   ],
+   "words": 11,
+   "start": 2.25,
+   "end": 6.375,
+   "sent_start": 0.0,
+   "sent_end": 6.46,
+   "png": "subpng/c01.png",
+   "lines": 2
+  },
+  {
+   "sentence": 2,
+   "text": "He brought a gift: a beautiful, crystal-clear glass bowl.",
+   "lines_text": [
+    "He brought a gift: a beautiful,",
+    "crystal-clear glass bowl."
+   ],
+   "words": 9,
+   "start": 6.5,
+   "end": 10.5,
+   "sent_start": 6.46,
+   "sent_end": 10.55,
+   "png": "subpng/c02.png",
+   "lines": 2
+  },
+  {
+   "sentence": 3,
+   "text": "In front of the emperor,",
+   "lines_text": [
+    "In front of the emperor,"
+   ],
+   "words": 5,
+   "start": 10.583333333333334,
+   "end": 11.791666666666666,
+   "sent_start": 10.55,
+   "sent_end": 14.08,
+   "png": "subpng/c03.png",
+   "lines": 1
+  },
+  {
+   "sentence": 3,
+   "text": "he threw it hard onto the floor.",
+   "lines_text": [
+    "he threw it hard onto the floor."
+   ],
+   "words": 7,
+   "start": 11.791666666666666,
+   "end": 14.0,
+   "sent_start": 10.55,
+   "sent_end": 14.08,
+   "png": "subpng/c04.png",
+   "lines": 1
+  },
+  {
+   "sentence": 4,
+   "text": "The bowl did not shatter. It only dented, like metal.",
+   "lines_text": [
+    "The bowl did not shatter.",
+    "It only dented, like metal."
+   ],
+   "words": 10,
+   "start": 14.083333333333334,
+   "end": 16.958333333333332,
+   "sent_start": 14.08,
+   "sent_end": 17.02,
+   "png": "subpng/c05.png",
+   "lines": 2
+  },
+  {
+   "sentence": 5,
+   "text": "The glassmaker took out a small hammer,",
+   "lines_text": [
+    "The glassmaker took out a small hammer,"
+   ],
+   "words": 7,
+   "start": 17.041666666666668,
+   "end": 18.958333333333332,
+   "sent_start": 17.02,
+   "sent_end": 20.95,
+   "png": "subpng/c06.png",
+   "lines": 1
+  },
+  {
+   "sentence": 5,
+   "text": "and tapped it back into shape.",
+   "lines_text": [
+    "and tapped it back into shape."
+   ],
+   "words": 6,
+   "start": 18.958333333333332,
+   "end": 20.875,
+   "sent_start": 17.02,
+   "sent_end": 20.95,
+   "png": "subpng/c07.png",
+   "lines": 1
+  },
+  {
+   "sentence": 6,
+   "text": "Tiberius asked him: does anyone else know this secret?",
+   "lines_text": [
+    "Tiberius asked him: does",
+    "anyone else know this secret?"
+   ],
+   "words": 9,
+   "start": 20.958333333333332,
+   "end": 23.791666666666668,
+   "sent_start": 20.95,
+   "sent_end": 23.86,
+   "png": "subpng/c08.png",
+   "lines": 2
+  },
+  {
+   "sentence": 7,
+   "text": "Proud, the glassmaker swore that no one else did.",
+   "lines_text": [
+    "Proud, the glassmaker",
+    "swore that no one else did."
+   ],
+   "words": 9,
+   "start": 23.875,
+   "end": 26.916666666666668,
+   "sent_start": 23.86,
+   "sent_end": 26.99,
+   "png": "subpng/c09.png",
+   "lines": 2
+  },
+  {
+   "sentence": 8,
+   "text": "But Tiberius feared this glass would",
+   "lines_text": [
+    "But Tiberius feared this glass would"
+   ],
+   "words": 6,
+   "start": 27.0,
+   "end": 28.916666666666668,
+   "sent_start": 26.99,
+   "sent_end": 30.94,
+   "png": "subpng/c10.png",
+   "lines": 1
+  },
+  {
+   "sentence": 8,
+   "text": "make gold and silver worthless.",
+   "lines_text": [
+    "make gold and silver worthless."
+   ],
+   "words": 5,
+   "start": 28.916666666666668,
+   "end": 30.875,
+   "sent_start": 26.99,
+   "sent_end": 30.94,
+   "png": "subpng/c11.png",
+   "lines": 1
+  },
+  {
+   "sentence": 9,
+   "text": "He ordered the glassmaker executed,",
+   "lines_text": [
+    "He ordered the glassmaker executed,"
+   ],
+   "words": 5,
+   "start": 30.958333333333332,
+   "end": 32.916666666666664,
+   "sent_start": 30.94,
+   "sent_end": 34.75,
+   "png": "subpng/c12.png",
+   "lines": 1
+  },
+  {
+   "sentence": 9,
+   "text": "and the secret died with him.",
+   "lines_text": [
+    "and the secret died with him."
+   ],
+   "words": 6,
+   "start": 32.916666666666664,
+   "end": 34.666666666666664,
+   "sent_start": 30.94,
+   "sent_end": 34.75,
+   "png": "subpng/c13.png",
+   "lines": 1
+  },
+  {
+   "sentence": 10,
+   "text": "That's the story told by the Roman writers Pliny and Petronius.",
+   "lines_text": [
+    "That's the story told by the Roman",
+    "writers Pliny and Petronius."
+   ],
+   "words": 11,
+   "start": 34.75,
+   "end": 38.166666666666664,
+   "sent_start": 34.75,
+   "sent_end": 42.087,
+   "png": "subpng/c14.png",
+   "lines": 2
+  },
+  {
+   "sentence": 10,
+   "text": "To this day, no one knows if this glass ever really existed.",
+   "lines_text": [
+    "To this day, no one knows if",
+    "this glass ever really existed."
+   ],
+   "words": 12,
+   "start": 38.166666666666664,
+   "end": 42.0,
+   "sent_start": 34.75,
+   "sent_end": 42.087,
+   "png": "subpng/c15.png",
+   "lines": 2
+  }
+ ],
+ "total": 42.087
+}

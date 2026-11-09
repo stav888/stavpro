@@ -1,0 +1,115 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "text": "In 1933, inventor Edwin Armstrong patented FM, a radio signal free of static.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 0.0,
+   "speech_end": 6.04,
+   "start": 0.0,
+   "onset": 0.25,
+   "end": 6.39
+  },
+  {
+   "sentence": 2,
+   "text": "He showed it to his old friend David Sarnoff, the head of RCA, America's radio giant.",
+   "first_word": "He",
+   "asr_first": "He",
+   "word_start": 6.38,
+   "speech_end": 11.0,
+   "onset": 6.45,
+   "start": 6.39,
+   "end": 11.71
+  },
+  {
+   "sentence": 3,
+   "text": "RCA let him test FM from the top of the Empire State Building, and the sound was crystal clear.",
+   "first_word": "RCA",
+   "asr_first": "RCA",
+   "word_start": 11.64,
+   "speech_end": 16.58,
+   "onset": 11.77,
+   "start": 11.71,
+   "end": 17.01
+  },
+  {
+   "sentence": 4,
+   "text": "But Sarnoff was betting RCA's future on television, and he had Armstrong's equipment removed.",
+   "first_word": "But",
+   "asr_first": "But",
+   "word_start": 17.0,
+   "speech_end": 21.46,
+   "onset": 17.07,
+   "start": 17.01,
+   "end": 22.14
+  },
+  {
+   "sentence": 5,
+   "text": "Armstrong spent his own fortune building FM stations anyway.",
+   "first_word": "Armstrong",
+   "asr_first": "Armstrong",
+   "word_start": 22.12,
+   "speech_end": 25.1,
+   "onset": 22.2,
+   "start": 22.14,
+   "end": 25.65
+  },
+  {
+   "sentence": 6,
+   "text": "Then in 1945, the government moved FM to a new part of the dial, and every FM radio already sold became useless.",
+   "first_word": "Then",
+   "asr_first": "Then,",
+   "word_start": 25.1,
+   "speech_end": 32.22,
+   "onset": 25.71,
+   "start": 25.65,
+   "end": 32.86
+  },
+  {
+   "sentence": 7,
+   "text": "RCA used FM in its new TV sets without paying him, so Armstrong sued.",
+   "first_word": "RCA",
+   "asr_first": "RCA",
+   "word_start": 32.82,
+   "speech_end": 37.18,
+   "onset": 32.92,
+   "start": 32.86,
+   "end": 37.81
+  },
+  {
+   "sentence": 8,
+   "text": "The court battle dragged on for years and drained his money and his strength.",
+   "first_word": "The",
+   "asr_first": "The",
+   "word_start": 37.72,
+   "speech_end": 40.84,
+   "onset": 37.87,
+   "start": 37.81,
+   "end": 41.29
+  },
+  {
+   "sentence": 9,
+   "text": "In 1954, exhausted, Armstrong took his own life.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 41.3,
+   "speech_end": 44.72,
+   "onset": 41.35,
+   "start": 41.29,
+   "end": 45.06
+  },
+  {
+   "sentence": 10,
+   "text": "His wife Marion kept fighting, and in the end she won or settled every case. Today, FM is in almost every radio on Earth.",
+   "first_word": "His",
+   "asr_first": "His",
+   "word_start": 45.1,
+   "speech_end": 52.3,
+   "onset": 45.12,
+   "start": 45.06,
+   "end": 52.6
+  }
+ ],
+ "total": 52.6
+}

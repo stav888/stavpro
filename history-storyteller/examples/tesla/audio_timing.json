@@ -1,0 +1,115 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "text": "In 1901, Nikola Tesla began building a giant tower on Long Island, New York.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 0.0,
+   "speech_end": 5.14,
+   "start": 0.0,
+   "onset": 0.26,
+   "end": 5.56
+  },
+  {
+   "sentence": 2,
+   "text": "His dream was to send messages, and even electricity, through the air to the whole world.",
+   "first_word": "His",
+   "asr_first": "His",
+   "word_start": 5.58,
+   "speech_end": 10.1,
+   "onset": 5.62,
+   "start": 5.56,
+   "end": 10.55
+  },
+  {
+   "sentence": 3,
+   "text": "It was paid for by J.P. Morgan, the most powerful banker in America.",
+   "first_word": "It",
+   "asr_first": "It",
+   "word_start": 10.54,
+   "speech_end": 13.9,
+   "onset": 10.61,
+   "start": 10.55,
+   "end": 14.41
+  },
+  {
+   "sentence": 4,
+   "text": "But in December 1901, Marconi sent a radio signal across the Atlantic, using far cheaper equipment.",
+   "first_word": "But",
+   "asr_first": "But",
+   "word_start": 14.42,
+   "speech_end": 19.76,
+   "onset": 14.47,
+   "start": 14.41,
+   "end": 20.21
+  },
+  {
+   "sentence": 5,
+   "text": "Tesla then asked Morgan for more money. His real dream was sending power through the air.",
+   "first_word": "Tesla",
+   "asr_first": "Tesla",
+   "word_start": 20.24,
+   "speech_end": 24.6,
+   "onset": 20.27,
+   "start": 20.21,
+   "end": 24.88
+  },
+  {
+   "sentence": 6,
+   "text": "Morgan refused to give him another cent.",
+   "first_word": "Morgan",
+   "asr_first": "Morgan",
+   "word_start": 24.88,
+   "speech_end": 26.88,
+   "onset": 24.94,
+   "start": 24.88,
+   "end": 27.22
+  },
+  {
+   "sentence": 7,
+   "text": "Tesla begged other investors for help, but no one would pay.",
+   "first_word": "Tesla",
+   "asr_first": "Tesla",
+   "word_start": 26.88,
+   "speech_end": 30.18,
+   "onset": 27.28,
+   "start": 27.22,
+   "end": 30.63
+  },
+  {
+   "sentence": 8,
+   "text": "By 1906, work on the tower stopped, and Tesla's hotel bills kept growing.",
+   "first_word": "By",
+   "asr_first": "By",
+   "word_start": 30.62,
+   "speech_end": 34.78,
+   "onset": 30.69,
+   "start": 30.63,
+   "end": 35.16
+  },
+  {
+   "sentence": 9,
+   "text": "In 1917, the tower was blown up and sold for scrap to help pay his hotel debts.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 35.18,
+   "speech_end": 39.5,
+   "onset": 35.22,
+   "start": 35.16,
+   "end": 39.89
+  },
+  {
+   "sentence": 10,
+   "text": "Tesla's tower never powered the world, but his dream of wireless energy lives on. A true story.",
+   "first_word": "Tesla's",
+   "asr_first": "Tesla's",
+   "word_start": 39.86,
+   "speech_end": 45.04,
+   "onset": 39.95,
+   "start": 39.89,
+   "end": 45.32
+  }
+ ],
+ "total": 45.32
+}

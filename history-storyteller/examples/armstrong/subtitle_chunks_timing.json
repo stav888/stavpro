@@ -1,0 +1,407 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "text": "In 1933, inventor Edwin Armstrong patented FM, a radio signal free of static.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 0.0,
+   "speech_end": 6.04,
+   "start": 0.0,
+   "onset": 0.25,
+   "end": 6.39
+  },
+  {
+   "sentence": 2,
+   "text": "He showed it to his old friend David Sarnoff, the head of RCA, America's radio giant.",
+   "first_word": "He",
+   "asr_first": "He",
+   "word_start": 6.38,
+   "speech_end": 11.0,
+   "onset": 6.45,
+   "start": 6.39,
+   "end": 11.71
+  },
+  {
+   "sentence": 3,
+   "text": "RCA let him test FM from the top of the Empire State Building, and the sound was crystal clear.",
+   "first_word": "RCA",
+   "asr_first": "RCA",
+   "word_start": 11.64,
+   "speech_end": 16.58,
+   "onset": 11.77,
+   "start": 11.71,
+   "end": 17.01
+  },
+  {
+   "sentence": 4,
+   "text": "But Sarnoff was betting RCA's future on television, and he had Armstrong's equipment removed.",
+   "first_word": "But",
+   "asr_first": "But",
+   "word_start": 17.0,
+   "speech_end": 21.46,
+   "onset": 17.07,
+   "start": 17.01,
+   "end": 22.14
+  },
+  {
+   "sentence": 5,
+   "text": "Armstrong spent his own fortune building FM stations anyway.",
+   "first_word": "Armstrong",
+   "asr_first": "Armstrong",
+   "word_start": 22.12,
+   "speech_end": 25.1,
+   "onset": 22.2,
+   "start": 22.14,
+   "end": 25.65
+  },
+  {
+   "sentence": 6,
+   "text": "Then in 1945, the government moved FM to a new part of the dial, and every FM radio already sold became useless.",
+   "first_word": "Then",
+   "asr_first": "Then,",
+   "word_start": 25.1,
+   "speech_end": 32.22,
+   "onset": 25.71,
+   "start": 25.65,
+   "end": 32.86
+  },
+  {
+   "sentence": 7,
+   "text": "RCA used FM in its new TV sets without paying him, so Armstrong sued.",
+   "first_word": "RCA",
+   "asr_first": "RCA",
+   "word_start": 32.82,
+   "speech_end": 37.18,
+   "onset": 32.92,
+   "start": 32.86,
+   "end": 37.81
+  },
+  {
+   "sentence": 8,
+   "text": "The court battle dragged on for years and drained his money and his strength.",
+   "first_word": "The",
+   "asr_first": "The",
+   "word_start": 37.72,
+   "speech_end": 40.84,
+   "onset": 37.87,
+   "start": 37.81,
+   "end": 41.29
+  },
+  {
+   "sentence": 9,
+   "text": "In 1954, exhausted, Armstrong took his own life.",
+   "first_word": "In",
+   "asr_first": "In",
+   "word_start": 41.3,
+   "speech_end": 44.72,
+   "onset": 41.35,
+   "start": 41.29,
+   "end": 45.06
+  },
+  {
+   "sentence": 10,
+   "text": "His wife Marion kept fighting, and in the end she won or settled every case. Today, FM is in almost every radio on Earth.",
+   "first_word": "His",
+   "asr_first": "His",
+   "word_start": 45.1,
+   "speech_end": 52.3,
+   "onset": 45.12,
+   "start": 45.06,
+   "end": 52.6
+  }
+ ],
+ "chunks": [
+  {
+   "sentence": 1,
+   "text": "In 1933, inventor Edwin Armstrong patented FM,",
+   "lines_text": [
+    "In 1933, inventor Edwin",
+    "Armstrong patented FM,"
+   ],
+   "words": 7,
+   "start": 0.08333333333333333,
+   "end": 4.416666666666667,
+   "sent_start": 0.0,
+   "sent_end": 6.39,
+   "png": "subpng/c00.png",
+   "lines": 2
+  },
+  {
+   "sentence": 1,
+   "text": "a radio signal free of static.",
+   "lines_text": [
+    "a radio signal free of static."
+   ],
+   "words": 6,
+   "start": 4.416666666666667,
+   "end": 6.333333333333333,
+   "sent_start": 0.0,
+   "sent_end": 6.39,
+   "png": "subpng/c01.png",
+   "lines": 1
+  },
+  {
+   "sentence": 2,
+   "text": "He showed it to his old friend David Sarnoff,",
+   "lines_text": [
+    "He showed it to his old friend David Sarnoff,"
+   ],
+   "words": 9,
+   "start": 6.416666666666667,
+   "end": 8.625,
+   "sent_start": 6.39,
+   "sent_end": 11.71,
+   "png": "subpng/c02.png",
+   "lines": 1
+  },
+  {
+   "sentence": 2,
+   "text": "the head of RCA, America's radio giant.",
+   "lines_text": [
+    "the head of RCA, America's radio giant."
+   ],
+   "words": 7,
+   "start": 8.625,
+   "end": 11.625,
+   "sent_start": 6.39,
+   "sent_end": 11.71,
+   "png": "subpng/c03.png",
+   "lines": 1
+  },
+  {
+   "sentence": 3,
+   "text": "RCA let him test FM from the top of the Empire State Building,",
+   "lines_text": [
+    "RCA let him test FM",
+    "from the top of the Empire State Building,"
+   ],
+   "words": 13,
+   "start": 11.75,
+   "end": 15.25,
+   "sent_start": 11.71,
+   "sent_end": 17.01,
+   "png": "subpng/c04.png",
+   "lines": 2
+  },
+  {
+   "sentence": 3,
+   "text": "and the sound was crystal clear.",
+   "lines_text": [
+    "and the sound was crystal clear."
+   ],
+   "words": 6,
+   "start": 15.25,
+   "end": 16.958333333333332,
+   "sent_start": 11.71,
+   "sent_end": 17.01,
+   "png": "subpng/c05.png",
+   "lines": 1
+  },
+  {
+   "sentence": 4,
+   "text": "But Sarnoff was betting RCA's future on television,",
+   "lines_text": [
+    "But Sarnoff was betting",
+    "RCA's future on television,"
+   ],
+   "words": 8,
+   "start": 17.041666666666668,
+   "end": 19.791666666666668,
+   "sent_start": 17.01,
+   "sent_end": 22.14,
+   "png": "subpng/c06.png",
+   "lines": 2
+  },
+  {
+   "sentence": 4,
+   "text": "and he had Armstrong's equipment removed.",
+   "lines_text": [
+    "and he had Armstrong's",
+    "equipment removed."
+   ],
+   "words": 6,
+   "start": 19.791666666666668,
+   "end": 22.083333333333332,
+   "sent_start": 17.01,
+   "sent_end": 22.14,
+   "png": "subpng/c07.png",
+   "lines": 2
+  },
+  {
+   "sentence": 5,
+   "text": "Armstrong spent his own fortune building FM stations anyway.",
+   "lines_text": [
+    "Armstrong spent his own fortune",
+    "building FM stations anyway."
+   ],
+   "words": 9,
+   "start": 22.166666666666668,
+   "end": 25.583333333333332,
+   "sent_start": 22.14,
+   "sent_end": 25.65,
+   "png": "subpng/c08.png",
+   "lines": 2
+  },
+  {
+   "sentence": 6,
+   "text": "Then in 1945, the government moved FM",
+   "lines_text": [
+    "Then in 1945, the government moved FM"
+   ],
+   "words": 7,
+   "start": 25.666666666666668,
+   "end": 28.125,
+   "sent_start": 25.65,
+   "sent_end": 32.86,
+   "png": "subpng/c09.png",
+   "lines": 1
+  },
+  {
+   "sentence": 6,
+   "text": "to a new part of the dial,",
+   "lines_text": [
+    "to a new part of the dial,"
+   ],
+   "words": 7,
+   "start": 28.125,
+   "end": 29.666666666666668,
+   "sent_start": 25.65,
+   "sent_end": 32.86,
+   "png": "subpng/c10.png",
+   "lines": 1
+  },
+  {
+   "sentence": 6,
+   "text": "and every FM radio already sold became useless.",
+   "lines_text": [
+    "and every FM radio already",
+    "sold became useless."
+   ],
+   "words": 8,
+   "start": 29.666666666666668,
+   "end": 32.791666666666664,
+   "sent_start": 25.65,
+   "sent_end": 32.86,
+   "png": "subpng/c11.png",
+   "lines": 2
+  },
+  {
+   "sentence": 7,
+   "text": "RCA used FM in its new TV",
+   "lines_text": [
+    "RCA used FM in its new TV"
+   ],
+   "words": 7,
+   "start": 32.875,
+   "end": 34.916666666666664,
+   "sent_start": 32.86,
+   "sent_end": 37.81,
+   "png": "subpng/c12.png",
+   "lines": 1
+  },
+  {
+   "sentence": 7,
+   "text": "sets without paying him, so Armstrong sued.",
+   "lines_text": [
+    "sets without paying him,",
+    "so Armstrong sued."
+   ],
+   "words": 7,
+   "start": 34.916666666666664,
+   "end": 37.75,
+   "sent_start": 32.86,
+   "sent_end": 37.81,
+   "png": "subpng/c13.png",
+   "lines": 2
+  },
+  {
+   "sentence": 8,
+   "text": "The court battle dragged on for years",
+   "lines_text": [
+    "The court battle dragged on for years"
+   ],
+   "words": 7,
+   "start": 37.833333333333336,
+   "end": 39.291666666666664,
+   "sent_start": 37.81,
+   "sent_end": 41.29,
+   "png": "subpng/c14.png",
+   "lines": 1
+  },
+  {
+   "sentence": 8,
+   "text": "and drained his money and his strength.",
+   "lines_text": [
+    "and drained his money and his strength."
+   ],
+   "words": 7,
+   "start": 39.291666666666664,
+   "end": 41.208333333333336,
+   "sent_start": 37.81,
+   "sent_end": 41.29,
+   "png": "subpng/c15.png",
+   "lines": 1
+  },
+  {
+   "sentence": 9,
+   "text": "In 1954, exhausted, Armstrong took his own life.",
+   "lines_text": [
+    "In 1954, exhausted,",
+    "Armstrong took his own life."
+   ],
+   "words": 8,
+   "start": 41.291666666666664,
+   "end": 45.0,
+   "sent_start": 41.29,
+   "sent_end": 45.06,
+   "png": "subpng/c16.png",
+   "lines": 2
+  },
+  {
+   "sentence": 10,
+   "text": "His wife Marion kept fighting,",
+   "lines_text": [
+    "His wife Marion kept fighting,"
+   ],
+   "words": 5,
+   "start": 45.083333333333336,
+   "end": 46.791666666666664,
+   "sent_start": 45.06,
+   "sent_end": 52.6,
+   "png": "subpng/c17.png",
+   "lines": 1
+  },
+  {
+   "sentence": 10,
+   "text": "and in the end she won or settled every case.",
+   "lines_text": [
+    "and in the end she won",
+    "or settled every case."
+   ],
+   "words": 10,
+   "start": 46.791666666666664,
+   "end": 49.666666666666664,
+   "sent_start": 45.06,
+   "sent_end": 52.6,
+   "png": "subpng/c18.png",
+   "lines": 2
+  },
+  {
+   "sentence": 10,
+   "text": "Today, FM is in almost every radio on Earth.",
+   "lines_text": [
+    "Today, FM is in almost",
+    "every radio on Earth."
+   ],
+   "words": 9,
+   "start": 49.666666666666664,
+   "end": 52.541666666666664,
+   "sent_start": 45.06,
+   "sent_end": 52.6,
+   "png": "subpng/c19.png",
+   "lines": 2
+  }
+ ],
+ "total": 52.6
+}

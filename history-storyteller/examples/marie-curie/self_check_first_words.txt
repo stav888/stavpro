@@ -1,0 +1,28 @@
+S 1 rms0-100 -89.9 rms0-400 -16.9 pre-100 -120.0
+S 2 rms0-100 -54.7 rms0-400 -20.4 pre-100 -106.5
+S 3 rms0-100 -51.5 rms0-400 -19.7 pre-100 -88.5
+S 4 rms0-100 -56.7 rms0-400 -22.9 pre-100 -112.0
+S 5 rms0-100 -56.8 rms0-400 -16.6 pre-100 -81.4
+S 6 rms0-100 -20.4 rms0-400 -14.8 pre-100 -111.0
+S 7 rms0-100 -59.9 rms0-400 -19.6 pre-100 -118.0
+S 8 rms0-100 -52.4 rms0-400 -16.5 pre-100 -118.0
+S 9 rms0-100 -56.7 rms0-400 -17.8 pre-100 -106.9
+In 1891, a young Polish woman named Maria arrived in Paris with almost no money. In a freezing little room, she dreamed of understanding how nature works. She heard of mysterious rays coming from uranium and gave them a name, radioactivity. With her husband Pierre, she worked in a leaky shed, stirring tons of boiling ore for years. One night in 1898, they saw a tiny substance glowing in the dark. Radium. In 1903, Marie became the first woman ever to win a Nobel Prize. Then Pierre was killed in an accident, but she kept going alone and won a second Nobel. In World War I, she drove X -ray units to the front, saving wounded soldiers. The glow she loved harmed her in the end, but her notebooks are still radioactive today.
+1 in FOUND [('In', np.float64(0.0)), ('1891,', np.float64(0.42))]
+2 in FOUND [('In', np.float64(6.38)), ('a', np.float64(6.56)), ('freezing', np.float64(6.72))]
+3 she FOUND [('She', np.float64(10.88)), ('heard', np.float64(11.1)), ('of', np.float64(11.34))]
+4 with FOUND [('With', np.float64(16.34)), ('her', np.float64(16.58)), ('husband', np.float64(16.68))]
+5 one FOUND [('One', np.float64(22.44)), ('night', np.float64(22.76))]
+6 in FOUND [('In', np.float64(28.5)), ('1903,', np.float64(28.66))]
+7 then FOUND [('Then', np.float64(33.78)), ('Pierre', np.float64(33.94))]
+8 in FOUND [('In', np.float64(39.34)), ('World', np.float64(39.5)), ('War', np.float64(39.74))]
+9 the FOUND [('The', np.float64(44.96)), ('glow', np.float64(45.06)), ('she', np.float64(45.32))]
+scene 1 start-end pixel diff 21.13
+scene 2 start-end pixel diff 6.24
+scene 3 start-end pixel diff 10.66
+scene 4 start-end pixel diff 24.34
+scene 5 start-end pixel diff 29.9
+scene 6 start-end pixel diff 6.06
+scene 7 start-end pixel diff 11.16
+scene 8 start-end pixel diff 18.5
+scene 9 start-end pixel diff 6.55

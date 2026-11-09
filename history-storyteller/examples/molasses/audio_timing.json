@@ -1,0 +1,77 @@
+{
+ "rows": [
+  {
+   "sentence": 1,
+   "start": 0.2,
+   "speech_end": 5.234,
+   "text": "On a bright winter day in 1919, a giant tank stood over Boston's harbor.",
+   "first_word": "On",
+   "end": 5.634
+  },
+  {
+   "sentence": 2,
+   "start": 5.634,
+   "speech_end": 8.665,
+   "text": "It held over two million gallons of sticky molasses.",
+   "first_word": "It",
+   "end": 9.065
+  },
+  {
+   "sentence": 3,
+   "start": 9.065,
+   "speech_end": 13.743,
+   "text": "For months it leaked and groaned, and the company just painted it brown to hide the leaks.",
+   "first_word": "For",
+   "end": 14.143
+  },
+  {
+   "sentence": 4,
+   "start": 14.143,
+   "speech_end": 19.248,
+   "text": "Just after noon came a sound like gunfire, as rivets flew and the tank burst open.",
+   "first_word": "Just",
+   "end": 19.648
+  },
+  {
+   "sentence": 5,
+   "start": 19.648,
+   "speech_end": 25.633,
+   "text": "A brown wave twenty-five feet high raced through the streets, crushing buildings and even bending the railway.",
+   "first_word": "A",
+   "end": 26.033
+  },
+  {
+   "sentence": 6,
+   "start": 26.033,
+   "speech_end": 30.468,
+   "text": "The cold made the molasses thick like glue, trapping people and horses.",
+   "first_word": "The",
+   "end": 30.868
+  },
+  {
+   "sentence": 7,
+   "start": 30.868,
+   "speech_end": 36.532,
+   "text": "Twenty-one people died, and sailors and firefighters worked for days as the harbor turned brown.",
+   "first_word": "Twenty-one",
+   "end": 36.932
+  },
+  {
+   "sentence": 8,
+   "start": 36.932,
+   "speech_end": 42.547,
+   "text": "In court, it came out the tank was never properly tested, leading to stricter engineering rules.",
+   "first_word": "In court",
+   "end": 42.947
+  },
+  {
+   "sentence": 9,
+   "start": 42.947,
+   "speech_end": 46.946,
+   "text": "And for decades, on hot days, the streets still smelled sweet.",
+   "first_word": "And",
+   "end": 47.296
+  }
+ ],
+ "total": 47.296
+}
