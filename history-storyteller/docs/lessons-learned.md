@@ -42,3 +42,14 @@ Sources: user feedback on frames/layout, Flow/Grok process decisions, Garbo QA r
 - **SEO / performance (when known):** views, CTR, retention notes from YouTube SEO bot …
 - **Carry forward:** 1–3 concrete rules for the next video
 ```
+
+## 2026-11-09 — emu-war (full Short)
+
+- **QA faults (part 1):** ping-pong when end sketch x ≈ start x but prompt asked for a walk; chain Clip B with end-pin reversed motion; fence fade; emu through soldier; red muzzle blinks; holds.
+- **User feedback:** prefer continuous Grok 8s start→end; max 3 versions then pick best and finish whole script; Grok only (no Flow).
+- **Fixed by:** rewrite motion to match actual sketch delta (locked x + emus from right edge); single continuous GenerateVideo; numeric gates (x range, red min, diff spikes); Lanczos upscale when Vulkan ESRGAN unavailable.
+- **SEO / performance (when known):** —
+- **Carry forward:**
+  1. End-sketch character x must equal start x + intended move; otherwise prompt only the drawn delta.
+  2. Prefer one continuous Grok clip (start + last_frame) over A/B chain when ≤8–15 s.
+  3. Crowds/animals enter from frame edge only; keep fixed props + constant accents; living motion through the end (no freeze).
