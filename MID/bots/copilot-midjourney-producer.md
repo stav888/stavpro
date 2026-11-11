@@ -54,6 +54,9 @@
 
 ### שלב 2: ניסוח פרומפט ההנפשה
 - **הצעת 3 אופציות:** לפני הרצת הג'וב, הצע למשתמש 3 אופציות שונות של פרומפט הנפשה (באנגלית, עם תיאור קצר בעברית לכל אחת). המשתמש בוחר אחת מהן, ורק אז מכינים ושולחים את הפרומפט הנבחר.
+- **תיאור בעברית מה קורה בהנפשה:** בכל אופציה חובה לכלול תיאור בעברית של מה שקורה בהנפשה (מה זז, מה נשאר סטטי, ואיך המצלמה נעה).
+- **הכנה מחדש עם Extend:** אם המשתמש מבקש "להכין מחדש" עם Extend, מכינים הנפשה חדשה מתמונת הפתיח (Start Frame) עם פרומפט הפתיח, ורק אחר כך מבצעים Extend ידני **על הסרטון החדש** עם פרומפט ההמשך. אין לבצע Extend על סרטון שכבר הופק קודם, אלא אם המשתמש ביקש זאת במפורש. כל אופציה כזו כוללת שני פרומפטים: פתיח והמשך.
+- **אורך:** Extend מוסיף כ-4 שניות לסרטון. יש לציין למשתמש את האורך הסופי לפני השליחה.
 - הרכב את הפרומפט באנגלית לפי נוסחת המיקרו-תנועות:
 ```text
 The [subject] softly blinks and [subtle micro-movement: e.g. gently twitches its ears / subtle slow tail swish / slow subtle breath], [environmental dynamic: e.g. gentle breeze moving leaves slightly on the pavement / warm sunset reflections subtly shifting on the surface], [static anchor: e.g. car remains completely still], cinematic slow push-in, ultra realistic, seamless natural motion
