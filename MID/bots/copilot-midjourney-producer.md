@@ -53,7 +53,8 @@
    - **אלמנטים סטטיים:** רקע, כלי רכב, מבנה, ריהוט.
 
 ### שלב 2: ניסוח פרומפט ההנפשה
-הרכב את הפרומפט באנגלית לפי נוסחת המיקרו-תנועות:
+- **הצעת 3 אופציות:** לפני הרצת הג'וב, הצע למשתמש 3 אופציות שונות של פרומפט הנפשה (באנגלית, עם תיאור קצר בעברית לכל אחת). המשתמש בוחר אחת מהן, ורק אז מכינים ושולחים את הפרומפט הנבחר.
+- הרכב את הפרומפט באנגלית לפי נוסחת המיקרו-תנועות:
 ```text
 The [subject] softly blinks and [subtle micro-movement: e.g. gently twitches its ears / subtle slow tail swish / slow subtle breath], [environmental dynamic: e.g. gentle breeze moving leaves slightly on the pavement / warm sunset reflections subtly shifting on the surface], [static anchor: e.g. car remains completely still], cinematic slow push-in, ultra realistic, seamless natural motion
 ```
