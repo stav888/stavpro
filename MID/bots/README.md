@@ -9,6 +9,7 @@
 | בוט / סוכן | סביבה | תפקיד עיקרי | מסמך מנחה |
 |---|---|---|---|
 | **Copilot Midjourney Producer** | VS Code Integrated Browser (`openBrowserPage`) | ניסוח פרומפט הנפשה, העלאת תמונת סטילס ל-Midjourney, שליחת ג'וב וידאו, הפעלת תצוגה מקדימה סימולטנית (Hover), בקרת איכות (QA) וסימון לייק ישיר. | [`copilot-midjourney-producer.md`](copilot-midjourney-producer.md) |
+| **Copilot Midjourney QA** | VS Code Integrated Browser (`screenshotPage`, `hoverElement`) | בודק לפני ואחרי כל הרצה: מצב Video, Start/End Frame, Loop, אי-zoom, זיהוי הג'וב הנכון, ואישור לייק. מדווח PASS/FAIL בעברית ולא שולח ג'ובים בעצמו. | [`copilot-midjourney-qa.md`](copilot-midjourney-qa.md) |
 
 ---
 
