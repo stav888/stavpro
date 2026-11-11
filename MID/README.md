@@ -61,6 +61,9 @@ The cat softly blinks and gently twitches its ears, subtle slow tail swish, gent
 
 - [`README.md`](README.md) — מסמך ראשי זה: סקירה, תהליך העבודה, מקרה הבוחן וכללי הברזל.
 - [`LESSONS-LEARNED.md`](LESSONS-LEARNED.md) — לקחים פרקטיים וטיפים חשובים שנלמדו במהלך העבודה.
+- [`bots/README.md`](bots/README.md) — סקירת תפקיד ה-Copilot כאוטומטור וכמפיק אנימציות.
+- [`bots/copilot-midjourney-producer.md`](bots/copilot-midjourney-producer.md) — הוראות הפעלה מפורטות ל-Copilot לביצוע אוטונומי של המשימה בעתיד.
+- [`docs/copilot-execution-playbook.md`](docs/copilot-execution-playbook.md) — ספר פקודות וכלים מעשיים להפעלת הדפדפן הפנימי של VS Code.
 - [`docs/workflow-step-by-step.md`](docs/workflow-step-by-step.md) — מדריך תפעולי מפורט צעד אחר צעד לביצוע התהליך על תמונות חדשות.
 - [`docs/animation-prompting-guide.md`](docs/animation-prompting-guide.md) — עקרונות הנדסת פרומפטים להנפשה, הימנעות מעיוותים ושמירה על פיזיקה אמינה.
 - [`docs/midjourney-web-ui.md`](docs/midjourney-web-ui.md) — הדרכה טכנית על ממשק המשתמש של Midjourney Web, כפתורים וקיצורי דרך.
