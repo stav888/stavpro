@@ -101,9 +101,7 @@ Start and end stills for all nine parts were copied from `/workspace/emu-war/sce
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part1_start.jpg` and `/workspace/emu-war/scenes/part1_end.jpg`):
 
-![part 1 start](emu-war-images/part1_start.jpg)
-
-![part 1 end](emu-war-images/part1_end.jpg)
+<p><img src="emu-war-images/part1_start.jpg" width="180" alt="part 1 start"> <img src="emu-war-images/part1_end.jpg" width="180" alt="part 1 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Used wording for the continuous 8s v2 take that shipped in final v2. Source: `/workspace/emu-war/clips/part1_v2_prompt_used.txt`.
@@ -229,9 +227,7 @@ no text, no letters, no captions.
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part2_start.jpg` and `/workspace/emu-war/scenes/part2_end.jpg`):
 
-![part 2 start](emu-war-images/part2_start.jpg)
-
-![part 2 end](emu-war-images/part2_end.jpg)
+<p><img src="emu-war-images/part2_start.jpg" width="180" alt="part 2 start"> <img src="emu-war-images/part2_end.jpg" width="180" alt="part 2 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Only saved part 2 prompt file. Final v2 used part 2 v3; a distinct v3 prompt file was not found. Source: `/workspace/emu-war/prompts/part2.txt`.
@@ -259,9 +255,7 @@ no text, no letters, no captions.
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part3_start.jpg` and `/workspace/emu-war/scenes/part3_end.jpg`):
 
-![part 3 start](emu-war-images/part3_start.jpg)
-
-![part 3 end](emu-war-images/part3_end.jpg)
+<p><img src="emu-war-images/part3_start.jpg" width="180" alt="part 3 start"> <img src="emu-war-images/part3_end.jpg" width="180" alt="part 3 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Part 3 v2, used in final v2. Source: `/workspace/emu-war/prompts/part3_v2.txt`.
@@ -307,9 +301,7 @@ no text, no letters, no captions.
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part4_start.jpg` and `/workspace/emu-war/scenes/part4_end.jpg`):
 
-![part 4 start](emu-war-images/part4_start.jpg)
-
-![part 4 end](emu-war-images/part4_end.jpg)
+<p><img src="emu-war-images/part4_start.jpg" width="180" alt="part 4 start"> <img src="emu-war-images/part4_end.jpg" width="180" alt="part 4 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Part 4 v2, used in final v2. Source: `/workspace/emu-war/prompts/part4_v2.txt`.
@@ -346,9 +338,7 @@ no text, no letters, no captions.
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part5_start.jpg` and `/workspace/emu-war/scenes/part5_end.jpg`):
 
-![part 5 start](emu-war-images/part5_start.jpg)
-
-![part 5 end](emu-war-images/part5_end.jpg)
+<p><img src="emu-war-images/part5_start.jpg" width="180" alt="part 5 start"> <img src="emu-war-images/part5_end.jpg" width="180" alt="part 5 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Part 5 v1, used in final v2 (retime only). Source: `/workspace/emu-war/prompts/part5.txt`.
@@ -367,9 +357,7 @@ no text, no letters, no captions.
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part6_start.jpg` and `/workspace/emu-war/scenes/part6_end.jpg`):
 
-![part 6 start](emu-war-images/part6_start.jpg)
-
-![part 6 end](emu-war-images/part6_end.jpg)
+<p><img src="emu-war-images/part6_start.jpg" width="180" alt="part 6 start"> <img src="emu-war-images/part6_end.jpg" width="180" alt="part 6 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Part 6 v1, used in final v2 (hold-drop retime). Source: `/workspace/emu-war/prompts/part6.txt`.
@@ -388,9 +376,7 @@ no text, no letters, no captions.
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part7_start.jpg` and `/workspace/emu-war/scenes/part7_end.jpg`):
 
-![part 7 start](emu-war-images/part7_start.jpg)
-
-![part 7 end](emu-war-images/part7_end.jpg)
+<p><img src="emu-war-images/part7_start.jpg" width="180" alt="part 7 start"> <img src="emu-war-images/part7_end.jpg" width="180" alt="part 7 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Part 7 v1, used in final v2 (retime). Source: `/workspace/emu-war/prompts/part7.txt`.
@@ -409,9 +395,7 @@ no text, no letters, no captions.
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part8_start.jpg` and `/workspace/emu-war/scenes/part8_end.jpg`):
 
-![part 8 start](emu-war-images/part8_start.jpg)
-
-![part 8 end](emu-war-images/part8_end.jpg)
+<p><img src="emu-war-images/part8_start.jpg" width="180" alt="part 8 start"> <img src="emu-war-images/part8_end.jpg" width="180" alt="part 8 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Part 8 v1, used in final v2 (hold-drop retime). Source: `/workspace/emu-war/prompts/part8.txt`.
@@ -430,9 +414,7 @@ no text, no letters, no captions.
 
 Start and end stills (copied from the box; also at `/workspace/emu-war/scenes/part9_start.jpg` and `/workspace/emu-war/scenes/part9_end.jpg`):
 
-![part 9 start](emu-war-images/part9_start.jpg)
-
-![part 9 end](emu-war-images/part9_end.jpg)
+<p><img src="emu-war-images/part9_start.jpg" width="180" alt="part 9 start"> <img src="emu-war-images/part9_end.jpg" width="180" alt="part 9 end"></p>
 
 
 - **Animation / clip prompt (used in final v2):** Part 9 v1, used in final v2 (hold-drop retime). Source: `/workspace/emu-war/prompts/part9.txt`.

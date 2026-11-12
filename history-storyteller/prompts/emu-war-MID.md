@@ -62,9 +62,7 @@ Measured from `/workspace/emu-war/audio/part_timing.json` (final v2). â€œSpeechâ
 - **Start Frame:** [`emu-war-images/part1_start.jpg`](emu-war-images/part1_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part1_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part1_end.jpg`](emu-war-images/part1_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part1_end.jpg`)
 
-![part 1 start](emu-war-images/part1_start.jpg)
-
-![part 1 end](emu-war-images/part1_end.jpg)
+<p><img src="emu-war-images/part1_start.jpg" width="180" alt="part 1 start"> <img src="emu-war-images/part1_end.jpg" width="180" alt="part 1 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/clips/part1_v2_prompt_used.txt` (final v2 wording, also in [`emu-war.md`](emu-war.md)). Converted below; not used verbatim because Midjourney wants a short motion prompt and a 5 s + 4 s split.
 
@@ -89,9 +87,7 @@ The three emus already on the right stand in a stable row with slight head bobs 
 - **Start Frame:** [`emu-war-images/part2_start.jpg`](emu-war-images/part2_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part2_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part2_end.jpg`](emu-war-images/part2_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part2_end.jpg`)
 
-![part 2 start](emu-war-images/part2_start.jpg)
-
-![part 2 end](emu-war-images/part2_end.jpg)
+<p><img src="emu-war-images/part2_start.jpg" width="180" alt="part 2 start"> <img src="emu-war-images/part2_end.jpg" width="180" alt="part 2 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part2.txt`.
 
@@ -114,9 +110,7 @@ The farmer finishes kneeling and crouches beside the drooping wheat at the same 
 - **Start Frame:** [`emu-war-images/part3_start.jpg`](emu-war-images/part3_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part3_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part3_end.jpg`](emu-war-images/part3_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part3_end.jpg`)
 
-![part 3 start](emu-war-images/part3_start.jpg)
-
-![part 3 end](emu-war-images/part3_end.jpg)
+<p><img src="emu-war-images/part3_start.jpg" width="180" alt="part 3 start"> <img src="emu-war-images/part3_end.jpg" width="180" alt="part 3 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part3_v2.txt`.
 
@@ -133,9 +127,7 @@ The farmer stays locked behind the fence on the left with only slight breath, em
 - **Start Frame:** [`emu-war-images/part4_start.jpg`](emu-war-images/part4_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part4_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part4_end.jpg`](emu-war-images/part4_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part4_end.jpg`)
 
-![part 4 start](emu-war-images/part4_start.jpg)
-
-![part 4 end](emu-war-images/part4_end.jpg)
+<p><img src="emu-war-images/part4_start.jpg" width="180" alt="part 4 start"> <img src="emu-war-images/part4_end.jpg" width="180" alt="part 4 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part4_v2.txt`.
 
@@ -152,9 +144,7 @@ Meredith stays at the same left place, the Lewis gun rises slowly from low at hi
 - **Start Frame:** [`emu-war-images/part5_start.jpg`](emu-war-images/part5_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part5_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part5_end.jpg`](emu-war-images/part5_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part5_end.jpg`)
 
-![part 5 start](emu-war-images/part5_start.jpg)
-
-![part 5 end](emu-war-images/part5_end.jpg)
+<p><img src="emu-war-images/part5_start.jpg" width="180" alt="part 5 start"> <img src="emu-war-images/part5_end.jpg" width="180" alt="part 5 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part5.txt`.
 
@@ -171,9 +161,7 @@ The soldier stays at the same left place aiming right, the two emus jog left fro
 - **Start Frame:** [`emu-war-images/part6_start.jpg`](emu-war-images/part6_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part6_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part6_end.jpg`](emu-war-images/part6_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part6_end.jpg`)
 
-![part 6 start](emu-war-images/part6_start.jpg)
-
-![part 6 end](emu-war-images/part6_end.jpg)
+<p><img src="emu-war-images/part6_start.jpg" width="180" alt="part 6 start"> <img src="emu-war-images/part6_end.jpg" width="180" alt="part 6 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part6.txt`.
 
@@ -196,9 +184,7 @@ The emus finish scattering to the right and stay on the right half, the gun sett
 - **Start Frame:** [`emu-war-images/part7_start.jpg`](emu-war-images/part7_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part7_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part7_end.jpg`](emu-war-images/part7_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part7_end.jpg`)
 
-![part 7 start](emu-war-images/part7_start.jpg)
-
-![part 7 end](emu-war-images/part7_end.jpg)
+<p><img src="emu-war-images/part7_start.jpg" width="180" alt="part 7 start"> <img src="emu-war-images/part7_end.jpg" width="180" alt="part 7 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part7.txt`.
 
@@ -215,9 +201,7 @@ The truck tilts and bounces one way as if on a rough ride, the soldier on the be
 - **Start Frame:** [`emu-war-images/part8_start.jpg`](emu-war-images/part8_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part8_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part8_end.jpg`](emu-war-images/part8_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part8_end.jpg`)
 
-![part 8 start](emu-war-images/part8_start.jpg)
-
-![part 8 end](emu-war-images/part8_end.jpg)
+<p><img src="emu-war-images/part8_start.jpg" width="180" alt="part 8 start"> <img src="emu-war-images/part8_end.jpg" width="180" alt="part 8 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part8.txt`.
 
@@ -234,9 +218,7 @@ Meredith stays at the same left place, he raises a blank paper and points, the g
 - **Start Frame:** [`emu-war-images/part9_start.jpg`](emu-war-images/part9_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part9_start.jpg`)
 - **End Frame (`--end`):** [`emu-war-images/part9_end.jpg`](emu-war-images/part9_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part9_end.jpg`)
 
-![part 9 start](emu-war-images/part9_start.jpg)
-
-![part 9 end](emu-war-images/part9_end.jpg)
+<p><img src="emu-war-images/part9_start.jpg" width="180" alt="part 9 start"> <img src="emu-war-images/part9_end.jpg" width="180" alt="part 9 end"></p>
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part9.txt`.
 
