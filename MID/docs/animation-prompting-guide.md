@@ -34,12 +34,10 @@
 - `background architecture stays locked`
 - `table and room furniture remain perfectly steady`
 
-### ד. תנועת מצלמה יחידה ורציפה (Single Camera Motion)
-- בחר **סוג תנועת מצלמה אחד** לכל קליפ:
-  - `cinematic slow push-in` (התקרבות קולנועית רציפה – המומלצת ביותר לקטעי פורטרט).
-  - `subtle slow drift` (צידוד עדין מאוד).
-  - `locked-off tripod shot` (מצלמה מקובעת לחלוטין ללא תנועה עצמית).
-- הימנע משילוב מספר תנועות מצלמה במקביל (כגון "zoom in while rotating and panning") שגורמות לסחרחורת וטשטוש.
+### ד. מצלמה נעולה (Locked-Off Camera)
+- ברירת המחדל המחייבת: `locked-off camera` (מצלמה מקובעת, בלי תנועה עצמית).
+- אין להשתמש ב-`push-in`, `zoom`, `dolly`, `move closer` או התקרבות מסגרת.
+- תנועת מצלמה אחרת (למשל drift או tilt) רק אם המשתמש ביקש זאת במפורש.
 
 ### ה. מילות איכות ותנועה רציפה (Quality & Motion Anchors)
 - `seamless natural motion`
@@ -56,14 +54,14 @@
 
 ### הפרומפט שנוסח ויושם:
 ```text
-The cat softly blinks and gently twitches its ears, subtle slow tail swish, gentle autumn breeze moving leaves slightly on the pavement, warm sunset reflections subtly shifting on the car surface, car remains completely still, cinematic slow push-in, ultra realistic, seamless natural motion
+The cat softly blinks and gently twitches its ears, subtle slow tail swish, gentle autumn breeze moving leaves slightly on the pavement, warm sunset reflections subtly shifting on the car surface, car remains completely still, locked-off camera, ultra realistic, seamless natural motion
 ```
 
 ### פירוק מרכיבי הפרומפט:
 1. **מיקרו-תנועות החתול:** מצמוץ רך, תנועת אוזניים קלה, נפנוף איטי ועדין בזנב.
 2. **אלמנטים סביבתיים:** רוח סתיו מזיזה קלות את העלים על המדרכה, השתקפויות שקיעה חמה נעות בעדינות על גוף הרכב.
 3. **עיגון סטטי:** הרכב נשאר דומם ויציב לחלוטין.
-4. **תנועת מצלמה:** התקרבות קולנועית איטית (Push-in).
+4. **תנועת מצלמה:** מצלמה נעולה (`locked-off camera`), בלי זום או התקרבות. (הפרומפט המקורי בריצה הראשונה כלל `push-in`; ראו [`../RUN-LOG.md`](../RUN-LOG.md).)
 5. **איכות:** מציאותי במיוחד, תנועה טבעית וחלקה.
 
-**התוצאה:** 4 סרטונים מרהיבים, כאשר וריאציה מס' 3 הפיקה תנועת זנב ואוזניים מושלמת והתקרבות נקייה לחלוטין.
+**התוצאה:** 4 סרטונים, כאשר וריאציה מס' 3 הפיקה תנועת זנב ואוזניים טבעית בלי עיוותים. לפי המדיניות העדכנית יש לבחור וריאציה עם מצלמה נעולה, בלי זום.

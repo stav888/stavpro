@@ -7,7 +7,7 @@
 ## 1. נוסחת הזהב להנפשת תמונה (Core Prompt Formula)
 
 ```text
-[תנועות מיקרו של הדמות/הנושא] + [אלמנטים דינמיים בסביבה/רקע] + [אלמנטים סטטיים מעוגנים] + [תנועת מצלמה עדינה] + [מילות איכות ותנועה טבעית]
+[תנועות מיקרו של הדמות/הנושא] + [אלמנטים דינמיים בסביבה/רקע] + [אלמנטים סטטיים מעוגנים] + [מצלמה נעולה (`locked-off camera`)] + [מילות איכות ותנועה טבעית]
 ```
 
 ### למה הנוסחה הזו עובדת?
@@ -20,7 +20,7 @@
 ## 2. התבנית המלאה באנגלית
 
 ```text
-The [subject] [subtle micro-movement: softly blinks / gently twitches ears / slow subtle breathing / subtle tail swish], [secondary movement], [environmental subtle motion: gentle breeze moving leaves/hair / soft light shift / ambient dust particles], [anchored static elements: e.g. background/vehicle/table remains completely still], [camera motion: cinematic slow push-in / subtle slow drift], photorealistic, ultra realistic, seamless natural motion
+The [subject] [subtle micro-movement: softly blinks / gently twitches ears / slow subtle breathing / subtle tail swish], [secondary movement], [environmental subtle motion: gentle breeze moving leaves/hair / soft light shift / ambient dust particles], [anchored static elements: e.g. background/vehicle/table remains completely still], [locked-off camera], photorealistic, ultra realistic, seamless natural motion
 ```
 
 ---
@@ -29,34 +29,33 @@ The [subject] [subtle micro-movement: softly blinks / gently twitches ears / slo
 
 ### דוגמה א': בעלי חיים (כמו בפרויקט החתול)
 ```text
-The cat softly blinks and gently twitches its ears, subtle slow tail swish, gentle autumn breeze moving leaves slightly on the pavement, warm sunset reflections subtly shifting on the car surface, car remains completely still, cinematic slow push-in, ultra realistic, seamless natural motion
+The cat softly blinks and gently twitches its ears, subtle slow tail swish, gentle autumn breeze moving leaves slightly on the pavement, warm sunset reflections subtly shifting on the car surface, car remains completely still, locked-off camera, ultra realistic, seamless natural motion
 ```
 
 ### דוגמה ב': דמות אנושית (פורטרט)
 ```text
-The person softly blinks and takes a slow subtle breath, slight natural head movement, soft strand of hair gently sways in a light breeze, warm candlelight flickering softly on the face, background remains perfectly steady, cinematic slow push-in, photorealistic, natural seamless motion
+The person softly blinks and takes a slow subtle breath, slight natural head movement, soft strand of hair gently sways in a light breeze, warm candlelight flickering softly on the face, background remains perfectly steady, locked-off camera, photorealistic, natural seamless motion
 ```
 
 ### דוגמה ג': כלי רכב או אובייקט עם סביבה חיה
 ```text
-The car stays parked and completely still, headlights gently glow with subtle atmospheric haze, rain droplets slowly sliding down the windshield, puddles on asphalt rippling slightly from falling raindrops, locked-off shot with subtle cinematic slow zoom, photorealistic
+The car stays parked and completely still, headlights gently glow with subtle atmospheric haze, rain droplets slowly sliding down the windshield, puddles on asphalt rippling slightly from falling raindrops, locked-off camera, photorealistic
 ```
 
 ### דוגמה ד': נוף או פנים מבנה
 ```text
-Gentle atmospheric haze drifting across the room, sunlight rays slowly shifting angle on the wooden floor, dust motes softly floating in the light beam, curtains swaying gently by an open window, perfectly still room architecture, smooth slow camera push-in
+Gentle atmospheric haze drifting across the room, sunlight rays slowly shifting angle on the wooden floor, dust motes softly floating in the light beam, curtains swaying gently by an open window, perfectly still room architecture, locked-off camera
 ```
 
 ---
 
-## 4. מילות מפתח מומלצות לתנועת מצלמה
+## 4. מילות מפתח למצלמה
 
-| פקודה | תיאור | השפעה |
+| פקודה | תיאור | שימוש |
 |---|---|---|
-| `cinematic slow push-in` | התקרבות איטית ומיוצבת לכיוון הנושא | מוסיף דרמטיות בלי לייצר רעידות |
-| `subtle slow drift` | תנועה מרחפת איטית מאוד | טבעי ואורגני לסצנות רגועות |
-| `locked-off camera` | מצלמה על חצובה ללא תזוזה | מצוין כשהדגש הוא רק על תנועות בתוך הפריים |
-| `slow tilt-up / tilt-down` | הטיה קלה מעלה או מטה | חושף הדרגתיות של פרטים בגובה (9:16) |
+| `locked-off camera` | מצלמה על חצובה ללא תזוזה | **ברירת המחדל המחייבת** — הדגש הוא על תנועה בתוך הפריים בלבד |
+| `push-in` / `zoom` / `dolly` / `move closer` | התקרבות או זום | **אסורים** לפי המדיניות הקבועה. אין לבחור גם וריאציה שנראית מוגדלת |
+| `subtle slow drift` / `tilt-up` / `tilt-down` | תנועת מצלמה אחרת | רק אם המשתמש ביקש זאת במפורש |
 
 ---
 
@@ -79,5 +78,5 @@ Gentle atmospheric haze drifting across the room, sunlight rays slowly shifting 
 3. **הצגת הפרומפטים באופן ממוספר וסדור:** המשתמש מקבל רשימה ישירה של פרומפטים להרצה שלב-אחר-שלב.
 4. **תמונות לכל קטע:** לכל סצנה מכינים תמונת פתיח (Start Frame) בלבד, אלא אם המשתמש ביקש במפורש גם תמונת סיום. התמונות נוצרות ב-GPT כברירת מחדל.
 5. **3 אופציות פרומפט לכל קטע:** לפני הרצת כל ג'וב מציעים למשתמש 3 אופציות פרומפט, והמשתמש בוחר אחת מהן.
-6. **בחירת לייק לכל קטע:** מריצים את הג'וב, עושים QA לווריאציות (ללא גליצ'ים או עיוותים), ומסמנים לייק לווריאציה הטובה ביותר לפני המעבר לקטע הבא.
-7. **איחוד הקטעים:** הקטעים שנבחרו (הלייקים) מאוחדים לרצף וידאו אחד לפי סדר התסריט.
+6. **בחירת לייק לכל קטע:** מריצים את הג'וב, עושים QA לווריאציות (ללא גליצ'ים, עיוותים או זום), ממליצים על וריאציה, ומסמנים לייק רק אחרי שהמשתמש אישר במפורש את אותו קליפ. רק אז עוברים לקטע הבא.
+7. **איחוד הקטעים:** Midjourney אינו מאחד סצנות. הקליפים שאושרו מורדים ומאוחדים לרצף אחד לפי [`../docs/post-production.md`](../docs/post-production.md).
