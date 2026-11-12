@@ -122,3 +122,124 @@ One row per production scene (sentence, segment, or part). Prompts are copied ve
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+## Published sketch-2 v6 stills (13 visual clips)
+
+The published Short (`sketch-2 v6`, 130 s) was assembled as **13 clips**, not seven stills. Narration remains the seven `seg1`–`seg7` files above. `/workspace/sketch2_v6/static/` is only the title and page-number overlay, not the scene art. Captioned verify grabs were not used. Original image and animation prompts for these clips were **not found**.
+
+### Visual clip 1 (seg1)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (source: `/workspace/xiaohei-scenes/scene-dream.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip01.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene01_start.jpg" width="180" alt="scene 1 start"> <img src="first-airplane-images/scene01_end.jpg" width="180" alt="scene 1 end"></p>
+
+### Visual clip 2 (seg1)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: **extracted from source** (no dedicated still for this falling-phase clip), letterboxed to 9:16 (source: `/workspace/sketch2_v3/pingpong/dream_pp.mp4 at t=12.04s`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip02.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene02_start.jpg" width="180" alt="scene 2 start"> <img src="first-airplane-images/scene02_end.jpg" width="180" alt="scene 2 end"></p>
+
+### Visual clip 3 (seg2)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (source: `/workspace/xiaohei-scenes/scene1.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip03.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene03_start.jpg" width="180" alt="scene 3 start"> <img src="first-airplane-images/scene03_end.jpg" width="180" alt="scene 3 end"></p>
+
+### Visual clip 4 (seg2)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (source: `/workspace/xiaohei-scenes/scene-balance.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip04.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene04_start.jpg" width="180" alt="scene 4 start"> <img src="first-airplane-images/scene04_end.jpg" width="180" alt="scene 4 end"></p>
+
+### Visual clip 5 (seg3)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (clip then goes to the wind tunnel) (source: `/workspace/xiaohei-scenes/scene-read.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip05.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene05_start.jpg" width="180" alt="scene 5 start"> <img src="first-airplane-images/scene05_end.jpg" width="180" alt="scene 5 end"></p>
+
+### Visual clip 6 (seg3)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (source: `/workspace/xiaohei-scenes/scene-wrongdata.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip06.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene06_start.jpg" width="180" alt="scene 6 start"> <img src="first-airplane-images/scene06_end.jpg" width="180" alt="scene 6 end"></p>
+
+### Visual clip 7 (seg4)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (source: `/workspace/xiaohei-scenes/scene-birds.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip07.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene07_start.jpg" width="180" alt="scene 7 start"> <img src="first-airplane-images/scene07_end.jpg" width="180" alt="scene 7 end"></p>
+
+### Visual clip 8 (seg4)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (glider; clip then goes to wing-warping) (source: `/workspace/xiaohei-scenes/scene2.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip08.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene08_start.jpg" width="180" alt="scene 8 start"> <img src="first-airplane-images/scene08_end.jpg" width="180" alt="scene 8 end"></p>
+
+### Visual clip 9 (seg5)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (clip then goes to the propeller) (source: `/workspace/xiaohei-scenes/scene-engine.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip09.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene09_start.jpg" width="180" alt="scene 9 start"> <img src="first-airplane-images/scene09_end.jpg" width="180" alt="scene 9 end"></p>
+
+### Visual clip 10 (seg6)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (source: `/workspace/xiaohei-scenes/scene4.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip10.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene10_start.jpg" width="180" alt="scene 10 start"> <img src="first-airplane-images/scene10_end.jpg" width="180" alt="scene 10 end"></p>
+
+### Visual clip 11 (seg6)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (source: `/workspace/xiaohei-scenes/scene5.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip11.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene11_start.jpg" width="180" alt="scene 11 start"> <img src="first-airplane-images/scene11_end.jpg" width="180" alt="scene 11 end"></p>
+
+### Visual clip 12 (seg6)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (same takeoff still as scene 11) (source: `/workspace/xiaohei-scenes/scene5.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip12.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene12_start.jpg" width="180" alt="scene 12 start"> <img src="first-airplane-images/scene12_end.jpg" width="180" alt="scene 12 end"></p>
+
+### Visual clip 13 (seg7)
+
+- **Image / sketch prompt:** **not found.**
+- **Animation / clip prompt:** **not found.**
+
+Start still: clean original, letterboxed to 9:16 (source: `/workspace/xiaohei-scenes/scene-worldflies.png`). End still is **extracted from clip** (last frame of `/workspace/sketch2_v6/clips/clip13.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="first-airplane-images/scene13_start.jpg" width="180" alt="scene 13 start"> <img src="first-airplane-images/scene13_end.jpg" width="180" alt="scene 13 end"></p>

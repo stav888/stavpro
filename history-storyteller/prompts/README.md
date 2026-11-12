@@ -22,17 +22,23 @@ Publish times below are in Israel time (Asia/Jerusalem), copied from `examples/*
 | File | Video | Publish / schedule (Israel time) | Prompt completeness |
 |---|---|---|---|
 | [`first-airplane.md`](first-airplane.md) | The First Airplane (Wright brothers) | 2026-10-19 21:33 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
+| [`first-airplane-MID.md`](first-airplane-MID.md) | The First Airplane (Wright brothers) (Midjourney-adapted) | 2026-10-19 21:33 Israel time (Asia/Jerusalem) | NEW Midjourney video prompts written from the published v6 stills and extracted end frames; original image and clip prompts still not found |
 | [`yamaguchi.md`](yamaguchi.md) | Tsutomu Yamaguchi | 2026-10-20 19:00 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
 | [`wojtek.md`](wojtek.md) | Wojtek the Soldier Bear | 2026-10-22 10:42 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
 | [`marie-curie.md`](marie-curie.md) | Marie Curie and Radium | 2026-10-23 19:00 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
+| [`marie-curie-MID.md`](marie-curie-MID.md) | Marie Curie and Radium (Midjourney-adapted) | 2026-10-23 19:00 Israel time (Asia/Jerusalem) | NEW Midjourney video prompts written from the real stills and extracted end frames; original image and clip prompts still not found; prompts kept gentle |
 | [`molasses.md`](molasses.md) | The Great Boston Molasses Flood (1919) | 2026-10-26 13:52 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
 | [`violet-jessop.md`](violet-jessop.md) | Violet Jessop (“Miss Unsinkable”) | 2026-10-28 17:23 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
 | [`wilma-rudolph.md`](wilma-rudolph.md) | Wilma Rudolph | 2026-10-30 16:17 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
+| [`wilma-rudolph-MID.md`](wilma-rudolph-MID.md) | Wilma Rudolph (Midjourney-adapted) | 2026-10-30 16:17 Israel time (Asia/Jerusalem) | NEW Midjourney video prompts written from the real stills and extracted end frames; original image and clip prompts still not found; prompts kept gentle |
 | [`stanley-meyer.md`](stanley-meyer.md) | Stanley Meyer's Water Car | 2026-11-01 17:47 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
+| [`stanley-meyer-MID.md`](stanley-meyer-MID.md) | Stanley Meyer's Water Car (Midjourney-adapted) | 2026-11-01 17:47 Israel time (Asia/Jerusalem) | NEW Midjourney video prompts written from the real stills and extracted end frames; original image and clip prompts still not found; prompts kept gentle |
 | [`flexible-glass.md`](flexible-glass.md) | Rome's Flexible Glass (Tiberius) | 2026-11-03 18:47 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
 | [`tesla.md`](tesla.md) | Tesla's Wardenclyffe Tower | 2026-11-05 18:43 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
+| [`tesla-MID.md`](tesla-MID.md) | Tesla's Wardenclyffe Tower (Midjourney-adapted) | 2026-11-05 18:43 Israel time (Asia/Jerusalem) | NEW Midjourney video prompts written from the real stills and extracted end frames; original image and clip prompts still not found |
 | [`armstrong.md`](armstrong.md) | Edwin Armstrong and FM Radio | 2026-11-08 18:52 Israel time (Asia/Jerusalem) | partial — narration found; image and clip prompts not found |
 | [`lustig.md`](lustig.md) | Victor Lustig Sells the Eiffel Tower | Scheduled 2026-11-10 18:47 Israel time (Asia/Jerusalem) (snapshot 2026-11-09) | partial — narration found (English final + v1 English/Hebrew/sources); Xiaohei image and clip prompts for the published Short not found. An earlier unused 16:9 Vox-style experiment is archived in a clearly labeled section. |
+| [`lustig-MID.md`](lustig-MID.md) | Victor Lustig Sells the Eiffel Tower (Midjourney-adapted) | Scheduled 2026-11-10 18:47 Israel time (Asia/Jerusalem) (snapshot 2026-11-09) | NEW Midjourney video prompts written from the real stills and extracted end frames; Xiaohei image and clip prompts still not found |
 | [`garbo.md`](garbo.md) | Juan Pujol García (Agent Garbo) | Scheduled 2026-11-12 18:43 Israel time (Asia/Jerusalem) (snapshot 2026-11-09) | partial — narration found (English + Hebrew); image and clip prompts not found |
 | [`emu-war.md`](emu-war.md) | The Great Emu War | not scheduled (in production) | partial — clip prompts and narration found; still prompts not found |
 | [`emu-war-MID.md`](emu-war-MID.md) | The Great Emu War (Midjourney-adapted) | not scheduled (in production) | Midjourney video prompts converted from the nine real Emu War animation prompts; original still prompts still not found |
@@ -75,3 +81,4 @@ For Emu War part 2, the only saved prompt file is `part2.txt`; a distinct v3 fil
 - Buffer post IDs, tags, and full descriptions stay in `examples/*/buffer_metadata.md` and are not repeated here.
 - Lustig includes a clearly labeled **unused 16:9 Vox-style experiment** found in `/workspace/vox-pipeline/prompts/`. That is not the scheduled Xiaohei Short.
 - No account names, emails, tokens, or secrets are included.
+- Midjourney-adapted files (`*-MID.md`) hold **NEW** video paste prompts labeled “NEW - written for MJ”. They are based on the real stills and on end frames extracted from the production clips. They are not original GenerateImage or GenerateVideo prompts. Start/end images live in `prompts/<name>-images/` and are also embedded in the regular MD file.

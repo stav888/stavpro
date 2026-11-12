@@ -87,56 +87,111 @@ One row per production scene (sentence, segment, or part). Prompts are copied ve
 ### Scene 1 — In 1925, a con man sold the Eiffel Tower. It…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene1.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip01.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene1_start.jpg" width="180" alt="scene 1 start"> <img src="lustig-images/scene1_end.jpg" width="180" alt="scene 1 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 2 — His name was Victor Lustig. A newspaper story about the…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene2.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip02.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene2_start.jpg" width="180" alt="scene 2 start"> <img src="lustig-images/scene2_end.jpg" width="180" alt="scene 2 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 3 — He posed as a government official. He forged official stationery.…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene3.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip03.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene3_start.jpg" width="180" alt="scene 3 start"> <img src="lustig-images/scene3_end.jpg" width="180" alt="scene 3 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 4 — There, he shared a secret. The government planned to tear…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene4.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip04.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene4_start.jpg" width="180" alt="scene 4 start"> <img src="lustig-images/scene4_end.jpg" width="180" alt="scene 4 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 5 — One dealer, André Poisson, wanted the deal badly.
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene5.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip05.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene5_start.jpg" width="180" alt="scene 5 start"> <img src="lustig-images/scene5_end.jpg" width="180" alt="scene 5 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 6 — But Lustig wanted more than the price of the tower.
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene6.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip06.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene6_start.jpg" width="180" alt="scene 6 start"> <img src="lustig-images/scene6_end.jpg" width="180" alt="scene 6 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 7 — He hinted that he was a corrupt official. He expected…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene7.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip07.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene7_start.jpg" width="180" alt="scene 7 start"> <img src="lustig-images/scene7_end.jpg" width="180" alt="scene 7 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 8 — Strangely, that made the scam more convincing. Now there was…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene8.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip08.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene8_start.jpg" width="180" alt="scene 8 start"> <img src="lustig-images/scene8_end.jpg" width="180" alt="scene 8 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 9 — Poisson paid. Lustig took the money and fled to Austria.
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene9.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip09.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene9_start.jpg" width="180" alt="scene 9 start"> <img src="lustig-images/scene9_end.jpg" width="180" alt="scene 9 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 10 — When Poisson realized he had been fooled, he was too…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene10.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip10.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene10_start.jpg" width="180" alt="scene 10 start"> <img src="lustig-images/scene10_end.jpg" width="180" alt="scene 10 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 11 — The Eiffel Tower stayed right where it was. Poisson's money…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/lustig/scenes/scene11.jpg`). End still is **extracted from clip** (last frame of `/workspace/lustig/clips/clip11.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="lustig-images/scene11_start.jpg" width="180" alt="scene 11 start"> <img src="lustig-images/scene11_end.jpg" width="180" alt="scene 11 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ## Earlier unused 16:9 Vox-style experiment (not the published Short)

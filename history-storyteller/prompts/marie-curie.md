@@ -52,44 +52,89 @@ One row per production scene (sentence, segment, or part). Prompts are copied ve
 ### Scene 1 — In 1891, a young Polish woman named Maria arrived in…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene1.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip01.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene1_start.jpg" width="180" alt="scene 1 start"> <img src="marie-curie-images/scene1_end.jpg" width="180" alt="scene 1 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 2 — In a freezing little room, she dreamed of understanding how…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene2.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip02.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene2_start.jpg" width="180" alt="scene 2 start"> <img src="marie-curie-images/scene2_end.jpg" width="180" alt="scene 2 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 3 — She heard of mysterious rays coming from uranium, and gave…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene3.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip03.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene3_start.jpg" width="180" alt="scene 3 start"> <img src="marie-curie-images/scene3_end.jpg" width="180" alt="scene 3 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 4 — With her husband Pierre, she worked in a leaky shed,…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene4.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip04.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene4_start.jpg" width="180" alt="scene 4 start"> <img src="marie-curie-images/scene4_end.jpg" width="180" alt="scene 4 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 5 — One night in 1898, they saw a tiny substance glowing…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene5.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip05.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene5_start.jpg" width="180" alt="scene 5 start"> <img src="marie-curie-images/scene5_end.jpg" width="180" alt="scene 5 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 6 — In 1903, Marie became the first woman ever to win…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene6.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip06.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene6_start.jpg" width="180" alt="scene 6 start"> <img src="marie-curie-images/scene6_end.jpg" width="180" alt="scene 6 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 7 — Then Pierre was killed in an accident, but she kept…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene7.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip07.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene7_start.jpg" width="180" alt="scene 7 start"> <img src="marie-curie-images/scene7_end.jpg" width="180" alt="scene 7 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 8 — In World War One, she drove X-ray units to the…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene8.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip08.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene8_start.jpg" width="180" alt="scene 8 start"> <img src="marie-curie-images/scene8_end.jpg" width="180" alt="scene 8 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 9 — The glow she loved harmed her in the end, but…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/curie/scenes/scene9.jpg`). End still is **extracted from clip** (last frame of `/workspace/curie/clips/clip09.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="marie-curie-images/scene9_start.jpg" width="180" alt="scene 9 start"> <img src="marie-curie-images/scene9_end.jpg" width="180" alt="scene 9 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.

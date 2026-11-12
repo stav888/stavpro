@@ -50,34 +50,69 @@ One row per production scene (sentence, segment, or part). Prompts are copied ve
 ### Scene 1 — In 1940, in a small Tennessee town, Wilma Rudolph was…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/wilma/scenes/scene1.jpg`). End still is **extracted from clip** (last frame of `/workspace/wilma/clips/clip01.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="wilma-rudolph-images/scene1_start.jpg" width="180" alt="scene 1 start"> <img src="wilma-rudolph-images/scene1_end.jpg" width="180" alt="scene 1 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 2 — At four, she caught polio, her left leg grew weak,…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/wilma/scenes/scene2.jpg`). End still is **extracted from clip** (last frame of `/workspace/wilma/clips/clip02.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="wilma-rudolph-images/scene2_start.jpg" width="180" alt="scene 2 start"> <img src="wilma-rudolph-images/scene2_end.jpg" width="180" alt="scene 2 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 3 — Her mother refused to give up, taking her by bus…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/wilma/scenes/scene3.jpg`). End still is **extracted from clip** (last frame of `/workspace/wilma/clips/clip03.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="wilma-rudolph-images/scene3_start.jpg" width="180" alt="scene 3 start"> <img src="wilma-rudolph-images/scene3_end.jpg" width="180" alt="scene 3 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 4 — For years she wore a metal brace, until at twelve,…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/wilma/scenes/scene4.jpg`). End still is **extracted from clip** (last frame of `/workspace/wilma/clips/clip04.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="wilma-rudolph-images/scene4_start.jpg" width="180" alt="scene 4 start"> <img src="wilma-rudolph-images/scene4_end.jpg" width="180" alt="scene 4 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 5 — She began to run, and at just sixteen, she won…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/wilma/scenes/scene5.jpg`). End still is **extracted from clip** (last frame of `/workspace/wilma/clips/clip05.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="wilma-rudolph-images/scene5_start.jpg" width="180" alt="scene 5 start"> <img src="wilma-rudolph-images/scene5_end.jpg" width="180" alt="scene 5 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 6 — In 1960, in Rome, she won three gold medals, and…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/wilma/scenes/scene6.jpg`). End still is **extracted from clip** (last frame of `/workspace/wilma/clips/clip06.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="wilma-rudolph-images/scene6_start.jpg" width="180" alt="scene 6 start"> <img src="wilma-rudolph-images/scene6_end.jpg" width="180" alt="scene 6 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ### Scene 7 — Back home, she insisted her welcome parade be open to…
 
 - **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+
+Start still is the real production scene image, letterboxed to 9:16 (source: `/workspace/wilma/scenes/scene7.jpg`). End still is **extracted from clip** (last frame of `/workspace/wilma/clips/clip07.mp4`, with burned-in title, page number, and any captions removed):
+
+<p><img src="wilma-rudolph-images/scene7_start.jpg" width="180" alt="scene 7 start"> <img src="wilma-rudolph-images/scene7_end.jpg" width="180" alt="scene 7 end"></p>
 - **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
