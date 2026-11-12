@@ -82,3 +82,43 @@ Title, description, and/or tags were updated on these 16 videos. After-titles be
 - **approved-by:** exact wording not recorded here
 - **verification:** recorded as applied in the working package; per-video update-response details not recorded here
 - **side effects:** not recorded here
+
+---
+
+## 2026-10-26 — history channel — 6nvhaMwV8nY (Boston molasses)
+
+- **channel:** history channel
+- **video ID:** [6nvhaMwV8nY](https://www.youtube.com/watch?v=6nvhaMwV8nY)
+- **field:** none
+- **before:** not applicable
+- **after:** no YouTube change by this bot
+- **approved-by:** not applicable
+- **verification:** this video was not in the earlier applied-updates batch; no post-publish title, description, or tag update by this bot is recorded. A later Analytics snapshot (1 October–6 November 2026) read 250 views and 112% average percent viewed; that was a read only.
+- **side effects:** none recorded
+
+---
+
+## 2026-11-01 — history channel — Q8_8kQcGjms (Stanley Meyer)
+
+- **channel:** history channel
+- **video ID:** [Q8_8kQcGjms](https://www.youtube.com/watch?v=Q8_8kQcGjms)
+- **field:** none
+- **before:** not applicable
+- **after:** no YouTube change by this bot
+- **approved-by:** not applicable
+- **verification:** this video was not in the earlier applied-updates batch; no pre-publish SEO package or post-publish YouTube change by this bot is recorded here.
+- **side effects:** none recorded
+
+---
+
+## 2026-11-10 — history channel — aNDpMCMlljs (Victor Lustig / Eiffel Tower)
+
+- **channel:** history channel
+- **video ID:** [aNDpMCMlljs](https://www.youtube.com/watch?v=aNDpMCMlljs)
+- **field:** none on YouTube (SEO package only, pre-publish)
+- **before:** not applicable
+- **after:** SEO package supplied pre-publish: title `He Sold the Eiffel Tower. It Was Never for Sale`, publish slot 10 November 2026 at 18:47 Israel time. The History bot scheduled the video in Buffer. No post-publish YouTube changes by this bot.
+- **approved-by:** exact wording not recorded here; no post-publish YouTube edit was requested or made
+- **verification:** the live title and description match the package; no tag update by this bot is recorded
+- **side effects:** none recorded
+

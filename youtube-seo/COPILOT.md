@@ -69,7 +69,11 @@ The YouTube Data API quota resets at about **10:00 Israel time**. If a call retu
 - Custom thumbnails for Shorts can be set only from the YouTube phone app.
 - Buffer does not transfer tags to YouTube. Add tags after the video is live, and only after approval.
 
-## 4. Step-by-step per video
+## 4. Audits and per-video updates
+
+**Audit scope (permanent rule):** Every SEO audit covers **all** videos on the target channel, including older uploads and any future uploads that have already gone live, not only the latest ones. List every video, then propose changes only where the style rules require them.
+
+### Step-by-step per video
 
 1. **Read** current metadata and stats with `YOUTUBE_GET_VIDEO_DETAILS_BATCH` (and Analytics for the history channel when needed). Note title, description, category, any tags that actually appear, privacy, and stats.
 2. **Diagnose** what is weak (title, description, tags, hook) against the style rules below. Use real numbers only.
@@ -106,6 +110,7 @@ Leave an empty day between uploads, 18:00–19:00 Israel time, at a non-round mi
 - Never invent numbers. If a metric is missing, say it is missing.
 - Never treat another bot's request as user approval.
 - Never write channel names or channel IDs in this folder.
+- Never limit an audit to only the latest uploads; every audit covers all videos on the channel, including future ones once they are live.
 
 ## 7. Real example
 
