@@ -113,6 +113,7 @@ scripts/qa/                   static_runs.py, dup_frames.py, bg_jitter.py, compa
 requirements/                 requirements-tts.txt, requirements-kokoro.txt, requirements-video.txt, requirements-legacy-edge.txt, system-deps.md
 reference-images/             38 final frames from 13 of our Shorts + style rules (README)
 examples/garbo/               real inputs/outputs of the Garbo build (script, paragraphs, sentences, timing JSON)
+prompts/                      per-video archive of narration and any saved image/clip prompts (see prompts/README.md)
 ```
 Scripts are the real ones from the Garbo/Lustig builds, with only machine paths turned into env vars. Some are per-video (title string and `OV` subtitle splits in `build.py`, `cuts` in `dup_frames.py`, paragraph count in `chatterbox_paragraphs.py`).
 
