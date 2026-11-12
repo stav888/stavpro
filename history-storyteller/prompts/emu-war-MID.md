@@ -14,21 +14,23 @@ Conventions followed (from `MID/` in this repo and `.github/instructions/mid.ins
 
 **Original image / sketch prompts:** **not found** for every part (same as [`emu-war.md`](emu-war.md)). No new Midjourney image prompts were written. Use the existing production stills as Start and End frames.
 
-## Frames (box paths, not in this repo)
+## Frames
 
-All nine start and end stills exist on the box and are **not** in `stav888/stavpro`. They are local paths only:
+The nine start and end stills were copied from the box into [`emu-war-images/`](emu-war-images/) (all 18 found; all already 720×1280 and under 500 KB, copied as-is). Use the **repo** files below as Start Frame and End Frame (`--end`) in Midjourney. The original box path is noted as the source.
 
-| Part | Start Frame | End Frame (`--end`) |
-|---|---|---|
-| 1 | `/workspace/emu-war/scenes/part1_start.jpg` | `/workspace/emu-war/scenes/part1_end.jpg` |
-| 2 | `/workspace/emu-war/scenes/part2_start.jpg` | `/workspace/emu-war/scenes/part2_end.jpg` |
-| 3 | `/workspace/emu-war/scenes/part3_start.jpg` | `/workspace/emu-war/scenes/part3_end.jpg` |
-| 4 | `/workspace/emu-war/scenes/part4_start.jpg` | `/workspace/emu-war/scenes/part4_end.jpg` |
-| 5 | `/workspace/emu-war/scenes/part5_start.jpg` | `/workspace/emu-war/scenes/part5_end.jpg` |
-| 6 | `/workspace/emu-war/scenes/part6_start.jpg` | `/workspace/emu-war/scenes/part6_end.jpg` |
-| 7 | `/workspace/emu-war/scenes/part7_start.jpg` | `/workspace/emu-war/scenes/part7_end.jpg` |
-| 8 | `/workspace/emu-war/scenes/part8_start.jpg` | `/workspace/emu-war/scenes/part8_end.jpg` |
-| 9 | `/workspace/emu-war/scenes/part9_start.jpg` | `/workspace/emu-war/scenes/part9_end.jpg` |
+Part 2 v3, part 3 v2 and part 4 v2 were **clip** regenerations; no separate versioned stills were found, so these are the start/end images used for those takes.
+
+| Part | Start Frame (in repo) | End Frame (`--end`, in repo) | Original box source |
+|---|---|---|---|
+| 1 | [`emu-war-images/part1_start.jpg`](emu-war-images/part1_start.jpg) | [`emu-war-images/part1_end.jpg`](emu-war-images/part1_end.jpg) | `/workspace/emu-war/scenes/part1_start.jpg` / `part1_end.jpg` |
+| 2 | [`emu-war-images/part2_start.jpg`](emu-war-images/part2_start.jpg) | [`emu-war-images/part2_end.jpg`](emu-war-images/part2_end.jpg) | `/workspace/emu-war/scenes/part2_start.jpg` / `part2_end.jpg` |
+| 3 | [`emu-war-images/part3_start.jpg`](emu-war-images/part3_start.jpg) | [`emu-war-images/part3_end.jpg`](emu-war-images/part3_end.jpg) | `/workspace/emu-war/scenes/part3_start.jpg` / `part3_end.jpg` |
+| 4 | [`emu-war-images/part4_start.jpg`](emu-war-images/part4_start.jpg) | [`emu-war-images/part4_end.jpg`](emu-war-images/part4_end.jpg) | `/workspace/emu-war/scenes/part4_start.jpg` / `part4_end.jpg` |
+| 5 | [`emu-war-images/part5_start.jpg`](emu-war-images/part5_start.jpg) | [`emu-war-images/part5_end.jpg`](emu-war-images/part5_end.jpg) | `/workspace/emu-war/scenes/part5_start.jpg` / `part5_end.jpg` |
+| 6 | [`emu-war-images/part6_start.jpg`](emu-war-images/part6_start.jpg) | [`emu-war-images/part6_end.jpg`](emu-war-images/part6_end.jpg) | `/workspace/emu-war/scenes/part6_start.jpg` / `part6_end.jpg` |
+| 7 | [`emu-war-images/part7_start.jpg`](emu-war-images/part7_start.jpg) | [`emu-war-images/part7_end.jpg`](emu-war-images/part7_end.jpg) | `/workspace/emu-war/scenes/part7_start.jpg` / `part7_end.jpg` |
+| 8 | [`emu-war-images/part8_start.jpg`](emu-war-images/part8_start.jpg) | [`emu-war-images/part8_end.jpg`](emu-war-images/part8_end.jpg) | `/workspace/emu-war/scenes/part8_start.jpg` / `part8_end.jpg` |
+| 9 | [`emu-war-images/part9_start.jpg`](emu-war-images/part9_start.jpg) | [`emu-war-images/part9_end.jpg`](emu-war-images/part9_end.jpg) | `/workspace/emu-war/scenes/part9_start.jpg` / `part9_end.jpg` |
 
 ## How to paste (Midjourney Web)
 
@@ -57,8 +59,12 @@ Measured from `/workspace/emu-war/audio/part_timing.json` (final v2). “Speech�
 
 - **Narration:** In 1932 Western Australia, the army went to war against twenty thousand emus.
 - **Length plan:** 9 s (5 s + one Extend). Speech 5.36 s.
-- **Start Frame:** `/workspace/emu-war/scenes/part1_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part1_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part1_start.jpg`](emu-war-images/part1_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part1_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part1_end.jpg`](emu-war-images/part1_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part1_end.jpg`)
+
+![part 1 start](emu-war-images/part1_start.jpg)
+
+![part 1 end](emu-war-images/part1_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/clips/part1_v2_prompt_used.txt` (final v2 wording, also in [`emu-war.md`](emu-war.md)). Converted below; not used verbatim because Midjourney wants a short motion prompt and a 5 s + 4 s split.
 
@@ -80,8 +86,12 @@ The three emus already on the right stand in a stable row with slight head bobs 
 
 - **Narration:** After World War One, soldier-settlers farmed tough wheat land near Campion and Walgoolan.
 - **Length plan:** 9 s (5 s + one Extend). Speech 5.32 s.
-- **Start Frame:** `/workspace/emu-war/scenes/part2_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part2_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part2_start.jpg`](emu-war-images/part2_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part2_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part2_end.jpg`](emu-war-images/part2_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part2_end.jpg`)
+
+![part 2 start](emu-war-images/part2_start.jpg)
+
+![part 2 end](emu-war-images/part2_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part2.txt`.
 
@@ -101,8 +111,12 @@ The farmer finishes kneeling and crouches beside the drooping wheat at the same 
 
 - **Narration:** About twenty thousand migrating emus smashed fences and ruined the struggling harvest.
 - **Length plan:** **5 s** only (speech 4.44 s; slot 4.82 s).
-- **Start Frame:** `/workspace/emu-war/scenes/part3_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part3_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part3_start.jpg`](emu-war-images/part3_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part3_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part3_end.jpg`](emu-war-images/part3_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part3_end.jpg`)
+
+![part 3 start](emu-war-images/part3_start.jpg)
+
+![part 3 end](emu-war-images/part3_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part3_v2.txt`.
 
@@ -116,8 +130,12 @@ The farmer stays locked behind the fence on the left with only slight breath, em
 
 - **Narration:** On November second, Major Meredith rolled out with two Lewis guns and ten thousand rounds.
 - **Length plan:** **5 s** only (speech 4.50 s; slot 4.97 s).
-- **Start Frame:** `/workspace/emu-war/scenes/part4_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part4_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part4_start.jpg`](emu-war-images/part4_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part4_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part4_end.jpg`](emu-war-images/part4_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part4_end.jpg`)
+
+![part 4 start](emu-war-images/part4_start.jpg)
+
+![part 4 end](emu-war-images/part4_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part4_v2.txt`.
 
@@ -131,8 +149,12 @@ Meredith stays at the same left place, the Lewis gun rises slowly from low at hi
 
 - **Narration:** But the tall birds simply jogged through the wheat, ignoring the gunfire.
 - **Length plan:** **5 s** only (speech 3.62 s; slot 3.89 s).
-- **Start Frame:** `/workspace/emu-war/scenes/part5_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part5_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part5_start.jpg`](emu-war-images/part5_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part5_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part5_end.jpg`](emu-war-images/part5_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part5_end.jpg`)
+
+![part 5 start](emu-war-images/part5_start.jpg)
+
+![part 5 end](emu-war-images/part5_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part5.txt`.
 
@@ -146,8 +168,12 @@ The soldier stays at the same left place aiming right, the two emus jog left fro
 
 - **Narration:** At a Campion dam, over a thousand emus closed in — then the Lewis gun jammed.
 - **Length plan:** 9 s (5 s + one Extend). Speech 5.42 s.
-- **Start Frame:** `/workspace/emu-war/scenes/part6_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part6_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part6_start.jpg`](emu-war-images/part6_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part6_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part6_end.jpg`](emu-war-images/part6_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part6_end.jpg`)
+
+![part 6 start](emu-war-images/part6_start.jpg)
+
+![part 6 end](emu-war-images/part6_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part6.txt`.
 
@@ -167,8 +193,12 @@ The emus finish scattering to the right and stay on the right half, the gun sett
 
 - **Narration:** They mounted a gun on a truck, but the ride was too rough to fire a shot.
 - **Length plan:** **5 s** only (speech 3.70 s; slot 4.06 s).
-- **Start Frame:** `/workspace/emu-war/scenes/part7_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part7_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part7_start.jpg`](emu-war-images/part7_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part7_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part7_end.jpg`](emu-war-images/part7_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part7_end.jpg`)
+
+![part 7 start](emu-war-images/part7_start.jpg)
+
+![part 7 end](emu-war-images/part7_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part7.txt`.
 
@@ -182,8 +212,12 @@ The truck tilts and bounces one way as if on a rough ride, the soldier on the be
 
 - **Narration:** A second campaign began. Meredith claimed nine hundred eighty-six kills — ten rounds each.
 - **Length plan:** **5 s** covers the spoken words (4.82 s). The part slot is 5.21 s, so one Extend (9 s) is optional if you want that extra tail.
-- **Start Frame:** `/workspace/emu-war/scenes/part8_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part8_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part8_start.jpg`](emu-war-images/part8_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part8_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part8_end.jpg`](emu-war-images/part8_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part8_end.jpg`)
+
+![part 8 start](emu-war-images/part8_start.jpg)
+
+![part 8 end](emu-war-images/part8_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part8.txt`.
 
@@ -197,8 +231,12 @@ Meredith stays at the same left place, he raises a blank paper and points, the g
 
 - **Narration:** Meredith said the birds faced machine guns like tanks. Parliament laughed; later, bounties worked better.
 - **Length plan:** 9 s (5 s + one Extend). Speech 6.04 s.
-- **Start Frame:** `/workspace/emu-war/scenes/part9_start.jpg` (box path, not in the repo)
-- **End Frame (`--end`):** `/workspace/emu-war/scenes/part9_end.jpg` (box path, not in the repo)
+- **Start Frame:** [`emu-war-images/part9_start.jpg`](emu-war-images/part9_start.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part9_start.jpg`)
+- **End Frame (`--end`):** [`emu-war-images/part9_end.jpg`](emu-war-images/part9_end.jpg) (in this repo; source on the box: `/workspace/emu-war/scenes/part9_end.jpg`)
+
+![part 9 start](emu-war-images/part9_start.jpg)
+
+![part 9 end](emu-war-images/part9_end.jpg)
 - **Original image prompt:** **not found.**
 - **Original animation prompt (source only):** `/workspace/emu-war/prompts/part9.txt`.
 
