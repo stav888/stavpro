@@ -50,7 +50,7 @@ Applied metadata changes only. Times are Israel time. Missing before-values or a
 - **field:** tags
 - **before:** none
 - **after:** `edwin armstrong`, `fm radio`, `invention of fm radio`, `david sarnoff`, `rca`, `armstrong vs rca`, `radio history`, `inventor story`, `patent war`, `empire state building`, `tragic inventors`, `history shorts`, `forgotten inventors`, `1930s history` (14 tags)
-- **approved-by:** StavKing, 2026-11-09 09:30 Israel time: "כן, שבוט ה־SEO יוסיף את התגיות לארמסטרונג"
+- **approved-by:** the user, 2026-11-09 09:30 Israel time: "כן, שבוט ה־SEO יוסיף את התגיות לארמסטרונג"
 - **verification:** update response confirmed the 14 tags (a later batch read omits tags)
 - **side effects:** `defaultAudioLanguage` `en` → `en-US`. Title, description, and category 27 were left unchanged.
 

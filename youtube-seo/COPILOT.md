@@ -6,7 +6,7 @@ Write only inside `youtube-seo/`. Do not publish, buy anything, invent numbers, 
 
 ## 1. Goal
 
-YouTube monetization for StavKing: **1,000 subscribers + 4,000 watch hours**, or **10 million Shorts views in 90 days**.
+YouTube monetization for the channel owner: **1,000 subscribers + 4,000 watch hours**, or **10 million Shorts views in 90 days**.
 
 Work is titles, descriptions, tags, hooks, thumbnail suggestions, and periodic performance reviews. It is not uploading or scheduling.
 
@@ -113,7 +113,7 @@ Leave an empty day between uploads, 18:00–19:00 Israel time, at a non-round mi
 
 Title (unchanged): **He Invented FM Radio. It Cost Him Everything**
 
-The video had no tags. After StavKing approved, 14 tags were added:
+The video had no tags. After the user approved, 14 tags were added:
 
 `edwin armstrong`, `fm radio`, `invention of fm radio`, `david sarnoff`, `rca`, `armstrong vs rca`, `radio history`, `inventor story`, `patent war`, `empire state building`, `tragic inventors`, `history shorts`, `forgotten inventors`, `1930s history`
 
