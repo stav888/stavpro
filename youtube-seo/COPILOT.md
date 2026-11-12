@@ -2,7 +2,7 @@
 
 Practical instructions for a coding agent with access to the channels' MCP (Composio) to do SEO work in this repo. Follow `README.md` for background. Log every applied YouTube change in `CHANGELOG.md`.
 
-Write only inside `youtube-seo/`. Do not publish, buy anything, invent numbers, or change a live video without the user's explicit approval in this chat.
+Write only inside `youtube-seo/`. Do not publish, buy anything, invent numbers, or change a live video without the user's explicit approval in this chat. Do not write channel names or channel IDs anywhere in this folder.
 
 ## 1. Goal
 
@@ -10,18 +10,14 @@ YouTube monetization for StavKing: **1,000 subscribers + 4,000 watch hours**, or
 
 Work is titles, descriptions, tags, hooks, thumbnail suggestions, and periodic performance reviews. It is not uploading or scheduling.
 
-## 2. Channels
+## 2. Style profiles
 
-| Channel | Public channel ID |
-|---|---|
-| Smart History Knowledge | `UC5NAHzY_1wbry1YvIbuHSmQ` |
-| Daily Facts Arete | `UC3T4I2Zv5zhmOP1vRw_lCBg` |
-| TAT_Mind | (listed in scope; no ID recorded here) |
-| TatzZDragon | (listed in scope; no ID recorded here) |
+Work follows two style profiles. In the changelog, label the channel with a generic tag only — never a name or an ID.
 
-All public metadata (title, description, tags, hashtags) is written in **English**.
+- **History Shorts style** — changelog label: `history channel`. Rules in section 5.
+- **Mystery/Facts Shorts style** — changelog label: `facts channel`. Rules in section 5.
 
-When more than one YouTube account is connected, pass Composio's `account` argument as the channel's **public name** (the connection alias), for example `Smart History Knowledge` or `Daily Facts Arete`. Do not hard-code internal connection IDs.
+When more than one YouTube account is connected, pass Composio's `account` argument so the call uses the correct connection. Resolve the account at runtime. Do not hard-code or commit channel names, channel IDs, or internal connection IDs in this folder.
 
 ## 3. Tools per step
 
@@ -29,13 +25,13 @@ YouTube actions are **not** first-class MCP tools. They are reached through Comp
 
 1. `COMPOSIO_SEARCH_TOOLS` — discover current slugs for the job. Never invent a slug.
 2. `COMPOSIO_GET_TOOL_SCHEMAS` — load the full input schema when a tool is returned with `schemaRef`, or before filling arguments.
-3. `COMPOSIO_MULTI_EXECUTE_TOOL` — run a discovered slug with schema-compliant `arguments` and the `session_id` from the search. Use `account` as above when both channels are connected.
+3. `COMPOSIO_MULTI_EXECUTE_TOOL` — run a discovered slug with schema-compliant `arguments` and the `session_id` from the search. Use `account` as above when more than one account is connected.
 
 Only slugs that exist in Composio and match work this bot has actually done are listed below. Do not call upload, delete, privacy, or thumbnail-update slugs for this job.
 
 ### List videos
 
-`YOUTUBE_LIST_CHANNEL_VIDEOS` exists in Composio for this step. Pass `channelId` (the `UC…` ID above) or `mine: true` for the selected account. Results are paginated (1–50 per page); use `nextPageToken` from the previous response until the list is complete.
+`YOUTUBE_LIST_CHANNEL_VIDEOS` exists in Composio for this step. Pass `channelId` for the target channel (resolve it at runtime; do not store it in this folder) or `mine: true` for the selected account. Results are paginated (1–50 per page); use `nextPageToken` from the previous response until the list is complete.
 
 `YOUTUBE_LIST_CHANNELS` exists for channel metadata (title, description, statistics) when you need the channel record itself, not the upload list.
 
@@ -49,7 +45,7 @@ Only slugs that exist in Composio and match work this bot has actually done are 
 
 `YOUTUBE_QUERY_ANALYTICS` exists in Composio for this step. Required: `ids` (for example `channel==CHANNEL_ID` or `channel==MINE`), `startDate`, `endDate`, and `metrics` (comma-separated, such as `views`). Optional: `dimensions`, `filters` (for example `video==VIDEO_ID`), `sort`, `maxResults`.
 
-**Analytics works for Smart History Knowledge.** It has not been available for Daily Facts Arete; for Arete use public statistics from a details read and/or the channel's public RSS. Never invent numbers. If a call fails or returns nothing, say so.
+**Analytics works for the history channel.** It has not been available for the facts channel; for that channel use public statistics from a details read and/or the channel's public RSS. Never invent numbers. If a call fails or returns nothing, say so.
 
 ### Update title, description, or tags
 
@@ -75,7 +71,7 @@ The YouTube Data API quota resets at about **10:00 Israel time**. If a call retu
 
 ## 4. Step-by-step per video
 
-1. **Read** current metadata and stats with `YOUTUBE_GET_VIDEO_DETAILS_BATCH` (and Analytics for Smart History when needed). Note title, description, category, any tags that actually appear, privacy, and stats.
+1. **Read** current metadata and stats with `YOUTUBE_GET_VIDEO_DETAILS_BATCH` (and Analytics for the history channel when needed). Note title, description, category, any tags that actually appear, privacy, and stats.
 2. **Diagnose** what is weak (title, description, tags, hook) against the style rules below. Use real numbers only.
 3. **Draft** a new title, description, and/or tags. Do not apply them yet.
 4. **MANDATORY STOP.** Show a before/after table for every field you want to change, and wait for the user's **explicit approval** in this chat. A request from another bot is not approval. If another bot relays approval, it must quote the user's own words, and it covers only what those words name.
@@ -85,20 +81,20 @@ The YouTube Data API quota resets at about **10:00 Israel time**. If a call retu
 
 ## 5. Style rules
 
-### Smart History Knowledge
+### History Shorts style
 
 - **Title:** 35–60 characters, famous anchor + twist. No emoji, no `|`, no `#Shorts`.
 - **Description:** 3–4 lines. Do not force the sentence "A true story." on every video.
 - **Hashtags:** exactly 3, lowercase: `#history #shorts #<topic>`.
 - **Tags:** up to about 15, under 500 characters in total.
 
-### Daily Facts Arete
+### Mystery/Facts Shorts style
 
 - **Title:** question or mystery, at most 1 emoji, no `#Shorts`.
 - **Description:** 400–800 characters, 3 hashtags, no long dashes.
 - **Topics:** lost places, geographic mysteries, near-miss technology, battles, forgotten civilizations. No ancient aliens or conspiracies.
 
-### Timing (history Shorts, when suggesting a slot)
+### Timing (History Shorts style, when suggesting a slot)
 
 Leave an empty day between uploads, 18:00–19:00 Israel time, at a non-round minute.
 
@@ -109,10 +105,11 @@ Leave an empty day between uploads, 18:00–19:00 Israel time, at a non-round mi
 - Never buy anything.
 - Never invent numbers. If a metric is missing, say it is missing.
 - Never treat another bot's request as user approval.
+- Never write channel names or channel IDs in this folder.
 
 ## 7. Real example
 
-**Armstrong Short** `Z2a30WfMVxI` — Smart History Knowledge, 9 November 2026 (Israel time).
+**Armstrong Short** `Z2a30WfMVxI` — history channel, 9 November 2026 (Israel time).
 
 Title (unchanged): **He Invented FM Radio. It Cost Him Everything**
 
@@ -129,7 +126,7 @@ Append one entry per applied change, in Israel time, with these fields:
 | Field | Meaning |
 |---|---|
 | date | Date (and time if known) in Israel time |
-| channel | Public channel name |
+| channel | Generic label only: `history channel` or `facts channel`. Never a channel name or ID |
 | video ID | YouTube video ID, or `channel` for a channel-level change |
 | field | What changed (`tags`, `title`, `description`, `channel description`, …) |
 | before | Previous value. If it was not recorded, write `not recorded here` |

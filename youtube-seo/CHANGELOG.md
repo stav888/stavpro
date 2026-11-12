@@ -1,12 +1,12 @@
 # YouTube SEO changelog
 
-Applied metadata changes only. Times are Israel time. Missing before-values or approval quotes are marked `not recorded here` or `exact wording not recorded here`; nothing below is invented.
+Applied metadata changes only. Times are Israel time. Missing before-values or approval quotes are marked `not recorded here` or `exact wording not recorded here`; nothing below is invented. Channel labels are generic only (`history channel` / `facts channel`); do not add channel names or IDs.
 
 ---
 
-## 2026-11-03 — Daily Facts Arete — channel description
+## 2026-11-03 — facts channel — channel description
 
-- **channel:** Daily Facts Arete (`UC3T4I2Zv5zhmOP1vRw_lCBg`)
+- **channel:** facts channel
 - **video ID:** channel
 - **field:** channel description
 - **before:** not recorded here
@@ -17,9 +17,9 @@ Applied metadata changes only. Times are Israel time. Missing before-values or a
 
 ---
 
-## 2026-11-04 — Smart History Knowledge — J6YyRlpvbPA (flexible glass / Tiberius)
+## 2026-11-04 — history channel — J6YyRlpvbPA (flexible glass / Tiberius)
 
-- **channel:** Smart History Knowledge
+- **channel:** history channel
 - **video ID:** [J6YyRlpvbPA](https://www.youtube.com/watch?v=J6YyRlpvbPA)
 - **field:** tags
 - **before:** none
@@ -30,9 +30,9 @@ Applied metadata changes only. Times are Israel time. Missing before-values or a
 
 ---
 
-## 2026-11-06 — Smart History Knowledge — P3nX-CPolzE (Tesla / Wardenclyffe)
+## 2026-11-06 — history channel — P3nX-CPolzE (Tesla / Wardenclyffe)
 
-- **channel:** Smart History Knowledge
+- **channel:** history channel
 - **video ID:** [P3nX-CPolzE](https://www.youtube.com/watch?v=P3nX-CPolzE)
 - **field:** tags
 - **before:** none
@@ -43,9 +43,9 @@ Applied metadata changes only. Times are Israel time. Missing before-values or a
 
 ---
 
-## 2026-11-09 — Smart History Knowledge — Z2a30WfMVxI (Armstrong / FM radio)
+## 2026-11-09 — history channel — Z2a30WfMVxI (Armstrong / FM radio)
 
-- **channel:** Smart History Knowledge
+- **channel:** history channel
 - **video ID:** [Z2a30WfMVxI](https://www.youtube.com/watch?v=Z2a30WfMVxI)
 - **field:** tags
 - **before:** none
@@ -60,26 +60,24 @@ Applied metadata changes only. Times are Israel time. Missing before-values or a
 
 Title, description, and/or tags were updated on these 16 videos. After-titles below come from the applied package; exact before-values, the precise apply date, approval wording, and side effects for each video are not recorded here.
 
-Video IDs and the after titles from that package:
-
-| Video ID | Channel (from the package) | After title |
+| Video ID | Channel | After title |
 |---|---|---|
-| `--7vSakvUGo` | Smart History Knowledge | Doctors Said She'd Never Walk. She Became the Fastest Woman Alive |
-| `XKFWp4H_2jY` | Smart History Knowledge | She Survived the Titanic… and 2 More Ship Disasters |
-| `pFGfYyiTvok` | Smart History Knowledge | Her Notebooks Are Still Radioactive Today |
-| `YZgYNVloEzI` | Smart History Knowledge | (title left unchanged in the package) |
-| `kdZNBJQjc6Q` | Smart History Knowledge | He Survived Hiroshima. Then He Went Home to Nagasaki. |
-| `VQ0v0G6OOoA` | Smart History Knowledge | The First Airplane Flew for Just 12 Seconds |
-| `wi3qos-CyPQ` | Smart History Knowledge | The First Computer Programmer Was a Woman in the 1800s |
-| `JjFwSP6t6k8` | Daily Facts Arete | How Did a Whole City Vanish Inside a Cliff? Petra's Mystery 😱 |
-| `biA7W6qekIE` | Daily Facts Arete | Why Did 1518 Strasbourg Dance Until They Dropped? 😱 |
-| `Wvbv_iAVoMg` | Daily Facts Arete | Was Cleopatra Closer to the Moon Landing Than the Pyramids? 🤯 |
-| `P-4QnA_3538` | Daily Facts Arete | What Was Hidden Under the Colosseum Floor? 😱 |
-| `R1kbYOLmBYQ` | Daily Facts Arete | How Did the Parthenon Trick Your Eyes? 😱 |
-| `ur9dc-om3W0` | Daily Facts Arete | Was the Great Pyramid a Power Plant? The Giza Theory 😱 |
-| `_KxhYSeF6hw` | Daily Facts Arete | Is There a Hidden Message in Our DNA? The Anunnaki Theory 😱 |
-| `EYcPNEKaOi4` | Daily Facts Arete | Who Built Teotihuacan? The Megacity With No Known Kings 😱 |
-| `lhtJFVQKNnU` | Daily Facts Arete | How Did the World's First Cities Begin? Sumer's Secret 😱 |
+| `--7vSakvUGo` | history channel | Doctors Said She'd Never Walk. She Became the Fastest Woman Alive |
+| `XKFWp4H_2jY` | history channel | She Survived the Titanic… and 2 More Ship Disasters |
+| `pFGfYyiTvok` | history channel | Her Notebooks Are Still Radioactive Today |
+| `YZgYNVloEzI` | history channel | (title left unchanged in the package) |
+| `kdZNBJQjc6Q` | history channel | He Survived Hiroshima. Then He Went Home to Nagasaki. |
+| `VQ0v0G6OOoA` | history channel | The First Airplane Flew for Just 12 Seconds |
+| `wi3qos-CyPQ` | history channel | The First Computer Programmer Was a Woman in the 1800s |
+| `JjFwSP6t6k8` | facts channel | How Did a Whole City Vanish Inside a Cliff? Petra's Mystery 😱 |
+| `biA7W6qekIE` | facts channel | Why Did 1518 Strasbourg Dance Until They Dropped? 😱 |
+| `Wvbv_iAVoMg` | facts channel | Was Cleopatra Closer to the Moon Landing Than the Pyramids? 🤯 |
+| `P-4QnA_3538` | facts channel | What Was Hidden Under the Colosseum Floor? 😱 |
+| `R1kbYOLmBYQ` | facts channel | How Did the Parthenon Trick Your Eyes? 😱 |
+| `ur9dc-om3W0` | facts channel | Was the Great Pyramid a Power Plant? The Giza Theory 😱 |
+| `_KxhYSeF6hw` | facts channel | Is There a Hidden Message in Our DNA? The Anunnaki Theory 😱 |
+| `EYcPNEKaOi4` | facts channel | Who Built Teotihuacan? The Megacity With No Known Kings 😱 |
+| `lhtJFVQKNnU` | facts channel | How Did the World's First Cities Begin? Sumer's Secret 😱 |
 
 - **approved-by:** exact wording not recorded here
 - **verification:** recorded as applied in the working package; per-video update-response details not recorded here
