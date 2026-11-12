@@ -1,9 +1,9 @@
 # The Great Emu War
 
 - **YouTube title:** **not found.** No Buffer title or SEO title file was found (the video has not been uploaded or scheduled). The working name in the files is “The Great Emu War” / “מלחמת האמו”.
-- **Status:** In production as of the 2026-11-09 / 2026-11-12 work. Final v2 was assembled and sent to QA; nothing has been uploaded or scheduled (per the production log and the standing “no upload without approval” rule).
+- **Status:** In production as of the 2026-11-09 / 2026-11-12 work. Final v3 was assembled after a targeted v2 QA near-pass; v1 and v2 were kept beside it. Nothing has been uploaded or scheduled (per the production log and the standing “no upload without approval” rule).
 - **Publish / schedule time:** not scheduled
-- **Final version / length:** v2, `/workspace/emu-war/final/emu_war_final_v2.mp4`, 1080×1920, 24 fps, 46.31 s (v1 ~48.9 s was kept beside it). Upscale: Lanczos (no Vulkan GPU for Real-ESRGAN).
+- **Final version / length:** v3, `/workspace/emu-war/final/emu_war_final_v3.mp4`, 1080×1920, 24 fps, 46.458 s (v1 ~48.9 s and v2 46.31 s were kept). Upscale: Lanczos (no Vulkan GPU for Real-ESRGAN).
 - **Narration method:** Chatterbox am_eric, seed 7, exaggeration 0.6, cfg 0.45; one take per paragraph; p8 later re-rendered for a stronger “A”; loudnorm −16.
 - **Completeness:** partial — full English narration and the clip/transition prompts are on the box; GenerateImage still/sketch prompts were not found.
 - **Primary sources:** `/workspace/emu-war/prompts/`, `/workspace/emu-war/clips/*prompt*.txt`, `/workspace/emu-war/audio/p1.txt`–`p9.txt`, `/workspace/emu-war/script-proposal.md`, `/workspace/emu-war/PRODUCTION_LOG.md`.
@@ -424,5 +424,30 @@ ONE continuous 8s. Ian Xiaohei, white bg. Locked camera, no zoom/pan/loop/revers
 Meredith LOCKED same left x. Lowers gun; emu stands firm; small farmer+blank bounty token appears bottom-right; red ring CONSTANT; parliament outline fixed. Living motion throughout especially 6.5–7.5s; no freeze.
 Start: pointing at tank-like emu. End: gun lowered, bounty token, farmer icon, emu firm.
 Beats: 0–2 living point; 2–5 lower gun; 5–7 bounty/farmer appear with living motion; 7–8 living settle.
+no text, no letters, no captions.
+```
+
+- **Animation / clip prompt (v2 used in final):** Part 9 v2, used in `emu_war_final_v3.mp4`. A v3 regen was also tried (gates still failed; less living motion) and was not used. Source: `/workspace/emu-war/prompts/part9_v2.txt`.
+
+```
+ONE continuous 8s clip matching the actual start and end sketches. Ian Xiaohei ink style. Pure white background. Locked static camera, no zoom, no pan, no loop, no reverse, no ping-pong.
+
+CRITICAL — LIVING MOTION THROUGH THE END: every figure keeps light living motion in EVERY second, including 0–1 s and 6.5–8 s. Emu head bobs, slight feather ruffle, weight shift foot to foot. Meredith subtle breath / tiny weight shift. Never freeze or near-freeze. No hold over 0.4 s.
+
+CRITICAL — Meredith LOCKED at the same left x the whole time. ONLY motion: he starts with his right arm pointing at the emu, then slowly lowers that pointing arm down to his side (one-way, never points again). Tiny RED ring on the Lewis-gun muzzle/cooling tip stays clearly visible and CONSTANT in EVERY frame — never blink off, no muzzle flash.
+
+CRITICAL — the tall emu stays on the RIGHT, standing firm, facing left. It does not walk away or cross Meredith. Keep continuous head-bobs / weight shifts so it is never static. Parliament building outline stays fixed in the mid background between them.
+
+Start (from the actual start sketch): large solid-black officer on the left with peaked cap, white dot eyes, thin stick legs; right arm pointing at the tall emu; Lewis gun held low in the other hand with a tiny red muzzle ring; tall black emu standing on the right facing left; thin-line parliament building with dome in the mid gap; sparse ground scribbles; pure white background.
+
+End (from the actual end sketch): SAME Meredith at the SAME left x, pointing arm now lowered at his side, gun still in the other hand with the SAME constant red muzzle ring; SAME emu standing firm on the right with living micro-motion; SAME fixed parliament outline; a SMALL solid-black farmer with a wide hat and pitchfork appears at the BOTTOM RIGHT, and a BLANK circular bounty token (two concentric circles, no letters) appears beside him. Farmer and token arrive with light living motion, not a pop-in freeze.
+
+Timed beats (8 s):
+- 0–1 s: exact start living immediately — Meredith still pointing, slight breath; emu slight head bob; red ring ON; parliament fixed; NO hold
+- 1–3 s: Meredith begins slowly lowering the pointing arm; emu weight-shifts and head-bobs; red ON; no morph jolts
+- 3–5 s: arm continues down toward his side; gun stays in the other hand, slightly lowered; emu still living; red ON
+- 5–7 s: small farmer with pitchfork and blank bounty circle appear at the bottom right; Meredith's arm is down; emu stands firm with ongoing head bobs; red ON; all figures keep living motion
+- 7–8 s: living settle on the end state — keep micro-motion to the last frame (emu head bob, farmer tiny weight shift, Meredith breath). NO freeze. Red ring still ON. Parliament still fixed.
+
 no text, no letters, no captions.
 ```
