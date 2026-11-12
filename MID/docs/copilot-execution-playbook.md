@@ -43,7 +43,7 @@ await clickElement({ selector: "button:has-text('Switch to video'), button[aria-
 
 ### ג. הזנת הפרומפט והרצה
 ```typescript
-const promptText = "The cat softly blinks and gently twitches its ears, subtle slow tail swish, gentle autumn breeze moving leaves slightly on the pavement, warm sunset reflections subtly shifting on the car surface, car remains completely still, cinematic slow push-in, ultra realistic, seamless natural motion";
+const promptText = "The cat softly blinks and gently twitches its ears, subtle slow tail swish, gentle autumn breeze moving leaves slightly on the pavement, warm sunset reflections subtly shifting on the car surface, car remains completely still, locked-off camera, ultra realistic, seamless natural motion";
 
 await typeInPage({
   text: promptText,
@@ -59,9 +59,10 @@ await hoverElement({
 });
 ```
 
-### ה. סימון לייק על הווריאציה הזוכה
+### ה. סימון לייק רק אחרי אישור המשתמש לאותו קליפ
 ```typescript
-// לחיצה על אייקון הלב באריח מס' 3 (אינדקס 2)
+// רק אחרי שהמשתמש אישר במפורש את הווריאציה הספציפית
+// (למשל אריח מס' 3 / אינדקס 2). אין לסמן לייק לפני האישור.
 await clickElement({
   selector: ".grid-item:nth-child(3) button[aria-label*='Like'], button[aria-label='Like video (L)']"
 });
