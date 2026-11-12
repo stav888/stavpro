@@ -42,6 +42,33 @@ For every Short except Emu War, **image/sketch/frame prompts and clip/animation/
 
 For **Emu War**, clip/transition prompts were found (and are copied in full in [`emu-war.md`](emu-war.md)); **GenerateImage still/sketch prompts were not found**. A distinct prompt file for Emu War part 2 v3 was also not found (only `part2.txt`).
 
+## Standing rule (from 2026-11-12)
+
+From now on, each production saves the image prompt and the animation prompt per scene in that video’s Markdown file in this folder, at the time the prompts are actually used. Do not rely on tool history or memory; write them into the file in the same production pass.
+
+## Per-scene prompt recovery (this update)
+
+A further search was run for the exact GenerateImage and GenerateVideo (or transition) prompts used per scene: project files, `/workspace/emu-war/prompts/`, on-disk transcripts and conversation-blobs, image metadata, and `SearchTranscripts` / `ReadTranscript` (the History Storyteller bot’s live production transcript was not readable from this documentation session; its local `store.db` has 0 transcript entries). Nothing was invented.
+
+| File | Scenes | Image prompts recovered | Animation prompts recovered |
+|---|---:|---:|---:|
+| [`first-airplane.md`](first-airplane.md) | 7 | 0 | 0 |
+| [`yamaguchi.md`](yamaguchi.md) | 8 | 0 | 0 |
+| [`wojtek.md`](wojtek.md) | 8 | 0 | 0 |
+| [`marie-curie.md`](marie-curie.md) | 9 | 0 | 0 |
+| [`molasses.md`](molasses.md) | 9 | 0 | 0 |
+| [`violet-jessop.md`](violet-jessop.md) | 9 | 0 | 0 |
+| [`wilma-rudolph.md`](wilma-rudolph.md) | 7 | 0 | 0 |
+| [`stanley-meyer.md`](stanley-meyer.md) | 3 | 0 | 0 |
+| [`flexible-glass.md`](flexible-glass.md) | 3 | 0 | 0 |
+| [`tesla.md`](tesla.md) | 10 | 0 | 0 |
+| [`armstrong.md`](armstrong.md) | 10 | 0 | 0 |
+| [`lustig.md`](lustig.md) | 11 | 0 | 0 |
+| [`garbo.md`](garbo.md) | 14 | 0 | 0 |
+| [`emu-war.md`](emu-war.md) | 9 | 0 | 9 |
+
+For Emu War part 2, the only saved prompt file is `part2.txt`; a distinct v3 file was not found, but that file is counted as recovered. Xiaohei still prompts were not found for any video. Lustig’s unused 16:9 Vox-style experiment has additional still prompts (including two more GenerateImage calls for scenes 03–04 found in an on-disk transcript) and is kept in a separate section of [`lustig.md`](lustig.md); those are not counted in the table above.
+
 ## Other notes
 
 - Buffer post IDs, tags, and full descriptions stay in `examples/*/buffer_metadata.md` and are not repeated here.

@@ -45,14 +45,51 @@ She kept working at sea for decades, and people called her Miss Unsinkable.
 
 **not found.** A Hebrew script file exists in the examples folder only for Garbo and Lustig (`examples/README.md`).
 
-## Image / sketch / frame prompts
+## Per-scene image and animation prompts
 
-**not found.**
+One row per production scene (sentence, segment, or part). Prompts are copied verbatim only when a source file or transcript call was found.
 
-`examples/README.md` records that image/video prompts were passed straight to `GenerateImage` / `GenerateVideo` and never saved as files. A search of `/workspace` project folders, `history-storyteller/` in the repo, and available on-disk transcripts did not turn up the still/sketch prompts actually submitted for this Short.
+### Scene 1 — In 1911, Violet Jessop was a stewardess on the Olympic,…
 
-## Clip / animation / transition prompts
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-**not found.**
+### Scene 2 — That autumn, the warship HMS Hawke rammed its side, but…
 
-Same as the still prompts: clip/animation/transition prompts for this Short were not saved as files, and were not found in the sources searched for this archive.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 3 — Months later, she joined the Olympic's new sister ship, the…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 4 — In April 1912, it struck an iceberg, and Violet was…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 5 — On the rescue ship Carpathia, a woman took the baby…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 6 — During World War One, she became a nurse on the…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 7 — In 1916, Britannic hit a mine, and Violet's lifeboat was…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 8 — She jumped, struck her head under the water, and still…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 9 — She kept working at sea for decades, and people called…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.

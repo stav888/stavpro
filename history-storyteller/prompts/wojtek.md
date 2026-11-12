@@ -44,14 +44,46 @@ In Iran in 1942, Polish soldiers found an orphaned brown bear cub. They adopted 
 
 **not found.** A Hebrew script file exists in the examples folder only for Garbo and Lustig (`examples/README.md`).
 
-## Image / sketch / frame prompts
+## Per-scene image and animation prompts
 
-**not found.**
+One row per production scene (sentence, segment, or part). Prompts are copied verbatim only when a source file or transcript call was found.
 
-`examples/README.md` records that image/video prompts were passed straight to `GenerateImage` / `GenerateVideo` and never saved as files. A search of `/workspace` project folders, `history-storyteller/` in the repo, and available on-disk transcripts did not turn up the still/sketch prompts actually submitted for this Short.
+### Scene 1 — In Iran in 1942, Polish soldiers found an orphaned brown…
 
-## Clip / animation / transition prompts
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-**not found.**
+### Scene 2 — They adopted him, named him Wojtek, and raised him in…
 
-Same as the still prompts: clip/animation/transition prompts for this Short were not saved as files, and were not found in the sources searched for this archive.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 3 — He ate, slept, and marched with the men, part of…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 4 — To sail with them to Italy, the army officially enlisted…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 5 — Private Wojtek got a service number, a pay book, and…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 6 — At Monte Cassino in 1944, soldiers said he carried crates…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 7 — After the war, he lived at Edinburgh Zoo, visited by…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 8 — He died in 1963 — more than a mascot, he…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.

@@ -88,23 +88,39 @@ Meredith said the birds faced machine guns like tanks. Parliament laughed; later
 
 The Hebrew approval document and part-by-part table are in `/workspace/emu-war/script-proposal.md`. Part 9 in that table still has the earlier English line “He said they faced guns like tanks. Parliament mocked them; later, bounties worked better.” The recorded line, used in the video, is the `p9.txt` text above. The table’s Hebrew start/end columns are planning descriptions, not the GenerateImage prompts actually submitted, so they are not copied here as image prompts. The file is left in place on the box rather than pasted in full, to keep this archive focused on the prompts and the narration that was actually used.
 
-## Image / sketch / frame prompts
+## Per-scene image and animation prompts
 
-**not found.** Start and end sketches exist as images under `/workspace/emu-war/scenes/partN_start.jpg` and `partN_end.jpg`, but the GenerateImage prompts used to make those stills were not saved as text files, and were not found in transcripts searched for this archive.
+Nine parts, matching the recorded narration. **Image / sketch prompts were not found** for any part (start/end stills exist as images under `/workspace/emu-war/scenes/`, but the GenerateImage text was not saved). Animation prompts below are copied verbatim from the production files. Sources are short file paths.
 
-## Clip / animation / transition prompts
+### Part 1
 
-These are the prompts saved on the box. Per `PRODUCTION_LOG.md`, the versions used in final v2 were: part 1 **v2**, part 2 **v3**, part 3 **v2**, part 4 **v2**, parts 5–9 **v1**. A separate prompt file for part 2 v3 was **not found** (only `prompts/part2.txt`). Part 1 also has earlier A/B-chain and tail-retry prompts, included below and labeled.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-### Files in `/workspace/emu-war/prompts/`
+- **Animation / clip prompt (used in final v2):** Used wording for the continuous 8s v2 take that shipped in final v2. Source: `/workspace/emu-war/clips/part1_v2_prompt_used.txt`.
 
-#### part1.txt
+```
+Slow continuous one-direction motion matching the actual start and end sketches. The soldier stays at the same horizontal place on the left (same x); only a small weight shift and a slight lift of his front foot toward the end pose. Do NOT walk him across the frame. Do NOT move him right then left. All new motion is the emus entering from the RIGHT EDGE only.
 
-Part 1 continuous 8s prompt (canonical file). Final v2 used part 1 v2; see also `part1_v2_prompt_used.txt` for the wording recorded as used.
+What the sketches show:
+- Start: large solid-black Australian Army officer left-of-centre facing right, peaked cap, white eyes, thin stick limbs; Lewis gun held aimed right with a constant tiny red ring near the muzzle; ONE tall black emu on the right facing left; low post-and-rail fence always on the far left; sparse ground scribbles; pure white background.
+- End: same soldier at the SAME left x with a slight weight shift / front foot slightly lifted; SAME gun and constant red muzzle ring; THREE clearly separate black emu silhouettes in a row on the right (white gaps between them); same fence left; same framing.
 
-### `part1.txt`
+Timed beats (8 s total, ONE continuous clip):
+- 0–1 s: motion starts immediately — tiny living motion / weight shift on the soldier; the single emu may shift slightly in place; NO freeze hold; fence fully visible; red muzzle ring constant
+- 1–3 s: a SECOND emu walks in from the RIGHT EDGE of the frame and stops fully to the RIGHT of the soldier and to the right of the first emu; NEVER crosses, overlaps, or passes behind/through the soldier; fence stays fixed and visible; red ring constant; no muzzle flash
+- 3–5 s: a THIRD emu walks in from the RIGHT EDGE and joins the row on the right; three emus remain clearly separate with white space between bodies; soldier stays at same x with only slight weight shift; fence fixed; red ring constant
+- 5–7 s: three clearly separate emu silhouettes stand in a stable row on the right facing the soldier; no merging into one blob; soldier small living motion only at same x
+- 7–8 s: settles on the end-image state with only slight living motion (no frozen hold) — soldier same left x, front foot slightly lifted, Lewis aimed right, constant red muzzle ring, three separate emus on the right, fence still fully visible left
 
-Source: `/workspace/emu-war/prompts/part1.txt`
+Hard rules: static locked camera, no zoom, no pan, no camera movement, no loop, no reverse, no ping-pong. Fence stays fixed and always visible the whole time. Red muzzle ring stays constant; no muzzle flash. Emus only on the right half; never enter through or behind the soldier. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines. no text, no letters, no captions.
+
+---
+Delivered take used GenerateVideo try2 wording (same rules, stronger living-motion / red / separation emphasis). Approach: ONE continuous 8s clip, image_path=part1_start.jpg, last_frame_path=part1_end.jpg, duration=8, resolution=480p, aspect_ratio=9:16.
+```
+
+Other animation prompt versions found for this part (not the final v2 take):
+
+**Canonical `prompts/part1.txt` (continuous 8s rules).** Source: `/workspace/emu-war/prompts/part1.txt`.
 
 ```
 ONE continuous clip. Ian Xiaohei ink style. Pure white background. Locked static camera, no zoom, no pan, no loop, no reverse, no ping-pong.
@@ -131,13 +147,50 @@ Timed beats:
 no text, no letters, no captions.
 ```
 
-#### part1_tail3s.txt
+**Earlier Clip A plan (not used in final v2).** Source: `/workspace/emu-war/clips/part1_a_prompt.txt`.
 
-Part 1 v3 tail-retry prompt (3s mid-frame → end). Not the v2 take used in the final.
+```
+Slow continuous one-direction motion matching the actual start and end sketches.
 
-### `part1_tail3s.txt`
+Timed beats (8 s total, Grok chain 2×4 s):
 
-Source: `/workspace/emu-war/prompts/part1_tail3s.txt`
+Clip A (0–4 s) — from part1_start.jpg:
+- 0–1 s: exact start-image state — large solid-black Australian Army officer left-of-centre facing right, peaked cap, white dot eyes, thin stick limbs; Lewis gun held in both hands aimed right with tiny red accent near the muzzle; one tall black emu silhouette on the right facing left (long neck, small head); low post-and-rail fence on the far left behind the soldier; sparse ground scribble lines; pure white background
+- 1–2 s: soldier begins one step toward the right; body shifts slightly forward; gun stays aimed right
+- 2–3 s: step continues; a second emu silhouette starts to appear on the far right behind the first
+- 3–4 s: soldier mid-step; two emus visible on the right; motion continues toward the end state (no reverse, no freeze)
+
+```
+
+**Earlier Clip A wording actually submitted (not used in final v2).** Source: `/workspace/emu-war/clips/part1_a_prompt_used.txt`.
+
+```
+Slow continuous one-direction motion matching the start sketch. Timed beats (4 s):
+- 0–1 s: exact start state — large solid-black Australian Army officer left-of-centre facing right, peaked cap, white dot eyes, thin stick limbs; Lewis gun held in both hands aimed right with tiny red accent near the muzzle; one tall black emu silhouette on the right facing left; low post-and-rail fence on the far left; sparse ground scribbles; pure white background
+- 1–2 s: soldier begins one step toward the right; body shifts slightly forward; gun stays aimed right
+- 2–3 s: step continues; a second emu silhouette starts to appear on the far right behind the first
+- 3–4 s: soldier mid-step; two emus visible on the right; motion continues forward (no reverse, no freeze)
+
+Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
+```
+
+**Earlier Clip B wording actually submitted (not used in final v2).** Source: `/workspace/emu-war/clips/part1_b_prompt_used.txt`.
+
+```
+IMPORTANT: begin exactly on this image and change it only slowly. Continue one continuous one-way motion toward the end state.
+
+From the current frame: large solid-black Australian Army officer mid-stride facing right, peaked cap, white eyes, Lewis gun aimed right with tiny red near muzzle; two black emu silhouettes (one near/behind soldier, one on the right); sparse ground lines; pure white background.
+
+Timed beats (4 s):
+- 0–1 s: keep the same composition; soldier continues the same step slightly further right; third emu begins to appear on the far right; restore/keep a low fence on the far left if missing
+- 1–2 s: three emu silhouettes form a row filling the right side, facing the soldier; soldier keeps stepping right
+- 2–3 s: soldier finishes the step (right leg forward); body settles; gun still aimed right with red muzzle accent; fence left
+- 3–4 s: settles on end state — soldier one pace right mid-stride, Lewis aimed right, three black emus filling the right, low fence left, same white background
+
+No sudden jump, no morphing faces, no vanishing limbs, no new unrelated objects. Static locked camera, no zoom, no pan, no loop, no reverse. Same Ian Xiaohei ink style, thin wobbly black lines. no text, no letters, no captions.
+```
+
+**Part 1 v3 3s tail-retry prompt (not used in final v2).** Source: `/workspace/emu-war/prompts/part1_tail3s.txt`.
 
 ```
 Continue ONE continuous 3-second clip from this exact mid frame to the end sketch. Ian Xiaohei ink style. Pure white background. Locked static camera, no zoom, no pan, no loop, no reverse.
@@ -160,13 +213,11 @@ Timed beats (3 s):
 no text, no letters, no captions.
 ```
 
-#### part2.txt
+### Part 2
 
-Part 2 prompt (only version saved as a file). Final v2 used part 2 v3; a distinct v3 prompt file was not found.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-### `part2.txt`
-
-Source: `/workspace/emu-war/prompts/part2.txt`
+- **Animation / clip prompt (used in final v2):** Only saved part 2 prompt file. Final v2 used part 2 v3; a distinct v3 prompt file was not found. Source: `/workspace/emu-war/prompts/part2.txt`.
 
 ```
 Slow continuous one-direction motion matching the actual start and end sketches. Ian Xiaohei ink style, pure white background. Locked static camera, no zoom, no pan, no loop, no reverse.
@@ -185,13 +236,30 @@ Timed beats (6 s):
 no text, no letters, no captions.
 ```
 
-#### part3.txt
+### Part 3
 
-Part 3 v1 prompt. Not the take used in final v2.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-### `part3.txt`
+- **Animation / clip prompt (used in final v2):** Part 3 v2, used in final v2. Source: `/workspace/emu-war/prompts/part3_v2.txt`.
 
-Source: `/workspace/emu-war/prompts/part3.txt`
+```
+ONE continuous 6s clip from the actual start and end sketches. Ian Xiaohei ink, pure white background. Locked static camera, no zoom, no pan, no loop, no reverse.
+
+Farmer LOCKED at same left x behind the fence — only subtle breath. Emus enter ONLY from the RIGHT EDGE and walk left toward a fence gap; never through/behind the farmer. Grow 1→3 distinct emus. Tiny blue eye accents CONSTANT every frame. Fence develops a broken gap; wheat flattens. CONTINUOUS living motion the whole time — emu head bobs, steps, feather ruffle. NEVER freeze or near-freeze, especially not in the last 2 seconds.
+
+Timed beats (6 s):
+- 0–1 s: exact start living immediately (no hold); 1 emu right; fence intact; blue eyes ON
+- 1–2.5 s: second emu walks in from RIGHT EDGE; farmer locked; continuous motion
+- 2.5–4 s: third emu from RIGHT EDGE; fence gap opens; wheat tramples; keep moving
+- 4–5.5 s: three emus settle mid-right with ongoing head bobs / weight shifts; NO freeze
+- 5.5–6 s: living settle on end image (still micro-motion, no freeze)
+
+no text, no letters, no captions.
+```
+
+Other animation prompt versions found for this part (not the final v2 take):
+
+**Part 3 v1 (not used in final v2).** Source: `/workspace/emu-war/prompts/part3.txt`.
 
 ```
 ONE continuous 6s clip. Ian Xiaohei style, pure white background. Locked static camera, no zoom, no pan, no loop, no reverse.
@@ -209,52 +277,11 @@ Beats: 0–1s start living; 1–3s second emu from right edge; 3–5s third emu 
 no text, no letters, no captions.
 ```
 
-#### part3_v2.txt
+### Part 4
 
-Part 3 v2 prompt — used in final v2.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-### `part3_v2.txt`
-
-Source: `/workspace/emu-war/prompts/part3_v2.txt`
-
-```
-ONE continuous 6s clip from the actual start and end sketches. Ian Xiaohei ink, pure white background. Locked static camera, no zoom, no pan, no loop, no reverse.
-
-Farmer LOCKED at same left x behind the fence — only subtle breath. Emus enter ONLY from the RIGHT EDGE and walk left toward a fence gap; never through/behind the farmer. Grow 1→3 distinct emus. Tiny blue eye accents CONSTANT every frame. Fence develops a broken gap; wheat flattens. CONTINUOUS living motion the whole time — emu head bobs, steps, feather ruffle. NEVER freeze or near-freeze, especially not in the last 2 seconds.
-
-Timed beats (6 s):
-- 0–1 s: exact start living immediately (no hold); 1 emu right; fence intact; blue eyes ON
-- 1–2.5 s: second emu walks in from RIGHT EDGE; farmer locked; continuous motion
-- 2.5–4 s: third emu from RIGHT EDGE; fence gap opens; wheat tramples; keep moving
-- 4–5.5 s: three emus settle mid-right with ongoing head bobs / weight shifts; NO freeze
-- 5.5–6 s: living settle on end image (still micro-motion, no freeze)
-
-no text, no letters, no captions.
-```
-
-#### part4.txt
-
-Part 4 v1 prompt. Not the take used in final v2.
-
-### `part4.txt`
-
-Source: `/workspace/emu-war/prompts/part4.txt`
-
-```
-ONE continuous 6s clip. Ian Xiaohei, white bg. Locked camera, no zoom, no pan, no loop, no reverse.
-Meredith LOCKED at same left x. ONLY motion: raise Lewis gun from low at side up to waist aim-right. Tiny red muzzle/cooling ring CONSTANT every frame. Fence and wheat fixed. Living motion; no freeze.
-Start: gun low at side. End: gun at waist aimed right. Same x.
-Beats: 0–1s start living red ON; 1–3s gun begins rising; 3–5s rises to waist; 5–6s living settle end, red ON.
-no text, no letters, no captions.
-```
-
-#### part4_v2.txt
-
-Part 4 v2 prompt — used in final v2.
-
-### `part4_v2.txt`
-
-Source: `/workspace/emu-war/prompts/part4_v2.txt`
+- **Animation / clip prompt (used in final v2):** Part 4 v2, used in final v2. Source: `/workspace/emu-war/prompts/part4_v2.txt`.
 
 ```
 ONE continuous 6s clip matching the actual start and end sketches. Ian Xiaohei ink, pure white background. Locked static camera, no zoom, no pan, no loop, no reverse.
@@ -270,13 +297,23 @@ Timed beats (6 s):
 no text, no letters, no captions.
 ```
 
-#### part5.txt
+Other animation prompt versions found for this part (not the final v2 take):
 
-Part 5 v1 prompt — used in final v2 (retime only).
+**Part 4 v1 (not used in final v2).** Source: `/workspace/emu-war/prompts/part4.txt`.
 
-### `part5.txt`
+```
+ONE continuous 6s clip. Ian Xiaohei, white bg. Locked camera, no zoom, no pan, no loop, no reverse.
+Meredith LOCKED at same left x. ONLY motion: raise Lewis gun from low at side up to waist aim-right. Tiny red muzzle/cooling ring CONSTANT every frame. Fence and wheat fixed. Living motion; no freeze.
+Start: gun low at side. End: gun at waist aimed right. Same x.
+Beats: 0–1s start living red ON; 1–3s gun begins rising; 3–5s rises to waist; 5–6s living settle end, red ON.
+no text, no letters, no captions.
+```
 
-Source: `/workspace/emu-war/prompts/part5.txt`
+### Part 5
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+- **Animation / clip prompt (used in final v2):** Part 5 v1, used in final v2 (retime only). Source: `/workspace/emu-war/prompts/part5.txt`.
 
 ```
 ONE continuous 6s. Ian Xiaohei, white bg. Locked camera, no zoom/pan/loop/reverse.
@@ -286,13 +323,11 @@ Beats: 0–1 living; 1–4 emus jog left; 4–6 living settle.
 no text, no letters, no captions.
 ```
 
-#### part6.txt
+### Part 6
 
-Part 6 v1 prompt — used in final v2 (hold-drop retime).
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-### `part6.txt`
-
-Source: `/workspace/emu-war/prompts/part6.txt`
+- **Animation / clip prompt (used in final v2):** Part 6 v1, used in final v2 (hold-drop retime). Source: `/workspace/emu-war/prompts/part6.txt`.
 
 ```
 ONE continuous 6s. Ian Xiaohei, white bg. Locked camera, no zoom/pan/loop/reverse.
@@ -302,13 +337,11 @@ Beats: 0–1 living; 1–3 scatter begins + gun tip tilts; 3–5 scatter finishe
 no text, no letters, no captions.
 ```
 
-#### part7.txt
+### Part 7
 
-Part 7 v1 prompt — used in final v2 (retime).
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-### `part7.txt`
-
-Source: `/workspace/emu-war/prompts/part7.txt`
+- **Animation / clip prompt (used in final v2):** Part 7 v1, used in final v2 (retime). Source: `/workspace/emu-war/prompts/part7.txt`.
 
 ```
 ONE continuous 6s. Ian Xiaohei, white bg. Locked camera, no zoom/pan/loop/reverse.
@@ -318,13 +351,11 @@ Beats: 0–1 living; 1–3 truck begins tilt; 3–5 tilt peaks + soldier wobbles
 no text, no letters, no captions.
 ```
 
-#### part8.txt
+### Part 8
 
-Part 8 v1 prompt — used in final v2 (hold-drop retime).
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-### `part8.txt`
-
-Source: `/workspace/emu-war/prompts/part8.txt`
+- **Animation / clip prompt (used in final v2):** Part 8 v1, used in final v2 (hold-drop retime). Source: `/workspace/emu-war/prompts/part8.txt`.
 
 ```
 ONE continuous 6s. Ian Xiaohei, white bg. Locked camera, no zoom/pan/loop/reverse.
@@ -334,13 +365,11 @@ Beats: 0–1 living; 1–4 raise paper/point; 4–6 living settle.
 no text, no letters, no captions.
 ```
 
-#### part9.txt
+### Part 9
 
-Part 9 v1 prompt — used in final v2 (hold-drop retime).
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-### `part9.txt`
-
-Source: `/workspace/emu-war/prompts/part9.txt`
+- **Animation / clip prompt (used in final v2):** Part 9 v1, used in final v2 (hold-drop retime). Source: `/workspace/emu-war/prompts/part9.txt`.
 
 ```
 ONE continuous 8s. Ian Xiaohei, white bg. Locked camera, no zoom/pan/loop/reverse.
@@ -349,81 +378,3 @@ Start: pointing at tank-like emu. End: gun lowered, bounty token, farmer icon, e
 Beats: 0–2 living point; 2–5 lower gun; 5–7 bounty/farmer appear with living motion; 7–8 living settle.
 no text, no letters, no captions.
 ```
-
-### Earlier part 1 A/B-chain and “used” wording (`/workspace/emu-war/clips/`)
-
-These were tried before the continuous 8s v2 approach. Included because they are the actual prompt texts saved from those tries.
-
-### `part1_a_prompt.txt`
-
-Source: `/workspace/emu-war/clips/part1_a_prompt.txt`
-
-```
-Slow continuous one-direction motion matching the actual start and end sketches.
-
-Timed beats (8 s total, Grok chain 2×4 s):
-
-Clip A (0–4 s) — from part1_start.jpg:
-- 0–1 s: exact start-image state — large solid-black Australian Army officer left-of-centre facing right, peaked cap, white dot eyes, thin stick limbs; Lewis gun held in both hands aimed right with tiny red accent near the muzzle; one tall black emu silhouette on the right facing left (long neck, small head); low post-and-rail fence on the far left behind the soldier; sparse ground scribble lines; pure white background
-- 1–2 s: soldier begins one step toward the right; body shifts slightly forward; gun stays aimed right
-- 2–3 s: step continues; a second emu silhouette starts to appear on the far right behind the first
-- 3–4 s: soldier mid-step; two emus visible on the right; motion continues toward the end state (no reverse, no freeze)
-
-```
-
-### `part1_a_prompt_used.txt`
-
-Source: `/workspace/emu-war/clips/part1_a_prompt_used.txt`
-
-```
-Slow continuous one-direction motion matching the start sketch. Timed beats (4 s):
-- 0–1 s: exact start state — large solid-black Australian Army officer left-of-centre facing right, peaked cap, white dot eyes, thin stick limbs; Lewis gun held in both hands aimed right with tiny red accent near the muzzle; one tall black emu silhouette on the right facing left; low post-and-rail fence on the far left; sparse ground scribbles; pure white background
-- 1–2 s: soldier begins one step toward the right; body shifts slightly forward; gun stays aimed right
-- 2–3 s: step continues; a second emu silhouette starts to appear on the far right behind the first
-- 3–4 s: soldier mid-step; two emus visible on the right; motion continues forward (no reverse, no freeze)
-
-Every beat continues the same one-way action. Static locked camera, no zoom, no pan, no camera movement, no loop, no reverse. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines, same characters and objects. no text, no letters, no captions.
-```
-
-### `part1_b_prompt_used.txt`
-
-Source: `/workspace/emu-war/clips/part1_b_prompt_used.txt`
-
-```
-IMPORTANT: begin exactly on this image and change it only slowly. Continue one continuous one-way motion toward the end state.
-
-From the current frame: large solid-black Australian Army officer mid-stride facing right, peaked cap, white eyes, Lewis gun aimed right with tiny red near muzzle; two black emu silhouettes (one near/behind soldier, one on the right); sparse ground lines; pure white background.
-
-Timed beats (4 s):
-- 0–1 s: keep the same composition; soldier continues the same step slightly further right; third emu begins to appear on the far right; restore/keep a low fence on the far left if missing
-- 1–2 s: three emu silhouettes form a row filling the right side, facing the soldier; soldier keeps stepping right
-- 2–3 s: soldier finishes the step (right leg forward); body settles; gun still aimed right with red muzzle accent; fence left
-- 3–4 s: settles on end state — soldier one pace right mid-stride, Lewis aimed right, three black emus filling the right, low fence left, same white background
-
-No sudden jump, no morphing faces, no vanishing limbs, no new unrelated objects. Static locked camera, no zoom, no pan, no loop, no reverse. Same Ian Xiaohei ink style, thin wobbly black lines. no text, no letters, no captions.
-```
-
-### `part1_v2_prompt_used.txt`
-
-Source: `/workspace/emu-war/clips/part1_v2_prompt_used.txt`
-
-```
-Slow continuous one-direction motion matching the actual start and end sketches. The soldier stays at the same horizontal place on the left (same x); only a small weight shift and a slight lift of his front foot toward the end pose. Do NOT walk him across the frame. Do NOT move him right then left. All new motion is the emus entering from the RIGHT EDGE only.
-
-What the sketches show:
-- Start: large solid-black Australian Army officer left-of-centre facing right, peaked cap, white eyes, thin stick limbs; Lewis gun held aimed right with a constant tiny red ring near the muzzle; ONE tall black emu on the right facing left; low post-and-rail fence always on the far left; sparse ground scribbles; pure white background.
-- End: same soldier at the SAME left x with a slight weight shift / front foot slightly lifted; SAME gun and constant red muzzle ring; THREE clearly separate black emu silhouettes in a row on the right (white gaps between them); same fence left; same framing.
-
-Timed beats (8 s total, ONE continuous clip):
-- 0–1 s: motion starts immediately — tiny living motion / weight shift on the soldier; the single emu may shift slightly in place; NO freeze hold; fence fully visible; red muzzle ring constant
-- 1–3 s: a SECOND emu walks in from the RIGHT EDGE of the frame and stops fully to the RIGHT of the soldier and to the right of the first emu; NEVER crosses, overlaps, or passes behind/through the soldier; fence stays fixed and visible; red ring constant; no muzzle flash
-- 3–5 s: a THIRD emu walks in from the RIGHT EDGE and joins the row on the right; three emus remain clearly separate with white space between bodies; soldier stays at same x with only slight weight shift; fence fixed; red ring constant
-- 5–7 s: three clearly separate emu silhouettes stand in a stable row on the right facing the soldier; no merging into one blob; soldier small living motion only at same x
-- 7–8 s: settles on the end-image state with only slight living motion (no frozen hold) — soldier same left x, front foot slightly lifted, Lewis aimed right, constant red muzzle ring, three separate emus on the right, fence still fully visible left
-
-Hard rules: static locked camera, no zoom, no pan, no camera movement, no loop, no reverse, no ping-pong. Fence stays fixed and always visible the whole time. Red muzzle ring stays constant; no muzzle flash. Emus only on the right half; never enter through or behind the soldier. Keep the same Ian Xiaohei ink style, pure white background, thin wobbly black lines. no text, no letters, no captions.
-
----
-Delivered take used GenerateVideo try2 wording (same rules, stronger living-motion / red / separation emphasis). Approach: ONE continuous 8s clip, image_path=part1_start.jpg, last_frame_path=part1_end.jpg, duration=8, resolution=480p, aspect_ratio=9:16.
-```
-

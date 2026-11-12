@@ -43,14 +43,41 @@ Back home, she insisted her welcome parade be open to everyone, and it became he
 
 **not found.** A Hebrew script file exists in the examples folder only for Garbo and Lustig (`examples/README.md`).
 
-## Image / sketch / frame prompts
+## Per-scene image and animation prompts
 
-**not found.**
+One row per production scene (sentence, segment, or part). Prompts are copied verbatim only when a source file or transcript call was found.
 
-`examples/README.md` records that image/video prompts were passed straight to `GenerateImage` / `GenerateVideo` and never saved as files. A search of `/workspace` project folders, `history-storyteller/` in the repo, and available on-disk transcripts did not turn up the still/sketch prompts actually submitted for this Short.
+### Scene 1 — In 1940, in a small Tennessee town, Wilma Rudolph was…
 
-## Clip / animation / transition prompts
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-**not found.**
+### Scene 2 — At four, she caught polio, her left leg grew weak,…
 
-Same as the still prompts: clip/animation/transition prompts for this Short were not saved as files, and were not found in the sources searched for this archive.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 3 — Her mother refused to give up, taking her by bus…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 4 — For years she wore a metal brace, until at twelve,…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 5 — She began to run, and at just sixteen, she won…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 6 — In 1960, in Rome, she won three gold medals, and…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 7 — Back home, she insisted her welcome parade be open to…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.

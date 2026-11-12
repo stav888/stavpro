@@ -45,14 +45,51 @@ The glow she loved harmed her in the end, but her notebooks are still radioactiv
 
 **not found.** A Hebrew script file exists in the examples folder only for Garbo and Lustig (`examples/README.md`).
 
-## Image / sketch / frame prompts
+## Per-scene image and animation prompts
 
-**not found.**
+One row per production scene (sentence, segment, or part). Prompts are copied verbatim only when a source file or transcript call was found.
 
-`examples/README.md` records that image/video prompts were passed straight to `GenerateImage` / `GenerateVideo` and never saved as files. A search of `/workspace` project folders, `history-storyteller/` in the repo, and available on-disk transcripts did not turn up the still/sketch prompts actually submitted for this Short.
+### Scene 1 — In 1891, a young Polish woman named Maria arrived in…
 
-## Clip / animation / transition prompts
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-**not found.**
+### Scene 2 — In a freezing little room, she dreamed of understanding how…
 
-Same as the still prompts: clip/animation/transition prompts for this Short were not saved as files, and were not found in the sources searched for this archive.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 3 — She heard of mysterious rays coming from uranium, and gave…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 4 — With her husband Pierre, she worked in a leaky shed,…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 5 — One night in 1898, they saw a tiny substance glowing…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 6 — In 1903, Marie became the first woman ever to win…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 7 — Then Pierre was killed in an accident, but she kept…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 8 — In World War One, she drove X-ray units to the…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 9 — The glow she loved harmed her in the end, but…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.

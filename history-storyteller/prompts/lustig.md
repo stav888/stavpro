@@ -80,18 +80,64 @@ Lustig had sold a monument that was never for sale.
 Caveats: story rests largely on Secret Service agent James Johnson's memoir; exact sum unknown (official Eiffel site: "unknown sum"; ~70,000 francs on Wikipedia is unverified) – omitted. Second attempt exists in sources but omitted. Hotel = Crillon (named in Smithsonian/Le Point), kept generic.
 ```
 
+## Per-scene image and animation prompts
 
-## Image / sketch / frame prompts
+One row per production scene (sentence, segment, or part). Prompts are copied verbatim only when a source file or transcript call was found.
 
-**not found.**
+### Scene 1 — In 1925, a con man sold the Eiffel Tower. It…
 
-`examples/README.md` records that image/video prompts were passed straight to `GenerateImage` / `GenerateVideo` and never saved as files. A search of `/workspace` project folders, `history-storyteller/` in the repo, and available on-disk transcripts did not turn up the still/sketch prompts actually submitted for this Short.
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-## Clip / animation / transition prompts
+### Scene 2 — His name was Victor Lustig. A newspaper story about the…
 
-**not found.**
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
-Same as the still prompts: clip/animation/transition prompts for this Short were not saved as files, and were not found in the sources searched for this archive.
+### Scene 3 — He posed as a government official. He forged official stationery.…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 4 — There, he shared a secret. The government planned to tear…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 5 — One dealer, André Poisson, wanted the deal badly.
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 6 — But Lustig wanted more than the price of the tower.
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 7 — He hinted that he was a corrupt official. He expected…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 8 — Strangely, that made the scam more convincing. Now there was…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 9 — Poisson paid. Lustig took the money and fled to Austria.
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 10 — When Poisson realized he had been fooled, he was too…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+
+### Scene 11 — The Eiffel Tower stayed right where it was. Poisson's money…
+
+- **Image / sketch prompt:** **not found.** No GenerateImage / still-sketch prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
+- **Animation / clip prompt:** **not found.** No GenerateVideo / animation / transition prompt was saved for this scene, and none was found in the transcripts or project files searched for this update.
 
 ## Earlier unused 16:9 Vox-style experiment (not the published Short)
 
@@ -192,4 +238,19 @@ On-disk transcript `GenerateImage` descriptions actually submitted (16:9), copie
 Vox-style paper-cut documentary collage, vintage newspaper textures, layered cutout illustrations, muted cream and sepia palette with bold red accent string, cinematic flat lighting, high detail. Wide Paris 1925 skyline as layered paper cutouts, Eiffel Tower silhouette center, cream paper sky, vintage map texture, bold date text MAY 1925 floating as cutout letters. No photoreal faces.
 
 Vox-style paper-cut documentary collage, vintage newspaper textures, layered cutout illustrations, muted cream and sepia palette with bold red accent string. Paper-cut rainy Paris street, umbrellas as cutouts, hotel facades, soft sepia, small PARIS label in red type. No photoreal faces.
+```
+
+Additional `GenerateImage` descriptions actually submitted, recovered from New Bot conversation-blobs (on-disk transcript store), scenes 03 and 04 — still part of the unused 16:9 Vox-style experiment, not the Xiaohei Short:
+
+Source: session transcript / `conversation-blobs.db` of agent 9eeee5d1 (New Bot), blob `f57f4a3c9d1e…`, tool `GenerateImage`.
+
+### scene-03-man-newspaper.png (16:9)
+
+```
+Vox-style paper-cut documentary collage, vintage newspaper textures, layered cutout illustrations, muted cream and sepia with bold red accent. Illustrated paper-cut man in 1920s suit reading a large newspaper in a cafe, layered collage, tiny Eiffel Tower through window. Illustrated cutout style only, no photoreal face.
+```
+### scene-04-newspaper.png (16:9)
+
+```
+Vox-style paper-cut documentary collage. Close-up of vintage newspaper headline collage about the Eiffel Tower rusting and costly maintenance, red underlines, paper tears, sepia and cream tones.
 ```
