@@ -35,6 +35,7 @@ Publish times below are in Israel time (Asia/Jerusalem), copied from `examples/*
 | [`lustig.md`](lustig.md) | Victor Lustig Sells the Eiffel Tower | Scheduled 2026-11-10 18:47 Israel time (Asia/Jerusalem) (snapshot 2026-11-09) | partial — narration found (English final + v1 English/Hebrew/sources); Xiaohei image and clip prompts for the published Short not found. An earlier unused 16:9 Vox-style experiment is archived in a clearly labeled section. |
 | [`garbo.md`](garbo.md) | Juan Pujol García (Agent Garbo) | Scheduled 2026-11-12 18:43 Israel time (Asia/Jerusalem) (snapshot 2026-11-09) | partial — narration found (English + Hebrew); image and clip prompts not found |
 | [`emu-war.md`](emu-war.md) | The Great Emu War | not scheduled (in production) | partial — clip prompts and narration found; still prompts not found |
+| [`emu-war-MID.md`](emu-war-MID.md) | The Great Emu War (Midjourney-adapted) | not scheduled (in production) | Midjourney video prompts converted from the nine real Emu War animation prompts; original still prompts still not found |
 
 ## Videos with no image/clip prompts found
 
