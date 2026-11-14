@@ -2,7 +2,7 @@
 
 **Format:** 10 parts · vertical 9:16 · English on-screen text · target video settings per part: Video, Audio On, 480p, 10 seconds.
 
-Each part below has its own script beat, opening and ending image, and animation prompt. The small previews embed the original full-resolution PNGs and only scale their display size. The image links open the original frame files. In Grok Imagine, assign the opening image as **First frame** and the ending image as **Last frame**. Review every part before submitting it for generation.
+Each part below has its own script beat, opening and ending image, and animation prompt. The previews embed the original full-resolution PNG files directly; no reduced copies are used. Click a preview to open its original frame. In Grok Imagine, assign the opening image as **First frame** and the ending image as **Last frame**. Review every part before submitting it for generation.
 
 ## Part 1 — DYATLOV PASS — 1959
 
@@ -12,7 +12,7 @@ Each part below has its own script beat, opening and ending image, and animation
 
 **Frames:** [Opening](images/part-01-opening.png) · [Ending](images/part-01-ending.png)
 
-<p><a href="images/part-01-opening.png"><img src="images/part-01-opening.png" alt="Part 1 opening preview" width="220"></a> <a href="images/part-01-ending.png"><img src="images/part-01-ending.png" alt="Part 1 ending preview" width="220"></a></p>
+[![Part 1 opening preview](images/part-01-opening.png)](images/part-01-opening.png) [![Part 1 ending preview](images/part-01-ending.png)](images/part-01-ending.png)
 
 **Animation prompt (English):**
 
@@ -28,7 +28,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-02-opening.png) · [Ending](images/part-02-ending.png)
 
-<p><a href="images/part-02-opening.png"><img src="images/part-02-opening.png" alt="Part 2 opening preview" width="220"></a> <a href="images/part-02-ending.png"><img src="images/part-02-ending.png" alt="Part 2 ending preview" width="220"></a></p>
+[![Part 2 opening preview](images/part-02-opening.png)](images/part-02-opening.png) [![Part 2 ending preview](images/part-02-ending.png)](images/part-02-ending.png)
 
 **Animation prompt (English):**
 
@@ -44,7 +44,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-03-opening.png) · [Ending](images/part-03-ending.png)
 
-<p><a href="images/part-03-opening.png"><img src="images/part-03-opening.png" alt="Part 3 opening preview" width="220"></a> <a href="images/part-03-ending.png"><img src="images/part-03-ending.png" alt="Part 3 ending preview" width="220"></a></p>
+[![Part 3 opening preview](images/part-03-opening.png)](images/part-03-opening.png) [![Part 3 ending preview](images/part-03-ending.png)](images/part-03-ending.png)
 
 **Animation prompt (English):**
 
@@ -60,7 +60,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-04-opening.png) · [Ending](images/part-04-ending.png)
 
-<p><a href="images/part-04-opening.png"><img src="images/part-04-opening.png" alt="Part 4 opening preview" width="220"></a> <a href="images/part-04-ending.png"><img src="images/part-04-ending.png" alt="Part 4 ending preview" width="220"></a></p>
+[![Part 4 opening preview](images/part-04-opening.png)](images/part-04-opening.png) [![Part 4 ending preview](images/part-04-ending.png)](images/part-04-ending.png)
 
 **Animation prompt (English):**
 
@@ -76,7 +76,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-05-opening.png) · [Ending](images/part-05-ending.png)
 
-<p><a href="images/part-05-opening.png"><img src="images/part-05-opening.png" alt="Part 5 opening preview" width="220"></a> <a href="images/part-05-ending.png"><img src="images/part-05-ending.png" alt="Part 5 ending preview" width="220"></a></p>
+[![Part 5 opening preview](images/part-05-opening.png)](images/part-05-opening.png) [![Part 5 ending preview](images/part-05-ending.png)](images/part-05-ending.png)
 
 **Animation prompt (English):**
 
@@ -92,7 +92,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-06-opening.png) · [Ending](images/part-06-ending.png)
 
-<p><a href="images/part-06-opening.png"><img src="images/part-06-opening.png" alt="Part 6 opening preview" width="220"></a> <a href="images/part-06-ending.png"><img src="images/part-06-ending.png" alt="Part 6 ending preview" width="220"></a></p>
+[![Part 6 opening preview](images/part-06-opening.png)](images/part-06-opening.png) [![Part 6 ending preview](images/part-06-ending.png)](images/part-06-ending.png)
 
 **Animation prompt (English):**
 
@@ -108,7 +108,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-07-opening.png) · [Ending](images/part-07-ending.png)
 
-<p><a href="images/part-07-opening.png"><img src="images/part-07-opening.png" alt="Part 7 opening preview" width="220"></a> <a href="images/part-07-ending.png"><img src="images/part-07-ending.png" alt="Part 7 ending preview" width="220"></a></p>
+[![Part 7 opening preview](images/part-07-opening.png)](images/part-07-opening.png) [![Part 7 ending preview](images/part-07-ending.png)](images/part-07-ending.png)
 
 **Animation prompt (English):**
 
@@ -124,7 +124,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-08-opening.png) · [Ending](images/part-08-ending.png)
 
-<p><a href="images/part-08-opening.png"><img src="images/part-08-opening.png" alt="Part 8 opening preview" width="220"></a> <a href="images/part-08-ending.png"><img src="images/part-08-ending.png" alt="Part 8 ending preview" width="220"></a></p>
+[![Part 8 opening preview](images/part-08-opening.png)](images/part-08-opening.png) [![Part 8 ending preview](images/part-08-ending.png)](images/part-08-ending.png)
 
 **Animation prompt (English):**
 
@@ -140,7 +140,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-09-opening.png) · [Ending](images/part-09-ending.png)
 
-<p><a href="images/part-09-opening.png"><img src="images/part-09-opening.png" alt="Part 9 opening preview" width="220"></a> <a href="images/part-09-ending.png"><img src="images/part-09-ending.png" alt="Part 9 ending preview" width="220"></a></p>
+[![Part 9 opening preview](images/part-09-opening.png)](images/part-09-opening.png) [![Part 9 ending preview](images/part-09-ending.png)](images/part-09-ending.png)
 
 **Animation prompt (English):**
 
@@ -156,7 +156,7 @@ Animate smoothly from the opening image to the ending image in the same minimali
 
 **Frames:** [Opening](images/part-10-opening.png) · [Ending](images/part-10-ending.png)
 
-<p><a href="images/part-10-opening.png"><img src="images/part-10-opening.png" alt="Part 10 opening preview" width="220"></a> <a href="images/part-10-ending.png"><img src="images/part-10-ending.png" alt="Part 10 ending preview" width="220"></a></p>
+[![Part 10 opening preview](images/part-10-opening.png)](images/part-10-opening.png) [![Part 10 ending preview](images/part-10-ending.png)](images/part-10-ending.png)
 
 **Animation prompt (English):**
 
