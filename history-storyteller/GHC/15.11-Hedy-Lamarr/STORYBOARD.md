@@ -6,6 +6,14 @@
 
 The character sheet defines the recurring black bean-shaped mascot. Keep it hatless in every illustration. Images for Parts 1 and 2 are included below. Images for Parts 3–10 are still to be created.
 
+## Character consistency instructions
+
+- Use the [character sheet](images/character-sheet.png) as the required visual reference whenever generating or editing an image for this story.
+- Preserve the mascot's silhouette, proportions, solid-black bean-shaped body, two small white eyes, and thin flexible arms and legs.
+- The mascot has no hat, clothing, accessories, mouth, or nose. Do not add these features, even if another reference image contains them.
+- Treat the character sheet as a design reference, not as scene content. Show only the pose and setting required by the current part.
+- Check every generated image against the character sheet before approval. If the character design drifts, regenerate the image before continuing.
+
 ## Part 1 — The Actress
 
 **Script:** ב-1940 מתעוררת בהוליווד שחקנית צעירה בשם היידי לאמאר, שמנצלת כל רגע פנוי כדי לחשוב על רעיונות מדעיים בלילות.
