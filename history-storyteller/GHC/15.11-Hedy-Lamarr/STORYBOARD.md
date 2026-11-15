@@ -25,7 +25,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes writes slowly on the notepad with its thin arm, and the lamp glow softly pulses. The film reel in the background turns very slowly. The character blinks, then looks up thoughtfully. The title THE ACTRESS fades in at the top without an underline, and the caption fades in at the bottom. Smooth, calm, cozy motion with soft easing and a slow camera push-in.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes writes slowly on the notepad with its thin arm, and the lamp glow softly pulses. The film reel in the background turns very slowly. The character blinks, then looks up thoughtfully. Draw a thin, hand-scribbled underline beneath the title THE ACTRESS from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Smooth, calm, cozy motion with soft easing and a slow camera push-in.
 ```
 
 ## Part 2 — One Frequency
@@ -39,7 +39,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The wavy line on the frequency axis draws itself smoothly from left to right. The crossed-out wave flickers briefly, then the cross mark draws itself in. The solid black bean character with white eyes taps the diagram with its hand, creating a small bounce. The title fades in at the top without an underline, and the caption fades in at the bottom. Focused, clean motion with smooth easing.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The wavy line on the frequency axis draws itself smoothly from left to right. The crossed-out wave flickers briefly, then the cross mark draws itself in. The solid black bean character with white eyes taps the diagram with its hand, creating a small bounce. Draw a thin, hand-scribbled underline beneath the title ONE FREQUENCY from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Focused, clean motion with smooth easing.
 ```
 
 ## Part 3 — The Torpedo
@@ -53,7 +53,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The torpedo outline glides slowly through the wavy ocean lines from left to right, and the ocean waves ripple gently. The small enemy signal arrow pulses and moves toward the torpedo with a tense, slow approach. The solid black bean character with white eyes leans forward on the deck with a subtle concerned sway. The title fades in at the top without an underline, and the caption fades in at the bottom. Tense but smooth motion with careful easing.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The torpedo outline glides slowly through the wavy ocean lines from left to right, and the ocean waves ripple gently. The small enemy signal arrow pulses and moves toward the torpedo with a tense, slow approach. The solid black bean character with white eyes leans forward on the deck with a subtle concerned sway. Draw a thin, hand-scribbled underline beneath the title THE TORPEDO from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Tense but smooth motion with careful easing.
 ```
 
 ## Part 4 — The Idea
@@ -67,7 +67,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The signal waves jump between the frequency blocks one after another in a rhythmic sequence, like notes being played. The solid black bean character with white eyes draws each wave with its arm in a smooth, flowing motion. The lightbulb icon above its head flickers on with a soft glow. The title fades in at the top without an underline, and the caption fades in at the bottom. Bright, energetic yet smooth motion.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The signal waves jump between the frequency blocks one after another in a rhythmic sequence, like notes being played. The solid black bean character with white eyes draws each wave with its arm in a smooth, flowing motion. The lightbulb icon above its head flickers on with a soft glow. Draw a thin, hand-scribbled underline beneath the title THE IDEA from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Bright, energetic yet smooth motion.
 ```
 
 ## Part 5 — A Partner
@@ -81,7 +81,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The two bean characters move their arms in a gentle rhythm, as if playing the piano together. The musical notes float upward and drift slowly between the characters, fading out gracefully. The sketch of the radio on the second character's paper gradually draws itself. The title fades in at the top without an underline, and the caption fades in at the bottom. Warm, rhythmic, collaborative motion with soft easing.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The two bean characters move their arms in a gentle rhythm, as if playing the piano together. The musical notes float upward and drift slowly between the characters, fading out gracefully. The sketch of the radio on the second character's paper gradually draws itself. Draw a thin, hand-scribbled underline beneath the title A PARTNER from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Warm, rhythmic, collaborative motion with soft easing.
 ```
 
 ## Part 6 — The Patent
@@ -95,7 +95,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes lifts the patent document slightly, and the small stamp presses down with a gentle thump and a faint ink mark appearing. The filing cabinet drawer slides closed slowly. The character makes a small, thoughtful head tilt. The title fades in at the top without an underline, and the caption fades in at the bottom. Quiet, understated motion with slow, steady easing.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes lifts the patent document slightly, and the small stamp presses down with a gentle thump and a faint ink mark appearing. The filing cabinet drawer slides closed slowly. The character makes a small, thoughtful head tilt. Draw a thin, hand-scribbled underline beneath the title THE PATENT from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Quiet, understated motion with slow, steady easing.
 ```
 
 ## Part 7 — The Hidden Gift
@@ -109,7 +109,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The small gift box lid lifts slowly, and a wave icon rises gently out of the box, floating upward and fading into soft light. The solid black bean character with white eyes turns toward the gift and blinks warmly. The title fades in at the top without an underline, and the caption fades in at the bottom. Warm, gentle, hopeful motion with smooth easing.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The small gift box lid lifts slowly, and a wave icon rises gently out of the box, floating upward and fading into soft light. The solid black bean character with white eyes turns toward the gift and blinks warmly. Draw a thin, hand-scribbled underline beneath the title THE HIDDEN GIFT from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Warm, gentle, hopeful motion with smooth easing.
 ```
 
 ## Part 8 — Everywhere
@@ -123,7 +123,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The thin wireless wave lines connecting the devices pulse outward softly, one after another, like signals spreading. The small devices gently bob up and down. The solid black bean character with white eyes looks from one device to another and gives a small nod. The title fades in at the top without an underline, and the caption fades in at the bottom. Connected, rhythmic, smooth motion with light easing.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The thin wireless wave lines connecting the devices pulse outward softly, one after another, like signals spreading. The small devices gently bob up and down. The solid black bean character with white eyes looks from one device to another and gives a small nod. Draw a thin, hand-scribbled underline beneath the title EVERYWHERE from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Connected, rhythmic, smooth motion with light easing.
 ```
 
 ## Part 9 — Recognition
@@ -137,7 +137,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes raises its arm and receives the plaque with a small bow. The small white silhouettes in the audience clap their hands in a gentle rhythmic motion. A few small sparkle lines appear and fade near the plaque. The title fades in at the top without an underline, and the caption fades in at the bottom. Celebratory but restrained motion with smooth easing.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes raises its arm and receives the plaque with a small bow. The small white silhouettes in the audience clap their hands in a gentle rhythmic motion. A few small sparkle lines appear and fade near the plaque. Draw a thin, hand-scribbled underline beneath the title RECOGNITION from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Celebratory but restrained motion with smooth easing.
 ```
 
 ## Part 10 — The Signal Continues
@@ -151,7 +151,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 **Animation prompt (English):**
 
 ```text
-Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes stands by the window and slowly turns its head toward the city. The faint wireless wave lines rising from the rooftops pulse softly and drift upward, fading gently into the sky. The camera makes a slow pull-back, revealing more of the quiet city. The title fades in at the top without an underline, and the caption fades in at the bottom. Reflective, calm motion with long easing and generous pauses.
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes stands by the window and slowly turns its head toward the city. The faint wireless wave lines rising from the rooftops pulse softly and drift upward, fading gently into the sky. The camera makes a slow pull-back, revealing more of the quiet city. Draw a thin, hand-scribbled underline beneath the title THE SIGNAL CONTINUES from left to right as a separate graphic stroke. Keep the title and caption exactly unchanged, static, sharp, and readable throughout; do not fade, move, morph, or distort any text. No talking, dialogue, narration, or voiceover. Reflective, calm motion with long easing and generous pauses.
 ```
 
 ## Historical note
