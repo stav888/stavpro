@@ -20,7 +20,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** In 1940, Hollywood star Hedy Lamarr spends her nights thinking about science.
 
-![Part 1 — The Actress](images/part-01.png)
+![Part 1 — The Actress](https://raw.githubusercontent.com/stav888/stavpro/37d00d0e6733c2fbc2fc44d4547d8a416e1a1137/history-storyteller/GHC/15.11-Hedy-Lamarr/images/part-01.png)
 
 **Animation prompt (English):**
 
@@ -34,7 +34,7 @@ Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white bac
 
 **On-screen caption:** A signal on a single fixed frequency is easy to jam and easy to block.
 
-![Part 2 — One Frequency](images/part-02.png)
+![Part 2 — One Frequency](https://raw.githubusercontent.com/stav888/stavpro/37d00d0e6733c2fbc2fc44d4547d8a416e1a1137/history-storyteller/GHC/15.11-Hedy-Lamarr/images/part-02.png)
 
 **Animation prompt (English):**
 
