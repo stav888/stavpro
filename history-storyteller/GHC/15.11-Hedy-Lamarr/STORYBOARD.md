@@ -36,7 +36,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** During World War II, enemy interference threatened torpedoes guided by radio signals.
 
-*Image pending.*
+![Part 3 — The Torpedo](images/part-03.png)
 
 ## Part 4 — The Idea
 
@@ -44,7 +44,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** Hedy proposes rapidly switching frequencies in a synchronized pattern known to the receiver.
 
-*Image pending.*
+![Part 4 — The Idea](images/part-04.png)
 
 ## Part 5 — A Partner
 
@@ -52,7 +52,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** She teams up with composer George Antheil, who understands rhythm and timing.
 
-*Image pending.*
+![Part 5 — A Partner](images/part-05.png)
 
 ## Part 6 — The Patent
 
@@ -60,7 +60,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** In 1942, they received a patent, but the military did not put the idea into use right away.
 
-*Image pending.*
+![Part 6 — The Patent](images/part-06.png)
 
 ## Part 7 — The Hidden Gift
 
@@ -68,7 +68,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** Years later, engineers recognized its value. Frequency hopping became one of several principles used in modern wireless communication.
 
-*Image pending.*
+![Part 7 — The Hidden Gift](images/part-07.png)
 
 ## Part 8 — Everywhere
 
@@ -76,7 +76,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** Bluetooth and Wi-Fi were not directly built from Lamarr and Antheil's patent; they use related principles in modern wireless communication.
 
-*Image pending.*
+![Part 8 — Everywhere](images/part-08.png)
 
 ## Part 9 — Recognition
 
@@ -84,7 +84,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** In 1997, Hedy Lamarr received formal recognition for her contribution.
 
-*Image pending.*
+![Part 9 — Recognition](images/part-09.png)
 
 ## Part 10 — The Signal Continues
 
@@ -92,7 +92,7 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 **On-screen caption:** An idea born in wartime still shapes how people connect today.
 
-*Image pending.*
+![Part 10 — The Signal Continues](images/part-10.png)
 
 ## Historical note
 
