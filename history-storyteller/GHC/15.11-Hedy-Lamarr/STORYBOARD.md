@@ -4,7 +4,7 @@
 **Format:** 10 parts · vertical 9:16 illustrations · English on-screen text  
 **Character reference:** [Character sheet](images/character-sheet.png)
 
-The character sheet defines the recurring black bean-shaped mascot. Keep it hatless in every illustration. Images for Parts 1 and 2 are included below. Images for Parts 3–10 are still to be created.
+The character sheet defines the recurring black bean-shaped mascot. Keep it hatless in every illustration. All 10 illustrations are included below.
 
 ## Character consistency instructions
 
@@ -22,6 +22,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 ![Part 1 — The Actress](images/part-01.png)
 
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes writes slowly on the notepad with its thin arm, and the lamp glow softly pulses. The film reel in the background turns very slowly. The character blinks, then looks up thoughtfully. The title THE ACTRESS fades in at the top without an underline, and the caption fades in at the bottom. Smooth, calm, cozy motion with soft easing and a slow camera push-in.
+```
+
 ## Part 2 — One Frequency
 
 **Script:** היידי לומדת על ההנדסה מאחורי מערכות רדיו ומבינה שאותות יכולים להיחסם בקלות כשהם נשלחים על תדר אחד קבוע.
@@ -29,6 +35,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 **On-screen caption:** A signal on a single fixed frequency is easy to jam and easy to block.
 
 ![Part 2 — One Frequency](images/part-02.png)
+
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The wavy line on the frequency axis draws itself smoothly from left to right. The crossed-out wave flickers briefly, then the cross mark draws itself in. The solid black bean character with white eyes taps the diagram with its hand, creating a small bounce. The title fades in at the top without an underline, and the caption fades in at the bottom. Focused, clean motion with smooth easing.
+```
 
 ## Part 3 — The Torpedo
 
@@ -38,6 +50,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 ![Part 3 — The Torpedo](images/part-03.png)
 
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The torpedo outline glides slowly through the wavy ocean lines from left to right, and the ocean waves ripple gently. The small enemy signal arrow pulses and moves toward the torpedo with a tense, slow approach. The solid black bean character with white eyes leans forward on the deck with a subtle concerned sway. The title fades in at the top without an underline, and the caption fades in at the bottom. Tense but smooth motion with careful easing.
+```
+
 ## Part 4 — The Idea
 
 **Script:** היידי מציעה שיטה שבה האות ישנה תדר באופן מהיר ומתואם, ורק המקלט שיודע את הרצף יוכל לקלוט אותו.
@@ -45,6 +63,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 **On-screen caption:** Hedy proposes rapidly switching frequencies in a synchronized pattern known to the receiver.
 
 ![Part 4 — The Idea](images/part-04.png)
+
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The signal waves jump between the frequency blocks one after another in a rhythmic sequence, like notes being played. The solid black bean character with white eyes draws each wave with its arm in a smooth, flowing motion. The lightbulb icon above its head flickers on with a soft glow. The title fades in at the top without an underline, and the caption fades in at the bottom. Bright, energetic yet smooth motion.
+```
 
 ## Part 5 — A Partner
 
@@ -54,6 +78,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 ![Part 5 — A Partner](images/part-05.png)
 
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The two bean characters move their arms in a gentle rhythm, as if playing the piano together. The musical notes float upward and drift slowly between the characters, fading out gracefully. The sketch of the radio on the second character's paper gradually draws itself. The title fades in at the top without an underline, and the caption fades in at the bottom. Warm, rhythmic, collaborative motion with soft easing.
+```
+
 ## Part 6 — The Patent
 
 **Script:** בשנת 1942 מקבלים השניים פטנט על שיטת קפיצת התדרים, אבל הצבא לא מיישם אותה מיד והרעיון נשאר בארון.
@@ -61,6 +91,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 **On-screen caption:** In 1942, they received a patent, but the military did not put the idea into use right away.
 
 ![Part 6 — The Patent](images/part-06.png)
+
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes lifts the patent document slightly, and the small stamp presses down with a gentle thump and a faint ink mark appearing. The filing cabinet drawer slides closed slowly. The character makes a small, thoughtful head tilt. The title fades in at the top without an underline, and the caption fades in at the bottom. Quiet, understated motion with slow, steady easing.
+```
 
 ## Part 7 — The Hidden Gift
 
@@ -70,6 +106,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 ![Part 7 — The Hidden Gift](images/part-07.png)
 
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The small gift box lid lifts slowly, and a wave icon rises gently out of the box, floating upward and fading into soft light. The solid black bean character with white eyes turns toward the gift and blinks warmly. The title fades in at the top without an underline, and the caption fades in at the bottom. Warm, gentle, hopeful motion with smooth easing.
+```
+
 ## Part 8 — Everywhere
 
 **Script:** Bluetooth ו-Wi-Fi לא נבנו ישירות על הפטנט של לאמאר ואנטייל, אך משתמשים בעקרונות דומים בתקשורת אלחוטית.
@@ -77,6 +119,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 **On-screen caption:** Bluetooth and Wi-Fi were not directly built from Lamarr and Antheil's patent; they use related principles in modern wireless communication.
 
 ![Part 8 — Everywhere](images/part-08.png)
+
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The thin wireless wave lines connecting the devices pulse outward softly, one after another, like signals spreading. The small devices gently bob up and down. The solid black bean character with white eyes looks from one device to another and gives a small nod. The title fades in at the top without an underline, and the caption fades in at the bottom. Connected, rhythmic, smooth motion with light easing.
+```
 
 ## Part 9 — Recognition
 
@@ -86,6 +134,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 
 ![Part 9 — Recognition](images/part-09.png)
 
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes raises its arm and receives the plaque with a small bow. The small white silhouettes in the audience clap their hands in a gentle rhythmic motion. A few small sparkle lines appear and fade near the plaque. The title fades in at the top without an underline, and the caption fades in at the bottom. Celebratory but restrained motion with smooth easing.
+```
+
 ## Part 10 — The Signal Continues
 
 **Script:** היידי מתבוננת בעולם מלא בתקשורת אלחוטית, ומבינה שההמצאה שלה, שנולדה במלחמה, עדיין נושאת מסרים ומשנה את הדרך שבה אנשים מתחברים.
@@ -93,6 +147,12 @@ The character sheet defines the recurring black bean-shaped mascot. Keep it hatl
 **On-screen caption:** An idea born in wartime still shapes how people connect today.
 
 ![Part 10 — The Signal Continues](images/part-10.png)
+
+**Animation prompt (English):**
+
+```text
+Animate a vertical 9:16 minimalist hand-drawn line-art scene on a pure white background. The solid black bean character with white eyes stands by the window and slowly turns its head toward the city. The faint wireless wave lines rising from the rooftops pulse softly and drift upward, fading gently into the sky. The camera makes a slow pull-back, revealing more of the quiet city. The title fades in at the top without an underline, and the caption fades in at the bottom. Reflective, calm motion with long easing and generous pauses.
+```
 
 ## Historical note
 
